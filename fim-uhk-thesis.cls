@@ -45,18 +45,18 @@
 \ifenglish
   \PassOptionsToPackage{main=english}{babel}
 \fi
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[czech,slovak,english]{babel}
-\usepackage[utf8]{inputenc} %kodovani / encoding
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage{url}
-\usepackage{ragged2e}
-\usepackage{color}
-\usepackage{etoolbox}
-\usepackage{enumitem}
-\usepackage{pdfpages}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[czech,slovak,english]{babel}
+\RequirePackage[utf8]{inputenc} %kodovani / encoding
+\RequirePackage{cmap}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{url}
+\RequirePackage{ragged2e}
+\RequirePackage{color}
+\RequirePackage{etoolbox}
+\RequirePackage{enumitem}
+\RequirePackage{pdfpages}
 \addto\captionsczech{\renewcommand{\refname}{Literatura}}
 \addto\captionsslovak{\renewcommand{\refname}{Literatúra}}
 
@@ -243,7 +243,6 @@
 %Vyber fakulty / faculty selection
 \newcommand{\set@faculty}[3]{%
  \naselfalse
- % TODO WRITER: enter name faculty
  \ifEqString{#1}{FIM}{Fakulta informatiky a managementu}{\@fim@CS}%
  \ifEqString{#1}{FIM}{Fakulta informatiky a managementu}{\@fim@SK}%
  \ifEqString{#1}{FIM}{Faculty of Informatics and Management}{\@fim@EN}%
@@ -259,7 +258,6 @@
 %Vyber ustavu / department selection
 \newcommand{\set@department}[3]{%
  \naselfalse
- % TODO WRITER: enter name of department
  \ifEqString{#1}{KIT}{Katedra informatiky a kvantitativních metod}{\@department@CS}
  \ifEqString{#1}{KIT}{Katedra informatiky a kvantitativních metod}{\@department@SK}
  \ifEqString{#1}{KIT}{Department of Information Technology}{\@department@EN}
@@ -830,26 +828,26 @@
 
 % Balíčky
 % Packages
-\usepackage[czech,slovak,english]{babel}
-\usepackage[]{opensans}
-\usepackage{float}
-\usepackage{calc}
-\usepackage{longtable,booktabs}
-\usepackage{xcolor,colortbl}
-\usepackage{multirow}
-\usepackage{tabularx}
-\usepackage{graphicx}
-\usepackage{acro}
-\usepackage{url}
+\RequirePackage[czech,slovak,english]{babel}
+\RequirePackage[]{opensans}
+\RequirePackage{float}
+\RequirePackage{calc}
+\RequirePackage{longtable,booktabs}
+\RequirePackage{xcolor,colortbl}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage{graphicx}
+\RequirePackage{acro}
+\RequirePackage{url}
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
 \def\UrlBreaks{\do\/\do-}
 
-\usepackage{blindtext}
-\usepackage{listings}
-\usepackage[toc,page,header]{appendix}
+\RequirePackage{blindtext}
+\RequirePackage{listings}
+\RequirePackage[toc,page,header]{appendix}
 \RequirePackage{titletoc}
 \ifczech
-  \usepackage{ae}
+  \RequirePackage{ae}
 \fi
 
 %--------------------------------------------------------
@@ -857,7 +855,7 @@
 % Fix for CZECH and SLOVAK -- needs up to date packages!
 % http://tex.stackexchange.com/questions/111999/slovak-and-czech-babel-gives-problems-with-cmidrule-and-cline
 %--------------------------------------------------------
-\usepackage{regexpatch}
+\RequirePackage{regexpatch}
 %\ifczechslovak
   \makeatletter
   % Change the `-` delimiter to an active character
