@@ -46,7 +46,7 @@ Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadan�
 \subsection{Red team assessment}
 
 \paragraph{}
-Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.\cite{lootsec_pen_test_vs_red_team, securityInteligence_pen_test_red_team_purple_team}
+Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů\cite{lootsec_pen_test_vs_red_team,astra_pen_test_vs_red_teaming,securityInteligence_pen_test_red_team_purple_team}.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
 Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby pokud možno co nejvíce simulovala skutečný útok.
 Výhodou je, že za předpokladu detekce testování bude obrana systému postupovat stejně, jako kdyby se jednalo o skutečnou hrozbu a získáme tak cenná data a zpětnou vazbu pro zlepšení budoucí obrany.
@@ -57,7 +57,17 @@ Také automatizace zde bývá složitá, jedná se totiž o specifickou strategi
 Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti cíle s omezeními vznikajícími pouze ze snahy simulovat reálný útok.
 
 
-%todo \cite{red_team_oakley_2019}
+%todo use this resource
+todo\cite{red_team_oakley_2019}
+
+\subsubsection{Purple team/Kontrolní cvičení}
+Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
+Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
+Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
+
+Tato cvičení lze uskutečňovat pouze jednou pro vyzkoušení techniky nebo také opakovaně.
+Částečná automatizace za použití open-source nástrojů, které mají v této práci vlastní kapitolu, je také jednou z možností.
+Výhodou opakovaného testování s automatizací je možnost měřit a porovnávat výsledky za stejných stupních podmínek, což vede k jasně viditelnému zlepšení obranné strategie.\cite{securityInteligence_pen_test_red_team_purple_team,redscan_team_purple_team}
 
 \section{Řešená problematika}
 % TODO WRITER: text pronto?
