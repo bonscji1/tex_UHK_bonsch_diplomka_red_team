@@ -21,7 +21,7 @@ Cíle, hypotézy/ výzkumné otázky, způsob hledání odpovědí na výzkumné
 % TODO WRITER: text
 
 co to je, proč to je.
-
+\paragraph{}
 Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení\cite{securityInteligence_pen_test_red_team_purple_team}.
 Z důvodu přesahu vlastností jsou tyto metodologie zaměňovány, někdy dokonce považovány za jedinou metodologie s několik různými názvy.
 Právě z těchto důvodů jsou v následujícím textu vysvětleny.
@@ -36,17 +36,28 @@ lootsec\cite{lootsec_pen_test_vs_red_team}
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému\cite{lootsec_pen_test_vs_red_team,astra_pen_test_vs_red_teaming,securityInteligence_pen_test_red_team_purple_team}.
 Takto důkladné hledání je omezeno pouze na zadaný ,scope', neboli část testovaného systému.
 Aby bylo dosaženo co největší efektivity, tento typ testování se svoji činnost nesnaží schovávat, naopak bývá velmi snadné ho detekovat, to však nevadí protože ochrana daného systému by o jeho provádění měla být předem informována.
+Tento typ testování může být také z části automatizován, což vede k dalšímu zlepšení efektivnosti na úkor flexibilitě.
+V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, ať už v podobě času, lidí či kapitálu, než red team assessment.
 
-\paragra
+\paragraph
+Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.
 
 
 \subsection{Red team assessment}
-% TODO WRITER: text
-základ, cíle rozdíly
 
-determine the ability/power of an organization to detect and respond to vulnerabilities
+\paragraph{}
+Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.\cite{lootsec_pen_test_vs_red_team, securityInteligence_pen_test_red_team_purple_team}
+To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
+Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby pokud možno co nejvíce simulovala skutečný útok.
+Výhodou je, že za předpokladu detekce testování bude obrana systému postupovat stejně, jako kdyby se jednalo o skutečnou hrozbu a získáme tak cenná data a zpětnou vazbu pro zlepšení budoucí obrany.
+Je jasné, že pro správné provedení red teamingu je potřeba více zdrojů, at už se jedná o čas nebo lidskou práci, než v případě pen testingu.
+Také automatizace zde bývá složitá, jedná se totiž o specifickou strategii pro každé testování kde je nutnost reagovat na všechny události vzniklé testováním.
 
-todo\cite{red_team_oakley_2019}
+\paragraph{}
+Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti cíle s omezeními vznikajícími pouze ze snahy simulovat reálný útok.
+
+
+%todo \cite{red_team_oakley_2019}
 
 \section{Řešená problematika}
 % TODO WRITER: text pronto?
