@@ -20,27 +20,34 @@ Cíle, hypotézy/ výzkumné otázky, způsob hledání odpovědí na výzkumné
 \section{Úvod do problematiky Cyber-security}
 \paragraph{}
 co to je, proč to je.
+% TODO WRITER: text
 
 \subsection{Studie trendů Cyber-security}
 Dlouhodobě můžeme v rámci Cyber-security rozeznávat několik klíčových zaměření.
-Zajímavé jsou změny v prioritách zaměření v ohledu na čas.
+Zajímavé jsou změny v prioritách zaměření v ohledu na čas, které můžeme zkoumat na literatuře.
 Velké změny lze zaznamenat především před a po pandemii Covidu-19.\cite{KUMAR2022102821}
-Jako i u jiných odvětví můžeme dělit celou sféru na 2 části, část akademickou a část praktickou.
+Jako i u jiných odvětví můžeme dělit celou sféru na 2 části, část akademickou a část veřejnou.
 Je jasné, že zaměření těchto dvou částí budou lehce rozdílná, proto je nutné dívat se na ně odděleně i když se v mnoha ohledech překrývají a ovlivňují.
+Důvod proč zkoumáme rozdíl před a po Covidu-19 je rapidní navýšení adopce digitálních technologií, které v této době proběhlo.
+Ztížené pracovní podmínky vyžadovaly zavádění nových technologií.
+To znamená nová bezpečnostní rizika vzniklá nejen z těchto technologií, ale i z přístupu jejich využívání.
+Je značný rozdíl v bezpečnosti práce uživatele, nachází-li se v uzavřené síti uvnitř společnosti nebo při připojování na dálku při práci z domova.
 
+\paragraph{Akademická literatura}
+
+\paragraph{Všeobecná literatura}
 
 % TODO WRITER: text
 
-\paragraph{}
+\subsection{Testování}
 Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
 Z důvodu přesahu vlastností jsou tyto metodologie zaměňovány, někdy dokonce považovány za jedinou metodologie s několik různými názvy.\cite{securityInteligence_pen_test_red_team_purple_team}
 
 \paragraph{}
 Právě z těchto důvodů jsou v následujícím textu vysvětleny.
 
-\subsection{Penetration testing}
+\subsubsection{Penetration testing}
 
-\paragraph{}
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
 Takto důkladné hledání je omezeno pouze na zadaný ,scope', neboli část testovaného systému.
 Aby bylo dosaženo co největší efektivity, tento typ testování se svoji činnost nesnaží schovávat, naopak bývá velmi snadné ho detekovat, to však nevadí protože ochrana daného systému by o jeho provádění měla být předem informována.
@@ -50,8 +57,8 @@ V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, a
 Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
 
 
-\subsection{Red team assessment}
-\paragraph{}
+\subsubsection{Red team assessment}
+
 Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
 Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby pokud možno co nejvíce simulovala skutečný útok.
@@ -66,7 +73,6 @@ Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti c�
 todo\cite{red_team_oakley_2019}
 
 \subsubsection{Purple team/Kontrolní cvičení}
-\paragraph{}
 Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
 Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
 Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
@@ -75,7 +81,7 @@ Tato cvičení lze uskutečňovat pouze jednou pro vyzkoušení techniky nebo ta
 Částečná automatizace za použití open-source nástrojů, které mají v této práci vlastní kapitolu, je také jednou z možností.
 Výhodou opakovaného testování s automatizací je možnost měřit a porovnávat výsledky za stejných stupních podmínek, což vede k jasně viditelnému zlepšení obranné strategie.\cite{securityInteligence_pen_test_red_team_purple_team,redscan_team_purple_team}
 
-\subsection{Zavedené nástroje v problematice}
+\subsection{Zavedené nástroje v problematice Testování}
 
 ATT\&CK a red teamy, caldera
 atomic red team, co má za nároky, atd atd, udělat porovnání s caldera atd
