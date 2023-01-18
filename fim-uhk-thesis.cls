@@ -985,7 +985,7 @@
 \newcommand{\cntcapfigure}[4]{
     \begin{figure}[H]
         \centering
-        \includegraphics[width=#2]{images/#1}\hfill
+        \includegraphics[width=#2]{Images/#1}\hfill
         \captionsource{#3}{#4}
     \end{figure}
 }

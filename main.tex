@@ -61,6 +61,8 @@
 % This solves the problems with links which leads after the picture
 \usepackage[all]{hypcap}
 
+\newcommand{\source}[1]{\caption*{Zdroj: {#1}} }
+
 \projectinfo{
   %Prace / Thesis
   project={DP},            %typ práce BP/SP/DP/DR  / thesis type (SP = term project)
@@ -231,6 +233,6 @@
   \newpage
 
   % TODO WRITER: provide your own generated assignment image
-  \includepdf[pages=-, offset=20 -50, width=20cm]{images/assignment.png}
+  \includepdf[pages=-, offset=20 -50, width=20cm]{Images/assignment.png}
 
 \end{document}
