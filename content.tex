@@ -105,7 +105,7 @@ Autor ~\ref{fig:MostCommonAttacks} v obrázku popisuje dle něj nejčastější 
 
 
 
-Naopak Cisco udává tyto nejčastější metody útoku.\cite{cisco_most_common_attack}
+Naopak Cisco udává tyto nejčastější metody útoku\cite{cisco_most_common_attack}.
 %todo add definitions from att&ck
 
 \paragraph{Malware}
@@ -179,12 +179,20 @@ Tyto slabiny se také snaží získat státní složky zaměřené na špehován
 Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
 %todo more? zdroje?
 
-\paragraph{Dns tunneling}
+\paragraph{DNS tunneling}
+\textit{DNS tunneling} je možné použít pro legitimní účely, tato práce však zkoumá jeho zneužití.
+Není to samotný útok ale podpora útoku.
+Je založený na \firstac{DNS}.
+Tento protokol je využíván prakticky neustále pro běžné účely a je velmi flexibilní.
+To však dovoluje jeho zneužití.
+\ac{DNS} je tak často používán, že malé navýšení není poznat.
+Mnoho společností ho navíc nekontroluje dostatečně, aby mohlo tento typ útoku možné odhalit.
+Útočník v \ac{DNS} requestech a responsech zakódovává vlastní komunikaci za účelem jejího skrytí.
+Odchozí komunikace může být použita pro exfiltraci kritických dat nebo přijímání odpovědí od nainstalovaného malware.
+příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
+%todo more? zdroje?
 
-
-
-
-% TODO WRITER: text?
+% TODO WRITER: text in between?
 
 \subsection{Testování}
 Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
