@@ -37,12 +37,12 @@ Je jasné, že v prostředí kde mezi sebou soupeří státy je značné úsilí
 Rozdíly mezi cyber-útokem, cyber-zločinem a cyber-válkou jsou ve většině případů rozděleny pouze dle účastníků.\cite{LI20218176}
 Způsob útoku či hrozby na zatřídění do předchozích kategorií klade minimální vliv, zohledněn bývá pouze výsledek.
 
-\paragraph{}
-%todo writer what did i want here?
+
+%todo more?
 
 
 
-\subsection{Relevance}
+\section{Relevance}
 Relevantnost problematiky cyber-bezpečnosti potvrzuje nejen množství akademických textů které zkoumají tuto problematiku, ale také stále větší zájem všeobecné veřejnosti.
 Hlavním důvodem je vzrůstající povědomí populace, způsobené medializací útoků sociálního inženýrství nebo ransomware které populaci v poslední době ovlivňovaly.
 V době psaní je v popředí například ransomware útok na dětskou nemocnici SickKids.\cite{bleep_sickkids_ransom}
@@ -97,16 +97,43 @@ Jeho primární zaměření se však liší.
 Před pandemií byla literatura zaměřena hlavně na ovlivnění správného chodu firem.
 Po pandemii se psalo spíše o dopadech na digitální infrastrukturu jako jsou \textit{služby v cloudu}.
 
-\subsection{Nejčastější cyber-útoky}
-Autor ~\ref{fig:MostCommonAttacks} v obrázku popisuje dle něj nejčastější typy útoků.
+\section{Nejčastější cyber-útoky}
+\paragraph{Trendy roku 2022}
+Asi nejčastějšími útoky jsou dlouhodobě \textit{Denial-of-service}, \textit{Man-in-the-Middle}, \textit{Malware} a samozřejmě \textit{Phishing}\cite{LI20218176}.
+Zaznamenané útoky v roce 2022 jsou v souladu s tímto trendem.
+Použití \textit{Ransomware} v tomto roze vzrostlo o 41\%, primárně v první polovině roku.
+Také čas na odhalení a nápravů úspěšného útoku trval o 49 dní déle, než bylo běžné.
+\textit{Phishing} je stále nejčastějším útokem.
+Jeho oblíbenost spočívá v jeho efektivitě a relativně nízkých nákladech na provedení.
+Počet zaznamenaných útoků téměř každoročně stoupá\cite{moje_bakalarka}.
+Není tak divu, že jen za první polovinu roku 2022 byl zaznamenán nárůst v četnosti útoků o 48\%.
+V této době bylo nahlášeno přes 11 tisíc útoků které stály cíle 12.3 milionů dolarů.
+Je nutné poznamenat, že statistiky se týkají pouze \textit{zaznamenaných} útoků.
+Mnoho společností tyto útoky neoznamuje.
+Může tomu být z pokusu zachování dobré pověsti.
+Horší možnost je že útok nezaznamenali.\cite{securityintelligence_most_common_2022_attacks}
 
-~\cntcapfigure{cyber_attack_types}{\linewidth}{Nejčastější typy cyber-útoků}{\cite{LI20218176}}\label{fig:MostCommonAttacks}
+\paragraph{Nové cíle}
+Stále více útoků se zaměřuje na \textit{supply-chain} a \ac{IoT}.
+To nemůže být překvapením.
+Již v předchozích letech bylo možné zaznamenat neklid mezi ruskem a ukrajinou.
+Plné vypuknutí války samozřejmě zahrnuje útoky na infrastrukturu, a to i v online prostředí.
+\textit{Supply-chain} je výborným cílem ze dvou důvodů.
+Jedna úspěšně napadnutá část dovoluje šířit se po celku a dopad úspěšného útoku je významný.
+Výzkumná zpráva od Accenture\cite{accenture_supplu-chain-disruption} odhadla škody způsobené v Eurozóně těmito útoky na 112.7 bilionů euro.
+Odhad na období 2022/2023 spojený právě s várkou je 242 bilionů euro a v nejhorším případě až 920 bilionů.
+
+
+
+\cite{securityintelligence_most_common_2022_attacks}
 
 
 
 
-Naopak Cisco udává tyto nejčastější metody útoku\cite{cisco_most_common_attack}.
+
+Cisco udává tyto nejčastější metody útoku\cite{cisco_most_common_attack}.
 %todo add definitions from att&ck
+%todo add defending? prevention, good security higiene(segmentation, backups atd)
 
 \paragraph{Malware}
 Tento termín se používá pro škodlivý software.
@@ -124,6 +151,7 @@ Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra.
 Proto je tento problém opravdu závažný.
 
 ~\cntcapfigure{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}\label{fig:MaliciousGoverments}
+%todo add specific for ransomware as the most common?
 
 \paragraph{Phishing}
 Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
@@ -137,6 +165,8 @@ Prvním je ověření nebo zisk informací, které lze použít k dalšímu úto
 Druhým je kompromitace zařízení, například pomocí malware.
 Nejčastěji je to pomocí odkazů, které se v podvodném emailu nachází, popřípadě pomocí infikovaných souborů.
 Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
+
+%todo defence ---> education, multifactor auth
 
 \paragraph{Man-in-the-middle}
 Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
