@@ -142,7 +142,7 @@ Například Cisco udává tyto nejčastější metody útoku\cite{cisco_most_com
 %todo add definitions from att&ck
 %todo add defending? prevention, good security higiene(segmentation, backups atd)
 
-\paragraph{Malware}
+\subsection{Malware}
 Tento termín se používá pro škodlivý software.
 Zahrnuje známé hrozby jako viry, červy, trojské koně, spyware a ransomware.
 Do systému se dostávají pomocí jeho slabin, často díky nepozornosti uživatele.\cite{cisco_most_common_attack}
@@ -160,7 +160,7 @@ Proto je tento problém opravdu závažný.
 ~\cntcapfigure{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}\label{fig:MaliciousGoverments}
 %todo add specific for ransomware as the most common?
 
-\paragraph{Phishing}
+\subsection{Phishing}
 Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
 Nejčastěji se jedná o emailovou komunikaci, existují však i formy přes sms nebo telefonní hovor.
 Nejnebezpečnější jsou specializované útoky, zvané whaling a spear-phishing.
@@ -175,7 +175,7 @@ Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moj
 
 %todo defence ---> education, multifactor auth
 
-\paragraph{Man-in-the-middle}
+\subsection{Man-in-the-middle}
 Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
 Útočník se při tomto útoku dostává doprostřed komunikace 2 subjektů.
 Hlavním cílem je filtrování, kradení a nahrazování dat proudících v komunikaci.
@@ -186,7 +186,7 @@ Další oblíbenou implementací útoku je použití malware.
 Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.\cite{cisco_most_common_attack}
 %todo more?
 
-\paragraph{Denial of service}
+\subsection{Denial of service}
 Útok zaměřený na kolaps infrastruktury.
 \textit{Denial-of-service}, také znám jako \firstac{DoS} útok se snaží vyčerpat zdroje služby množství zasílaných požadavků.
 Další možností je ovládnutí nebo alespoň vyřazení z provozu dané služby za pomocí známe zranitelnosti.\cite{cisco_most_common_attack}
@@ -202,12 +202,12 @@ Jedno zařízení jen těžce může konkurovat statisícím v množství požad
 A to i za předpokladu, že je mnohem výkonnější.
 %todo more? zdroje?
 
-\paragraph{Sql injection}
+\subsection{Sql injection}
 Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
 Ze špatně zabezpečeného vyhledávacího boxu je útočných schopný zadáním specificky vypadajícího dotazu získat například výpis celé databáze.
 %todo more? zdroje?
 
-\paragraph{Zero day exploit}
+\subsection{Zero day exploit}
 \textit{Zero day exploit} je slabina na kterou ještě neexistuje patch.
 Tato situace může nastat pokud byla slabina nahlášena a ještě ji výrobce systému nestihl opravit.
 Mnohem častější je případ, kdy slabinu našel sám útočník.
@@ -216,7 +216,7 @@ Tyto slabiny se také snaží získat státní složky zaměřené na špehován
 Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
 %todo more? zdroje?
 
-\paragraph{DNS tunneling}
+\subsection{DNS tunneling}
 \textit{DNS tunneling} je možné použít pro legitimní účely, tato práce však zkoumá jeho zneužití.
 Není to samotný útok ale podpora útoku.
 Je založený na \firstac{DNS}.
@@ -231,14 +231,14 @@ příchozí naopak pro posílání příkazů již nainstalovanému malware nebo
 
 % TODO WRITER: text in between?
 
-\subsection{Testování}
+\section{Testování}
 Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
 Z důvodu přesahu vlastností jsou tyto metodologie zaměňovány, někdy dokonce považovány za jedinou metodologie s několik různými názvy.\cite{securityInteligence_pen_test_red_team_purple_team}
 
 \paragraph{}
 Právě z těchto důvodů jsou v následujícím textu vysvětleny.
 
-\subsubsection{Penetration testing}
+\subsection{Penetration testing}
 
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
 Takto důkladné hledání je omezeno pouze na zadaný ,scope', neboli část testovaného systému.
@@ -249,7 +249,7 @@ V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, a
 Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
 
 
-\subsubsection{Red team assessment}
+\subsection{Red team assessment}
 
 Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
@@ -264,7 +264,7 @@ Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti c�
 %todo use this resource
 todo\cite{red_team_oakley_2019}
 
-\subsubsection{Purple team/Kontrolní cvičení}
+\subsection{Purple team/Kontrolní cvičení}
 Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
 Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
 Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
@@ -273,15 +273,18 @@ Tato cvičení lze uskutečňovat pouze jednou pro vyzkoušení techniky nebo ta
 Částečná automatizace za použití open-source nástrojů, které mají v této práci vlastní kapitolu, je také jednou z možností.
 Výhodou opakovaného testování s automatizací je možnost měřit a porovnávat výsledky za stejných stupních podmínek, což vede k jasně viditelnému zlepšení obranné strategie.\cite{securityInteligence_pen_test_red_team_purple_team,redscan_team_purple_team}
 
-\subsection{Zavedené nástroje v problematice Testování}
-
-ATT\&CK a red teamy, caldera
-atomic red team, co má za nároky, atd atd, udělat porovnání s caldera atd
-
-% TODO WRITER: text
-
-
-kouknout co se v problematice řeší, ukázat klady a zápory (ideálně 2 stránky do vánoc)
+\section{Zavedené nástroje v problematice Testování}
+Pro účely testování je dobré využívat stávající technologie.
+Je jasné, že každé testování prostředí je jedinečné.
+To však neznamená, že není možné těžit z poznatku ostatních obránců.
+Vzniklo mnoho nástrojů, jejichž cílem je pomoci nejen s rozeznáváním útoků ale i se samotným testováním.
+Asi nejznámějším frameworkem pro kolekci útoků a jejich rozeznávání je MITRE ATT\&CK\cite{mitre_attack_framework}.
+Tento framework je open-source, volně dostupný a obsáhlý.
+Existuje množství testovacích frameworků, které jsou s MITRE ATT\&CK kompatibilní\cite{csoonline_4_testing_frameworks}.
+Příkladem Red Team Automation (RTA), Caldera nebo Atomic Red.
+Tyto frameworky jsou na rozdíl od jiných zdarma a proto se hodí pro začátek testování.
+Je dobré si nejdříve vymezit testovanou oblast.
+Všechny tyto frameworky budou více probrány a porovnány v následujících kapitolách.
 
 \subsubsection{Mitre ATT\&CK}
 % TODO WRITER: text
