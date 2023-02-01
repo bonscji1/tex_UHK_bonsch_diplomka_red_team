@@ -281,7 +281,7 @@ Vzniklo mnoho nástrojů, jejichž cílem je pomoci nejen s rozeznáváním úto
 Asi nejznámějším frameworkem pro kolekci útoků a jejich rozeznávání je MITRE ATT\&CK\cite{mitre_attack_framework}.
 Tento framework je open-source, volně dostupný a obsáhlý.
 Existuje množství testovacích frameworků, které jsou s MITRE ATT\&CK kompatibilní\cite{csoonline_4_testing_frameworks}.
-Příkladem Red Team Automation (RTA), Caldera nebo Atomic Red.
+Příkladem \firstac{RTA}, Caldera nebo Atomic Red.
 Tyto frameworky jsou na rozdíl od jiných zdarma a proto se hodí pro začátek testování.
 Je dobré si nejdříve vymezit testovanou oblast.
 Všechny tyto frameworky budou více probrány a porovnány v následujících kapitolách.
@@ -293,13 +293,22 @@ vysvětlit matici, co nám přináší
 \subsubsection{Nástroje}
 ~\cntcapfigure{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}\label{fig:OpenSourceTestTools}
 % TODO maybe make my own table?
+
+Než je zvolen finální framework pro testování, je nutné si nejdříve připravit co možná nejvíce informací týkajících se testování.
+Je jasné, že každý z vybraných frameworků má své silné a slabé stránky.
+Jak je vidět v tabulce ~\ref{fig:OpenSourceTestTools}, jedním z ovlivňujících parametrů je například testovaný operační systém.
+Kde s atomic red je možné testovat na všech třech hlavních platformách, \ac{RTA} je přizpůsobené pouze pro Windows.
+Specializace sama o sobě není špatná vlastnost, naopak většinou bývá přínosem.
+Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nástroj který toho není schopen.
+Žádný z frameworků také nepokrývá celou MITRE ATT\&CK matice.
+Proto lze předpokládat použití více nástrojů právě podle okruhu testování, na který je testování zaměřeno.
+
 % TODO WRITER: text
+% TODO udělat porovnání vybraných nástrojů(viz článek -> atomic red team, mitre caldera,..)
+% TODO vlastní subsekce pro nástroje
+% TODO MITRE Caldera, Uber Metta, Atomic Red Team and Endgame RTA
 
-udělat porovnání vybraných nástrojů(viz článek -> atomic red team, mitre caldera,..)
-vlastní subsekce pro nástroje
-MITRE Caldera, Uber Metta, Atomic Red Team and Endgame RTA
-
-\subsubsection{Atomic Red Team}
+\subsubsection{Red Canary Atomic Red}
 % TODO WRITER: text
 co to je, porovnání
 
