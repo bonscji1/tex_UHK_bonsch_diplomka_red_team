@@ -321,11 +321,21 @@ To neznamená, že není možné simulovat složité útoky využívající hned
 Atomic red dovoluje techniky za sebou řetězit a vytvářet složité sequence útoků.
 Výborným příkladem přímo od tvůrců je kod zvaný \textit{Dragons tail}\cite{redcanary_dragons_tail}.
 Tento příklad se snaží napodobit chování skutečných útočníků.
-Samozřejmě napodobení není dokonalé, ale dobře ukazuje možnosti Atomic Red.\cite{csoonline_4_testing_frameworks}
+Samozřejmě napodobení není dokonalé, ale dobře ukazuje možnosti Atomic Red pro složitější testování.\cite{csoonline_4_testing_frameworks}
+
+\paragraph{Nevýhody}
+Hlavní nedokonalostí tohoto přístupu je nutnost vytvářet nebo najít vlastní pomůcky.
+Atomic Red je nástroj pro obránce a nechce útočníkům všechny potřebné prostředky pro provedení útoku.
+To znamená že pomocné nástroje pro útok si musí obránce připravit sám.
+Příkladem může být malware vložený v Microsoft Word dokumentu.
+Atomic Red se snaží ukázat, jak malware operuje a jek ho útočníci využívají bez toho, aby ho útočníkům poskytl.
+Dalším problémem je generace výstupních reportů.
+Na rozdíl od dalších přístupů Atomic Red nevytváří automaticky stručný report o technikách které byly v útoku zkoumány.
+Tato funkcionalita je bohužel až v pokročilejším placeném software který Red Canary nabízí.\cite{csoonline_4_testing_frameworks}
 
 %todo add more after using it?
 % TODO WRITER: text
-co to je, porovnání
+%todo co to je, porovnání
 
 \subsubsection{Mitre Caldera}
 % TODO WRITER: text
