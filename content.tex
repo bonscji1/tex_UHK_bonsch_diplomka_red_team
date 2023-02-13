@@ -357,10 +357,19 @@ Pro základní automatizaci stačí, pro hlubší testovaní je tento nástroj v
 % TODO WRITER: text
 
 
-https://www.csoonline.com/article/3268545/4-open-source-mitre-attandck-test-tools-compared.html
-
 \subsubsection{Mitre Caldera}
 Caldera je od stejných vývojářů jako ATT\&CK, tedy Mitre.
+Lze tak očekávat dobrou integraci a kompatibilitu mezi těmito nástroji.
+Na rozdíl od dříve představených nástrojů je Mitre Caldera komparativně náročnější nástroj, což se projevili i v instalaci.
+Ani tak však není instalace náročná, a to hlavně díky přípravě tvůrců a dobré dokumentaci\cite{mitre_caldera_docs}.
+Framework caldera lze rozdělit na 2 hlavní části.
+První je \textit{Jádro systému}.
+Tento framework je dostupný v github repozitáři.
+Zahrnuje asynchronní server pro řízení příkazů a kontrolu (command-and-control, C2) s REST API a webovým rozhraním.
+druhou složkou jsou \textit{pluginy}.
+Jsou to rozšíření pro možnosti jádra frameworku poskytující dodatečnou funkcionalitu.
+Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic red team.\cite{mitre_caldera}
+
 
 % TODO WRITER: text
 co to je, porovnání
