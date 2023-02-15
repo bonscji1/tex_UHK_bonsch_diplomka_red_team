@@ -373,17 +373,25 @@ Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic red
 
 \paragraph{Systémové požadavky}
 Autoři se snaží podporovat široké spektrum cílových systémů.
+Proto existují 2 typy požadavků, povinné a doporučené.
+Povinné určují, kde může být vůbec Caldera připravena.
 Jádro frameworku může být nainstalováno na operačních systémech Linux nebo MacOS.
 Pro fungování je vyžadován Python verze 3.7, 3.8, nebo 3.9 samozřejmě s rozhraním pip3.
-Pip3 je vyžadován pro instalaci podpůrných balíčků uvedených v souboru \textit{requirements} přímo v repozitáři caldery.
+Pip3 je vyžadován pro instalaci podpůrných balíčků uvedených v souboru \textit{requirements} přímo v repozitáři Caldery.
 Ke správnému ovládání je vyžadován moderní prohlížeč.
 Doporučený je Google Chrome.
-Za zmínku stojí možnost instalovat a pracovat s Calderou v Docker kontejneru.\cite{mitre_caldera_docs}
+Doporučené požadavky se týkají vývoje a správného fungování Caldery.
+Je doporučený hardware s 8GB+ RAM a 2+ CPU\@.
+Dále je pro správnou kompilaci a funkčnost Golang agentů doporučen GoLang 1.17+.
+Za zmínku stojí také možnost instalovat a pracovat s Calderou v Docker kontejneru.\cite{mitre_caldera_docs}
 
+\paragraph{Možnosti}
+Caldera je oproti dříve představeným nástrojům složitý framework.
+To je však více nežli dostatečně vyváženo dobrou dokumentací a hlavně možnostmi, které zkušenému uživateli Caldera nabízí.
+Caldera dovoluje nastavení autonomních red-team nebo blue-team operací, a to plnohodnotně včetně závěrečného výpisu a exportování logů.
+Existuje také možnost manuálních red-team operací, hlavně v případech nahrazování a testování pomocí vlastních nástrojů.\cite{mitre_caldera_docs}
+%todo add more after using it?
 
-
-% TODO WRITER: text
-co to je, porovnání
 
 
 \section{Praktická část}
