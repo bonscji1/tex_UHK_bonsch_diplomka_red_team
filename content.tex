@@ -258,27 +258,46 @@ Toto základní rozdělení je však vhodné pro rozpoznání hlavních výzev, 
 Nelze říci, zda je jeden scénář lepší nežli jiné, naopak se doplňují a každý slouží pro určitou situaci.\cite{red_team_oakley_2019}
 
 \paragraph{Celkový pokus o kompromitaci}
-Základní situací je Celkový pokus o kompromitaci obrany.
-Je to snaha \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
+Základní situací je \textit{celkový pokus o kompromitaci obrany}.
+Lze definovat jako snaha \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
 Tato strategie je vhodná pro celkové testování infrastruktury.
+Je to nejbližší emulace skutečného útoku.
+Testování ve většině případů začíná ze stejného bodu, který je běžně dostupný veřejnosti a tím pádem i útočníkům.
 Lze takto testovat správnou fragmentaci infrastruktury a resistivity jednotlivých fragmentů.
-Z velkého a otevřeného rozhasu však vyplívá jen omezená možnost testování do hloubky a zaměření se na specifické části infrastruktury.
+Z velkého a otevřeného rozsahu však vyplývá jen omezená možnost testování do hloubky a zaměření se na specifické části infrastruktury.
 \textit{Red team} má pouze omezený čas a prostředky, proto nachází pouze nejčastější slabiny na celém rozsahu testování ale nemá možnost testovat jednotlivé části do hloubky a pro všechny možné hrozby.
+Při nesprávném provedení nebo nepochopení cíle tohoto testování může vznikat falešný pocit bezpečnosti, který je pro zabezpečení nebezpečný.
+cílem tohoto testu je získat celkové povědomí o ochraně a poté pokračovat s podrobnějším testováním.
 %todo add picture?
 
 \paragraph{Specifický pokus o kompromitaci}
+Pro testování omezené části infrastruktury se využívá \textit{specifický pokus o kompromitaci}.
+Cílem je důkladně otestovat omezenou část infrastruktury bez využití, zásahu nebo omezení částí infrastruktury nacházející se mimo testovaný rozsah.
+\textit{Red team} prování podrobné testování, které při korektním provedení vede k nalezení všech slabin.
+Výhodou tohoto testování je jeho specificita, je možné testovat určitou oblast infrastruktury nebo jen určité zařízení a to pouze za určitých podmínek.
+Příkladem může být testování za použití specifického účtu a s ním spojených pravomocí přístupu.
+Další výhoda je možnost testování v běžném provozu.
+Krátkodobě vyřadit a testovat část infrastruktury je proveditelnější nežli celkové vyřazení nebo testování za běžného provozu.
+V takovém případě je však nutné dávat pozor na správné vybrání rozsahu.
+Při důkladném testování není neobvyklé vyřazení testovacího zařízení z běžného provozu nebo jeho zhroucení.
+Je tak důležité aby nebyl testován systém, který je kriticky důležitý nebo zrovna používaný.
 
+\paragraph{Předpokládaná kompromitace}
+Z názvu je jasné, že toto testování zkoumá, jakou škodu může útočník napáchat při úspěšném útoku.
+Počáteční bod tohoto testování je založen na předpokladu úspěšné infiltrace útočníkem.
+Přístup k takto identifikovanému bodu je s příslušnými právy poskytnut \textit{red teamu}, který nemusí prolamovat obranu systému.
+\textit{Red team} se tak může plně soustředit na zkoumání dopadu úspěšného útoku.
+Důvod, proč toto testování není pouze součástí předchozích testování je úspora času a prostředků.
+Vhodným příkladem jsou útoky sociálního inženýrství a phishing.
+Jsou to často testované útoky díky jejich četnosti, jejich výsledek a prolomení systému však není okamžité.
+Může trvat i týdny než uživatel otevře email a nainstaluje malware.\cite{red_team_oakley_2019}
+Z důvodu efektivity je tedy lepší předpokládat úspěch útoku a začít testovat z bodu malware nakaženého uživatelského stroje.
+Tento typ testování je výhodný pro ukázku dopadu úspěšného útoku.
+Častým problémem bezpečnosti je její nedocenění dokud funguje správně.
+Ve chvíli kdy nastane problém je však většinou pozdě.
+Proto tento typ testování představuje nástroj prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
 
-Specifické pokusy o kompromitaci jsou ty, při kterých je určitá část útočné plochy prioritizována pro hodnocení a zbytek organizace je mimo dosah.
-
-\paragraph{Předpokládaný kompromis}
-
-Předpokládaný kompromis je angažování red teamu, kdy hodnocení začíná s přístupem, který je poskytnut hodnotitelům a je založen na předpokladu úspěšné infiltrace aktérem.
-
-
-
-
-
+%todo continue
 
 \paragraph{}
 Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
