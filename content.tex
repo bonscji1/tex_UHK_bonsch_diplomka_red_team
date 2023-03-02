@@ -136,7 +136,7 @@ Jelikož je toto zařízení nachází hlavně v armádní a policejní technice
 
 \paragraph{Nejčastější útoky}
 Je nutné podívat se nejčastější útoky.
-V předchozím textu jsme již na některé narazili, přídáme k nim ještě další.
+V předchozím textu jsme již na některé narazili, přidáme k nim ještě další.
 Například Cisco udává tyto nejčastější metody útoku\cite{cisco_most_common_attack}.
 %todo add more sources of most common attacks
 %todo add definitions from att&ck
@@ -240,16 +240,36 @@ Stejně jako v každém odvětví existují i mezi útočníky sféry kompetence
 Existuje mnoho útočníků, kteří se touto činností nejen živí ale je to také jejich vášeň.
 Takovýto útočník bude disponovat znalostmi a technikami které nejsou běžné.
 Při útoku bude postupovat co možná nejoptimálněji za účelem dosažení výsledků.
-Je možné od něj očekávat pozorné zkoumání cíle a vytrvalost, když si cíl zvolí.
+Je možné od něj očekávat pozorné zkoumání cíle a vytrvalost, díky které se si cíl zvolí.
 Tiše hledá slabiny a proniká do střežených systémů bez povšimnutí.
-Naštěstí pro obránce je těchto útočníků málo.
+Ne každý útočník je však takto nebezpečný.
 Drtivá většina útoků je prováděna nadšenci nebo útočníky bez obsáhlých znalostí a technik útoku.
-Není tak vyloučeno použití snadno detekovatelných `hlučných' technik nebo prostých chyb kterými na sebe při útoku upozorní.
-Nebezpečnost této skupiny v posledních letech vzrostla také díky propagaci \firstac{MaaS}\cite{MaaS_ATaT} a \firstac{RaaS}\cite{RaaS_microsoft}.
+Není tak vyloučeno použití snadno detekovatelných `hlučných' technik nebo prostých chyb, kterými na sebe při útoku upozorní.
+Nebezpečnost této skupiny v posledních letech vzrostla díky propagaci \firstac{MaaS}\cite{MaaS_ATaT} a \firstac{RaaS}\cite{RaaS_microsoft}.
 Existence nástrojů, které dovolují provézt úspěšný útok za pomocí znalostí zkušenějšího útočníka znamená, že ani nezkušené útočníky není možné podceňovat.
 
-
 \paragraph{}
+Testování je jedna z nejlepších možností, jak zlepšit obranyschopnost organizace.
+Nemilou samozřejmostí je, že největší změny v ochraně přichází po bezpečnostním incidentu.
+Ztráta dat, poškození reputace organizace nebo i finanční postihy jsou výborné motivace nejen pro obránce ale i management organizace věnovat zabezpečení větší úsilí.
+Pokud se útočníkovi podařilo prolomit ochranu organizace, jasně to ukazuje na nedostatky, které je nutné napravit.
+Bezpečnostní incident tak se kromě mnoha nepříjemností ukazuje, jak dobře byla organizace připravena.
+Dle reakce obránců lze zkoumat jejich celková připravenost.
+Dobře připravení obránci mohou nebezpečný incident zaznamenat včas a pokud jeho následku nejde zabránit, mohou ho alespoň omezit.
+Nepřipravení obránci nemusejí zaznamenat incident ani měsíce po jeho uskutečnění a několikanásobném zopakování.
+Organizace a její obránci musí vědět, jak postupovat v případě incidentu.
+Testování je simulace bezpečnostního incidentu ale bez většiny jeho negativ.
+V závislosti na druhu testování je možné vyzkoušet připravenost obránců, jejich obezřetnost a postupy v případě detekce podazřelé činnosti.
+Můžeme testovat robustnost infrastruktury, zda je kvalitně navržena a správně nastavena.
+Můžeme testovat zařízení, zda fungují správně a nelze je zneužít.
+Můžeme testovat technologie, zda jsou správně využívány popřípadě zda je jejich využívání nutno omezit nebo naopak rozšížit.
+Důvodů, proč by mělo být testování součástí zlepšování obranyschopnosti každé organizace je tedy mnoho.
+Testování přináší tolik benefitů protože to není prostá reakce na událost ale příprava.
+Cílem organizace je zajistit, aby žádný bezpečnostní incident nebylo možné stejně uskutečnit dvakrát.
+Čím více je poprvé uskutečněno pomocí testování, tím více jich bude zaznamenáno a zastaveno při skutečném útoku.
+
+
+\subsection{Rozsah testovní}
 Obránci se musí přizpůsobovat a testovat nejen nejběžnější a nejefektivnější útoky ale i krajní scénáře.
 Toto přizpůsobování vedlo nejen k různým testovacím metodikám jako \textit{Red teaming} a \textit{Penetration testing} ale také k testování různých scénářů a hlavně rozsahů.
 Mezi nejznámější patří \textit{celkový pokus o kompromitaci}, \textit{specifický pokus o kompromitaci} nebo \textit{předpokládaný kompromis}.
@@ -297,14 +317,15 @@ Tento typ testování je výhodný pro ukázku dopadu úspěšného útoku.
 Ve chvíli kdy nastane problém je však většinou pozdě.
 Proto tento typ testování představuje nástroj prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
 
-%todo continue
+\subsection{Metodologie testování}%todo rozepsat se
+ještě důležitějším rozhodnutím než jak široce testovat je způsob testování.
+možná nejznámější jsou 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
+Samozřejmě stejně jako i u rozsahu testování i u těchto metodologií existuje určitý přesah.
+Z tohoto důvodu jsou tyto metodologie nepřesně definovány, někdy zaměňovány nebo dokonce považovány za jedinou metodologii s několik různými názvy.
+Je proto nutné si je představit v kontextu tohoto textu.
+K tomu slouží následující sekce.\cite{securityInteligence_pen_test_red_team_purple_team}
 
-\paragraph{}
-Pro zlepšení bezpečnosti jsou doporučovány 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
-Z důvodu přesahu vlastností jsou tyto metodologie zaměňovány, někdy dokonce považovány za jedinou metodologie s několik různými názvy.
-Právě z těchto důvodů jsou v následujícím textu vysvětleny.\cite{securityInteligence_pen_test_red_team_purple_team}
-
-\subsection{Penetration testing}
+\paragraph{Penetration testing}
 
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
 Takto důkladné hledání je omezeno pouze na zadaný ,scope', neboli část testovaného systému.
@@ -315,7 +336,7 @@ V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, a
 Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
 
 
-\subsection{Red team assessment}
+\paragraph{Red team assessment}
 
 Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
@@ -330,7 +351,7 @@ Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti c�
 %todo use this resource
 todo\cite{red_team_oakley_2019}
 
-\subsection{Purple team/Kontrolní cvičení}
+\paragraph{Purple team/Kontrolní cvičení}
 Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
 Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
 Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
