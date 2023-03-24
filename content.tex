@@ -228,7 +228,7 @@ Právě z těchto důvodů je nutné podívat se nejčastější kategorie útok
 V předchozím textu byly mnohé zmíněny, následuje jejich rozbor do hloubky.
 Kategorie byly zvoleny z kombinaci několika zdrojů, jako je \ac{ENISA}\cite{Enisa_thread_landscape}, Cisco\cite{cisco_most_common_attack} nebo \firstac{NIST}\cite{nist_risks}.
 
-%todo add mitre as source
+
 %todo add definitions from att&ck
 %todo add defending? prevention, good security higiene(segmentation, backups atd)
 %todo add enisa -
@@ -243,16 +243,25 @@ Je také nutné dávat si pozor odkud je program stažen.
 Stále častěji malware předstírá, že je legitimní software.
 Mezi nejznámější napodobované programy patří Skype, Adobe Acrobat, VLC nebo 7zip.\cite{virustotal_report_findings}
 Škodlivému software se bohužel nevyhnul ani státní sektor.
-Není však jen cílem ale i používán k šíření.
+Není však jen jeho cílem ale je také používán k šíření.
 Zkoumání z roku 2022 ukazuje, že je možné najít desítky instancí hostování škodlivého software přímo v doménách spojených se státními institucemi.\cite{virustotal_report_findings_goverment}
 Tento problém není specifický pro jeden stát ale je to celosvětový problém, jak je možné vidět na ~\ref{fig:MaliciousGoverments}.
 Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra.
 Proto je tento problém opravdu závažný.
-
 ~\cntcapfigure{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}\label{fig:MaliciousGoverments}
-%todo add specific for ransomware as the most common?
 
-\subsection{Phishing}
+\subsubsection{Ransomware}
+za zvláštní zmínku stojí ransomware.
+%todo add
+
+\subsubsection{Spyware}
+%todo add
+
+
+\subsection{Sociální inženýrství}
+%todo from my bakalářka
+
+\subsubsection{Phishing}
 Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
 Nejčastěji se jedná o emailovou komunikaci, existují však i formy přes sms nebo telefonní hovor.
 Nejnebezpečnější jsou specializované útoky, zvané whaling a spear-phishing.
@@ -265,20 +274,19 @@ Druhým je kompromitace zařízení, například pomocí malware.
 Nejčastěji je to pomocí odkazů, které se v podvodném emailu nachází, popřípadě pomocí infikovaných souborů.
 Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
 
-%todo defence ---> education, multifactor auth
 
-\subsection{Man-in-the-middle}
-Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
-Útočník se při tomto útoku dostává doprostřed komunikace 2 subjektů.
-Hlavním cílem je filtrování, kradení a nahrazování dat proudících v komunikaci.
-Mezi nejčastější implementace tohoto útoky patří napodobování veřejné \textit{Wi-Fi}.
-Útočník se představuje jako vstupní bod na tuto veřejnou wifi kap posléze odesílá veškerou komunikaci.
-Lidé si tak nemusí uvědomit, že útočník existuje a nedávají si tak pozor na svoji činnost na takto odposlouchávané síti.
-Další oblíbenou implementací útoku je použití malware.
-Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.\cite{cisco_most_common_attack}
-%todo more?
 
-\subsection{Denial of service}
+
+\subsection{Threat against data}
+
+\subsection{Sql injection}
+Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
+Ze špatně zabezpečeného vyhledávacího boxu je útočných schopný zadáním specificky vypadajícího dotazu získat například výpis celé databáze.
+%todo more? zdroje?
+
+\subsection{Threat against availibility}
+
+\subsubsection{Denial of service}
 Útok zaměřený na kolaps infrastruktury.
 \textit{Denial-of-service}, také znám jako \firstac{DoS} útok se snaží vyčerpat zdroje služby množství zasílaných požadavků.
 Další možností je ovládnutí nebo alespoň vyřazení z provozu dané služby za pomocí známe zranitelnosti.\cite{cisco_most_common_attack}
@@ -294,12 +302,25 @@ Jedno zařízení jen těžce může konkurovat statisícím v množství požad
 A to i za předpokladu, že je mnohem výkonnější.
 %todo more? zdroje?
 
-\subsection{Sql injection}
-Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
-Ze špatně zabezpečeného vyhledávacího boxu je útočných schopný zadáním specificky vypadajícího dotazu získat například výpis celé databáze.
-%todo more? zdroje?
+\subsubsection{Internet threats}
 
-\subsection{Zero day exploit}
+
+\subsection{Ostatní}
+Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie ale jsou často využívány v kombinaci s jinými kategoriemi útoků.
+je nutné je v tomto výčtu zmínit kvůli jejich nebezpečnosti, rozšířenosti a nízkému veřejnému povědomí.
+
+\subsubsection{Man-in-the-middle}
+Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
+Útočník se při tomto útoku dostává doprostřed komunikace 2 subjektů.
+Hlavním cílem je filtrování, kradení a nahrazování dat proudících v komunikaci.
+Mezi nejčastější implementace tohoto útoky patří napodobování veřejné \textit{Wi-Fi}.
+Útočník se představuje jako vstupní bod na tuto veřejnou wifi kap posléze odesílá veškerou komunikaci.
+Lidé si tak nemusí uvědomit, že útočník existuje a nedávají si tak pozor na svoji činnost na takto odposlouchávané síti.
+Další oblíbenou implementací útoku je použití malware.
+Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.\cite{cisco_most_common_attack}
+%todo more?
+
+\subsubsection{Zero day exploit}
 \textit{Zero day exploit} je slabina na kterou ještě neexistuje patch.
 Tato situace může nastat pokud byla slabina nahlášena a ještě ji výrobce systému nestihl opravit.
 Mnohem častější je případ, kdy slabinu našel sám útočník.
@@ -308,7 +329,7 @@ Tyto slabiny se také snaží získat státní složky zaměřené na špehován
 Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
 %todo more? zdroje?
 
-\subsection{DNS tunneling}
+\subsubsection{DNS tunneling}
 \textit{DNS tunneling} je možné použít pro legitimní účely, tato práce však zkoumá jeho zneužití.
 Není to samotný útok ale podpora útoku.
 Je založený na \firstac{DNS}.
@@ -321,7 +342,10 @@ Odchozí komunikace může být použita pro exfiltraci kritických dat nebo př
 příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
 %todo more? zdroje?
 
-% TODO WRITER: text in between?
+\subsubsection{Supply-chain útoky}
+%todo add
+
+
 
 \section{Testování}
 % TODO WRITER: incorporate into text, source enisa
