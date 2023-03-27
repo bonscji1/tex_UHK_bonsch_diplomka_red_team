@@ -252,6 +252,7 @@ Proto je tento problém opravdu závažný.
 
 \subsubsection{Ransomware}
 za zvláštní zmínku stojí ransomware.
+Jedná se o typ útoku, kdy útočníci přebírají kontrolu nad cílovými aktivy a požadují výkupné výměnou za obnovení dostupnosti těchto aktiv.
 %todo add
 
 \subsubsection{Spyware}
@@ -346,19 +347,157 @@ příchozí naopak pro posílání příkazů již nainstalovanému malware nebo
 %todo add
 
 \section{Kategorie útočníků}
-% TODO WRITER: incorporate into text, source enisa
-Pro kompletnost je při zkoumání bezpečnostního nutné uvažovat i o utočnících.
-Ty je možné zařadit do několika prominentních skupin.
-Jsou jimi:
+Pro kompletnost je při zkoumání bezpečnostního nutné uvažovat i typu útočníka, který útok uskutečňuje.
+Různé typy se chovají během útoku různě, mají jiné cíle, možnosti a motivace.
+Pokud je cílem komplexní ochrana, je nutné zvážit, se kterými typy útočníku bude nejčastější konflikt.
+Pro zjednodušení je možné útočníky zařadit do několika skupin.
+Stejně jako u útoků mezi skupinami existují návaznosti a překrývání, je nutné skupiny brát pouze jako hrubé zařazení a ne definitivní výčet.
+Skupinami jsou:
 \begin{itemize}
-	\item Recreational attacker,
-	\item Script kiddies,
-	\item Hacktivist
-	\item Hacker-for-hire
-	\item Cyber criminals
-	\item State-sponsored actors
-	\item Insider
+	\item Příležitostný útočník,
+	\item Script kiddie,
+	\item Hacktivista,
+	\item Hacker na objednávku
+	\item Cyber kriminálník
+	\item Státem podporovaný útočník
+	\item Insider (vnitřní osoba)
 \end{itemize}\cite{Enisa_thread_landscape,data_flair_attackers}
+
+\paragraph{Příležitostný útočník}
+Tento typ útočníka by bylo možné nazývat také hobby útočník.
+Mají omezené zdroje a bývají velmi specifičtí v rámci postupů a zranitelností, které využívají k dosažení svého záměru.
+Tito útočníci nejsou plně zaměřeni na hackování, je to pro ně spíše zábava a zpestření života.
+Z toho také vyplývají hlavní motivace těchto útočníků.
+Cílem je získat proslulost.
+Existují fora dedikované těmto útočníkům, kde se navzájem chlubí svými útoky ostatním.
+Můžeme tak očekávat, že útoky budou směřovány k jasně viditelným avšak málo destruktivním typům.
+
+\paragraph{Script kiddie}
+Vě většině případů nejméně schopní útočníci.
+Jsou to amatéři, kteří používají volně dostupné nebo zakoupené nástroje bez hlubších znalostí systémů a hackování.
+Většinou bývají neškodní, teprve se učí a mají omezené znalosti a možnosti útoku.
+Proto jsou jejich útoky málokdy úspěšné a i v případě úspěchu často nevědí, jak pokračovat.
+Lze tak předpokládat nízkou úroveň poškození u útoků, snadno odhalitelné útoky a nízkou sofistikovanost.
+Jediným výrazným rizikem jsou zakoupené nástroje pro specifické účely.
+Ve výjimečných případech kdy bývá motivací pomsta zakupují script kiddies na černém trhu nástroje pro konkrétní devastující útok.
+Ve většině případů se však jedná o nováčky kteří hledají výzvy a adrenalin.
+Pokud má skript kiddie pro hackování talent, může se díky zisku zkušeností a znalostí stát v průběhu času profesionálním hackerem.
+
+\paragraph{Hacktivista}
+Útočníci motivování politickými nebo ideologickými názory jsou nazýváni hackticvisti.
+Provádějí škodlivé útoky pro zviditelnění a prosazení své agendy.
+Možná nejznámějším příslušníkem je skupina Anonymous.
+S velikostí skupiny je očekávaná jistá fragmentace, a tak se anonymous hlásí k množství incidentů s různými agendami.
+Za speciální zmínku stojí jejich cybernetické útoky proti Rusku v souvislosti s válkou na ukrajině\cite{anonymous_russian_attacks}.
+Jak je jasné, motivací hacktivistů není zisk, ale snaha bojovat za spravedlnost.
+Jejich útoky tak bývají ve vážnosti v rozmezí od neškodných, jako je změna webové stránky, po drastické kde vede k poškození infrastruktury a zničení nebo vyzrazení citlivých dat.
+Také není neobvyklá spolupráce s Insidery, kteří sdílí jejich přesvědčení nebo je upozornili na objekt jejich zájmu.
+Lze tedy říci, že hacktivisté mohou dle svého přesvědčení být kvalifikování jako síla dobra i zla.
+
+
+\paragraph{Hacker na objednávku} %todo enisa add
+Skupina schopných hackerů kteří své vědomosti a znalosti propůjčují jiným osobám či organizacím jsou hackeři na objednávku.
+Nemůže být překvapením, že velká většina hackerů více či méně spadá do této skupiny.
+Skupina se totiž navíc dle motivace,metodologie a záměru dělí na podskupiny, zvané \textit{White hat, Gray hat} a \textit{Black hat} hackeři.
+
+\textit{White hat hackeři} využívají své schopnosti ve spolupráci s organizacemi k určení jejich slabých míst v zabezpečení.
+Tito hackeři se řídí silným etickým kompasem, který je jasně zřetelný z jejich činnosti a zaměření pro zlepšení zabezpečení.
+Pracují s svolením organizace a v jasně vymezených hranicích, což však může vázat jejich schopnost odhalit veškeré slabiny.
+
+\textit{Black hat hackeři} jsou neetický opak white hat hackerů.
+Jejich primární metodikou je prolamování obrany systémů a sítí bez vědomí organizace.
+Cílem těchto hackerů je vždy svůj vlastní prospěch.
+Existuje mnoho možností, jak tohoto prospěchu dosáhnou.
+Někteří napadají společnosti a exfiltrují data uživatelů, která pak prodávají na černém trhu.
+Jiný využívají tato data k bankovním podvodům, kampaním sociálního inženýrství nebo kradení účtů.
+Další možností je pouze vyhledávání slabin a jejich následný prodej na trhu slabin.
+Státní organizace jsou za takzvané \textit{zero day slabiny} ochotné zaplatit i statisíce dolarů\cite{world_end_2021}.
+Tam kde by slabinu etický hacker ohlásil aby mohla být napravena ji neetický hacker prodá za značnou sumu peněz.
+
+\textit{Gray hat hackeři} jsou na pomezí předchozích kategorií.
+Jestli boudou klasifikování blíže k white hat hackerovi nebo black hat hackerovi závisí na situaci.
+Mnohdy využívají metodologii black hat hackerů k odhalení slabin, ale místo prodeje nebo zneužití slabiny ji dané organizaci nahlásí.
+Nesnaží se tak způsobovat škodu, ale odhalit slabiny zabezpečení, které by mohly být nemožné odhalit pro white hat hackera.
+To však bohužel stále znamená napadení organizace či osoby a ty nemusí reagovat kladně na pozdější oznámení útoku.
+Také občasné požadavky platby za napravení slabiny nebo její nevyzrazení jim nedělá nejlepší jméno.
+Asi nejlepším příkladem tohoto fenoménu je kauza okolo Twitteru Donalda Trumpa, jeho hesel a hackerů nazývaných \textit{The Guild of the Grumpy Old Hackers}.
+Této skupině hackerů se povedlo několikrát získat přístup k Twitter účtu Donalda Trumpa, a to v letech 2016 a 2020.
+Pro kontext, Donalt Trump byl v roce 2016 kandidát na prezidenta Ameriky a v roce 2020 dokonce prezident.
+Po obou těchto úspěšných útocích to sami hackeři nahlásili, avšak i tak se nevyhnuli soudnímu řízení.
+Naštěstí byl jejich postup zcela legální a byly tak zproštěni viny.
+
+
+
+
+\paragraph{Cyber kriminálník}
+These attackers constitute an individual or a group of individuals whose aim is to exploit sensitive information of the user.
+They either capture the system and the data for financial gains.
+They undertake various approaches to achieve their purpose.
+Some of them are spreading viruses in a system, spamming the user with infected messages, or even stealing sensitive information of the user or a business.
+
+
+
+\paragraph{Kyberkriminálník}
+Tito útočníci jsou jednotlivci nebo skupina jedinců, jejichž cílem je využít citlivé informace uživatele.
+Buď zachytí systém a data pro finanční zisk nebo používají různé přístupy k dosažení svého cíle.
+Některé z nich jsou šíření virů v systému, spamování uživatele infikovanými zprávami nebo dokonce krádež citlivých informací uživatele nebo firmy.
+
+
+
+
+
+
+\paragraph{Státem podporovaný útočník}
+State-sponsored attackers have specific goals associating with either the political or military origin of their country. They use unlimited resources and highly sophisticated technologies. They often cause advanced persistent threats. Cyberwars, industrial espionage, and leaking state secrets are some of the attacks done by state-sponsored attackers.
+
+\paragraph{Státem podporovaný útočník}
+Útočníci podporovaní státem mají specifické cíle spojené s politickým nebo vojenským původem své země. Využívají neomezené zdroje a vyspělé technologie. Často způsobují pokročilé trvalé hrozby. Kybernetické války, průmyslová špionáž a únik státních tajemství jsou některé z útoků, které provádějí útočníci podporovaní státem.
+
+
+
+
+
+
+
+
+\paragraph{Insider (vnitřní osoba)}
+Insiders come from within an organization and pose a threat to the security of valuable data the company holds. When the needs of the employee are dissatisfied they become disgruntled employees and eventually hackers.
+
+The insiders threaten the safety of the internal systems. These insiders may be financially motivated and some may even be unintentional. Former employees, temporary workers, or even customers may play the role of an insider.
+
+Insider threats are of the following types:
+a. Malicious Insider Threats
+
+Malicious insiders steal the company’s data and cause damage to the system infrastructure. Dissatisfied employees turn into malicious insiders to seek revenge against the organization.
+b. Accidental Insider Threats
+
+These are unintentional damages done to the company by its employees. Accidental deletion or modification of important files is an example of an accidental insider.
+c. Negligent Insider Threats
+
+These occur due to the carelessness of an employee. This happens when an employee fails to follow the policies and procedures framed by an organization. The policies are put in place to protect the integrity of data and when not followed might accumulate to end up in a huge loss open vulnerability for threats.
+
+
+\paragraph{Insider (vnitřní osoba)}
+Insideré pocházejí z organizace a představují hrozbu pro bezpečnost cenných dat, které organizace drží. Když jsou potřeby zaměstnance nespokojeny, stávají se nespokojenými zaměstnanci a nakonec hackery.
+
+Insideré ohrožují bezpečnost interních systémů. Tito insideré mohou mít finanční motivaci a někteří z nich mohou být dokonce nechtění. Bývalí zaměstnanci, dočasní pracovníci nebo dokonce zákazníci mohou hrát roli insidera.
+
+Hrozby insiderů jsou následujícího typu:
+a. Hrozby od zákeřného insidéra
+
+Zákeřní insideré kradou data společnosti a způsobují poškození infrastruktury systému. Nespokojení zaměstnanci se promění v zákeřné insideré, aby se pomstili organizaci.
+b. Hrozby od nechtěného insidéra
+
+Jedná se o nechtěné škody způsobené zaměstnanci společnosti. Příkladem nechtěného insidera je náhodné smazání nebo modifikace důležitých souborů.
+c. Hrozby od nedbalého insidéra
+
+Tyto hrozby vznikají kvůli nedbalosti zaměstnance. To se stane, když zaměstnanec nedodržuje politiky a postupy, které organizace stanovila. Politiky jsou zavedeny k ochraně integrity dat a když se nedodržují, mohou nakonec vést k velkým ztrátám a otevřeným zranitelnostem pro hrozby.
+
+
+
+
+
+
 
 
 \section{Testování}
@@ -458,7 +597,7 @@ K tomu slouží následující sekce.\cite{securityInteligence_pen_test_red_team
 \paragraph{Penetration testing}
 
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
-Takto důkladné hledání je omezeno pouze na zadaný ,scope', neboli část testovaného systému.
+Takto důkladné hledání je omezeno pouze na zadaný `scope', neboli část testovaného systému.
 Aby bylo dosaženo co největší efektivity, tento typ testování se svoji činnost nesnaží schovávat, naopak bývá velmi snadné ho detekovat, to však nevadí protože ochrana daného systému by o jeho provádění měla být předem informována.
 Tento typ testování může být také z části automatizován, což vede k dalšímu zlepšení efektivnosti na úkor flexibilitě.
 V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, ať už v podobě času, lidí či kapitálu, než red team assessment.
