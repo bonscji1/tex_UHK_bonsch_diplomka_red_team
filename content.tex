@@ -357,10 +357,10 @@ Skupinami jsou:
 	\item Příležitostný útočník,
 	\item Script kiddie,
 	\item Hacktivista,
-	\item Hacker na objednávku
-	\item Cyber kriminálník
-	\item Státem podporovaný útočník
-	\item Insider (vnitřní osoba)
+	\item Hacker na objednávku,
+	\item Cyber kriminálník,
+	\item Státem podporovaný útočník,
+	\item Insider (vnitřní osoba).
 \end{itemize}\cite{Enisa_thread_landscape,data_flair_attackers}
 
 \subsection{Příležitostný útočník}
@@ -469,7 +469,7 @@ Cílem těchto insiderů bývá často pomsta nebo jen peněžní zisk.
 Speciálním případem této kategorie je takzvaný \textit{whistleblowing}.
 Tento termín označuje veřejné upozorňování na trestné, neetické nebo podezřelé jednání firem či státních institucí jejich zaměstnanci.
 Tohoto zaměstnance lze tedy také považovat za úmyslného insidera, který však vyzrazuje informace v dobré víře a nejedná ve vlastní prospěch.
-Velice známým zástupcem je Edward Snowden, který v roce 2013 veřejnosti odhalil existenci rozsáhlých programů na sběr informací fungujících pod záštitou \firstac{NSA}.
+Velice známým zástupcem je Edward Snowden, který v roce 2013 veřejnosti odhalil existenci rozsáhlých programů na sběr informací fungujících pod záštitou \firstac{NSA}\cite{Edward_Snowden}.
 
 \paragraph{Nechtěný insider}
 Může se stát, že insiderem se stane běžný zaměstnanec.
@@ -630,9 +630,34 @@ Tyto frameworky jsou na rozdíl od jiných zdarma a proto se hodí pro začátek
 Je dobré si nejdříve vymezit testovanou oblast.
 Všechny tyto frameworky budou více probrány a porovnány v následujících kapitolách.
 
-\subsubsection{Mitre ATT\&CK}
-% TODO WRITER: text
-vysvětlit matici, co nám přináší
+\subsubsection{MITRE ATT\&CK}
+MITRE ATT\&CK je bezplatná otevřená znalostní databáze popisující chování útočníků a techniky, které tyto útočníci využívají.
+Tato znalostní báze je založená na pozorování v rámci reálného světa, je aktivně udržována a každé dva roky podléhá aktualizaci\cite{mitre_attack_framework_faq}.
+Hlavním přínosem tohoto projektu však není pouze mapování útočníků, ale celková klasifikace útoků do jednotlivých \textit{Taktik, Technik a Dílčích technik}.
+
+\paragraph{Taktika}
+
+\paragraph{Technika a dílčí technika}
+
+\paragraph{Obrana}
+
+\paragraph{závěrem}
+V současné době je MITRE ATT\&CK považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.
+Díky popularitě došlo k jeho velkému růstu, existují proto specifikace pro určitá odvětví:
+
+\begin{itemize}
+	\item \textbf{Enterprise} - síťové a cloudové technologie,
+	\item \textbf{ICS} - průmyslové řídící systémy,
+	\item \textbf{Mobile} - mobilní zařízení.
+\end{itemize}
+
+
+
+Pomocí této databáze mohou lépe porozumět, jak útočníci pracují a jaké techniky používají, a mohou použít tyto informace k vytvoření lepších obranných strategií.
+MITRE ATT\&CK poskytuje informace o různých fázích útoku, včetně získávání informací o cílové organizaci, překonávání zabezpečení a exfiltrace dat.
+Každá technika útoku je popsána podrobně včetně kroků, jakými útočníci postupují, aby napadli cílovou organizaci.
+
+
 
 \subsubsection{Nástroje}
 ~\cntcapfigure{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}\label{fig:OpenSourceTestTools}
