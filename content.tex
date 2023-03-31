@@ -652,10 +652,11 @@ Proto existují specifikace pro určitá odvětví:
 	\item \textbf{Mobile} \- mobilní zařízení.
 \end{itemize}
 
+\paragraph{}
 Samozřejmě i jednotlivá odvětví jsou dále rozdělena na domény dle zaměření útočníků.
 U Enterprise je rozlišování pro Windows, macOS nebo Linux a také cloud, network a containers.
 Mobilní platforma odlišuje Android a iOS\@.
-Toto rozdělení dává smysl, stejná technika bude jinak aplikována na různých systémech a díky tomuto rozdělení je možné zameřit se právě na jeden určitý use-case útoku.
+Toto rozdělení dává smysl, stejná technika bude jinak aplikována na různých systémech a díky tomuto rozdělení je možné zamířit se právě na jeden určitý use-case útoku.
 
 
 Groups
@@ -680,18 +681,21 @@ Hlavním přínosem sledování skupin jsou informace o postupech a metodologií
 Tyto informace jsou získány mapováním na veřejně oznámené použití technik a jsou uvedeny původní odkazy.
 Je důležité zmínit, že informace nezobrazují všechny možné použití technik skupin, ale pouze podmnožinu, která byla zaznamenána.
 I tak je to pro obránce značný přínos.
-Při identifikaci metodologie útoku na určitou skupinu je možné předpovídat další kroky z předchozích záznamů a zmírnit tak dopad útoku.
+Při identifikaci metodologie útoku na určitou skupinu je možné předpovídat další kroky z předchozích záznamů a zmírnit tak dopad útoku.\cite{Mitre_groups}
 
 
 \paragraph{Software}
-Software je obecný termín pro vlastní nebo komerční kód, utility operačního systému, open source software nebo jiné nástroje používané k provádění chování modelovaného v ATT&CK. Některé instance software mají více jmen spojených se stejnou instancí kvůli různým organizacím, které sledují stejnou sadu software různými názvy. Tým se snaží sledovat překrývání jmen na základě veřejně oznámených asociací a označuje je jako "Associated Software" na každé stránce (dříve označováno jako "Aliases"), protože věříme, že tyto překryvy jsou užitečné pro povědomí analytiků.
+Software je termín pro vlastní nebo komerční kod a nástroje používané útočníky pro provádění technik nebo taktik.
+Stejně jako u skupin můžeme u software najít alternativní názvy právě díky sledování několika skupin.
+Překrývání je týmem ATT\&CK a tyto názvy jsou označeny jako \textit{Associated Software}.
+Informace o software pochází z veřejně oznámených technik a často bývají mapované na skupiny, které tento software využívají.
+Je tedy opět nutné zmínit, že použití určitého software neznamená, že se jedná o související skupinu.
+Pouze to znamená, že daná skupina tento software v minulosti použila.\cite{Mitre_software}
 
-Záznamy o software zahrnují veřejně oznámené použití techniky nebo schopnost používat techniku a mohou být mapovány na skupiny, které byly hlášeny, že používají daný software. Poskytnuté informace nezastupují veškeré možné použití techniky pro daný software, ale pouze podmnožinu, která je k dispozici výhradně prostřednictvím zpráv z otevřených zdrojů.
 
-Nástroj - komerční, open-source, vestavěný nebo veřejně dostupný software, který by mohl být použit obráncem, pen testerem, red teamerem nebo útočníkem. Tato kategorie zahrnuje jak software, který se obvykle nenachází na podnikovém systému, tak software obvykle k dispozici jako součást operačního systému, který již existuje v prostředí. Příklady zahrnují PsExec, Metasploit, Mimikatz, stejně jako Windows utilities, jako jsou Net, netstat, Tasklist atd.
-Malware - komerční, vlastní uzavřený nebo open-source software určený k použití pro zločinné účely útočníky. Příklady zahrnují PlugX, CHOPSTICK, atd.
 \paragraph{Campaigns}
 
+\cite{Mitre_campaigns}
 Bezpečnostní komunita sleduje intruzivní aktivity pomocí různých analytických metod a pojmů, jako jsou operace, soubory intruzí a kampaně. Některé intruzivní aktivity mohou být označovány různými jmény kvůli tomu, že různé organizace sledují podobnou aktivitu, často z různých úhlů pohledu. Naopak někdy se o nahlášené aktivitě vůbec neuvádí název.
 
 Závadná kybernetická aktivita může být připsána hrozbě ze strany skupiny, nebo se odkazuje jako nezpochybněná aktivita. Alternativně mohou být složité kybernetické operace zapojeny několik přidružených nebo nepřidružených skupin, přičemž každá hraje jedinečnou roli (tj. počáteční přístup, exfiltrace dat atd.).
