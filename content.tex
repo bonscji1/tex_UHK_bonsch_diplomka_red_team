@@ -18,7 +18,7 @@ Smysl a účel, výzkumné otázky.
 Cíle, hypotézy/ výzkumné otázky, způsob hledání odpovědí na výzkumné otázky včetně metodiky vlastního výzkumu/šetření, literární rešerše.
 
 \section{Úvod do problematiky Cyber-security}
-%todo writer clean uvod?
+%todo writer clean whole text, add as needed
 V dnešní době díky rozvoji moderních technologií tráví velká část lidské populace značné množství času interakcemi s těmito tachnologiemi.
 Ať už se jedná o Internet, \firstac{IoT}, mobilní bankovnictví nebo sociální sítě, lidé se na technologií stávají čím dál více závislí.
 Technologie nám usnadňují všední život, dovolují práci z domova nebo přináší příležitosti, které jen pár let předem neexistovaly.
@@ -36,10 +36,6 @@ Existuje nezměrné množství hrozeb.
 Je jasné, že v prostředí kde mezi sebou soupeří státy je značné úsilí věnováno jak zabezpečení tak útoku.
 Rozdíly mezi cyber-útokem, cyber-zločinem a cyber-válkou jsou ve většině případů rozděleny pouze dle účastníků.\cite{LI20218176}
 Způsob útoku či hrozby na zatřídění do předchozích kategorií klade minimální vliv, zohledněn bývá pouze výsledek.
-
-
-%todo more?
-
 
 
 \section{Relevance}
@@ -574,7 +570,7 @@ Tento typ testování je výhodný pro ukázku dopadu úspěšného útoku.
 Ve chvíli kdy nastane problém je však většinou pozdě.
 Proto tento typ testování představuje nástroj prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
 
-\subsection{Metodologie testování}%todo rozepsat se
+\subsection{Metodologie testování}
 ještě důležitějším rozhodnutím než jak široce testovat je způsob testování.
 možná nejznámější jsou 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
 Samozřejmě stejně jako i u rozsahu testování i u těchto metodologií existuje určitý přesah.
@@ -595,7 +591,7 @@ Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadan�
 
 \paragraph{Red team assessment}
 
-Red team assessment, také referovaný jako red teaming, je na rozdíl od pen testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
+Red team assessment, také referovaný jako red teaming, je na rozdíl od pen-testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
 Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby pokud možno co nejvíce simulovala skutečný útok.
 Výhodou je, že za předpokladu detekce testování bude obrana systému postupovat stejně, jako kdyby se jednalo o skutečnou hrozbu a získáme tak cenná data a zpětnou vazbu pro zlepšení budoucí obrany.
@@ -605,8 +601,6 @@ Také automatizace zde bývá složitá, jedná se totiž o specifickou strategi
 \paragraph{}
 Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti cíle s omezeními vznikajícími pouze ze snahy simulovat reálný útok.
 
-%todo use this resource
-todo\cite{red_team_oakley_2019}
 
 \paragraph{Purple team/Kontrolní cvičení}
 Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
@@ -632,30 +626,55 @@ Všechny tyto frameworky budou více probrány a porovnány v následujících k
 
 \subsubsection{MITRE ATT\&CK}
 MITRE ATT\&CK je bezplatná otevřená znalostní databáze popisující chování útočníků a techniky, které tyto útočníci využívají.
-Tato znalostní báze je založená na pozorování v rámci reálného světa, je aktivně udržována a každé dva roky podléhá aktualizaci\cite{mitre_attack_framework_faq}.
-Hlavním přínosem tohoto projektu však není pouze mapování útočníků, ale celková klasifikace útoků do jednotlivých \textit{Taktik, Technik a Dílčích technik}.
+Tato znalostní báze je založená na pozorování v rámci reálného světa, data pochází z veřejného zpravodajství a hlášených bezpečnostních incidentů.
+Samozřejmě jsou začleněny i veřejné výzkumy technik útočníků.
+Je aktivně udržována, nové informace jsou přidávány dvakrát do roka\cite{mitre_attack_framework_faq}.
+Hlavním přínosem tohoto projektu však není pouze mapování útočníků, ale celková klasifikace útoků do jednotlivých \textit{taktik, technik a sub-technik}.
+framework tak obráncům nabízí možnost rozložit složitý útok na jeho jednotlivé stavební kameny.
+ATT\&CK je velmi podrobný a dokonce u jednotlivých technik útočníků nabízí možnosti detekce a obrany.
+Obránci proto mohou snáze porozumět stylu práce útočníků, technikám které používají ale nejdůležitěji, jak tyto informace využít k vytvoření lepší obrany.
+Všechny tyto informace jsou navíc přehledně dostupné v interaktivní formě pomocí ATT\&CK navigátoru\cite{mitre_attack_navigator}.
+V něm je možné provádět vizualizaci a porovnávání útoků.
+Je tedy snadné prezentovat rozbor útoku dalším osobám a díky exportování a importování je snadné studovat již popsané útoky a sledovat nejpoužívanější taktiky a techniky.
+Není proto divu, že je MITRE ATT\&CK v době psaní tohoto textu považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.\cite{mitre_attack_framework}
 
-\paragraph{Taktika}
+%todo add picture of navigator
 
-\paragraph{Technika a dílčí technika}
-
-\paragraph{Obrana}
-
-\paragraph{závěrem}
-V současné době je MITRE ATT\&CK považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.
-Díky popularitě došlo k jeho velkému růstu, existují proto specifikace pro určitá odvětví:
+\subsubsection{Členění}
+Díky popularitě ATT\&CK došlo k jeho velkému růstu.
+Je jasné, že s přidáváním taktik a technik vzrůstá nepřehlednost.
+Také rozšiřování zaměření nakonec vedlo k nutnosti rozdělení, aby byla zachována přehlednost a funkcionalita.
+Proto existují specifikace pro určitá odvětví:
 
 \begin{itemize}
-	\item \textbf{Enterprise} - síťové a cloudové technologie,
-	\item \textbf{ICS} - průmyslové řídící systémy,
-	\item \textbf{Mobile} - mobilní zařízení.
+	\item \textbf{Enterprise} \- síťové a cloudové technologie,
+	\item \textbf{ICS} \- průmyslové řídící systémy,
+	\item \textbf{Mobile} \- mobilní zařízení.
 \end{itemize}
 
+Samozřejmě i jednotlivá odvětví jsou dále rozdělena na domény dle zaměření útočníků.
+U Enterprise je rozlišování pro Windows, macOS nebo Linux a také cloud, network a containers.
+Mobilní platforma odlišuje Android a iOS\@.
+Toto rozdělení dává smysl, stejná technika bude jinak aplikována na různých systémech a díky tomuto rozdělení je možné zameřit se právě na jeden určitý use-case útoku.
 
 
-Pomocí této databáze mohou lépe porozumět, jak útočníci pracují a jaké techniky používají, a mohou použít tyto informace k vytvoření lepších obranných strategií.
-MITRE ATT\&CK poskytuje informace o různých fázích útoku, včetně získávání informací o cílové organizaci, překonávání zabezpečení a exfiltrace dat.
-Každá technika útoku je popsána podrobně včetně kroků, jakými útočníci postupují, aby napadli cílovou organizaci.
+Groups
+\subsubsection{Taktika}
+
+\subsubsection{Technika a sub-technika}
+
+\subsubsection{Další přínos}
+V neposlední řade ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
+Tyto záložky jsou na hlavní stránce, specificky se jedná o \textit{Groups, Software} a \textit{Campaigns}.
+
+\paragraph{Groups}
+Skupiny jsou shluky aktivit sledované pod společným názvem v bezpečnostní komunitě. Analytici sledují tyto shluky pomocí různých analytických metodologií a termínů, jako jsou hrozbové skupiny (threat groups), aktivitní skupiny (activity groups) a aktéři hrozeb (threat actors). Některé skupiny mají kvůli tomu, že různé organizace sledují podobné aktivity pod různými názvy, přiřazena více jmen spojených se podobnými aktivitami. Definice skupin organizací se mohou částečně překrývat s těmi, které jsou stanoveny jinými organizacemi, a mohou se neshodovat ohledně konkrétních aktivit.
+Skupiny jsou mapovány na veřejně oznámené použití technik a jsou uvedeny původní odkazy. Poskytnuté informace nezobrazují všechny možné použití technik skupin, ale pouze podmnožinu, která je k dispozici pouze prostřednictvím otevřeného zdroje. Skupiny jsou také mapovány na hlášený software, který je používán, a na připisované kampaně, a související techniky jsou sledovány samostatně na příslušných stránkách.
+\paragraph{Software}
+
+\paragraph{Campaigns}
+
+
 
 
 
@@ -671,11 +690,6 @@ Specializace sama o sobě není špatná vlastnost, naopak většinou bývá př
 Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nástroj který toho není schopen.
 Žádný z frameworků také nepokrývá celou MITRE ATT\&CK matice.
 Proto lze předpokládat použití více nástrojů právě podle okruhu testování, na který je testování zaměřeno.
-
-% TODO WRITER: text
-% TODO udělat porovnání vybraných nástrojů(viz článek -> atomic red team, mitre caldera,..)
-% TODO vlastní subsekce pro nástroje
-% TODO MITRE Caldera, Uber Metta, Atomic Red Team and Endgame RTA
 
 \subsubsection{Red Canary Atomic Red}
 Ze všech uváděných příkladů je \textit{Atomic Red} nejvíce přívětivý rychlému začátku .
