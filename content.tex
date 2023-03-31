@@ -667,13 +667,38 @@ Groups
 V neposlední řade ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
 Tyto záložky jsou na hlavní stránce, specificky se jedná o \textit{Groups, Software} a \textit{Campaigns}.
 
-\paragraph{Groups}
-Skupiny jsou shluky aktivit sledované pod společným názvem v bezpečnostní komunitě. Analytici sledují tyto shluky pomocí různých analytických metodologií a termínů, jako jsou hrozbové skupiny (threat groups), aktivitní skupiny (activity groups) a aktéři hrozeb (threat actors). Některé skupiny mají kvůli tomu, že různé organizace sledují podobné aktivity pod různými názvy, přiřazena více jmen spojených se podobnými aktivitami. Definice skupin organizací se mohou částečně překrývat s těmi, které jsou stanoveny jinými organizacemi, a mohou se neshodovat ohledně konkrétních aktivit.
-Skupiny jsou mapovány na veřejně oznámené použití technik a jsou uvedeny původní odkazy. Poskytnuté informace nezobrazují všechny možné použití technik skupin, ale pouze podmnožinu, která je k dispozici pouze prostřednictvím otevřeného zdroje. Skupiny jsou také mapovány na hlášený software, který je používán, a na připisované kampaně, a související techniky jsou sledovány samostatně na příslušných stránkách.
-\paragraph{Software}
+\paragraph{Groups - skupiny}
+Skupiny označují shluky útočníků, kteří operují se stejným cílem a je rozumná domněnka, že jsou mezi sebou v kontaktu.
+Analytici sledují skupiny pomocí různých  metodologií a termínů.
+Je proto možné, že různé skupiny analytiků nazývají jistou skupinu různými jmény, ATT\&CK se snaží tyto různá pojmenování respektovat.
+Proto jsou u skupin zaznamenávány i alternativní názvy.
+Také mezi jednotlivými skupinami dochází k částečnému překrytí, a to z důvodu pohyby útočníků a složitosti sledování skupin.
+U kriminálních skupin je častý takzvaný \textit{rebranding}, kdy skupina změní své oficiální jméno nebo identifikační rysi za účelem zmatení autorit.
+Pro zmatení ja také časté použití identifikačních rysů jiných skupin.
+Proto je zaznamenávání a sledování obtížné.
+Hlavním přínosem sledování skupin jsou informace o postupech a metodologiích útoku, které daná skupina preferuje.
+Tyto informace jsou získány mapováním na veřejně oznámené použití technik a jsou uvedeny původní odkazy.
+Je důležité zmínit, že informace nezobrazují všechny možné použití technik skupin, ale pouze podmnožinu, která byla zaznamenána.
+I tak je to pro obránce značný přínos.
+Při identifikaci metodologie útoku na určitou skupinu je možné předpovídat další kroky z předchozích záznamů a zmírnit tak dopad útoku.
 
+
+\paragraph{Software}
+Software je obecný termín pro vlastní nebo komerční kód, utility operačního systému, open source software nebo jiné nástroje používané k provádění chování modelovaného v ATT&CK. Některé instance software mají více jmen spojených se stejnou instancí kvůli různým organizacím, které sledují stejnou sadu software různými názvy. Tým se snaží sledovat překrývání jmen na základě veřejně oznámených asociací a označuje je jako "Associated Software" na každé stránce (dříve označováno jako "Aliases"), protože věříme, že tyto překryvy jsou užitečné pro povědomí analytiků.
+
+Záznamy o software zahrnují veřejně oznámené použití techniky nebo schopnost používat techniku a mohou být mapovány na skupiny, které byly hlášeny, že používají daný software. Poskytnuté informace nezastupují veškeré možné použití techniky pro daný software, ale pouze podmnožinu, která je k dispozici výhradně prostřednictvím zpráv z otevřených zdrojů.
+
+Nástroj - komerční, open-source, vestavěný nebo veřejně dostupný software, který by mohl být použit obráncem, pen testerem, red teamerem nebo útočníkem. Tato kategorie zahrnuje jak software, který se obvykle nenachází na podnikovém systému, tak software obvykle k dispozici jako součást operačního systému, který již existuje v prostředí. Příklady zahrnují PsExec, Metasploit, Mimikatz, stejně jako Windows utilities, jako jsou Net, netstat, Tasklist atd.
+Malware - komerční, vlastní uzavřený nebo open-source software určený k použití pro zločinné účely útočníky. Příklady zahrnují PlugX, CHOPSTICK, atd.
 \paragraph{Campaigns}
 
+Bezpečnostní komunita sleduje intruzivní aktivity pomocí různých analytických metod a pojmů, jako jsou operace, soubory intruzí a kampaně. Některé intruzivní aktivity mohou být označovány různými jmény kvůli tomu, že různé organizace sledují podobnou aktivitu, často z různých úhlů pohledu. Naopak někdy se o nahlášené aktivitě vůbec neuvádí název.
+
+Závadná kybernetická aktivita může být připsána hrozbě ze strany skupiny, nebo se odkazuje jako nezpochybněná aktivita. Alternativně mohou být složité kybernetické operace zapojeny několik přidružených nebo nepřidružených skupin, přičemž každá hraje jedinečnou roli (tj. počáteční přístup, exfiltrace dat atd.).
+
+Pro účely stránky Kampaně tým MITRE ATT&CK používá pojem kampaň k popisu jakéhokoli seskupení intruzivní aktivity, která proběhla během určitého období s obecnými cíli a úkoly. Nejmenovaná intruzivní aktivita se označuje jedinečným identifikátorem ATT&CK, jinak tým použije název aktivity uvedený v veřejných zprávách. Pro pojmenované kampaně tým činí nejlepší úsilí o sledování překrývajících se jmen, která jsou označena jako "Přidružené kampaně" na každé stránce, protože věříme, že tyto překrývající se názvy jsou pro analytiky užitečné. Záznamy kampaní budou také přiřazeny k stránkám ATT&CK Group a Software, pokud je to možné na základě veřejného hlášení; nezpochybněná aktivita bude jednoduše odkazovat na "hrozbu pro aktéry" v procedurálním příkladu.
+
+Kampaně jsou mapovány na veřejně uváděné techniky a jsou v nich zahrnuty původní reference. Poskytnuté informace nezastupují veškeré možné techniky používané v kampani, ale spíše jejich podmnožinu, která je dostupná prostřednictvím otevřených zdrojů.
 
 
 
