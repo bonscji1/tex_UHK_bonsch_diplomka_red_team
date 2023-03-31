@@ -658,11 +658,46 @@ U Enterprise je rozlišování pro Windows, macOS nebo Linux a také cloud, netw
 Mobilní platforma odlišuje Android a iOS\@.
 Toto rozdělení dává smysl, stejná technika bude jinak aplikována na různých systémech a díky tomuto rozdělení je možné zamířit se právě na jeden určitý use-case útoku.
 
-
-Groups
 \subsubsection{Taktika}
+Taktika představuje nejvyšší úroveň abstrakce modelu ATT\&CK\@.
+Představuje cíl útočníka, ne však jak se tohoto cíle útočník snaží dosáhnout.
+Příkladem můžeme zmínit \textit{Impact(Dopad)}.
+Taktika dopadu je zaměřená na způsobení škody v podobě ohrožení integrity nebo dostupnosti dat.
+Spadají do této taktiky techniky zaměřené na ničení nebo manipulaci dat.
+Rozdělení na taktiky není ojedinělé, naopak na této abstraktní úrovni ATT\&CK těsně připomíná další modely hrozeb zaměřené na postup útoku a útočníka.
+Důvod, proč je ATT\&CK preferován před jinými modely je jeho rozsah, provázanost a modelování namapované na proces navigace útočníka v napadaném systému.
+Další výhodou je jasná rozlišitelnost taktik.
+Jsou označené jedinečným řetězcem ve tvaru \textbf{TA0XXX} kde XXX je nahrazeno číslem jednotlivé taktiky.
+Pozor na fakt, že taktika se stejným názvem, například \textit{Initial access(Počáteční přístup)}, bude označena jiným řetězcem v závislosti na odvětví do kterého spadá.
+Pro enterprise je to \textbf{TA0001}, pro mobile \textbf{TA0027} a pro ICS se tato taktika značí \textbf{TA0108}.
+Nelze tak dojít k záměně a nahlížet na techniky, které nejsou aplikovatelné na dané odvětví.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
+
+%todo add taktiky z mitre enterprise, ics?
 
 \subsubsection{Technika a sub-technika}
+Techniky jsou způsob, kterým útočník dosahuje svého taktického cíle.
+To znamená, že v rámci každé taktiky existuje konečný počet popsaných akcí, jejichž provedením útočník dosáhne svého cíle.
+Je jasné, že použité techniky se mění v závislosti na znalostech i možnostech útočníka.
+Také je nutné brát v potaz prostředí, kde útok probíhá.
+Popis taktik je však od těchto specifik odproštěn.
+Důvodem je opět nutnost klasifikace, kdy není možné vytvořit téměř nekonečné množství technik pro jednotlivé útoky.
+Jsou proto klasifikovány do kategorií technik, kde změny v metodologii nebo jednotlivé kroky jsou přidány pomocí sub-technik.
+Tento postup umožňuje popsat nejdůležitější kroky chování útočníka aniž by se obránce ztratil v detailech.
+Další výhodou je izolace od neustále vyvíjejícího kodu.
+Základní metodika zůstává zachována, avšak jednotlivé implementace se v čase rapidně mění.
+
+\paragraph{}
+Techniky se jen málokdy vyskytují v izolaci, většinou na sebe stejně jako celé taktiky navazují.
+Vytvářejí tak sled událostí, které vedou k úspěšnému útoku.
+Schopnost identifikovat a propojit navazující druhy událostí je důležitou součástí obrany.
+Cílem modelu ATT\&CK je totu schopnost co nejvíce usnadnit.
+Data získaná z každéko kroku v sekvenci pak nejen vypovídají o tom, zda se jedná o útok ale také obránci dovolují lépe vyhledávat další postup útočníka.
+Je také možné, že podle cíle techniky je daná technika zařazena do více taktik zároveň.
+Jedním takovýmto příkladem může být technika \textit{input capture(zachycení vstupy)}.
+Ta spadá ve stejnou chvíli do taktik \textit{Collection(Sběr dat)} a \textit{Credential access(Pověření k přístupu)}.
+Je jasné, že framnework ATT\&CK nevypisuje všechny existující techniky útoku z dané taktiky.
+Jeho založení na informacích získaných z opravdových bezpečnostních incidentů a komunity výzkumníků však vede k upřednostnění nejznámějších a nejpoužívanějších technik.
+Zdá se to být nejlepší způsob, jak shromažďovat účinné informace o použití technik útočníka a jak je propojovat do užitečného analytického nástroje.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
 
 \subsubsection{Další přínos}
 V neposlední řade ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
