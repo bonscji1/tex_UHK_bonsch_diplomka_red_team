@@ -647,9 +647,9 @@ Také rozšiřování zaměření nakonec vedlo k nutnosti rozdělení, aby byla
 Proto existují specifikace pro určitá odvětví:
 
 \begin{itemize}
-	\item \textbf{Enterprise} \- síťové a cloudové technologie,
-	\item \textbf{ICS} \- průmyslové řídící systémy,
-	\item \textbf{Mobile} \- mobilní zařízení.
+	\item \textbf{Enterprise} - síťové a cloudové technologie,
+	\item \textbf{ICS} - průmyslové řídící systémy,
+	\item \textbf{Mobile} - mobilní zařízení.
 \end{itemize}
 
 \paragraph{}
@@ -685,6 +685,11 @@ Jsou proto klasifikovány do kategorií technik, kde změny v metodologii nebo j
 Tento postup umožňuje popsat nejdůležitější kroky chování útočníka aniž by se obránce ztratil v detailech.
 Další výhodou je izolace od neustále vyvíjejícího kodu.
 Základní metodika zůstává zachována, avšak jednotlivé implementace se v čase rapidně mění.
+Stejně jako taktiky i techniky jsou označeny jedinečným řetězcem, který je ve tvary \textbf{TXXXX} kde XXXX je nahrazeno číslem jednotlivé techniky.
+Pokud pro tuto techniku existují sub-techniky, připojuje se na konec řetězce \textbf{.XXX} jde XXX reprezentuje jednotlivou subtechniku.
+Za příklad je možno uvézt techniku \textit{Phishing}, která je identifikována řetězcem \textbf{T1566}.
+Technika phishing má také 3 sub-techniky, kterými jsou \textit{Spearphishing Attachment \textbf{[T1566.001]}}, \textit{Spearphishing Link \textbf{[T1566.002]}} a \textit{Spearphishing via Service \textbf{[T1566.003]}}
+
 
 \paragraph{}
 Techniky se jen málokdy vyskytují v izolaci, většinou na sebe stejně jako celé taktiky navazují.
@@ -842,6 +847,29 @@ Existuje také možnost manuálních red-team operací, hlavně v případech na
 \section{Praktická část}
 
 % TODO WRITER: text
+
+\subsection{Popis testovacího prostředí}
+
+kali, kali purple, instalace caldebry, využití vmvare, proč, co a jak
+zameření na přenositelnost a rychlou instalaci
+
+\subsection{Popis testované infrastruktory}
+
+založeno na nemocniční prostředí, poradit se s honzíkem co můžem nemužem napsat, co tam je, co tam není atd atd
+
+říci jak je to implementováno, takže lab -> jaké stroje, jak to je propojené atd
+
+\subsection{Testované scénáře}
+
+přidat jsem identifikované vulnarability z navigátoru, u každého scénáře pak z navigáto přesně to, co je testované
+
+\subsubsection{Scénář 1 - doplnit název}
+
+\subsubsection{Scénář 2 - doplnit název}
+
+\subsubsection{Scénář 3 - doplnit název}
+
+\subsection{Celkové zhodnocení výsledků}
 
 \section{Závěry a doporučení}
 
