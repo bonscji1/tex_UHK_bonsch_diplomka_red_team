@@ -246,17 +246,128 @@ Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra.
 Proto je tento problém opravdu závažný.
 ~\cntcapfigure{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}\label{fig:MaliciousGoverments}
 
+\paragraph{Obrana a detekce}
+Obrana proti malware je složitá.
+Nelze totiž ukázat na jednu specifickou chybu, kterou je nutné opravit aby tento problém nenastal znovu.
+Existují však dobré uživatelské praktiky, které riziko infikování stroje malware snižují.
+Absolutním základem je aktualizování softwaru používaného zařízení.
+Mnoho velkých firem aktivně sleduje bezpečnostní incidenty spojené s jejich zařízeními a snaží se své uživatele chránit pomocí bezpečnostních aktualizací.
+Pro detekci malware je vhodný antivirus, který je schopný z online databází nalézt nejznámější rysy malware kampaní a ty pak detekovat v nainstalovaných souborech.
+Pokud nastane podezření na malware, je proto dobré pomocí antiviry zkontrolovat soubory.
+Podezření by mělo nastat při výrazném zpomalení zařízení, nemožnosti vypínat programy, vyskakování reklam nebo cizích pokusech o přihlášení k osobním účtům.
+Aby se předešlo samotné instalaci malware, je nutné dbát na bezpečné chování uživatele co se týče procházení internetu, instalace programů a klikání na soubory nebo odkazy v emailech.
+Jak již bylo zmíněno, malware může být zabalen společně s legitimním software, je proto velmi důležité instalovat programy pouze z ověřených, ideálně oficiálních zdrojů.
+Pozor na stránky, které napodobují oficiální stránky daného produktu.
+Na nich lze malware očekávat s jistotou.
+Nutné je také dávat pozor na podezřelé odkazy nebo soubory v emaily.
+I přes tyto vektory se do zařízení může dostat malware.
+V poslední řadě je nutné zmínit USB zařízení.
+Pokud je to možné, uživatel by neměl nikdy zapojovat ke svému zařízení neznámé usb zařízení.
+Ty jsou totiž nejen hrozba v podobě přenašeče malware ale dokonce i hrozba samotnému zařízení.
+Příkladem takto nebezpečného zařízení je USBKill\cite{usb_kill}.
+Toto zařízení na testování hardwaru se při napojení do usb portu nabije a pak vypustí svůj náboj zpět do portu.
+Novější verze jsou dokonce schopné nabití dopředu.
+To znamená, že jsou schopna útočit na vypnutá zařízení a obchází všechny známé bezpečnostní protokoly.
+
 \subsubsection{Ransomware}
-za zvláštní zmínku stojí ransomware.
-Jedná se o typ útoku, kdy útočníci přebírají kontrolu nad cílovými aktivy a požadují výkupné výměnou za obnovení dostupnosti těchto aktiv.
-%todo add
+Za zvláštní zmínku stojí ransomware, jelikož je to velmi nebezpečný a útočníky oblíbený malware.
+Jedná se o typ útoku, kdy útočníci přebírají kontrolu nad cílovými daty a požadují výkupné výměnou za obnovení dostupnosti těchto dat nebo zachování tajnosti dat.
+Jednoduché ransomware útoky data pouze odcizí a vyhrožují vypuštěním, popřípadě uzamknou systém, aby nebylo možné se k datům dostat.
+Nejčastější jsou však sofistikované ransomware útoky, kde jsou data zašifrována a klič nebo dokonce program pro jejich odšifrování je oběti poskytnut až po zaplacení výkupného.
+Ve výjimečných případech se stává, že klíč k odšifrování dat není poskytnut nikdy.
+Důvod proč jsou tyto situace výjimečné je však zřejmý.
+Není to dobré pro business ransomware skupin.
+Nejen že neposkytování klíčů by vedlo k neplacení výkupného ale také to snižuje okruh cílů.
+Zašifrovaná data totiž nemá cenu znovu napadat a žádat o další výkupné.
+Tyto myšlenkové pochody útočníků nemůžou být překvapením.
+Z interních dokumentů a logů skupiny Conti je zřejmé, že alespoň některé ransomware skupiny operují jako běžná společnost\cite{Conti_logs}.
+Ve skupině pracovali manažeři, útočníci pracovali převážně během pracovního týdne a dokonce měli nárok na placenou dovolenou a jiné benefity.
+
+
+\paragraph{Monitorování}
+Jak je vidět z ~\ref{fig:ENISA_Ransomware}, Ransomware útoky byly v době sledování, tedy období od Května 2021 do červen 2022, časté a dopad na data byl značný.
+
+
+obtížné
+
+
+
+K různým účelům se často používají digitální měny jako paysafecard, Bitcoin a další kryptoměny, což ztěžuje vystopování a trestní stíhání pachatelů.
+
+
+
+
+ Práce se zaměřuje na tři klíčové prvky přítomné v každém ransomware útoku: aktiva, akce a vydírání.
+Tato definice je nezávislá na konkrétní akci a byla vytvořena s ohledem na proměnlivou hrozbu ransomware, rozšíření více metod vydírání a různé cíle, než jenom finanční zisk.
+Zpráva také pokrývá čtyři základní akce (uzamknout, zašifrovat, smazat a ukrást), které ransomware používá ke způsobení výpadku dostupnosti, důvěrnosti a integrity aktiv.
+Může sloužit jako reference k lepšímu porozumění této hrozbě.
+
+
+Skupiny pokračují v mizení a (znovu)vyvstávání.
+Zároveň se často opakovaně využívají nebo kradou jejich zdrojové kódy, což znesnadňuje porozumění tomu, jak jsou tyto skupiny propojeny.
+Výzkumníci často vytvářejí předpoklady na základě překryvu zdrojových kódů nebo opakovaně použitých adres peněženek, aby pochopili tuto měnící se krajinu.
+
+Útoky prostřednictvím RDP (protokol vzdálené plochy) jako počátečního vektoru útoku pokračují v poklesu, ale stále zůstávají druhým nejdůležitějším vektorem pro ransomware útoky.
+Útočníci se snaží prolomit slabá RDP přihlašovací jména a hesla, zejména pokud není povolena MFA (vícefaktorová autentizace).
+V současné době se phishing stal nejvíce používaným útočným vektorem pro získání počátečního základu v organizaci.
+Obě tyto metody jsou levné a proto nejvýnosnější pro útočníky.
+
+Klasické operace ransomware sbírají informace před dalšími kroky, jako je vydírání s nebo bez šifrování souborů.
+Pokud společnost odmítne platit, informace jsou zveřejněny a/nebo data jsou zveřejněna na tzv. leak sitech.
+Tyto leak sitey seskupují všechny oběti konkrétního RaaS útočníka a často jsou dostupné pouze prostřednictvím Tor.
+
+Nové trendy:
+Obětí bylo nabídnuto, aby si "koupila" svá data dříve, než je koupí konkurent.
+Tento hrozný aktér aktivně znehodnocoval webové stránky svých obětí tím, že na ně zobrazoval výkupné poznámky.
+Toto je měnící se taktika, protože během počáteční fáze klasické infekce ransomware v určitém časovém okně byl útok nepředstaven, aby mohla být vedena jednání a přesvědčit společnost, aby zaplatila výkupné.
+Často se stává, že společnost končí na stránkách s úniky dat pouze tehdy, když odmítne platit nebo spolupracovat.
+Tento nárůst veřejného hanobení má přímý vliv na vztahy s veřejností a reputaci společnosti.
+
+
+
+
+K rozšíření tohoto typy útoku přispívá také koncept \ac{RaaS}.
+Ten dovoluje i nezkušeným útočníkům operovat s velice sofistikovaným software.
+Naopak zkušení útočníci nemusí ztrácet čas hledáním cílů ale soustředí se pouze na vyvíjení ransomware nástrojů a technickou podporu.
+Z každého úspěšně provedeného útoku jim totiž náleží část peněz\cite{Enisa_thread_landscape}
+~\cntcapfigure{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených datve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}\label{fig:ENISA_Ransomware}
+
+
+Optional:% todo del
+In June 2022, ALPHV started creating a dedicated leak site for individual victims hosted over the public internet. They
+leaked customer and employee information and data packs for individual employees. Using the website’s
+functionality, employees or customers could check if they were present in the data leak314. The spread of information
+on the public internet tends to go faster, gets cached, gets indexed and therefore it could be an effective way for
+threat actors to leverage their victims into paying a ransom. Furthermore, it allows third-party victims whose data was
+leaked to investigate whether they were impacted.
+Creating a public search site has become a new way for threat actors to get third-party victims to identify themselves quickly.
+If these affected customers contact the RaaS actor
+themselves, this can cause a shift-left approach315 and limit the effort invested by the threat actor.
+
+
+
+
+The average time to exploit is within eight days of a vendor's publication of the vulnerability. This trend highlights the
+importance of proper patch management and a threat-informed approach to the risk management of vulnerabilities
+
+Some american states prohibited agencies/public entities from
+paying ransoms.
+In addition, the Cyber incident Reporting Act obliges
+mandatory incident reporting within 72 hours of experiencing a cyberattack and within 24 hours of making a
+ransomware payment328. It remains to be seen whether these undertakings will be effective, as RaaS groups will not
+limit themselves because of local legislation. Only in a more global context could these legal measures become more
+effective.
+
 
 \subsubsection{Spyware}
 %todo add
 
 
 \subsection{Sociální inženýrství}
+
 %todo from my bakalářka
+
+Phishing útoky jsou prováděny ve velkém objemu a cílí na širokou veřejnost, zatímco jiné útoky sociálního inženýrství využívají vlastní kampaně přizpůsobené konkrétním zaměstnancům. Při použití sociálního inženýrství útočníci využívají přístup zaměstnanců uvnitř organizace k získání technického základu v síti, ze které provádějí další útoky.
 
 \subsubsection{Phishing}
 Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
