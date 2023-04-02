@@ -120,9 +120,9 @@ Pegasus je využíván pro špehování, překvapivě jsou však cílovým záka
 Průmysl špehování na zakázku funguje celosvětově a zaměřuje se stále více na běžné uživatele internetu.
 Cílem je nejen zisk informací ale také manipulace cílů za účelem kompromitování jejich zařízení a účtů.
 Většina zprostředkovatelů těchto služeb tvrdí, že služby jsou určené pro sledování zločinců a teroristů.
-Tomuto tvrzení však jednoznačně protiřečí  výzkum provedený společností \ac{ENISA}.
+Tomuto tvrzení však jednoznačně protiřečí výzkum provedený společností \ac{ENISA}.
 Více než 30,000 aktivistů za lidská práva, novinářů a právníků po celém světě bylo cílem špehování.
-V Evropě byl hlášen vysoký počet případů právě se špionážním softwarem Pegasus od NSO.
+V Evropě byl hlášen vysoký počet případů právě se špionážním softwarem Pegasus od NSO\@.
 Například byli monitorováni politici Španělska a vůdci katalánské nezávislosti.
 Navíc sama skupina NSO uvedla, že pět států \firstac{EU} používá jejich špionážní software Pegasus.\cite{Enisa_thread_landscape}
 
@@ -223,12 +223,6 @@ Jelikož je toto zařízení nachází hlavně v armádní a policejní technice
 Právě z těchto důvodů je nutné podívat se nejčastější kategorie útoků.
 V předchozím textu byly mnohé zmíněny, následuje jejich rozbor do hloubky.
 Kategorie byly zvoleny z kombinaci několika zdrojů, jako je \ac{ENISA}\cite{Enisa_thread_landscape}, Cisco\cite{cisco_most_common_attack} nebo \firstac{NIST}\cite{nist_risks}.
-
-
-%todo add definitions from att&ck
-%todo add defending? prevention, good security higiene(segmentation, backups atd)
-%todo add enisa -
-hole\cite{Enisa_thread_landscape}
 
 \subsection{Malware}
 Tento termín se používá pro škodlivý software.
@@ -356,19 +350,41 @@ Mezi nejpoužívanější typy patří:
 	\item Rootkit.
 \end{itemize}\cite{avast_spyware, fortinet_spyware}
 
-\paragraph{}
-Adware automatically displays advertisements while you’re browsing the internet or using advertising-supported software. In a malware context, adware furtively installs itself on your computer or mobile device, spies on your browsing history, and then serves you intrusive ads.
-\paragraph{}
-Keyloggers record all the keystrokes you make on your infected device and then save the information in a log file that is typically encrypted. Short for “keystroke logging”, this type of spyware collects everything you type into your computer, smartphone, or tablet, including text messages, emails, usernames, passwords.
-\paragraph{}
-Infostealers collect information from your computer or mobile systems. Keyloggers are a type of infostealer; other types can do much more than record and store information acquired from your keystrokes. They can also, for instance, scan your computer for specific information and harvest your browsing history, documents, and instant messaging sessions. Some strains can do all their dirty work secretly in one fell swoop before disappearing from their targets’ computers.
-\paragraph{}
-Red Shell spyware is a type of spyware that installs itself during the installation of certain PC games, then tracks gamers’ online activities. Its makers state they want “to leverage knowledge to help developers make better games” and “make better decisions about the effectiveness of their marketing campaigns.” Red Shell’s detractors oppose the fact that it installs itself without their knowledge or consent.
-\paragraph{}
-Cookies can be useful; for example, they instantly log you into your favorite websites and serve you advertisements for goods and services that are relevant to your interests. But tracking cookies can be considered spyware as they follow you online as you browse, compile your browsing history, and record login attempts.With the right knowledge and tools, a black hat hacker could use these cookies to recreate your login sessions, so make sure to delete tracking cookies regularly or disable them entirely.
-\paragraph{}
-Rootkits enable criminals to infiltrate computers and mobile devices and access them at a very deep level. To achieve this, they can exploit security vulnerabilities, use a Trojan horse, or log into a machine as an administrator. Rootkits are typically difficult or impossible to detect, but they can be prevented with strong antivirus software.
+\paragraph{Adware}
 
+Adware automaticky zobrazuje reklamy při prohlížení internetu nebo používání reklamou podporovaného softwaru. V kontextu malwaru se adware tajně instaluje na váš počítač nebo mobilní zařízení, sleduje vaši prohlížečovou historii a poté vám poskytuje invazivní reklamy.
+
+Adware automatically displays advertisements while you’re browsing the internet or using advertising-supported software. In a malware context, adware furtively installs itself on your computer or mobile device, spies on your browsing history, and then serves you intrusive ads.
+
+\paragraph{Keylogger}
+
+Keyloggery (klávesové špionážní programy) zaznamenávají všechna stisknutí kláves, která uživatel na svém infikovaném zařízení provede, a následně tuto informaci ukládají do zprávy typicky zakódované. Tento druh škodlivého softwaru, zkráceně nazývaného keylogger, sbírá vše, co uživatel napíše do svého počítače, smartphonu nebo tabletu, včetně textových zpráv, e-mailů, uživatelských jmen a hesel.
+
+Keyloggers record all the keystrokes you make on your infected device and then save the information in a log file that is typically encrypted. Short for “keystroke logging”, this type of spyware collects everything you type into your computer, smartphone, or tablet, including text messages, emails, usernames, passwords.
+
+\paragraph{Infostealer}
+
+Infostealery shromažďují informace z vašich počítačů nebo mobilních systémů. Keyloggery jsou jedním typem infostealeru; další typy mohou dělat mnohem více než zaznamenávat a ukládat informace získané z vašich stisknutí kláves. Mohou například prohledávat váš počítač pro konkrétní informace a sbírat vaši historii prohlížení, dokumenty a relace okamžitých zpráv. Některé verze mohou provádět všechnu svou špinavou práci tajně v jednom úderu, než zmizí z počítačů svých cílů.
+
+Infostealers collect information from your computer or mobile systems. Keyloggers are a type of infostealer; other types can do much more than record and store information acquired from your keystrokes. They can also, for instance, scan your computer for specific information and harvest your browsing history, documents, and instant messaging sessions. Some strains can do all their dirty work secretly in one fell swoop before disappearing from their targets’ computers.
+
+\paragraph{Red Shell spyware}
+
+Red Shell spyware je typem spywaru, který se nainstaluje během instalace určitých PC her a poté sleduje online aktivity hráčů. Jeho tvůrci uvádějí, že chtějí "využít znalosti k pomoci vývojářům vytvářet lepší hry" a "dělat lepší rozhodnutí o účinnosti svých marketingových kampaní". Protivníci Red Shellu nesouhlasí s tím, že se nainstaluje bez vědomí a souhlasu uživatelů.
+
+Red Shell spyware is a type of spyware that installs itself during the installation of certain PC games, then tracks gamers’ online activities. Its makers state they want “to leverage knowledge to help developers make better games” and “make better decisions about the effectiveness of their marketing campaigns.” Red Shell’s detractors oppose the fact that it installs itself without their knowledge or consent.
+
+\paragraph{Cookies}
+
+Cookies mohou být užitečné, například okamžitě vás přihlásí do vašich oblíbených webových stránek a zobrazí vám reklamy na zboží a služby, které jsou relevantní pro vaše zájmy. Nicméně sledovací cookies mohou být považovány za spyware, protože vás sledují online, když prohlížíte internet, sestavují váš prohlížecí historie a zaznamenávají pokusy o přihlášení. S dostatečnými znalostmi a nástroji by mohl black hat hacker použít tyto cookies k opětovnému vytvoření vašich přihlašovacích sezení, takže se ujistěte, že pravidelně mazat sledovací cookies nebo je zcela zakázat.
+
+Cookies can be useful; for example, they instantly log you into your favorite websites and serve you advertisements for goods and services that are relevant to your interests. But tracking cookies can be considered spyware as they follow you online as you browse, compile your browsing history, and record login attempts.With the right knowledge and tools, a black hat hacker could use these cookies to recreate your login sessions, so make sure to delete tracking cookies regularly or disable them entirely.
+
+\paragraph{Rootkit}
+
+Rootkity umožňují zločincům infiltrovat počítače a mobilní zařízení a získat přístup na velmi hluboké úrovni. K tomu mohou využít bezpečnostní zranitelnosti, použít trojského koně nebo se přihlásit na stroj jako administrátor. Rootkity jsou obvykle obtížné nebo nemožné detekovat, ale mohou být předcházeny silným antivirovým softwarem.
+
+Rootkits enable criminals to infiltrate computers and mobile devices and access them at a very deep level. To achieve this, they can exploit security vulnerabilities, use a Trojan horse, or log into a machine as an administrator. Rootkits are typically difficult or impossible to detect, but they can be prevented with strong antivirus software.
 
 \paragraph{Dopad}
 Jedním z nejčastějších problémů způsobených spywarem je krádež dat.
@@ -383,13 +399,29 @@ Dalším je zpomalení zařízení, jelikož v závislosti na sofistikovanosti s
 V horších případech může spyware zařízení dokonce nevratně poškodit.
 To se stává pokud je špatně navrženo nebo nezáleží na dlouhodobém sledování ale jde pouze o krátkodobou extrakci dat.\cite{avast_spyware, fortinet_spyware}
 
-\paragraph{}
-TODO - dopsat Pegasus spyware
-zaměření na industrial špionáž, i na běžné občany (Pegasus)
-%todo add
-
-
-
+\paragraph{Pegasus spyware}
+Jak již bylo zmíněno, spyware je také používán pro špehování na zakázku.
+Již zmíněný Pegasus spyware spadá právě do této kategorie a je to výborný příklad.
+Také více jak 30,000 aktivistů za lidská práva, novinářů a právníků po celém světě bylo cílem špehování.
+Jeho použití ve státech \ac{EU} potvrdil i samotný tvůrce NSO\@.
+Pegasus je velmi sofistikovaný spyware.
+O jeho schopnostech svědčí i fakt, že společnost NSO musí získat povolení od izraelského ministerstva obrany předtím, než může být nástroj licencován pro jakéhokoli klienta.
+V minulosti u něj výzkumníci pozorovali použití hned několik zero-day slabin za sebou k získání kontroly nad celým zařízením.
+Po získání kontroly Pegasus zapnul mikrofon, kameru, četl zprávy, poslouchal hovory a sledoval polohu zařízení.
+Všechna tato data posléze zasílal na NSO servery, kde k nim měli přístup zadavatelé špehování.
+Při pohledu na oznámené případy používání Pegasus se často objevuje velmi nepříjemný společný motiv.
+Proti cílené oběti dochází znepokojivě často k nějaké fyzické akci.
+Existují případy, které vedly k uvěznění, fyzickým hrozbám, útokům a zastrašování.
+Nejhorším případem je však vražda.
+Jamal Khashoggi byl novinář ze Saúdské Arábie.
+Původně blízký přítel královské rodiny byl nucen uprchnout ze země po jmenování Mohameda bin Salmána korunním princem.
+Po úniku začal velmi otevřeně mluvit o represi v Saúdské Arábie.
+V říjnu 2018 byl v Turecku nalákán do budovy saúdského konzulátu kvůli zřízení dokumentů pro bezpečný návrat do Saúdské Arábie.
+z budovy však nikdy neodešel, byl uškrcen a rozčtvrcen.
+Zkoumání odhalilo, že NSO nainstalovalo Pegasus na telefon jeho manželky Hanan Elatr jen několik měsíců před jeho smrtí\cite{khashoggi_wife_pegasus}.
+Taká číslo telefonu jeho snoubenky bylo nalezeno mezi potencionálními cíli instalace Pegasus spyware.
+Lze předpokládat, že Jamal Khashoggi byl také cílem sledování.
+Při zohlednění těchto skutečností je použití Pegasus spyware zcela neetické.\cite{darknet_100_NSO,Enisa_thread_landscape}
 
 \subsection{Sociální inženýrství}
 
@@ -667,7 +699,7 @@ Je samozřejmé, že každá tato kategorie obsahuje další podkategorie.
 Toto základní rozdělení je však vhodné pro rozpoznání hlavních výzev, složitostí ale i přínosů testování.
 Nelze říci, zda je jeden scénář lepší nežli jiné, naopak se doplňují a každý slouží pro určitou situaci.\cite{red_team_oakley_2019}
 
-\paragraph{Celkový pokus o kompromitaci}
+\subsubsection{Celkový pokus o kompromitaci}
 Základní situací je \textit{celkový pokus o kompromitaci obrany}.
 Lze definovat jako snaha \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
 Tato strategie je vhodná pro celkové testování infrastruktury.
@@ -680,7 +712,7 @@ Při nesprávném provedení nebo nepochopení cíle tohoto testování může v
 cílem tohoto testu je získat celkové povědomí o ochraně a poté pokračovat s podrobnějším testováním.
 %todo add picture?
 
-\paragraph{Specifický pokus o kompromitaci}
+\subsubsection{Specifický pokus o kompromitaci}
 Pro testování omezené části infrastruktury se využívá \textit{specifický pokus o kompromitaci}.
 Cílem je důkladně otestovat omezenou část infrastruktury bez využití, zásahu nebo omezení částí infrastruktury nacházející se mimo testovaný rozsah.
 \textit{Red team} prování podrobné testování, které při korektním provedení vede k nalezení všech slabin.
@@ -692,7 +724,7 @@ V takovém případě je však nutné dávat pozor na správné vybrání rozsah
 Při důkladném testování není neobvyklé vyřazení testovacího zařízení z běžného provozu nebo jeho zhroucení.
 Je tak důležité aby nebyl testován systém, který je kriticky důležitý nebo zrovna používaný.
 
-\paragraph{Předpokládaná kompromitace}
+\subsubsection{Předpokládaná kompromitace}
 Z názvu je jasné, že toto testování zkoumá, jakou škodu může útočník napáchat při úspěšném útoku.
 Počáteční bod tohoto testování je založen na předpokladu úspěšné infiltrace útočníkem.
 Přístup k takto identifikovanému bodu je s příslušnými právy poskytnut \textit{red teamu}, který nemusí prolamovat obranu systému.
@@ -715,7 +747,7 @@ Z tohoto důvodu jsou tyto metodologie nepřesně definovány, někdy zaměňov�
 Je proto nutné si je představit v kontextu tohoto textu.
 K tomu slouží následující sekce.\cite{securityInteligence_pen_test_red_team_purple_team}
 
-\paragraph{Penetration testing}
+\subsubsection{Penetration testing}
 
 Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
 Takto důkladné hledání je omezeno pouze na zadaný `scope', neboli část testovaného systému.
@@ -726,7 +758,7 @@ V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, a
 Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
 
 
-\paragraph{Red team assessment}
+\subsubsection{Red team assessment}
 
 Red team assessment, také referovaný jako red teaming, je na rozdíl od pen-testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
 To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
@@ -739,7 +771,7 @@ Také automatizace zde bývá složitá, jedná se totiž o specifickou strategi
 Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti cíle s omezeními vznikajícími pouze ze snahy simulovat reálný útok.
 
 
-\paragraph{Purple team/Kontrolní cvičení}
+\subsubsection{Purple team/Kontrolní cvičení}
 Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
 Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
 Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
@@ -761,7 +793,7 @@ Tyto frameworky jsou na rozdíl od jiných zdarma a proto se hodí pro začátek
 Je dobré si nejdříve vymezit testovanou oblast.
 Všechny tyto frameworky budou více probrány a porovnány v následujících kapitolách.
 
-\subsubsection{MITRE ATT\&CK}
+\subsection{MITRE ATT\&CK}
 MITRE ATT\&CK je bezplatná otevřená znalostní databáze popisující chování útočníků a techniky, které tyto útočníci využívají.
 Tato znalostní báze je založená na pozorování v rámci reálného světa, data pochází z veřejného zpravodajství a hlášených bezpečnostních incidentů.
 Samozřejmě jsou začleněny i veřejné výzkumy technik útočníků.
@@ -882,7 +914,7 @@ Tým ATT\&CK pro jednotlivé kampaně činí nejlepší úsilí o sledování p�
 Toto sledování je výhodné, protože poskytuje informace nejen o existenci kampaně, ale také informace o technikách, které jsou využívány.
 Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jsou v nich zahrnuty původní reference.\cite{Mitre_campaigns}
 
-\subsubsection{Nástroje}
+\subsection{Nástroje}
 ~\cntcapfigure{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}\label{fig:OpenSourceTestTools}
 % TODO maybe make my own table?
 
