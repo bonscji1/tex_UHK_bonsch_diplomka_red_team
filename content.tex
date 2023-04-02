@@ -322,13 +322,73 @@ Oběti je nabídnuto, aby si data \textit{koupila} dříve, než je zakoupí jej
 Útočníci také již po provedení útoku změnili vzhled webových stránek oběti aby o útoku oznámili.
 Takto prováděný útok vede k veřejnému hanobení oběti útoku a má přímý vliv na vztahy s veřejností a reputaci společnosti.
 Dalším znepokojivým trendem je vytváření dedikovaných stránek s daty o napadených přímo na veřejném internetu.
-Tento postup zvolil ALPHV, také známý jako BlackCat ransomware, který operuje jako \ac{RaaS}\cite{ALPHV_blackcat}.
+Tento postup zvolil \textit{ALPHV}, také známý jako \textit{BlackCat} ransomware, který operuje jako \ac{RaaS}\cite{ALPHV_blackcat}.
 Na tomto webu se nacházely informace o zákaznících i zaměstnancích a ti si tak mohli snadno zkontrolovat, zda byli útokem zasaženi.
 Vytvoření takto veřejného repozitáře se stalo novým způsobem, jak donutit třetí strany, aby se identifikovaly.
 Lze předpokládat, že postižení zákazníci sami kontaktují majitele webu aby zaplatili za stažení dat.
 
 \subsubsection{Spyware}
+Specifický malware, jehož primárním cílem je shromažďování dat s nazývá spyware.
+Při infikování zařízení sbírá osobní a citlivé informace nejen o uživateli ale i o samotném zařízení.
+Získané informace spyware posílá nazpět svému tvůrci.
+Všechny tyto činnosti samozřejmě provádí spyware bez souhlasu a znalosti uživatele.
+Infikování je stejné jako většina malware, spyware je nevědomky nainstalován uživatelem.
+Oblíbenou metodou je přibalení spyware k jinému programu nebo přes podvodné odkazy a soubory, které spouští instalační skripty.
+Data, na která se útočníci zaměřují, jsou převážně přihlašovací údaje, údaje o bankovních účtech a kreditních kartách nebo také chování na internetu.
+Všechna tato dala zde totiž prodat na černém trhu nebo rovnou využít k další nelegální činnosti.
+Spyware je jedním z nejčastěji používaných způsobů kybernetických útoků.
+Jeho oblíbenost spočívá v obtížnosti odhalení a při štěstí velkém výnosu.\cite{avast_spyware, fortinet_spyware}
+
+\paragraph{Typy}
+Všechny typy spyware monitorují uživatelskou aktivitu, rozlišujeme je na další typy podle toho, k čemu takto získaná data využívají a jak data získávají.
+Některé spyware pořizují snímky obrazovky, jiné pouze monitorují běžící programy nebo jen vstup z klávesnice.
+Vzácně je tento software dokonce schopen zapínat kameru či mikrofon a z nich nahrávat záznamy.
+Dalším možným bodem odlišení jednotlivých typů jsou jejich dodatečné vlastnosti.
+Některý typy spyware mají schopnost instalovat další software.
+To umožňuje útočníkovi rozšířit své kompetence na zařízení, at už se jedná o pokročilejší sběr dat nebo manipulaci dat a nastavení přímo na daném zařízení.
+Mezi nejpoužívanější typy patří:
+\begin{itemize}
+	\item Adware,
+	\item Keylogger,
+	\item Infostealer,
+	\item Red Shell spyware,
+	\item Cookies,
+	\item Rootkit.
+\end{itemize}\cite{avast_spyware, fortinet_spyware}
+
+\paragraph{}
+Adware automatically displays advertisements while you’re browsing the internet or using advertising-supported software. In a malware context, adware furtively installs itself on your computer or mobile device, spies on your browsing history, and then serves you intrusive ads.
+\paragraph{}
+Keyloggers record all the keystrokes you make on your infected device and then save the information in a log file that is typically encrypted. Short for “keystroke logging”, this type of spyware collects everything you type into your computer, smartphone, or tablet, including text messages, emails, usernames, passwords.
+\paragraph{}
+Infostealers collect information from your computer or mobile systems. Keyloggers are a type of infostealer; other types can do much more than record and store information acquired from your keystrokes. They can also, for instance, scan your computer for specific information and harvest your browsing history, documents, and instant messaging sessions. Some strains can do all their dirty work secretly in one fell swoop before disappearing from their targets’ computers.
+\paragraph{}
+Red Shell spyware is a type of spyware that installs itself during the installation of certain PC games, then tracks gamers’ online activities. Its makers state they want “to leverage knowledge to help developers make better games” and “make better decisions about the effectiveness of their marketing campaigns.” Red Shell’s detractors oppose the fact that it installs itself without their knowledge or consent.
+\paragraph{}
+Cookies can be useful; for example, they instantly log you into your favorite websites and serve you advertisements for goods and services that are relevant to your interests. But tracking cookies can be considered spyware as they follow you online as you browse, compile your browsing history, and record login attempts.With the right knowledge and tools, a black hat hacker could use these cookies to recreate your login sessions, so make sure to delete tracking cookies regularly or disable them entirely.
+\paragraph{}
+Rootkits enable criminals to infiltrate computers and mobile devices and access them at a very deep level. To achieve this, they can exploit security vulnerabilities, use a Trojan horse, or log into a machine as an administrator. Rootkits are typically difficult or impossible to detect, but they can be prevented with strong antivirus software.
+
+
+\paragraph{Dopad}
+Jedním z nejčastějších problémů způsobených spywarem je krádež dat.
+Všechna data mají pro útočníky cenu, některá jsou však vyhledávaná více nežli jiná.
+Útočník se například může snažit sestavit falešnou identitu, kterou pak sám použije k další trestné činnosti nebo prodá na černém trhu.
+Také přístupové údaje k účtům mohou být cenná data, vzácné účty se na černém trhu prodávají i za stovky dolarů.
+Dalším příkladem cenných dat jsou přístupové práva, které může útočník použít k většímu kybernetickému útoku.
+Vedlejším efektem spyware jsou problémy s přístupem k internetu nebo samotnou sítí.
+Tyto problémy vznikají právě kvůli komunikaci dat zpět tvůrci.
+Je to také jedním z ukazatelů na existenci spyware.
+Dalším je zpomalení zařízení, jelikož v závislosti na sofistikovanosti spyware běžícího na pozadí bude zařízení ovlivněno.
+V horších případech může spyware zařízení dokonce nevratně poškodit.
+To se stává pokud je špatně navrženo nebo nezáleží na dlouhodobém sledování ale jde pouze o krátkodobou extrakci dat.\cite{avast_spyware, fortinet_spyware}
+
+\paragraph{}
+TODO - dopsat Pegasus spyware
+zaměření na industrial špionáž, i na běžné občany (Pegasus)
 %todo add
+
+
 
 
 \subsection{Sociální inženýrství}
@@ -349,8 +409,6 @@ Prvním je ověření nebo zisk informací, které lze použít k dalšímu úto
 Druhým je kompromitace zařízení, například pomocí malware.
 Nejčastěji je to pomocí odkazů, které se v podvodném emailu nachází, popřípadě pomocí infikovaných souborů.
 Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
-
-
 
 
 \subsection{Threat against data}
