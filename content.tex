@@ -272,6 +272,7 @@ To znamená, že jsou schopna útočit na vypnutá zařízení a obchází všec
 \subsubsection{Ransomware}
 Za zvláštní zmínku stojí ransomware, jelikož je to velmi nebezpečný a útočníky oblíbený malware.
 Jedná se o typ útoku, kdy útočníci přebírají kontrolu nad cílovými daty a požadují výkupné výměnou za obnovení dostupnosti těchto dat nebo zachování tajnosti dat.
+Útočníci tak přímo ohrožují dostupnost, důvěrnost i integritu dat.
 Jednoduché ransomware útoky data pouze odcizí a vyhrožují vypuštěním, popřípadě uzamknou systém, aby nebylo možné se k datům dostat.
 Nejčastější jsou však sofistikované ransomware útoky, kde jsou data zašifrována a klič nebo dokonce program pro jejich odšifrování je oběti poskytnut až po zaplacení výkupného.
 Ve výjimečných případech se stává, že klíč k odšifrování dat není poskytnut nikdy.
@@ -282,82 +283,49 @@ Zašifrovaná data totiž nemá cenu znovu napadat a žádat o další výkupné
 Tyto myšlenkové pochody útočníků nemůžou být překvapením.
 Z interních dokumentů a logů skupiny Conti je zřejmé, že alespoň některé ransomware skupiny operují jako běžná společnost\cite{Conti_logs}.
 Ve skupině pracovali manažeři, útočníci pracovali převážně během pracovního týdne a dokonce měli nárok na placenou dovolenou a jiné benefity.
-
-
-\paragraph{Monitorování}
-Jak je vidět z ~\ref{fig:ENISA_Ransomware}, Ransomware útoky byly v době sledování, tedy období od Května 2021 do červen 2022, časté a dopad na data byl značný.
-
-
-obtížné
-
-
-
-K různým účelům se často používají digitální měny jako paysafecard, Bitcoin a další kryptoměny, což ztěžuje vystopování a trestní stíhání pachatelů.
-
-
-
-
- Práce se zaměřuje na tři klíčové prvky přítomné v každém ransomware útoku: aktiva, akce a vydírání.
-Tato definice je nezávislá na konkrétní akci a byla vytvořena s ohledem na proměnlivou hrozbu ransomware, rozšíření více metod vydírání a různé cíle, než jenom finanční zisk.
-Zpráva také pokrývá čtyři základní akce (uzamknout, zašifrovat, smazat a ukrást), které ransomware používá ke způsobení výpadku dostupnosti, důvěrnosti a integrity aktiv.
-Může sloužit jako reference k lepšímu porozumění této hrozbě.
-
-
-Skupiny pokračují v mizení a (znovu)vyvstávání.
-Zároveň se často opakovaně využívají nebo kradou jejich zdrojové kódy, což znesnadňuje porozumění tomu, jak jsou tyto skupiny propojeny.
-Výzkumníci často vytvářejí předpoklady na základě překryvu zdrojových kódů nebo opakovaně použitých adres peněženek, aby pochopili tuto měnící se krajinu.
-
-Útoky prostřednictvím RDP (protokol vzdálené plochy) jako počátečního vektoru útoku pokračují v poklesu, ale stále zůstávají druhým nejdůležitějším vektorem pro ransomware útoky.
-Útočníci se snaží prolomit slabá RDP přihlašovací jména a hesla, zejména pokud není povolena MFA (vícefaktorová autentizace).
-V současné době se phishing stal nejvíce používaným útočným vektorem pro získání počátečního základu v organizaci.
-Obě tyto metody jsou levné a proto nejvýnosnější pro útočníky.
-
-Klasické operace ransomware sbírají informace před dalšími kroky, jako je vydírání s nebo bez šifrování souborů.
-Pokud společnost odmítne platit, informace jsou zveřejněny a/nebo data jsou zveřejněna na tzv. leak sitech.
-Tyto leak sitey seskupují všechny oběti konkrétního RaaS útočníka a často jsou dostupné pouze prostřednictvím Tor.
-
-Nové trendy:
-Obětí bylo nabídnuto, aby si "koupila" svá data dříve, než je koupí konkurent.
-Tento hrozný aktér aktivně znehodnocoval webové stránky svých obětí tím, že na ně zobrazoval výkupné poznámky.
-Toto je měnící se taktika, protože během počáteční fáze klasické infekce ransomware v určitém časovém okně byl útok nepředstaven, aby mohla být vedena jednání a přesvědčit společnost, aby zaplatila výkupné.
-Často se stává, že společnost končí na stránkách s úniky dat pouze tehdy, když odmítne platit nebo spolupracovat.
-Tento nárůst veřejného hanobení má přímý vliv na vztahy s veřejností a reputaci společnosti.
-
-
-
-
 K rozšíření tohoto typy útoku přispívá také koncept \ac{RaaS}.
 Ten dovoluje i nezkušeným útočníkům operovat s velice sofistikovaným software.
 Naopak zkušení útočníci nemusí ztrácet čas hledáním cílů ale soustředí se pouze na vyvíjení ransomware nástrojů a technickou podporu.
-Z každého úspěšně provedeného útoku jim totiž náleží část peněz\cite{Enisa_thread_landscape}
-~\cntcapfigure{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených datve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}\label{fig:ENISA_Ransomware}
+Z každého úspěšně provedeného útoku jim totiž náleží část peněz.\cite{Enisa_thread_landscape}
 
 
-Optional:% todo del
-In June 2022, ALPHV started creating a dedicated leak site for individual victims hosted over the public internet. They
-leaked customer and employee information and data packs for individual employees. Using the website’s
-functionality, employees or customers could check if they were present in the data leak314. The spread of information
-on the public internet tends to go faster, gets cached, gets indexed and therefore it could be an effective way for
-threat actors to leverage their victims into paying a ransom. Furthermore, it allows third-party victims whose data was
-leaked to investigate whether they were impacted.
-Creating a public search site has become a new way for threat actors to get third-party victims to identify themselves quickly.
-If these affected customers contact the RaaS actor
-themselves, this can cause a shift-left approach315 and limit the effort invested by the threat actor.
+\paragraph{Monitorování}
+~\cntcapfigure{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených dat ve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}\label{fig:ENISA_Ransomware}
+Jak je vidět z ~\ref{fig:ENISA_Ransomware}, Ransomware útoky byly v době sledování, tedy období od Května 2021 do červen 2022, časté a dopad na data byl značný.
+Sledování těchto útoků je však velmi obtížné.
+Pokud dochází pouze k vydírání, firmy mohou výkupné zaplatit a pokusit se zamlčet existenci útoku.
+Se stoupajícími částkami výkupného je tato možnost stále méně validní.
+Spíše se firmy obrací na pojištění proti ransomware.
+To však ironicky zvyšuje jejich atraktivnost jako cíl, protože je jistota zaplacení výkupného
+Dalším problémem monitorování je abstrakce ze strany útočníka.
+Pro zmatení vyšetřovatelů nejsou pro ransomware skupiny neobvyklé změny názvu spolu s falešným odchodem do důchodu.
+Tato stejná skupina pak se změněným jménem operuje nadále, můžou však pozměnit styl provádění útoků nebo nástroje.
+Díky rivalitě mezi skupinami často dochází ke kradení zdrojových kódy, což však znesnadňuje identifikování této skupiny se skupinou původní.
+Častým vodítkem bývají adresy krypto peněženek.
+Výplaty výkupného v jsou vždy v kryptoměně, například Bitcoinu.
+To samozřejmě také ztěžuje vystopování a trestní stíhání pachatelů.
+Bez nadsázky lze říci, že monitorování ransomware skupin je složitější než se ransomware bránit.\cite{Enisa_thread_landscape}
 
-
-
-
-The average time to exploit is within eight days of a vendor's publication of the vulnerability. This trend highlights the
-importance of proper patch management and a threat-informed approach to the risk management of vulnerabilities
-
-Some american states prohibited agencies/public entities from
-paying ransoms.
-In addition, the Cyber incident Reporting Act obliges
-mandatory incident reporting within 72 hours of experiencing a cyberattack and within 24 hours of making a
-ransomware payment328. It remains to be seen whether these undertakings will be effective, as RaaS groups will not
-limit themselves because of local legislation. Only in a more global context could these legal measures become more
-effective.
-
+\paragraph{Změny v metodice}
+Ze zaznamenaných dat jasně vyplývá pokles útoky s počátečním vektorem prostřednictvím \firstac{RDP}, neboli protokolem vzdálené plochy.
+Stále je to však druhý nejpoužívanější vektor útoku pro ransomware.
+Útočníci stále prolamují slabá \ac{RDP} přihlašovací jména a hesla, zejména pokud není povolena \firstac{MFA}, v překladu vícefaktorová autentizace.
+\ac{MFA} je velmi dobrou obranou proti neznalým útočníkům a jednodušším útoků, bohužel není nepřekonatelná.
+Nejpoužívanějším vektorem útoku je samozřejmě phishing.
+Za povšimnutí stojí nízké nakladu na využití těchto metod útoku a jejich značný výnos, což je jeden z hlavních důvodů jejich oblíbenosti mezi útočníky
+Zajímavým trendem jsou změny ve způsobu vydírání společností.
+Klasický útok ransomware nejdříve sbírá informace, poté k nim zamezí přístup a posléze vydírá společnost.
+Teprve pokud společnost odmítne zaplatit výkupné je útok veřejně oznámen.
+Získaná data jsou také prodávána nebo volně dostupná na internetových fórech dark webu.
+Některé ransomware skupiny však začali používat jiný postup.
+Oběti je nabídnuto, aby si data \textit{koupila} dříve, než je zakoupí její konkurenti.
+Útočníci také již po provedení útoku změnili vzhled webových stránek oběti aby o útoku oznámili.
+Takto prováděný útok vede k veřejnému hanobení oběti útoku a má přímý vliv na vztahy s veřejností a reputaci společnosti.
+Dalším znepokojivým trendem je vytváření dedikovaných stránek s daty o napadených přímo na veřejném internetu.
+Tento postup zvolil ALPHV, také známý jako BlackCat ransomware, který operuje jako \ac{RaaS}\cite{ALPHV_blackcat}.
+Na tomto webu se nacházely informace o zákaznících i zaměstnancích a ti si tak mohli snadno zkontrolovat, zda byli útokem zasaženi.
+Vytvoření takto veřejného repozitáře se stalo novým způsobem, jak donutit třetí strany, aby se identifikovaly.
+Lze předpokládat, že postižení zákazníci sami kontaktují majitele webu aby zaplatili za stažení dat.
 
 \subsubsection{Spyware}
 %todo add
