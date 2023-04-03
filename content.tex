@@ -141,7 +141,7 @@ Cíl sledování je potichu profilován s využitím software k automatickému s
 Informace o cíli pochází ze všech dostupných online zdrojů, a to jak volně dostupných tak i placených nebo nelegálních.
 Jsou to data z veřejných webů, jako jsou blogy nebo sociální média.
 Dále data z platforem pro správu znalostí, jako je například Wikipedia.
-V neposlední řadě jsou data sbírána z "dark web" stránek, kde lze naleznout výpisy z napadených databází.
+V neposlední řadě jsou data sbírána z `dark web' stránek, kde lze naleznout výpisy z napadených databází.
 \textit{Navázání kontaktu} je druhá fáze řetězce.
 Typicky je právě zde největší možnost odhalit sledování a s ním spojený útok.
 Obezřetnost je tedy opět nejdůležitější krok k předcházení hrozeb.
@@ -351,10 +351,9 @@ Mezi nejpoužívanější typy patří:
 \end{itemize}\cite{avast_spyware, fortinet_spyware}
 
 \paragraph{Adware}
-
-Adware automaticky zobrazuje reklamy při prohlížení internetu nebo používání reklamou podporovaného softwaru. V kontextu malwaru se adware tajně instaluje na váš počítač nebo mobilní zařízení, sleduje vaši prohlížečovou historii a poté vám poskytuje invazivní reklamy.
-
-Adware automatically displays advertisements while you’re browsing the internet or using advertising-supported software. In a malware context, adware furtively installs itself on your computer or mobile device, spies on your browsing history, and then serves you intrusive ads.
+Cílem adware je automatické zobrazování reklam bud přímo v prohlížeči nebo přímo v operačním systému zařízení.
+V kontextu malware se jedná o tajně nainstalovaný software bez souhlasu uživatele.
+Problémem je časté využíván k zobrazování invazivních nebo klamavých reklam.\cite{avast_spyware}
 
 \paragraph{Keylogger}
 Keyloggery jsou specifické programy pro zaznamenávání stisknutí kláves uživatelem.
@@ -362,7 +361,7 @@ Tyto informace jsou poté ukládány a zašifrovány.
 Pokud keylogger funguje samostatně, tak tyto data také zasílá útočníkovi.
 Častější je však použití keyloggeru spolu s dalším spyware.
 Primárním cílem útočníka jsou běžně zadávané věci, které jsou v software chráněny.
-Jedná se tedy například o přístupové údaje, soukromé zprávy a emaily.
+Jedná se tedy například o přístupové údaje, soukromé zprávy a emaily.\cite{avast_spyware}
 
 \paragraph{Infostealer}
 Asi neklasičtější představa spyware, infostealer je útočníky využíván pro shromažďování informací z napadeného zařízení.
@@ -373,21 +372,21 @@ Hlavní rozdíly jsou však ve způsobu operace.
 Některé infostealery existují na zařízení až do jejich objevení nebo zničení zařízení.
 Stále zasílají útočníkovi informace a to bývá primární důvod jejich objevení.
 Zákeřnější jsou schopné najít a exfiltrovat všechna žádaná data najednou a pak se vymazat.
-Pokud nejsou detekovány při tomto jednom přenosu, není pak možnost pro uživatele poznat, že byl napaden.
+Pokud nejsou detekovány při tomto jednom přenosu, není pak možnost pro uživatele poznat, že byl napaden.\cite{avast_spyware}
 
 \paragraph{Red Shell spyware}
-Specializovaný spyware na sledovýní online aktivity hráčů.
+Specializovaný spyware na sledování online aktivity hráčů.
 Je nainstalován právě s danou hrou, u které sbírá data.
 Původní záměr tvůrců je využít takto získaná data pro vývoj lepších her a pomáhat společnostem dělat lepší marketingová rozhodnutí.
-Hlavním problémem je však instalace tohoto software bez vědomí uživatelů a jejich výslovného souhlasu.
+Hlavním problémem je však instalace tohoto software bez vědomí uživatelů a jejich výslovného souhlasu.\cite{avast_spyware}
 
 \paragraph{Cookies}
-Cookies původně vznikly jako uřitecná pomůcka, například pro přihlášení do oblíbených vebových stránek uživatele nebo zachování instance v e-shopu.
+Cookies původně vznikly jako užitečná pomůcka, například pro přihlášení do oblíbených webových stránek uživatele nebo zachování instance v e-shopu.
 Jsou také využívány pro zobrazování reklam spojených se zájmem uživatele, kterého sledují.
 Jak již bylo naznačeno, problém je ve sledování online chování uživatele na internetu.
 To cookies plně kvalifikuje jako spyware, který sleduje nejen historii prohlížení ale zaznamenává i pokusy o přihlášení.
 Útočník s dostatečnými znalostmi a vybavením je tak schopen zpětně obnovit přihlášenou instanci.
-Není proto divu, že o cookies se již delší dobu zajímá legislativa a hlavní internetové prohlížeče jejich činost již v základu omezují nebo dokonce kompletně zakazují.
+Není proto divu, že o cookies se již delší dobu zajímá legislativa a hlavní internetové prohlížeče jejich činnost již v základu omezují nebo dokonce kompletně zakazují.\cite{avast_spyware}
 
 \paragraph{Rootkit}
 Možná nejnebezpečnějším typem spyware je Rootkit.
@@ -395,7 +394,7 @@ Ten umožňuje útočníkovi infiltrovat zařízení a získat přístup na velm
 Rootkit je proto velmi obtížné odhalit.
 Díky hlubokému přístupu má útočník značnou kontrolu nad zařízením, kterou většinou využije k instalaci a skrytí dalšího malware.
 Při prvotním nakažení rootkit pro zisk přístupu nejčastěji využívá bezpečnostní zranitelnosti v samotném systému zařízení nebo administrátorské přístupy.
-Jeho prvotní kroky jsou však detekovatelné dobrým antivirovým software.
+Jeho prvotní kroky jsou však detekovatelné dobrým antivirovým software.\cite{avast_spyware}
 
 \paragraph{Dopad}
 Jedním z nejčastějších problémů způsobených spywarem je krádež dat.
@@ -921,7 +920,7 @@ Například může být jedna skupina zodpovědná za počáteční průnik do s
 Kampaň je označována názvem uvedeným ve veřejných zprávách nebo jedinečným identifikátorem ATT\&CK pokud kampaň ještě nebyla pojmenována.
 Zaznamenání a sledování kampaní je obtížné.
 Různé organizace zaznamenávající útok patřící do kampaně ho mohou oznámit pod různými jmény, a stejný útok navíc může být popsán z různých úhlů pohledu.
-Tým ATT\&CK pro jednotlivé kampaně činí nejlepší úsilí o sledování překrývajících se jmen, která jsou označena jako "Přidružené kampaně".
+Tým ATT\&CK pro jednotlivé kampaně činí nejlepší úsilí o sledování překrývajících se jmen, která jsou označena jako `Přidružené kampaně'.
 Toto sledování je výhodné, protože poskytuje informace nejen o existenci kampaně, ale také informace o technikách, které jsou využívány.
 Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jsou v nich zahrnuty původní reference.\cite{Mitre_campaigns}
 
