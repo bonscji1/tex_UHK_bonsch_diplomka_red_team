@@ -1033,14 +1033,17 @@ Jako testovací prostředí bylo zvoleno Kali Linux.
 Samozřejmě je toto prostředí pouštěno v Oracle VM VirtualBox.
 
 %todo omáčka
-Linux je Linux a proto je v rámci kmenové distribuce jednuduché naistalovat vše, co je potřeba.
-Výhoda kli je však předpřipravenost mnoha nástrojů, které nemusí uživatel instalovat zvlášt.
+Linux je Linux a proto je v rámci kmenové distribuce jednoduché naistalovat vše, co je potřeba.
+Výhoda Kali je však předpřipravenost mnoha nástrojů, které nemusí uživatel instalovat navíc.
 
 %todo doplŇ omáčku o kali
 
 
 Menší změna však nastala při 10 výročí této distribuce\cite{kali_purple}.
 Vývojáři představili Kali Purple.
+%todo check image and source
+~\cntcapfigure{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí \textbf{Zdroj: Vlastní}}{\label{fig:kali_purple}
+
 Tato verze Kali Linux je více orientována na defenzivní testování oproti klasické ofenzivně zaměřené Kali.
 Proto byl původní plán pozměněn a pro implementaci prostředí byla použita právě Kali Purple.
 Zvědavost a možnost testování nové distribuce byly také faktory vedoucí k této změně.
@@ -1055,24 +1058,50 @@ Po připravení operačního systému ve virtuálním prostředí je čas nainst
 Při samotné instalaci Caldery nastal další problém.
 Nejnovější verze Caldery v době psaní je 4.1.0 která vyšla 19.9.2022.
 V době testování však tato verze Caldery nejde zkompilovat na nové verzi Kali Purple.
-Tento fakt je vidět na ~\ref{ref:caldera_error}.
-%todo add caldera_error, maybe crop it to only show
+Tento fakt je vidět na ~\ref{fig:caldera_error}.
+%todo check zdroj, maybe crop
+~\cntcapfigure{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku \textbf{Zdroj: Vlastní}}}\label{fig:caldera_error}
 
 Tento problém vyplývá ze starších balíčků, které calder vyžaduje pro svoji funkčnost.
 Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují.
 Nabízí se tedy několik řešení, jak tento problém vyřešit.
 Prvním a velmi líným řešením je oznámit problém a počkat na vydání nové verze.
 Toto řešení zachovává stabilitu systému a frameworku, je to však na úkor času.
-Autoři kaldery mají nejlepší znalosti a možnosti otestovat, zda změny v závislostech neovlivnili správnou funčnost frameworku.
+Autoři kaldery mají nejlepší znalosti a možnosti otestovat, zda změny v závislostech neovlivnili správnou funkčnost frameworku.
 Z časových důvodů to však není pro tuto práci možné.
 Dalším možnám řešením je změna verze pythonu pro celý systém.
 To je však velmi drastický zásah do celého systému a mohl by vézt ke ztrátě stability aplikací nebo dokonce celého systému.
-Realističtější možností je vytvořit virtualizaci pythonu a využívat nížší verzi pythonu pouze pro specifické aplikace, v tomto případě pro Calderu.
-Caldera je však složitá aplikace, využívající nestandartní serverouvou strukturu.
+Realističtější možností je vytvořit virtualizaci pythonu a využívat nižší verzi pythonu pouze pro specifické aplikace, v tomto případě pro Calderu.
+Caldera je však složitá aplikace, využívající nestandardní serverovou strukturu.
 Není tak zajištěno, že při zkompilování pod určitým pythonem se aplikace nepokusí využívat systémovou vyšší verzi.
-Posledním řešením je zkusit identifikovat problematické balíčky a najít, zda existuje
+Posledním řešením je zkusit identifikovat problematické balíčky a najít, zda existují novější kompatibilní verze.
+Problémem tohoto řešení je možná nefunkčnost aplikace v závislosti na tom, jak velký rozdíl je mezi verzemi balíčků.
+Lze však očekávat, že novější balíčky mají zpětnou kompatibilitu, není však neomezená.
 
-%todo add caldera error
+\paragraph{Výsledné řešení}
+Po porovnání přístupů se jako nejlepší řešení jeví využití novějších verzí balíčků.
+Virtualizace pythonu je druhé nejlepší řešení.
+Zde je však větší šance problémů a tak slouží jako záloha v případě, že první řešení nebude fungovat.
+Identifikace problémových balíčků je jednoduchá přímo ze zpětné vazby při kompilování, jak je možné vidět na ~\ref{fig:caldera_error}.
+Prvním problémovým balíčkem je aiohttp, který je ve verzi 3.8.1.
+V repozitáři balíčků je možné najít nejnovější aiohttp ve verzi 3.8.4.
+To je možné vidět na ~\ref{fig:pypi_aiohttp}
+%todo check zdroj and picture
+~\cntcapfigure{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáži Pypi \textbf{Zdroj: Vlastní}}\label{fig:pypi_aiohttp}
+
+Po změně na tuto novou verzí byl identifikován další problémový balíček.
+Je jím reportlab ve verzi 3.5.67, kde je opět možné nahradit novější verzi 3.6.12.
+Následný pokus o zkompilování proběhl úspěšně.
+V tuto chvíli vypadá soubor s požadovanými balíčky takto ~\ref{fig:new_setup}.
+%todo check picture and zdroj
+~\cntcapfigure{new_setup}{\linewidth}{Nová podoba souboru requirements.txt \textbf{Zdroj: Vlastní}}\label{fig:new_setup}
+
+Po spuštění serveru existuje propojení přes localhost:8888.
+I přihlášení pomocí základního uživatele red s heslem admin proběhlo úspěšně a tak lze předpokládat, že caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
+%todo add piscture of caldera logged in
+~\cntcapfigure{Caldera_error_msg}{\linewidth}{Caldera framework po úvodním přihlášení \textbf{Zdroj: Vlastní}}\label{fig:Caldera_running}
+
+
 
 
 
