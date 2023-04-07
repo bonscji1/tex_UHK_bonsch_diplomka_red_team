@@ -992,6 +992,15 @@
 
 \newcommand{\nlparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
+\newcommand{\clfig}[5]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#2]{Images/#1}\hfill
+        \captionsource{#3}{#4}
+        \label{#5}
+    \end{figure}
+}
+
 \endinput
 %%
 %% End of file `fitthesis.cls'.

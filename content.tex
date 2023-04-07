@@ -1,17 +1,17 @@
-\section{Úvod}
+\section{Úvod}\label{sec:uvod}
 
 % TODO WRITER: text
 
 Zde vysvětlit problémovou situaci a otázky, které se budou v bakalářské/diplomové práci řešit.
 
-\section{Cíl práce}
+\section{Cíl práce}\label{sec:cil-prace}
 
 % TODO WRITER: text
 
 Smysl a účel, výzkumné otázky.
 
 %teoretická část
-\section{Metodika zpracování}
+\section{Metodika zpracování}\label{sec:metodika-zpracovani}
 
 % TODO WRITER: text
 
@@ -819,8 +819,7 @@ V něm je možné provádět vizualizaci a porovnávání útoků.
 Je tedy snadné prezentovat rozbor útoku dalším osobám a díky exportování a importování je snadné studovat již popsané útoky a sledovat nejpoužívanější taktiky a techniky.
 Není proto divu, že je MITRE ATT\&CK v době psaní tohoto textu považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.\cite{mitre_attack_framework}
 
-%todo add picture of navigator
-%~\cntcapfigure{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT\@CK Navigátor}{\cite{mitre_attack_framework}}\label{fig:navigator}
+~\cntcapfigure{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT@CK Navigátor}{\cite{mitre_attack_framework}}\label{fig:navigator}
 
 \subsubsection{Členění}
 Díky popularitě ATT\&CK došlo k jeho velkému růstu.
@@ -854,8 +853,6 @@ Pozor na fakt, že taktika se stejným názvem, například \textit{Initial acce
 Pro enterprise je to \textbf{TA0001}, pro mobile \textbf{TA0027} a pro ICS se tato taktika značí \textbf{TA0108}.
 Nelze tak dojít k záměně a nahlížet na techniky, které nejsou aplikovatelné na dané odvětví.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
 
-%todo add taktiky z mitre enterprise, ics?
-
 \subsubsection{Technika a sub-technika}
 Techniky jsou způsob, kterým útočník dosahuje svého taktického cíle.
 To znamená, že v rámci každé taktiky existuje konečný počet popsaných akcí, jejichž provedením útočník dosáhne svého cíle.
@@ -882,7 +879,7 @@ Data získaná z každého kroku v sekvenci pak nejen vypovídají o tom, zda se
 Je také možné, že podle cíle techniky je daná technika zařazena do více taktik zároveň.
 Jedním takovýmto příkladem může být technika \textit{input capture(zachycení vstupy)}.
 Ta spadá ve stejnou chvíli do taktik \textit{Collection(Sběr dat)} a \textit{Credential access(Pověření k přístupu)}.
-Je jasné, že framnework ATT\&CK nevypisuje všechny existující techniky útoku z dané taktiky.
+Je jasné, že framework ATT\&CK nevypisuje všechny existující techniky útoku z dané taktiky.
 Jeho založení na informacích získaných z opravdových bezpečnostních incidentů a komunity výzkumníků však vede k upřednostnění nejznámějších a nejpoužívanějších technik.
 Zdá se to být nejlepší způsob, jak shromažďovat účinné informace o použití technik útočníka a jak je propojovat do užitečného analytického nástroje.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
 
@@ -1031,7 +1028,7 @@ Existuje také možnost manuálních red-team operací, hlavně v případech na
 
 % TODO WRITER: text
 
-\subsection{Popis testovacího prostředí}
+\subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}
 Jako testovací prostředí bylo zvoleno Kali Linux.
 Samozřejmě je toto prostředí pouštěno v Oracle VM VirtualBox.
 
@@ -1043,9 +1040,8 @@ Výhoda Kali je však předpřipravenost mnoha nástrojů, které nemusí uživa
 
 
 Menší změna však nastala při 10 výročí této distribuce\cite{kali_purple}.
-Vývojáři představili Kali Purple.
-%todo check image and source
-%~\cntcapfigure{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí \textbf{Zdroj: Vlastní}}{\label{fig:kali_purple}
+Vývojáři představili Kali Purple, kterou je možné vidět na obrázku~\ref{fig:kali_purple}.
+\clfig{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí}{Vlastní}{fig:kali_purple}
 
 Tato verze Kali Linux je více orientována na defenzivní testování oproti klasické ofenzivně zaměřené Kali.
 Proto byl původní plán pozměněn a pro implementaci prostředí byla použita právě Kali Purple.
@@ -1056,16 +1052,17 @@ Kali Purple je však zatím dostupná pouze v podobě klasického instalačního
 Prvotní příprava je proto o instalační krok ztížena.
 To však není velký problém.
 
-\paragraph{Caldera}
+\nlparagraph{Caldera}
 Po připravení operačního systému ve virtuálním prostředí je čas nainstalovat nástroj Mitre Caldera.
 Při samotné instalaci Caldery nastal další problém.
 Nejnovější verze Caldery v době psaní je 4.1.0 která vyšla 19.9.2022.
 V době testování však tato verze Caldery nejde zkompilovat na nové verzi Kali Purple.
-Tento fakt je vidět na ~\ref{fig:caldera_error}.
-%todo check zdroj, maybe crop
-%~\cntcapfigure{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku \textbf{Zdroj: Vlastní}}\label{fig:caldera_error}
+Tento fakt je vidět na obrázku~\ref{fig:caldera_error}.
+%todo upravit
+\clfig{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku}{Vlastní}{fig:caldera_error}
 
-Tento problém vyplývá ze starších balíčků, které calder vyžaduje pro svoji funkčnost.
+
+\noindent Tento problém vyplývá ze starších balíčků, které calder vyžaduje pro svoji funkčnost.
 Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují.
 Nabízí se tedy několik řešení, jak tento problém vyřešit.
 Prvním a velmi líným řešením je oznámit problém a počkat na vydání nové verze.
@@ -1081,34 +1078,30 @@ Posledním řešením je zkusit identifikovat problematické balíčky a najít,
 Problémem tohoto řešení je možná nefunkčnost aplikace v závislosti na tom, jak velký rozdíl je mezi verzemi balíčků.
 Lze však očekávat, že novější balíčky mají zpětnou kompatibilitu, není však neomezená.
 
-\paragraph{Výsledné řešení}
+\nlparagraph{Výsledné řešení}
 Po porovnání přístupů se jako nejlepší řešení jeví využití novějších verzí balíčků.
 Virtualizace pythonu je druhé nejlepší řešení.
 Zde je však větší šance problémů a tak slouží jako záloha v případě, že první řešení nebude fungovat.
-Identifikace problémových balíčků je jednoduchá přímo ze zpětné vazby při kompilování, jak je možné vidět na ~\ref{fig:caldera_error}.
+Identifikace problémových balíčků je jednoduchá přímo ze zpětné vazby při kompilování, jak je možné vidět na obrázku~\ref{fig:caldera_error}.
 Prvním problémovým balíčkem je aiohttp, který je ve verzi 3.8.1.
 V repozitáři balíčků je možné najít nejnovější aiohttp ve verzi 3.8.4.
-To je možné vidět na ~\ref{fig:pypi_aiohttp}
-%todo check zdroj and picture
-%~\cntcapfigure{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáři Pypi \textbf{Zdroj: Vlastní}}\label{fig:pypi_aiohttp}
+To je možné vidět na obrázku~\ref{fig:pypi_aiohttp}
+\clfig{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáři Pypi}{Vlastní}{fig:pypi_aiohttp}
 
 Po změně na tuto novou verzí byl identifikován další problémový balíček.
 Je jím reportlab ve verzi 3.5.67, kde je opět možné nahradit novější verzi 3.6.12.
 Následný pokus o zkompilování proběhl úspěšně.
 V tuto chvíli vypadá soubor s požadovanými balíčky takto ~\ref{fig:new_setup}.
-%todo check picture and zdroj
-%~\cntcapfigure{new_setup}{\linewidth}{Nová podoba souboru requirements.txt \textbf{Zdroj: Vlastní}}\label{fig:new_setup}
+%todo remake, just the requirements
+\clfig{new_setup}{\linewidth}{Nová podoba souboru requirements.txt}{Vlastní}{fig:new_setup}
 
 Po spuštění serveru existuje propojení přes localhost:8888.
 I přihlášení pomocí základního uživatele red s heslem admin proběhlo úspěšně a tak lze předpokládat, že caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
-%todo add piscture of caldera logged in, check how it looks
-%~\cntcapfigure{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení \textbf{Zdroj: Vlastní}}\label{fig:Caldera_running}
+%todo remake
+\clfig{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení}{Vlastní}{fig:Caldera_running}
 
-
-
-%todo check if we even use this
-\paragraph{Recon-ng}
-Poslední nástrojem, který je nutné připravit je \textit{Recon-ng}.
+\nlparagraph{Recon-ng}
+Zajímavým nástrojem, který byl připraven ale nakonec nebyl využit je \textit{Recon-ng}.
 Jedná se o open-source \ac{OSINT} nástroj v příkazové řádce.
 Díky volbě Kali Purple jako testovacího prostředí je jeho instalace opravdu snadná.
 Stačí v příkazové řádce vykonat příkaz \textbf{sudo apt-get install recon-ng}.
@@ -1117,10 +1110,12 @@ Zajímavějším a důležitějším krokem je však instalace modulů.
 Po zapnutí nástroje příkazem \textbf{recon-ng} je možné instalovat jednotlivé moduly přes marketplace.
 Všechny moduly je možné zobrazit příkazem \textbf{marketplace search}.
 Vybrané moduly jsou nainstalovány příkazem \textbf{marketplace install \textit{jmeno\_modulu}}.
+Při testování však byla zjištěna zastaralost a nefunkčnost důležitých modulů.
+Také ovládání je zvláštní a s existencí specializovaných nástrojů jako je \textit{nmap} bylo po otestování od použití tohoto nástroje v labech odstoupeno.
 
 
+\nlparagraph{nmap}
 %todo add nmap
-\paragraph{nmap}
 
 
 \subsection{Popis testované infrastruktory}
@@ -1141,9 +1136,10 @@ přidat jsem identifikované vulnarability z navigátoru, u každého scénáře
 
 \subsubsection{Scénář 3 - doplnit název}
 
-\subsection{Celkové zhodnocení výsledků}
+\subsection{Celkové zhodnocení výsledků}\label{subsec:celkove-zhodnoceni-vysledku}
 
-\section{Závěry a doporučení}
+
+\section{Závěry a doporučení}\label{sec:zavery-a-doporuceni}
 
 % TODO WRITER: text
 
@@ -1230,7 +1226,7 @@ public interface AccountDao {
 
 			Další text
 
-\section{Závěry a doporučení}
+\section{Závěry a doporučení}\label{sec:zavery-a-doporuceni2}
 
 % TODO WRITER: text
 
