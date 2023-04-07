@@ -454,6 +454,7 @@ Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moj
 
 
 \subsection{Threat against data}
+%todo dopln
 
 \subsubsection{Sql injection}
 Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
@@ -461,6 +462,7 @@ Ze špatně zabezpečeného vyhledávacího boxu je útočných schopný zadán�
 %todo more? zdroje?
 
 \subsection{Threat against availability}
+%todo dopln
 
 \subsubsection{Denial of service}
 Útok zaměřený na kolaps infrastruktury.
@@ -479,7 +481,7 @@ A to i za předpokladu, že je mnohem výkonnější.
 %todo more? zdroje?
 
 \subsubsection{Internet threats}
-
+%todo dopln
 
 \subsection{Ostatní}
 Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie ale jsou často využívány v kombinaci s jinými kategoriemi útoků.
@@ -818,6 +820,7 @@ Je tedy snadné prezentovat rozbor útoku dalším osobám a díky exportování
 Není proto divu, že je MITRE ATT\&CK v době psaní tohoto textu považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.\cite{mitre_attack_framework}
 
 %todo add picture of navigator
+%~\cntcapfigure{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT\@CK Navigátor}{\cite{mitre_attack_framework}}\label{fig:navigator}
 
 \subsubsection{Členění}
 Díky popularitě ATT\&CK došlo k jeho velkému růstu.
@@ -1042,7 +1045,7 @@ Výhoda Kali je však předpřipravenost mnoha nástrojů, které nemusí uživa
 Menší změna však nastala při 10 výročí této distribuce\cite{kali_purple}.
 Vývojáři představili Kali Purple.
 %todo check image and source
-~\cntcapfigure{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí \textbf{Zdroj: Vlastní}}{\label{fig:kali_purple}
+%~\cntcapfigure{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí \textbf{Zdroj: Vlastní}}{\label{fig:kali_purple}
 
 Tato verze Kali Linux je více orientována na defenzivní testování oproti klasické ofenzivně zaměřené Kali.
 Proto byl původní plán pozměněn a pro implementaci prostředí byla použita právě Kali Purple.
@@ -1060,7 +1063,7 @@ Nejnovější verze Caldery v době psaní je 4.1.0 která vyšla 19.9.2022.
 V době testování však tato verze Caldery nejde zkompilovat na nové verzi Kali Purple.
 Tento fakt je vidět na ~\ref{fig:caldera_error}.
 %todo check zdroj, maybe crop
-~\cntcapfigure{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku \textbf{Zdroj: Vlastní}}}\label{fig:caldera_error}
+%~\cntcapfigure{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku \textbf{Zdroj: Vlastní}}\label{fig:caldera_error}
 
 Tento problém vyplývá ze starších balíčků, které calder vyžaduje pro svoji funkčnost.
 Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují.
@@ -1087,20 +1090,23 @@ Prvním problémovým balíčkem je aiohttp, který je ve verzi 3.8.1.
 V repozitáři balíčků je možné najít nejnovější aiohttp ve verzi 3.8.4.
 To je možné vidět na ~\ref{fig:pypi_aiohttp}
 %todo check zdroj and picture
-~\cntcapfigure{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáži Pypi \textbf{Zdroj: Vlastní}}\label{fig:pypi_aiohttp}
+%~\cntcapfigure{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáři Pypi \textbf{Zdroj: Vlastní}}\label{fig:pypi_aiohttp}
 
 Po změně na tuto novou verzí byl identifikován další problémový balíček.
 Je jím reportlab ve verzi 3.5.67, kde je opět možné nahradit novější verzi 3.6.12.
 Následný pokus o zkompilování proběhl úspěšně.
 V tuto chvíli vypadá soubor s požadovanými balíčky takto ~\ref{fig:new_setup}.
 %todo check picture and zdroj
-~\cntcapfigure{new_setup}{\linewidth}{Nová podoba souboru requirements.txt \textbf{Zdroj: Vlastní}}\label{fig:new_setup}
+%~\cntcapfigure{new_setup}{\linewidth}{Nová podoba souboru requirements.txt \textbf{Zdroj: Vlastní}}\label{fig:new_setup}
 
 Po spuštění serveru existuje propojení přes localhost:8888.
 I přihlášení pomocí základního uživatele red s heslem admin proběhlo úspěšně a tak lze předpokládat, že caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
 %todo add piscture of caldera logged in, check how it looks
-~\cntcapfigure{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení \textbf{Zdroj: Vlastní}}\label{fig:Caldera_running}
+%~\cntcapfigure{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení \textbf{Zdroj: Vlastní}}\label{fig:Caldera_running}
 
+
+
+%todo check if we even use this
 \paragraph{Recon-ng}
 Poslední nástrojem, který je nutné připravit je \textit{Recon-ng}.
 Jedná se o open-source \ac{OSINT} nástroj v příkazové řádce.
@@ -1111,6 +1117,10 @@ Zajímavějším a důležitějším krokem je však instalace modulů.
 Po zapnutí nástroje příkazem \textbf{recon-ng} je možné instalovat jednotlivé moduly přes marketplace.
 Všechny moduly je možné zobrazit příkazem \textbf{marketplace search}.
 Vybrané moduly jsou nainstalovány příkazem \textbf{marketplace install \textit{jmeno\_modulu}}.
+
+
+%todo add nmap
+\paragraph{nmap}
 
 
 \subsection{Popis testované infrastruktory}
@@ -1124,7 +1134,7 @@ založeno na nemocniční prostředí, poradit se s honzíkem co můžem nemuže
 
 přidat jsem identifikované vulnarability z navigátoru, u každého scénáře pak z navigáto přesně to, co je testované
 
-\subsubsection{Scénář 1 - doplnit název}
+\subsubsection{Scénář 1 - recon}
 
 
 \subsubsection{Scénář 2 - doplnit název}
