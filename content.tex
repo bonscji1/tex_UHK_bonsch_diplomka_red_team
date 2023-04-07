@@ -111,7 +111,7 @@ Důležité je poukázat na trendů útoku na supply-chain a dezinformace.
 Nelze říci, že tyto útoky byly v předchozích letech neexistující, v porovnání se současnou situací to tak ale téměř vypadá.
 Jejich závažnost a také množství rapidně vzrostlo.
 Není tak divu, že se objevují na listu hlavních hrozeb.
-~\cntcapfigure{ENISA_prime_threats}{\linewidth}{Primární hrozby identifikované agenturou ENISA}{\cite{Enisa_thread_landscape}}\label{fig:PrimeThreats}
+~\clfig{ENISA_prime_threats}{\linewidth}{Primární hrozby identifikované agenturou ENISA}{\cite{Enisa_thread_landscape}}{fig:PrimeThreats}
 
 \paragraph{Pegasus spyware}
 Speciální zmínku si zaslouží Pegasus spyware a celkově průmysl špehování na zakázku.
@@ -127,7 +127,7 @@ Například byli monitorováni politici Španělska a vůdci katalánské nezáv
 Navíc sama skupina NSO uvedla, že pět států \firstac{EU} používá jejich špionážní software Pegasus.\cite{Enisa_thread_landscape}
 
 \paragraph{Další entity v průmyslu špehování na zakázku}
-~\cntcapfigure{Facebook_banned_entities}{\linewidth}{Entity identifikované společností Meta}{\cite{pegasus_facebook}}\label{fig:FacebookThreads}
+~\clfig{Facebook_banned_entities}{\linewidth}{Entity identifikované společností Meta}{\cite{pegasus_facebook}}{fig:FacebookThreads}
 Facebook je jeden ze zdrojů informací, které se používají pro špehování.
 Meta se snaží tuto činnost zredukovat a tak provedla kroky proti 7 různým entitám operujícím špehování na zakázku.
 Tyto entity sídlily působícím z Číny, Izraele, Indie a Severní Makedonie.
@@ -156,7 +156,7 @@ Jako cenné informace jsou brány přihlašovací údaje, například k  e-mailo
 za nežádoucí akce se považuje instalace malware, specificky spyware pro další zisk informací nebo ransomware pro peněžitý zisk.\cite{pegasus_facebook}
 
 \paragraph{Nejvíce napadené odvětví}
-~\cntcapfigure{ENISA_targeted_sectors}{\linewidth}{Nejvíce napadené sektory (v období červenec 2021 - červen 2022)}{\cite{Enisa_thread_landscape}}\label{fig:TargetedSectors}
+~\clfig{ENISA_targeted_sectors}{\linewidth}{Nejvíce napadené sektory (v období červenec 2021 - červen 2022)}{\cite{Enisa_thread_landscape}}{fig:TargetedSectors}
 Z již zmíněného reportu\cite{Enisa_thread_landscape} je možné vyčíst, ve kterých odvětvích je zaznamenáno nejvíce útoků.
 Útoky jsou jen zřídka omezené na jeden sektor, ve většině případů i útok zaměřený na specifický sektor přetéká díky provázanosti do ostatních.
 Tento pohled na sektory je i přesto důležitý právě kvůli připravenosti jednotlivých sektorů na útoky.
@@ -238,7 +238,7 @@ Zkoumání z roku 2022 ukazuje, že je možné najít desítky instancí hostov�
 Tento problém není specifický pro jeden stát ale je to celosvětový problém, jak je možné vidět na ~\ref{fig:MaliciousGoverments}.
 Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra.
 Proto je tento problém opravdu závažný.
-~\cntcapfigure{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}\label{fig:MaliciousGoverments}
+~\clfig{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}{fig:MaliciousGoverments}
 
 \paragraph{Obrana a detekce}
 Obrana proti malware je složitá.
@@ -284,7 +284,7 @@ Z každého úspěšně provedeného útoku jim totiž náleží část peněz.\
 
 
 \paragraph{Monitorování}
-~\cntcapfigure{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených dat ve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}\label{fig:ENISA_Ransomware}
+~\clfig{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených dat ve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}{fig:ENISA_Ransomware}
 Jak je vidět z ~\ref{fig:ENISA_Ransomware}, Ransomware útoky byly v době sledování, tedy období od Května 2021 do červen 2022, časté a dopad na data byl značný.
 Sledování těchto útoků je však velmi obtížné.
 Pokud dochází pouze k vydírání, firmy mohou výkupné zaplatit a pokusit se zamlčet existenci útoku.
@@ -819,7 +819,7 @@ V něm je možné provádět vizualizaci a porovnávání útoků.
 Je tedy snadné prezentovat rozbor útoku dalším osobám a díky exportování a importování je snadné studovat již popsané útoky a sledovat nejpoužívanější taktiky a techniky.
 Není proto divu, že je MITRE ATT\&CK v době psaní tohoto textu považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.\cite{mitre_attack_framework}
 
-~\cntcapfigure{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT@CK Navigátor}{\cite{mitre_attack_framework}}\label{fig:navigator}
+~\clfig{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT@CK Navigátor}{\cite{mitre_attack_framework}}{fig:navigator}
 
 \subsubsection{Členění}
 Díky popularitě ATT\&CK došlo k jeho velkému růstu.
@@ -925,7 +925,7 @@ Toto sledování je výhodné, protože poskytuje informace nejen o existenci ka
 Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jsou v nich zahrnuty původní reference.\cite{Mitre_campaigns}
 
 \subsection{Nástroje}
-~\cntcapfigure{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}\label{fig:OpenSourceTestTools}
+~\clfig{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}{fig:OpenSourceTestTools}
 % TODO maybe make my own table?
 
 Než je zvolen finální framework pro testování, je nutné si nejdříve připravit co možná nejvíce informací týkajících se testování.
