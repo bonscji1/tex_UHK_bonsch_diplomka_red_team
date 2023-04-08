@@ -1152,19 +1152,112 @@ Proto bylo otestováno u každého zařízení postupně připojení sama na seb
 Po úspěšném otestování všech zařízení je možné považovat  infrastrukturu za připravenou pro testovaní v labech.
 
 \subsection{Testované scénáře}
+%todo představení scénářu
+
+\clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
 přidat jsem identifikované vulnarability z navigátoru, u každého scénáře pak z navigáto přesně to, co je testované
 
 \subsubsection{Scénář 1 - recon}
+%todo
 jak se dělá recon, popsat co používáme za nástroj, co to znamená, co to vyhodilo
 
-\subsubsection{Scénář 2 - discovery a elevated-privileges}
+\subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}
+Scénář 2 navazuje na scénář 1.
+Snahou je simulovat možné kroky útočníka poté, co provedl sběr informací o cíli.
+Cílem útočníka je tedy využít získaná data ve svůj prospěch a provést kompromitaci systému.
+Jak již bylo zmíněno v teoretické části textu, jedním z nejpoužívanějších vektorů pro prvotní kompromitaci systému je \textit{phishing}.
+Útočník využije již získaných dat ze scénáře 1 pro vytvoření \textit{phishingové kampaně}, jejímž cílem je kompromitovat zařízení.
+Pro účely scénáře 2 uvažujeme, že se útočníkovi tímto vektorem povedlo získat prvotní vstup.
+Je totiž těžké simulovat phishing v laboratoři.
+Jeho založení na psychologii a zranitelnostech lidského chování lze sice jednoduše napodobit, nemá však velký vypovídající význam.
+Pro účely testování tedy uvažujeme, že běžný uživatel klikl na podvodný email, který útočníkovi poskytl vzdálený přístup k jeho zařízení.
+Důležité je, že se jedná o běžného uživatele.
+V pozdějších částech tohoto labu je ukázáno, jaký je rozdíl v možnostech útočníka v případě, že by se jednalo o privilegovaného uživatele.
+Tento scénář bude simulován na již popsané testovací infrastructure.
+V roli útočníka bude působit Caldera, jakožto nástroj pro testování.
+Za zmínku stojí fakt, že většina infrastruktury obsahuje nejnovější operační systémy.
+Výjimkou jsou servery, kde lze očekávat dlouhodobě podporován starší verze.
+Pozor však na fakt, že na všechna zařízení byly uplatněny nejnovější bezpečnostní aktualizace.
+To znamená, že tato infrastruktura je proti útokům stejně odolná, jako nejlepší možná varianta skutečné infrastruktury.
+Pokud však správce skutečné infrastruktury podcenil aktualizace zařízení, lze očekávat, že bude na útoky náchylnější.
+Výsledkem je tedy nelichotivá komparace testovací a skutečné infrastruktury.
+Pokud se útok povede na testovací infrastruktuře, zcela jistě ho bude možné provézt i na skutečné.
+I nevydařený útok na testovacím prostředí má však šanci na skutečné infrastruktuře uspět.
+Tento fakt pouze svědčí o tom, že je nutné aktualizovat zařízení kvůli bezpečnosti.
+
+
+\nlparagraph{Příprava scénáře}
+Pro simulaci scénáře je nutné připravit agenta v testovacím nástroji Caldera.
+Tento agent pak simuluji kompromitování zařízení a provádí testování, které mu nastavíme.
+V Caldeře je možné sledovat a vytvářet agenty v záložce agents, viz obrázek~\ref{fig:caldera_agents}.
+%todo crop image
+\clfig{lab/Agent_mainpage}{\linewidth}{Stránka pro ovládání agentů}{Vlastní}{fig:caldera_agents}
+
+Agenta lze vytvořit stiskem tlačítka \textit{Deploy an agent}.
+Po stisknutí je uživateli představen formulář pro bližší specifikaci agenta, viz obrázek~\ref{fig:agent_creation}.
+V tomto formuláři je nutné nastavit platformu a kontaktní adresu Caldera serveru.
+Vhodné je také změnit \textit{implant\_name}, což je název, pod kterým bude agent vidět na infikovaném stroji.
+V rámci testování bylo použito jasně rozeznatelné jméno \textbf{caldera}.
+Pro složitější testování, kde se snaží útočníci red teamu vyhnout detekci členy obrany v blue teamu by mohlo být zvoleno méně nápadné jméno, jako například \textbf{svchost}.
+Na obrázku jsou pak také vidět příkazy, které je nutné spustit na simulovaném napadeném zařízení pro instalaci a nastavení agenta.
+Existuje několik verzí příkazů, pro tuto práci jsou však aplikovatelné příkazu na obrázku~\ref{fig:agent_creation}, které jsou určené pro windows powershell.
+Po provedení příkazů agent sám naváže komunikaci se serverem Caldera.
+Agent navíc pravidelně ohlašuje svoje informace serveru, a to až do doby svého ukončení.
+Caldera naopak o agentovi vede záznam a může mu posílat instrukce.
+
+\clfig{lab/agent_creation}{\linewidth}{Formulář pro vytvoření agenta}{Vlastní}{fig:agent_creation}
+
+Na obrázku~\ref{fig:caldera_agents} je možné vidět již vytvořeného agenta připraveného pro další testování.
+Za povšimnutí stojí všechny údaje, které jsou s agentem spojené.
+Základní údaje jsou \textit{id} a \textit{host}, které agenta jednoznačně identifikují.
+\textit{Platform} identifikuje, na jaké platformě je agent spuštěn.
+Nejdůležitější údaje jsou však \textit{group} a \textit{privilege}.
+\textit{group} označuje pracovní skupino, do které agent patří.
+To je důležité pro spouštění operací, kde právě pomocí \textit{group} určujeme, kteří agenti mají operace vykonávat.
+\textit{privilege} určuje, jaká práva má agent na daném zařízení.
+\textbf{User} znamená, že tento agent byl spuštěn běžným uživatelem a zdědil tak jeho základní práva.
+Pokud by agenta spustil privilegovaný uživatel, v této kolonce by bylo označení \textbf{elevated}, jak je možné vidět na pozdějším obrázku~\ref{fig:dead_agent}.
+Je také možné identifikovat, jak s caldera serverem agent komunikuje pomocí atributu \textit{contact}.
+Poslední důležité údaje vypovídají o stavu agenta[\textit{status}] a informací o čase posledního kontaktu agenta se serverem[\textit{last seen}].
+Samozřejmě existuje i podrobnější výpis přímo po rozkliknutí agenta, viz obrázek~\ref{fig:dead_agent}.
+Za povšimnutí zde stojí informace, které mohou být využitelné pro útočníka.
+Jsou jimi \textit{Host IP addresses, Architecture} a primárně \textit{Executors}.
+Důležité je tlačítko \textit{Kill agent}, kterým se zastaví funkčnost agenta.
+Černý křížek na hlavní stránce agentů, viz obrázek~\ref{fig:caldera_agents}, nezpůsobí ukončení agenta ale pouze ho odstraní se seznamu agentů.
+Stále fungující agent se proto v tomto seznamu znovu objeví při jeho další komunikaci se serverem.
+
+\clfig{lab/dead_agent}{\linewidth}{Detaily specifického agenta}{Vlastní}{fig:dead_agent}
+
+\nlparagraph{Výběr chování při útoku - adversary}
+%todo
+
+\nlparagraph{Spuštění operace}
+%todo
+
+
+\nlparagraph{lab02}
+%todo
+plošné zkoušení možností
+
+\nlparagraph{lab02v2}
+%todo
+specifické zaměření na privilegia a discovery
+
+\nlparagraph{změny s privilegovaným uživatelem}
+%todo
+
+
+
+%todo del
 jak jsme to to testovali, tady krok po kroku od udělání agenta, adversary, operace až po výsledky a output
 
 \subsubsection{Scénář 3 - discovery a worm}
+%todo
 specifičtější testování na discovery a worm, který teda nefunguje ale to jen protože to máme moc dobře udělané
 
 \subsection{Celkové zhodnocení výsledků}\label{subsec:celkove-zhodnoceni-vysledku}
+%todo
 
 
 \section{Závěry a doporučení}\label{sec:zavery-a-doporuceni}
