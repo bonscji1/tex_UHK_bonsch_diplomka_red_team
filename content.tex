@@ -1230,10 +1230,67 @@ Stále fungující agent se proto v tomto seznamu znovu objeví při jeho dalš�
 \clfig{lab/dead_agent}{\linewidth}{Detaily specifického agenta}{Vlastní}{fig:dead_agent}
 
 \nlparagraph{Výběr chování při útoku - adversary}
-%todo
+Dalším důležitým krokem je příprava chování útočníka.
+To je v Caldeře simulované pomocí takzvaných \textit{Adversaries}.
+\textit{Adversary} je simulovaný útočník, kterému vybereme techniky, které bude v operaci provádět.
+To je možné vidět na obrázku~\ref{fig:adversary_show_techniques}.
+Jak již bylo zmíněno, Caldera je založena na Frameworku Mitre ARR\&CK\@.
+Proto je možno u \textit{adversaries} vybírat techniky podle taktik z Mitre ARR\&CK\@.
+
+%todo remake with create profile button and proper crop
+\clfig{lab/adversary_show_techniques}{\linewidth}{Ukázka technik u simulovaného útočníka}{Vlastní}{fig:adversary_show_techniques}
+
+\noindent
+Nový \textit{adversary} je vytvořen pomocí tlačítka \textit{new profile}.
+To otevře formulář pro vyplnění názvu a popisu tohoto profilu útočníka.
+poté je nutné přidat techniky, které bude tento útočník provádět.
+To lze udělat 2 způsoby.
+Prvním je přidání  technik jiného profilu pomocí tlačítka \textit{Add adversary}.
+Samozřejmostí je výběr technik, které lze z jiného profilu přidat.
+Pokud tedy existuje profil, který z velké části odpovídá potřebám testování, toto je nejrychlejší volba jak bez úpravy původního profilu lze vytvořit nový.
+Druhým způsobem přidávání technik je tlačítko add ability, kde přidáváme jednotlivé požadované techniky.
+
+%todo make picture for add ability search
+todo add picture\label{fig:ability_selection}
+%\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
+
+Jak je vidět na obrázku~\ref{fig:ability_selection}, vyhledávání technik lze provádět 2 způsoby.
+Pokud je známo jméno techniky nebo alespoň přibližné zaměření, lze použít přímé vyhledávání technik.
+Naopak pokud je vyžadováno využití určité taktiky, je možné vyhledávat selektivně podle nich.
+Volba taktiky pak vede k volbě technik, které vedou na volbu sub-technik nebo specifických provedení dané techniky.
+
+\nlparagrap{Adversary pro scénář 2}
+Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byli pojmenováni \textit{Lab02} a \textit{Lab02v2}.
+Pro přehlednost budou i operace pojmenované podle \textit{adversary}, který v nich figuruje.
+Operace \textit{Lab02} je zaměřena na rozsáhlé testování testování.
+Předpokládáme útočníka, který nezná vnitřní prostředí a jeho cílem je získat co nejvíce informací a vyzkoušet základní taktiky, které jsou pro něj přínosné.
+\textit{Adversary} pro tuto operaci obsahuje 74 technik.
+Útočník v operaci \textit{Lab02v2} využije znalosti z předchozí operace a pokusí se dosáhnout specifických cílů.
+V tomto případě se jedná specificky o získání privilegií administrátora a vypnutí monitorování.
+Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto záměru.
+
 
 \nlparagraph{Spuštění operace}
-%todo
+%\clfig{lab/operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:operation}
+Finálním krokem testování je spuštění operace.
+K tomuto účelu v Caldeře slouží záložka \textit{Operations}, viz obrázek~\ref{fig:operation}.
+Zde je možné spouštět nebo vytvářet nové operace.
+Zároven tato záložka slouží pro správu operací, které již byly uskutečněny.
+Zachovávají se zde informace o průběhu operace a případných výstupech z daných technik.
+Jelikož již bylo připraveno vše pro správnou činnost operace, je načase kliknout na tlačítko \textit{Create operation}.
+Tím je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:operation_creation}.
+Je zde několik důležitých nastavení.
+Jméno operace a nastavení požadovaného \textit{adversary} je přímočaré.
+\textit{Fact source} je zajímavější.
+Je to předpřipravené poznatky, například o testovaném zařízení, které lze přímo zadat nebo použít zjištění z předchozích operací.
+V rozšířené sekci se pak nachází složitější nastavení.
+Jsou zde nastavení pro cílovou skupinu[\textit{Group}], tedy určení, kteří agenti mají provádět úkony
+\textit{Planner} určuje, jak budou operace prováděny.
+základem je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází u \textit{adversary}.
+Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitre_caldera_docs}.
+V neposlední řadě se zne nachází přepínače pro řízení chodu operací a možnosti zakódovaní a krytí operace.
+%todo crop
+\clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:operation_creation}
 
 
 \nlparagraph{lab02}
@@ -1253,6 +1310,7 @@ specifické zaměření na privilegia a discovery
 jak jsme to to testovali, tady krok po kroku od udělání agenta, adversary, operace až po výsledky a output
 
 \subsubsection{Scénář 3 - discovery a worm}
+kde lab2 zaměřen na jedno zařízení, lab 3 testuje sít -> moc robustní aby jsme tam dělali velké věci
 %todo
 specifičtější testování na discovery a worm, který teda nefunguje ale to jen protože to máme moc dobře udělané
 
