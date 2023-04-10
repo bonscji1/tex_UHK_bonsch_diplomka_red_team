@@ -1321,32 +1321,47 @@ Také definice úspěšnosti může být u některých technik pro nezkušeného
 Například se stalo, že caldera vyhodnotila techniko kontaktování \ac{DNS} jako úspěšnou, i když celá infrastruktura \ac{DNS} nevyužívá.
 Tyto případy jsou však ojedinělé a není problém je nalézt, pokud nastanou.
 
-%todo add picture of lab02 fig:lab02
-
-
-
-
-
-Informace na kterém se v tomto kontextu zaměřujeme jsou data z prohlížečů jako cookies, záložky a historie prohlížení.
-Vzhled operace proto bude vypadat tak, jak je ukázáno na obrázku~\ref{fig:lab02}.
-Z ukázky je zřejmé, že ne všechny chtěná data se podařilo nalezt, je jich však dostatek pro další využití útočníkem.
-
-%todo vypsat zajímavá data z obrázku
-
 \clfig{lab/lab02}{\linewidth}{Ukázka probíhající operace}{Vlastní}{fig:lab02}
 
+Je jasné, že existují úrovně dat co se týče složitosti zjištění, složitosti pochopení a nebo důležitosti pro útočníka.
+Proto i v simulované operaci můžeme vidět, že útočník se nejdříve zaměřil na snadno zjistitelná data s nízkým rizikem odhalení.
+Příkladem je jméno uživatele a jeho doména, viz obrázek~\ref{fig:username_and_domain}.
+%todo crop
+\clfig{lab/username_and_domain}{\linewidth}{Výstup taktiky pro zjištění uživatele a jemu příslušné domény}{Vlastní}{fig:username_and_domain}
+
+Dalším krokem může být zjištění všech účtů na daném zařízení.
+tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, zde existuje metodologie vytváření jmen ve velkých organizacích.
+Třešničkou na pomyslném dortu jsou účty typu \textit{Admin} nebo \textit{Guest}, kde velmi často dochází k porušení praktik dobrých hesel.
+Není neobvyklé, že tyto účtu mají hesla stejná jako jméno, nebo v případě účtů admin je stejné heslo pro všechna zařízení.
+Kompromitace jediného admin účtu by tak kompromitovala všechna zařízení s tímto účtem.
+Výstup z techniky pro zjištění bude vypadat jako výstup na obrázku~\ref{find_all_accounts}.
+
+\clfig{lab/find_all_accounts}{\linewidth}{Výstup taktiky pro zjištění všech uživatelských účtů}{Vlastní}{fig:find_all_accounts}
+
+Také je možné zjistit přesné informace o operačním systému, viz obrázek~\ref{data_about_system_and_machine}.
 Také data o samotné zařízení jsou pro útočníka zajímavá v kontextu hledání využitelných zranitelností.
+Na obrázku je vidět \textit{OS Version}, tedy přesná verze operačního systému.
+Podle tohoto údaje lze z otevřených databází jednoduše vyhledat nejen o kterou aktualizaci se jedná ale také zda existují novější verze.
+Největším nebezpečím jsou však databáze slabin, které existují nejen na dark vebu ale i na klasickém internetu.
+Stačí velmi jednoduše z databáze verzí získat oficiální označení verze, pro tento případ se jedná o 21H2\cite{win_versions}.
+S tímto kódem je pak možné z některé z mnoha přístupných databází nalézt příslušné kódy slabin slabin, viz obrázek~\ref{fig:21h2_vulnerabilities}
+V tuto chvíli není nic jednodušší než nalézt aplikovatelnou slabinu a využít ji.
 
+\clfig{lab/data_about_system_and_machine}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{Vlastní}{fig:data_about_system_and_machine}
+\clfig{21h2_vulnerabilities}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{\cite{21h2_vulnerabilities}}{fig:21h2_vulnerabilities}
 
-Důležitým zjištěním této operace je přítomnost firewallu a antiviru na testovaném zařízení.
+Dalším důležitým poznáním z této operace je nejen zjištění přítomnosti firewallu a antiviru na testovaném zařízení ale dokonce i jejich identifikace.
 Výstupy zkoumající tyto fakty je možné vidět na obrázcích~\ref{fig:antivirus_discovery,fig:firewall_discovery}.
+Stejně jako u operačních systémů i u zabezpečení existují slabiny a způsoby obcházení jejich činnosti.
+Znalost ochranných prostředků proto útočníkovi nabízí podstatnou výhodu.
 
 \clfig{lab/antivirus_discovery}{\linewidth}{Nalezené informace o antiviry na testovaném zařízení}{Vlastní}{fig:antivirus_discovery}
 \clfig{lab/firewall_discovery}{\linewidth}{Nalezené informace o firewall na testovaném zařízení}{Vlastní}{fig:firewall_discovery}
 
-
-%todo
-plošné zkoušení možností
+V neposlední řadě se útočník může pokusit získat data z prohlížeče.
+Informace na kterém se v tomto kontextu útočník zaměřuje jsou cookies, záložky, historie prohlížení nebo uložená hesla.
+Oproti předchozím případům se zde primárně nejedná o data, která může útočník použít k dalším útokům na dané zařízení.
+Stejně se ale jedná o cenná data, které může v mnoha případech útočník prodat nebo použít k jiným typům útoků.
 
 \nlparagraph{Lab02v2}
 Tato operace a adversary využívají již zjištěných dat k upřesnění specifických cílů.
