@@ -1259,7 +1259,7 @@ Pokud je známo jméno techniky nebo alespoň přibližné zaměření, lze pou�
 Naopak pokud je vyžadováno využití určité taktiky, je možné vyhledávat selektivně podle nich.
 Volba taktiky pak vede k volbě technik, které vedou na volbu sub-technik nebo specifických provedení dané techniky.
 
-\nlparagrap{Adversary pro scénář 2}
+\nlparagraph{Adversary pro scénář 2}
 Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byli pojmenováni \textit{Lab02} a \textit{Lab02v2}.
 Pro přehlednost budou i operace pojmenované podle \textit{adversary}, který v nich figuruje.
 Operace \textit{Lab02} je zaměřena na rozsáhlé testování testování.
@@ -1291,29 +1291,99 @@ Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitr
 V neposlední řadě se zne nachází přepínače pro řízení chodu operací a možnosti zakódovaní a krytí operace.
 %todo crop
 \clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:operation_creation}
+Pro účely této práce jsou všechny operace nastaveny na automatické spuštění při vytvoření a také automatické uzavření a kolekci dat.
+Automatické spuštění je zřejmé, již máme připraveny všechny stavební bloky pro vykonání operace a tak není třeba nic dalšího připravovat a čekat.
+Automatické uzavření a kolekce vyplývá z faktu, že se jedná o kompletní operace, nechceme v běhu operace přidávat další kroky ani přistupovat k napadenému zařízení na přímo a vykonávat vlastní příkazy.
+V rámci automatizace je tedy výhodnější zvolit automatické uzavření a kolekci, protože není nutné hlídat zda jsme již provedly všechny požadované kroky operace a je nutné zadat příkaz ke kolekci.
+Z pohledu efektivity to také uvolňuje čas testovatele, který může během průběhu jedné operace vytvářet jinou nebo zkoumat data z jiné operace.
+Pro referenci, operace může běžet i několik hodin a pokud tedy není dozor potřeba, je dobré se mu vyhnout.
 
 
-\nlparagraph{lab02}
+\nlparagraph{Lab02}
+
+
+Cílem simulovaného útočníka je pokusit se získat pro něj zajímavé informace.
+Informace na kterém se v tomto kontextu zaměřujeme jsou data z prohlížečů jako cookies, záložky a historie prohlížení.
+Vzhled operace proto bude vypadat tak, jak je ukázáno na obrázku~\ref{fig:lab02}.
+Z ukázky je zřejmé, že ne všechny chtěná data se podařilo nalezt, je jich však dostatek pro další využití útočníkem.
+
+%todo vypsat zajímavá data z obrázku
+
+\clfig{lab/lab02}{\linewidth}{Ukázka probíhající operace}{Vlastní}{fig:lab02}
+
+Také data o samotné zařízení jsou pro útočníka zajímavá v kontextu hledání využitelných zranitelností.
+
+
+Důležitým zjištěním této operace je přítomnost firewallu a antiviru na testovaném zařízení.
+Výstupy zkoumající tyto fakty je možné vidět na obrázcích~\ref{fig:antivirus_discovery,fig:firewall_discovery}.
+
+\clfig{lab/antivirus_discovery}{\linewidth}{Nalezené informace o antiviry na testovaném zařízení}{Vlastní}{fig:antivirus_discovery}
+\clfig{lab/firewall_discovery}{\linewidth}{Nalezené informace o firewall na testovaném zařízení}{Vlastní}{fig:firewall_discovery}
+
 
 %todo
 plošné zkoušení možností
 
-\nlparagraph{lab02v2}
+\nlparagraph{Lab02v2}
+Tato operace a adversary využívají již zjištěných dat k upřesnění specifických cílů.
+Simulujeme zde situaci, kdy útočník získal základní data o napadeném zařízení.
+Jeho cílem je ted nejen získat vyšší práva nad tímto zařízením
+Prvním krokem je tak zlepšení šancí na dosažení těchto cílů.
+Za tímto účelem se simulovaný útočník pokusí vypnout antivirová opatření, na která narazil v předchozí operaci, viz obrázek~\ref{fig:antivirus_discovery}.
+To však není zcela úspěšné, jak již bylo psáno nacházíme se na nové verzi Windows, která je adekvátně aktualizovaná.
+Nemůže tak být překvapením, že se tato taktika nezdařila.
+Důležité je však poznamenat, že v systému Windows ale také nevyvolala v tomto kroku operace žádné hlášení.
+Hlášení nastala, až kdy se simulovaný útočník pokoušel získat administrátorská práva.
+V rámci testování se tato práva snažil získat všemi možnostmi, které Caldera nabízí.
+Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a \ref{fig:specific_threat}.
 
-%todo remake
+%todo remake, show some antivirus disablin and then this, its in the other operation
 \clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
+\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
+\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
+
+Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
+Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace o kterých je nutné uživatele informovat.
+Již při vytváření operace bylo jasné, že šance úspěchu předchozích operací je malá.
+proto jejich neúspěch není překvapením ale očekávaným a správným výsledkem.
+Naopak by bylo nemilým překvapením, kdyby se nám takto jednoduchým způsobem povedlo administrátorská práva získat.
+Poslední částí této operace jsou pokusy o získání dalších důležitých dat, která by útočníkovi mohla pomoci získat administrátorský přístup.
+Příkladem je například politika hesel, která existuje na daném zařízení.
+Jak je patrné na obrázku~\ref{fig:show_password_policy}, Caldera si plně nerozumí s českou lokalizací systému.
+To pouze znamená, že není možné sběr dat plně zautomatizovat, nejdůležitější poznatky lze stále přečíst, i když se zvýšeným úsilím.
+
+%todo crop
+\clfig{lab/show_password_policy}{\linewidth}{Nalezená politika hesel}{Vlastní}{fig:show_password_policy}
+
+Poslední technikou v této operaci, která stojí za zvláštní zmínku, je zobrazení všech procesů daného uživatele.
+Jak je vidět na obrázku~\ref{fig:show_user_processes}, pro útočníka je možné zjistit všechny procesy daného uživatele.
+To je důležité hned z několika důvodů.
+Znalost procesů dovoluje útočníkovi napodobit jména často používaných procesů a tak je před uživatelem chovat.
+Ještě důležitější je pro útočníka tato znalost z důvodu hledání slabin.
+Znalost procesů omezuji množinu programů, které musí útočník zkontrolovat pro využitelné slabiny.
+Navíc nemusí řešit dodatečnou instalaci nástrojů nebo hledat slabiny přímo v operačním systému, pokud může využít slabin již nainstalovaných programů se stejným výsledkem.
+Tato možnost není uplatnitelná vždy, ale je dobré mít ji na paměti.
+Posledním důvodem, proč procesu uživatele útočníka zajímají jsou data, která z těchto procesů může útočník vytěžit.
+Pokud narazí na proces, který ho zajímá, může na něj zaměřit další fáze útoku.
+Například už jen zjištění, který prohlížeč uživatel preferuje zjednodušuje následující útoky na data.
+Nebo fakt, že uživatel využívá nějaké cloudové uložiště, jak je například vidět na obrázku~\ref{fig:show_user_processes}.
+%todo crop
+\clfig{lab/show_user_processes}{\linewidth}{Ukázka všech procesů uživatele}{Vlastní}{fig:show_user_processes}
 
 
-%todo
-specifické zaměření na privilegia a discovery
+\nlparagraph{Změny s privilegovaným uživatelem}
+%todo add more or pictures?
+V rámci zvědavosti byly stejné operace, tedy \textit{Lab02} a \textit{Lab02v2}, pouštěny na jiném zařízení v infrastruktuře tentokrát s privilegovaným přístupem.
+Získaná data byla až na pár operací stejná.
+To potvrzuje domněnku robustního systému, kde celkový stabilita a dostatečné zabezpečení v podobě antiviru odbouralo alespoň část hrozby.
+Zajímavá jsou však data z operace \textit{Lab02v2}.
+Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nejsou značné odchylky.
+\textit{Lab02v2} byl na získání vyšších uživatelských práv, což popravdě nedává s administrátorským účtem smysl.
+zajímavé je, že se nám podařilo částečně vyřadit fungování antivirového programu.
+Další překvapivé zjištění také bylo, že místo selhání všech hrozeb pro zisk privilegií se jedna technika vydařila.
+Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění.
+%todo add picture with succesfull technique
 
-\nlparagraph{změny s privilegovaným uživatelem}
-%todo
-
-
-
-%todo del
-jak jsme to to testovali, tady krok po kroku od udělání agenta, adversary, operace až po výsledky a output
 
 \subsubsection{Scénář 3 - discovery, impact a worm}
 kde lab2 zaměřen na jedno zařízení, lab 3 testuje sít -> moc robustní aby jsme tam dělali velké věci
