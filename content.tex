@@ -1229,7 +1229,7 @@ Stále fungující agent se proto v tomto seznamu znovu objeví při jeho dalš�
 
 \clfig{lab/dead_agent}{\linewidth}{Detaily specifického agenta}{Vlastní}{fig:dead_agent}
 
-\nlparagraph{Výběr chování při útoku - adversary}
+\nlparagraph{Výběr chování při útoku - Adversary}
 Dalším důležitým krokem je příprava chování útočníka.
 To je v Caldeře simulované pomocí takzvaných \textit{Adversaries}.
 \textit{Adversary} je simulovaný útočník, kterému vybereme techniky, které bude v operaci provádět.
@@ -1248,16 +1248,23 @@ To lze udělat 2 způsoby.
 Prvním je přidání  technik jiného profilu pomocí tlačítka \textit{Add adversary}.
 Samozřejmostí je výběr technik, které lze z jiného profilu přidat.
 Pokud tedy existuje profil, který z velké části odpovídá potřebám testování, toto je nejrychlejší volba jak bez úpravy původního profilu lze vytvořit nový.
+V Caldeře existuje mnoho předpřipravených profilů útočníka.
+Příkladem může být worm, viz obrázek~\ref{fig:worm3}, který dokonce existuje v několika podobách s lehkými úpravami.
+Je tak na zvážení, zda vytvářet novéhu útočníka zcela od začátku nebo využít jednu z předpřipravených šablon a na ni dále stavět.
+
+\clfig{lab/worm3}{\linewidth}{Příklad předpřipraveného adversary}{Vlastní}{fig:worm3}
+
+
 Druhým způsobem přidávání technik je tlačítko add ability, kde přidáváme jednotlivé požadované techniky.
-
-%todo make picture for add ability search
-todo add picture\label{fig:ability_selection}
-%\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
-
 Jak je vidět na obrázku~\ref{fig:ability_selection}, vyhledávání technik lze provádět 2 způsoby.
 Pokud je známo jméno techniky nebo alespoň přibližné zaměření, lze použít přímé vyhledávání technik.
 Naopak pokud je vyžadováno využití určité taktiky, je možné vyhledávat selektivně podle nich.
 Volba taktiky pak vede k volbě technik, které vedou na volbu sub-technik nebo specifických provedení dané techniky.
+Tímto způsobem může dále upravovat chování útočníka na bázi jednotlivých technik.
+
+%todo make picture for add ability search
+todo add picture\label{fig:ability_selection}
+%\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
 
 \nlparagraph{Adversary pro scénář 2}
 Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byli pojmenováni \textit{Lab02} a \textit{Lab02v2}.
@@ -1275,7 +1282,7 @@ Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto zámě
 Finálním krokem testování je spuštění operace.
 K tomuto účelu v Caldeře slouží záložka \textit{Operations}, viz obrázek~\ref{fig:operation}.
 Zde je možné spouštět nebo vytvářet nové operace.
-Zároven tato záložka slouží pro správu operací, které již byly uskutečněny.
+Zároveň tato záložka slouží pro správu operací, které již byly uskutečněny.
 Zachovávají se zde informace o průběhu operace a případných výstupech z daných technik.
 Jelikož již bylo připraveno vše pro správnou činnost operace, je načase kliknout na tlačítko \textit{Create operation}.
 Tím je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:operation_creation}.
@@ -1291,6 +1298,7 @@ Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitr
 V neposlední řadě se zne nachází přepínače pro řízení chodu operací a možnosti zakódovaní a krytí operace.
 %todo crop
 \clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:operation_creation}
+
 Pro účely této práce jsou všechny operace nastaveny na automatické spuštění při vytvoření a také automatické uzavření a kolekci dat.
 Automatické spuštění je zřejmé, již máme připraveny všechny stavební bloky pro vykonání operace a tak není třeba nic dalšího připravovat a čekat.
 Automatické uzavření a kolekce vyplývá z faktu, že se jedná o kompletní operace, nechceme v běhu operace přidávat další kroky ani přistupovat k napadenému zařízení na přímo a vykonávat vlastní příkazy.
@@ -1298,11 +1306,27 @@ V rámci automatizace je tedy výhodnější zvolit automatické uzavření a ko
 Z pohledu efektivity to také uvolňuje čas testovatele, který může během průběhu jedné operace vytvářet jinou nebo zkoumat data z jiné operace.
 Pro referenci, operace může běžet i několik hodin a pokud tedy není dozor potřeba, je dobré se mu vyhnout.
 
-
 \nlparagraph{Lab02}
+První z připravených operací má název \textit{Lab02}.
+Jak již bylo zmíněno, cílem je simulovat prvotní kroky útočníka v nově infikovaném systému.
+Útočník má v tuto chvíli o systému pouze minimální informace.
+Proto lze předpokládat, že se pokusí co nejvíce informací získat.
+Důvod, proč byla vybrána pro první scénář tato situace je vyzkoušení možností samotné Caldery.
+Z tohoto důvodu operace pro \textit{lab02} provádí 74 technik zaměřených na zisk dat, která by běžného útočníka zajímala.
+Cílem je vyhodnotit, která data je pro útočníka jednoduché získat.
+Výhodou pro testovatele je zde barevné značení technik Caldery, jak je vidět na obrázku~\ref{fig:lab02}.
+Rozlišuje 3 barevné stavy techniky, červená barva pro neúspěch, zelená pro úspěch a žlutá pro právě provádějící operaci.
+Pozor je však nutné dávat na fakt, že úspěšná operace nemusí vždy vracet očekávaná data.
+Také definice úspěšnosti může být u některých technik pro nezkušeného operátora Caldery zvláštní.
+Například se stalo, že caldera vyhodnotila techniko kontaktování \ac{DNS} jako úspěšnou, i když celá infrastruktura \ac{DNS} nevyužívá.
+Tyto případy jsou však ojedinělé a není problém je nalézt, pokud nastanou.
+
+%todo add picture of lab02 fig:lab02
 
 
-Cílem simulovaného útočníka je pokusit se získat pro něj zajímavé informace.
+
+
+
 Informace na kterém se v tomto kontextu zaměřujeme jsou data z prohlížečů jako cookies, záložky a historie prohlížení.
 Vzhled operace proto bude vypadat tak, jak je ukázáno na obrázku~\ref{fig:lab02}.
 Z ukázky je zřejmé, že ne všechny chtěná data se podařilo nalezt, je jich však dostatek pro další využití útočníkem.
