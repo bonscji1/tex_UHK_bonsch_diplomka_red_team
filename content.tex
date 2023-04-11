@@ -1027,27 +1027,19 @@ Existuje také možnost manuálních red-team operací, hlavně v případech na
 % TODO WRITER: text , úvod, bla bla
 
 \subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}
-Jako testovací prostředí bylo zvoleno Kali Linux.
+Jako testovací prostředí bylo zvoleno Kali Linux, které bude spouštěno v Oracle VM VirtualBox.
+Kali Linux je operační systém založený na Debianu, který je od základu navržen pro testování zabezpečení a penetrační testování.
+Jedná se o možná nejznámější a nejrozšířenější distribuci linuxu s tímto zaměřením, oblíbeným mezi profesionály i nadšenci.
+Obsahuje množství specializovaných nástrojů pro testování zabezpečení, odhalování zranitelností nebo monitorování sítě.
+Velkou výhodou je zaměření na open-source nástroje, které často vytvýří profesionálové pro své specifické potřeby.
+Lze tak jednoduše využít jejich znalosti k zjednodušení práce ostatních uživatelů.
+V případě potřeby se však stále jedná o distribuci linuxu a proto je v rámci kmenové distribuce jednoduché naistalovat jakýkoli nástroj, který by mohl uživatel potřebovat.
+Repozitáře kali linuxu však zjednodušují instalaci právě testovacích nástrojů.\cite{kali_mainpage}
 
-
-Kali Linux je operační systém založený na Debianu, který je navržen pro testování zabezpečení a penetrační testování. Jedná se o distribuci Linuxu, která obsahuje množství nástrojů pro testování zabezpečení a průnikového testování, jako jsou například nástroje pro testování síťové bezpečnosti, pro získávání přístupu k cílovým systémům, pro odhalování zranitelností a další. Kali Linux je oblíbeným nástrojem mezi profesionálními bezpečnostními specialisty, etickými hackery a studenty, kteří se učí o bezpečnosti sítí a systémů.
-
-
-Samozřejmě je toto prostředí pouštěno v Oracle VM VirtualBox.
-
-%todo omáčka o kali 
-\cite{kali_mainpage}
-
-Linux je Linux a proto je v rámci kmenové distribuce jednoduché naistalovat vše, co je potřeba.
-Výhoda Kali je však předpřipravenost mnoha nástrojů, které nemusí uživatel instalovat navíc.
-
-%todo doplŇ omáčku o kali
-
-
-Menší změna však nastala při 10 výročí této distribuce\cite{kali_purple}.
-Vývojáři představili Kali Purple, kterou je možné vidět na obrázku~\ref{fig:kali_purple}.
 \clfig{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí}{Vlastní}{fig:kali_purple}
 
+Menší změna od původního plánu využít kali nastala při 10 výročí této distribuce\cite{kali_purple}.
+Vývojáři představili Kali Purple, kterou je možné vidět na obrázku~\ref{fig:kali_purple}.
 Tato verze Kali Linux je více orientována na defenzivní testování oproti klasické ofenzivně zaměřené Kali.
 Proto byl původní plán pozměněn a pro implementaci prostředí byla použita právě Kali Purple.
 Zvědavost a možnost testování nové distribuce byly také faktory vedoucí k této změně.
@@ -1119,9 +1111,9 @@ Také ovládání tohoto nástroje je zvláštní a po otestování bylo od pou�
 Recon-ng je totiž možné nahradit specializovanými nástroji a technikami, jako je například \textit{nmap}.
 
 
-\nlparagraph{nmap}
-tanto nástroj je
-%todo add nmap
+\nlparagraph{Nmap}
+Zde je důležitá právě volba kali purple jako testovacího prostředí.
+Nástroj Nmap je připraven již s instalací této distribuce a proto nebylo pro jeho používání nutné provádět žádné další kroky.
 
 
 \subsection{Popis testované infrastruktory}
@@ -1156,6 +1148,7 @@ Po úspěšném otestování všech zařízení je možné považovat  infrastru
 
 \clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
+%todo
 přidat jsem identifikované vulnarability z navigátoru, u každého scénáře pak z navigáto přesně to, co je testované
 
 \subsubsection{Scénář 1 - recon}
@@ -1250,7 +1243,7 @@ Samozřejmostí je výběr technik, které lze z jiného profilu přidat.
 Pokud tedy existuje profil, který z velké části odpovídá potřebám testování, toto je nejrychlejší volba jak bez úpravy původního profilu lze vytvořit nový.
 V Caldeře existuje mnoho předpřipravených profilů útočníka.
 Příkladem může být worm, viz obrázek~\ref{fig:worm3}, který dokonce existuje v několika podobách s lehkými úpravami.
-Je tak na zvážení, zda vytvářet novéhu útočníka zcela od začátku nebo využít jednu z předpřipravených šablon a na ni dále stavět.
+Je tak na zvážení, zda vytvářet nového útočníka zcela od začátku nebo využít jednu z předpřipravených šablon a na ni dále stavět.
 
 \clfig{lab/worm3}{\linewidth}{Příklad předpřipraveného adversary}{Vlastní}{fig:worm3}
 
@@ -1425,12 +1418,57 @@ Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění
 
 
 \subsubsection{Scénář 3 - discovery, impact a worm}
-kde lab2 zaměřen na jedno zařízení, lab 3 testuje sít -> moc robustní aby jsme tam dělali velké věci
-%todo
-specifičtější testování na discovery a worm, který teda nefunguje ale to jen protože to máme moc dobře udělané
+zaměřením tohoto scénáře je otestování možností šíření útočníkova dosahu v infrastruktuře a impact jeho činnosti.
+Scénář 2 byl primárně zaměřen na jedno zařízení a zisk informací, scénář 3 je zaměřen na infrastrukturu a dopad na uživatele a společnost.
+předpokladem je, že útočník již zjistil minimální potřebná data ze scénáře 2, již ho nezajímý být tak skrytý ale naopak chce napadenému cíli uškodit.
+v rámci možností Caldery proto budou simulovány možné techniky, které jsou v souladu s cíly útočníka.
+
+\nlparagraph{Lab03}
+Operace na šíření po infrastruktuře má název \textit{Lab03}.
+Jako \textit{adversary} je využit základní útočník \textbf{Worm}.
+Tento útočník v Caldeře existuje hned v několika verzích s malými rozdíly, zajímavou myšlenkou proto bylo použít několik verzí a porovnat jejich výsledky.
+Specificky byla tato operace testována s útočníky \textbf{Worm, Worm2} a \textbf{Worm 3}.
+Pro ukázku je možné techniky útočníka \textbf{Worm 3} vidět na obrázku~\ref{fig:worm3}.
+Při testování vybraných útočníků typu worm však nebyly rozeznatelné rozdíly v jejich účinnosti.
+Proto bude v dalším textu popisována pouze generická operace s útočníkem worm zahrnující všechny specifické iterace.
+Jak je z obrázku~\ref{fig:worm3} jasné, cílem útočníka worm je rozšířit se v infrastruktuře.
+Prvním krokem tohoto útočníka je proto zjištění dalším připojených zařízení.
+Výsledek tohoto kroku je vidět na obrázku~\ref{fig:show_IP_in_VLAN}.
+
+\clfig{lab/show_IP_in_VLAN}{\linewidth}{Ukázka nalezených IP adres}{Vlastní}{fig:show_IP_in_VLAN}
+
+Je zřejmé, že útočník tímto krokem nenalezl všechna zařízení v sítě ale pouze zařízení v jeho \ac{VLAN}.
+Tento fakt potvrzuje nutnost dobré segmentace infrastruktury za cílem její obrany.
+Dalším krokem útočníka je provézt \textit{Reverse IP nslookup} pro všechny nalezené IP adresy.
+Tento krok však selže, protože v síti není využívané \ac{DNS}.
+Z důvodu velikosti a bezpečnosti implementace nedávala smysl.
+Překvapivé je, že neexistence \ac{DNS} nejen že zastavila další šíření útočníka worm, ale navíc byly techniky provádějící tuto operaci chybně označeny za úspěšné.
+Tento fakt je možný vidět na obrázku~\ref{fig:nslookup_fail}.
+%todo create this one
+%\clfig{lab/nslookup_fail}{\linewidth}{Ukázka špatně označených technik}{Vlastní}{fig:nslookup_fail}
+
+Z výsledků je jasné, že testovaný infrastruktura je vůči tomuto útoku velmi odolná.
+Nejen že správně nastavená infrastruktura omezila zisk informací útočníka, ale také kompletně zamezila jeho dalšímu šíření.
+
+\nlparagraph{Lab03v2}
+Druhá část scénáře 3 je zaměřena na testování taktiky Impact.
+V Caldeře byl proto vytvořen \textit{adversary}, který obsahuje techniky s tímto zaměřením.
+Průběh operace s tímto útočníkem je vidět na obrázku~\ref{fig:operation_ransom}.
+V první části je simulován útok ransomware.
+To je nejčastější a nejzávažnější typ hrozby, proto dává smysl zjistit, zda lze pomocí Caldery testovat.
+Jak je vidět z obrázku~\ref{fig:operation_ransom}, úspěšně se povedlo na ploše uživateli vytvořit textový soubor \textit{ransomware note}.
+Naštěstí pokus o zakódování dat byl obranou systému úspěšně zastaven.
+Také přepisování souborů bylo zastaveno.
+Naopak práce se \textit{staging directory} byla úspěšná.
+Povedlo se nejen vytvořil, ale při ukončování operace po sobě i smazat tento adresář.
+Je tedy nutné podotknout, že pokud i volně dostupný testovací framework je chopen provést tyto operace, je na zvážení, co vše je schopnen udělat specifický software zaměřeným přímo pro tyto úkony.
+Takového software je hned řada, část nelegální část legální.
+Možná nejznámějším příkladem je \textit{Metasploit}\cite{metasploit}.
+
+\clfig{lab/operation_ransom}{\linewidth}{Ukázka operace pro Lab03v2}{Vlastní}{fig:operation_ransom}
 
 \subsection{Celkové zhodnocení výsledků}\label{subsec:celkove-zhodnoceni-vysledku}
-%todo
+%todo if i want to, probably can do only závěr
 
 
 \section{Závěry a doporučení}\label{sec:zavery-a-doporuceni}
