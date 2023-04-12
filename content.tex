@@ -437,7 +437,144 @@ Při zohlednění těchto skutečností je použití Pegasus spyware zcela neeti
 
 %todo from my bakalářka
 
-Phishing útoky jsou prováděny ve velkém objemu a cílí na širokou veřejnost, zatímco jiné útoky sociálního inženýrství využívají vlastní kampaně přizpůsobené konkrétním zaměstnancům. Při použití sociálního inženýrství útočníci využívají přístup zaměstnanců uvnitř organizace k získání technického základu v síti, ze které provádějí další útoky.
+
+
+\cite{Enisa_thread_landscape, moje_bakalarka}
+%todo adjust
+Social engineering encompasses a broad range of activities that attempt to exploit a human error or human
+behaviour with the objective of gaining access to information or services356. It uses various forms of manipulation to
+trick victims into making mistakes or hand over sensitive or secret information. In cyber security, social engineering
+lures users into opening documents, files or e-mails, visit websites or grant unauthorised persons access to systems
+or services. And although these tricks can abuse technology they always rely on a human element to be successful.
+This threat canvas consists mainly of the following vectors: phishing, spear-phishing, whaling, smishing, vishing,
+business e-mail compromise (BEC), fraud, impersonation and counterfeit.
+
+Impersonation is when one entity illegitimately assumes the identity of another entity in order to benefit from it.
+Counterfeit finally is the fraudulent imitation of something
+
+Social engineering and especially phishing remain a popular technique for attackers to conduct their malicious
+activities358 359 360 361. According to the Verizon Data Breach Investigations Report362 (DBIR) about 82% of breaches
+involve a human element and no less than 60% of the breaches in Europe, the Middle East and Africa include a
+social engineering component. The underlying reason for the criminals' interest in social engineering is obvious. Email is where their potential victims are easiest reachable. And despite awareness raising campaigns and exercises,
+users still fall for these tricks363. Also according to the DBIR, attackers continue to use stolen credentials to obtain
+more details on a target via company e-mails. Their final goal is then to use this information to craft realistic pretexts,
+for example as part of BEC attacks.
+
+The leak (or 'disclosure') of the playbook of this group also underlined369 370 371 that
+ransomware groups rely heavily on well-established social engineering options372 such as spear phishing and phonecalls as their primary pathway for initial access. Both Europol373 and the FBI374 report that phishing and social
+engineering remain the main vectors for payment fraud, increasing in both volume and sophistication. The Ponemon
+Institute375 reports that the cost of phishing in 2021 has more than tripled since 2015, with the most time-consuming
+tasks to resolve these attacks being the cleaning and fixing of infected systems and conducting forensic investigation
+
+In general the objective of social engineering (and consequentially the impact for victims) is gaining access to
+information or services or obtaining knowledge about a specific subject but it is also used for financial profit. It thus
+comes as no surprise that during the reporting period financial institutes were among the top organisations
+impersonated by phishers. Next to the financial sector, the criminals themed377 378 379 their social engineering
+campaigns around the technology sector with brands such as Microsoft, Apple and Google ranking as the top
+impersonated targets. We also witnessed social engineering campaigns mimicking popular cloud services used by
+remote workers or the platforms that are used by streaming and media providers. Cybercriminals also continued to
+capitalise on the Covid-19 pandemic in whatever ways they could.
+
+%interesting trend - long con
+Iranian threat groups such as APT34427 (OilRig or TA452), APT35428 (Charming Kitten or TA453) or TA456429
+(Imperial Kitten or Tortoiseshell) employ long running social engineering campaigns for cyber espionage and
+information operations. In the Operation SpoofedScholars430, revealed in July 2021, the threat group TA453431
+masqueraded as UK scholars with the University of London’s School of Oriental and African Studies (SOAS). They
+targeted senior think tank personnel, journalists focused on Middle Eastern affairs as well as professors with very
+targeted fake invitations to conferences. These invitations eventually led to credential stealing websites.
+Whereas this group used the professional background of their identified targets to build a story, other campaigns
+such as those run by Curium432 (TA456433) focus on romantic engagements. Their playbook typically consists of
+masquerading as an attractive woman on social media, establishing connections via both corporate and personal
+platforms (to increase the bond of trust), sharing malicious documents and then convincing the target to open the
+document with the goal of exfiltrating sensitive information.
+Considering the success of previous campaigns it is very likely that we will continue to see similar social engineering
+tradecraft, persistency and determination being used by threat actors coming from the Iranian region.
+
+%todo typy
+Phishing aims at stealing important information like credit card numbers and passwords, through e-mails involving
+social engineering and deception. Spear-phishing is a more sophisticated version of phishing that targets specific
+organisations or individuals. Whaling is a spear-phishing attack aimed at users in high positions (executives,
+politicians etc.). Smishing, a term derived as a combination of 'SMS' and 'phishing', occurs when financial or
+personal information of victims are gathered via the use of SMS messages. Another related threat is vishing, a
+combination of phishing and voice that occurs when information is given via phone, where malicious actors using
+social engineering techniques to extract sensitive information from users.
+
+Creating phishing websites and setting up the underlying infrastructure for a social engineering campaign can be a
+tedious job. Instead, criminals turn more and more to ready-made material offered by phishing kits or they make use
+of a service model through 'Phishing-as-a-Service'
+
+deployments of phishing kits generally have a short lifespan, with almost one-third of deployed kits
+being used for no longer than a day. According to Microsoft383, modern phishing kits are sufficiently sophisticated to
+masquerade as legitimate content in their use of spelling, grammar and imagery. In the same report Microsoft notes
+that the miscreants making use of these kits can also be fooled. Some of the kits contain 'added' functionality that not
+only sends the credentials obtained to phishers but also to the kit’s originating author or a sophisticated intermediary.
+From a victim's point of view this can severely aggravate the impact of an incident as stolen credentials now end up
+in the hands of several different gangs.
+Phishing kits also take into account regional differences (with geo-blocking), filter out unwelcome agents, add
+obfuscation options384 and are sold as part of a software-as-a-service package: Phishing-as-a-Service (PhaaS).
+These services are not new but a report385 from Microsoft on the BulletProofLink operation show its level of
+sophistication, professional business model and its use of automation.
+
+An extension of PhaaS is the use of Initial Access Brokers (IAB). This supply chain of social engineering specialists
+first opens the 'flood gates' to an organisation, after which they hand over their access, often credentials or installed
+remote access tools, to follow-up actors386. As the DBIR stated earlier, this can then be used by the attackers to
+engage with victims or find their way further into an organisation. This market for IAB has further flourished387 in
+recent years, mostly because of the constant demand from criminal organisations for easy access to organisation
+
+A noteworthy campaign by an initial access broker referred to as 'Exotic Lily' was documented by Google's TAG
+(Threat Analysis Group)388 in March 2022. The group used phishing e-mails to deliver an exploit for a vulnerability in
+Microsoft MSHTML and appears to be providing initial access for groups spreading Conti and Diavol ransomware.
+The payload of the mails included the use of disk image (ISO) files. But they were not the only threat actors that were
+observed that were using disk images.
+
+A campaign highlighted in March 2022 by Proofpoint397 is about a likely nation-state sponsored phishing campaign
+that used a possibly compromised Ukrainian armed service member’s e-mail account to target European government
+personnel involved in managing the logistics for refugees fleeing Ukraine. The campaign used an e-mail with a
+subject referring to a decision of the Security Counsel of Ukraine.
+Google's TAG has observed a continuously growing number of threat actors using the war in Ukraine as a lure in
+phishing and malware campaigns. One of the campaigns involved COLDRIVER, an allegedly Russian based threat
+actor sometimes referred to as Callisto, which used credential phishing e-mails to target government and defence
+officials, politicians, NGOs, think tanks and journalists39
+
+The use of multi-factor authentication (MFA) has reduced the opportunities for attackers to use compromised
+accounts as a pivot point for starting social engineering campaigns. So instead of targeting individual mailboxes, we
+have witnessed attackers shifting to abuse legitimate infrastructure to execute their operations.
+An example of such a shift in tactics is where attackers register trial tenants for services at Office 365 which make
+their e-mail appear much more legitimate402. Other ways include compromising a Microsoft Exchange server via
+ProxyShell or ProxyLogin and then distributing phishing e-mails to internal and external user accounts403 404. To
+further deceive potential victims, attackers also hijack mail conversations and in some cases modified the typeface
+and language of the reply messages for each attack to increase the chances of success.
+It is likely that we will see further use of known (and sometimes 'trusted') accounts or legitimate infrastructure to
+execute phishing campaigns, either by exploiting vulnerabilities in systems such as Microsoft Exchange or by making
+use of exploitation efforts by other threat actors.
+
+
+Phishing útoky jsou prováděny ve velkém objemu a cílí na širokou veřejnost, zatímco jiné útoky sociálního inženýrství využívají vlastní kampaně přizpůsobené konkrétním zaměstnancům.
+Při použití sociálního inženýrství útočníci využívají přístup zaměstnanců uvnitř organizace k získání technického základu v síti, ze které provádějí další útoky.
+
+
+%SMSing
+A mobile banking malware that's been heavily observed is FluBot. It targets users of Android devices in most of
+Europe and is spread via SMS and MMS. Victims first receive an SMS message (called smishing or SMS phishing)
+that impersonates parcel delivery companies, voicemail memos or fake software. The message contains a link that
+points to a website, instructing the victim to install an app. Once the app is installed, the requested permissions are
+granted or, sometimes, security features are disabled. FluBot spreads through self-propagation by sending phishing
+text messages from the infected device to its contact list. It will also share this contact list with the campaign
+operators but, most problematic for the victims, it also collects credit card numbers and online banking credentials,
+intercepts SMS messages (such as one-time passwords) and captures screenshots417 418 419 420 421.
+
+%Vishing
+According to Europol425 the safe account scam is an emerging modus operandi in vishing. In such a scam attackers
+convince victims into transferring funds to a 'safe account' by telling them their bank account has been compromised.
+To make the story more convincing, they often pose as a police officer or an employee of their financial institution.
+Unfortunately this so called safe account is under the control of fraudsters and after the money transfers have been
+completed victims find that they have lost their life’s savings in the space of a few minutes.
+The volume of vishing cases has also increased substantially, according426 to Agari and PhishLabs, no less than 550
+per cent over the last twelve months (Q1 2022 compared to Q1 2021). It is very likely we will continue to witness this
+trend in the near future.
+
+
+
 
 \subsubsection{Phishing}
 Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
@@ -456,13 +593,154 @@ Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moj
 \subsection{Threat against data}
 %todo dopln
 
+Today, we live in an interconnected society where cloud, edge and IoT technologies and applications produce huge
+amounts of data every second. These data are fundamental for all enterprises that want to compete in the global
+market and must be properly managed and analysed. Better management and analysis, in fact, leads to faster
+processes, better customer management, and lower overhead costs. On top of this, Machine Learning (ML) and
+Artificial Intelligence (AI) are increasingly being adopted and are boosting the migration from traditional software
+systems based on deterministic algorithms to systems where ML or AI models use reason on data to calculate a
+solution for individual instances of a problem. This migration poses a new wave of risks that push towards the 'AI
+Act',434 a proposed European law on artificial intelligence (AI) – the first law on AI by a major regulator anywhere.
+
+Threats against data form a collection of threats that target data sources with the aim of gaining
+unauthorised access and disclosure, as well as the manipulation of data to interfere with system behaviour. These
+threats are also at the basis of many of the existing threats, also discussed in this report. For instance, ransomware,
+RDoS, DDoS aim to deny access to data and possibly collect a payment to restore this access. Disinformation and
+misinformation build on data manipulation. Phishing, also in its novel implementation based on deepfakes, builds on
+data manipulation.
+A data breach is defined in the GDPR435 as any breach of security leading to the accidental or unlawful destruction,
+loss, alteration or unauthorised disclosure of or access to personal data transmitted, stored or otherwise processed
+(article 4.12 GDPR). Technically speaking, threats against data can be mainly classified in data breach and data leak.
+Though often used as interchangeable concepts, they entail fundamentally different concepts that mostly lie in how
+they happen436 437.
+Data breach is an intentional attack brought by a cybercriminal with the goal of gaining unauthorised access and the
+release of sensitive, confidential or protected data. In other words, a data breach is a deliberate and forceful attack
+against a system or organisation with the intention of stealing data.
+Data leak is an event that can cause the unintentional release of sensitive, confidential or protected data due to, for
+example, misconfigurations, vulnerabilities or human errors. It does not include intentional attacks.
+In a nutshell, data breaches can occur as a result of a cyberattack while data leaks consist of unintentional loss or
+exposure of data. Data breaches are the most long-lived threat to data. However, the exponential growth of
+connected systems and the digital transformation have increased the relevance of data leaks due to the increasing
+expansion of the attack surface as well as the increasing involvement of users in the workings of software systems
+
+In addition to data leak and data breach, the increasing adoption of ML or AI models at the core of novel distributed
+systems and decision-making put data manipulation under the spotlight. Data poisoning and adversarial attacks
+become widespread with the aim of undermining trust in IT and production systems and, more generally, in society as
+a whole. On one side, data manipulation attacks target modern systems affecting the accuracy of their results; on the
+other side, data manipulation attacks target people disseminating disinformation
+
+
+Verizon observes that around 80\% of total data compromises comes from outside
+the target organisation, while around 20\% comes from inside. The motivation is still mainly financial gain (around
+90\%) and, second by far, espionage (less than 10\%)
+
+In fact, 82\% of data breaches
+involve a human element; this can be easily explained by considering that both social engineering and miscellaneous
+errors (misdelivery and misconfiguration) are among the main attack patterns, third and fourth respectively, only
+outperformed by system intrusion (which also involves social attacks) and basic web application attacks.
+
+Despite the importance of humans in data breaches, it is important to note that the exploitation of vulnerabilities as
+the causes of of data breaches has doubled, reaching 7\% of breaches this year.
+
+-přidat zmínku o již zmíněném ransomware, to sem taky patří
+
+%todo identity theft
+identity theft, where
+malicious actors use personal identifiable information (PII) to impersonate a user. Moreover, given the significance of
+data and in particular of private and sensitive data, adversaries are combining more sophisticated threats to target
+data, such as ransomware or supply chain attacks, as well as distributed denial of services (DDoS) and
+disinformation. It is noteworthy that in the ENISA threat landscape for supply chain attacks report439 in 2021, for about
+58\% of the supply chain incidents analysed, the customer assets targeted were predominantly customer data,
+including personally identifiable information (PII) data and intellectual property.
+
+Due to the increase in data breaches, personal and sensitive data has been easily accessible to malicious actors via
+online forums and the dark web. This has had a cascading effect on identity theft. According to the US Federal Trade
+Commission (FTC), 1.4 million reports of identity theft have been received in 2021 and the most targeted victims are
+between 30 and 39 years old451. According to McAfee452, credit card fraud is the most common type of identity theft.
+
+%todo data poisoning
+Trustworthy data are in fact a prerequisite for implementing safe autonomic and adaptive systems built on data. In
+particular, the central role of collected data and corresponding inferences on the behaviour of modern systems
+increases the risk introduced by data poisoning and manipulation. The latter then become fundamental threats to
+data-driven systems, where data integrity is not the only property to protect and guarantee, but also data provenance,
+non-repudiation, and accountability should be supported.
+In this context, Ransomware attacks (see chapter 3) as well as deepfakes (see chapter 9) are spreading and target
+the integrity and availability of data, introducing substantial risks to decisions built entirely on unverified data. For
+instance, a deepfake voice call resulted in a fraudulent bank transfer of nearly $35 million
+
+A direct consequence of data poisoning and manipulation is a decrease in the accuracy of machine learning models.
+
 \subsubsection{Sql injection}
+Možná nejznámějším příkladem lidské chyby je útok Sql injection.
 Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
-Ze špatně zabezpečeného vyhledávacího boxu je útočných schopný zadáním specificky vypadajícího dotazu získat například výpis celé databáze.
-%todo more? zdroje?
+Pokud útočník nalezne špatně zabezpečený vstup, například vyhledávací box, může do databáze zadávat vlastní příkazy.
+To je možné pomocí řetězení příkazů, kdy útočník vytvoří specifický řetězec, který mu dovolí vyvolat nejen očekávané chování ale i další chování které je na původní chování přidané.
+Nejčastěji takto útočník získává výpis celé databáze.
+
 
 \subsection{Threat against availability}
 %todo dopln
+
+
+Distributed Denial of Service (DDoS) targets system and data availability and, though it is not a new threat (it
+celebrated its 20th anniversary in 2019), it has a significant role in the cybersecurity threat landscape478 479. Attacks
+occur when users of a system or service are not able to access relevant data, services or other resources. This can
+be accomplished by exhausting the service and its resources or overloading the component of the network
+infrastructure
+
+In this context, Ransom Denial of Service
+(RDoS) mixes the dangers of a traditional DDoS, while substantially reducing the need for resources to carry out an
+attack. Groups of cybercriminals (e.g. Fancy Bear, Cozy Bear, Lazarus Group and the Armada Collective carrying out
+these campaigns) analyse target businesses to find those with weak and vulnerable systems. They then threaten
+these businesses by sending an extortion letter asking for a ransom to not attack the system482 483. The simplicity of
+RDoS attacks is at the basis of their adoption.
+
+During this reporting period, we again observed a large number of incidents involving Denial of Service. We saw a
+rise in July 2022, a month that featured many DoS attacks. These peeked with the largest ever recorded attack
+launched against a European customer on the Prolexic platform485, using globally distributed attack traffic that
+reached its pinnacle at 853.7 Gbps and 659.6 Mbps over 14 hours.
+
+%todo trend
+DDoS threats are finally becoming the fifth
+dimension of warfare, after battles in the air, sea, land and even space.487 The threats and levels of extortion
+exploded, moving DDoS towards being a state-sponsored attack. In this context, cloud computing is increasingly
+being used as a threat vector for DDoS attacks on the one side, and as a primary target of the attacks on the other
+side488.
+
+traditional DDoS is moving towards mobile networks and IoT. Sensors and
+devices are in fact a suitable target of DDoS attacks due to their limited resources that often result in poor security
+protection. Devices are simple to corrupt, often coming with misconfigurations (e.g. weak passwords)501. At the same
+time, the increasing complexity of these mobile systems make users' shortage of security skills increasingly relevant.
+In this context, DDoS aims to threaten the availability of components, as well as to disrupt the operation of other
+networks or systems, but also have the potential to threaten the safety of users. The increasing number of devices
+and applications connected to the cloud gives adversaries a larger playing field on which to target attacks.
+
+This trend was also confirmed in the last reporting period when DDoS attacks were often launched from
+compromised servers or consumer devices, such as Internet-of-Thing (IoT) products and broadband routers502. This
+is often caused by delays by smart device owners in updating and patching devices503. For instance, the Mozi Botnet
+still uses vulnerabilities discovered eight years ago and compromises unpatched devices building botnets with
+hundreds of thousands of bots. This was also confirmed by an experiment at the US National Institute of Standards
+and Technology (NIST), where NIST researchers observed that 'admin' (username) and '1234' (password) was the
+most common combination used in attacks against IoT
+
+%rdos
+Ransom Denial of Service (RDoS) is the new frontier of denial of service attacks. RDoS aims to identify vulnerable
+systems that become the target of the attack and put in place different activities that result in a final request to pay a
+ransom. RDoS can come in two flavours: i) attack-first or ii) extortion first. Point i) considers a scenario where a DDoS
+attack is implemented and a ransom is requested to stop it. Point ii) considers a scenario where an extortion letter
+and a proof in the form of a small-scale DoS is sent with a request to pay a ransom. RDoS attacks are even more
+dangerous than traditional DDoS since it can be completed even if the attacker does not have enough resources519.
+RDoS is a complex attack that mixes several approaches and techniques such as Denial of Service, Ransomware,
+identity spoofing, to name but a few
+
+RDoS targeted ISPs, financial institutions, and small
+and medium-sized businesses (SMBs), and its success is due to the spread of online services. In addition to
+traditional double-extortion methods by exfiltrating victims’ data and threatening to publish it, we observe an
+enlargement of the target boundaries that often involve clients, business partners and employees of the victim. RDoS
+is then used to force victims into complying with the ransom request threatening them at several levels, such as,
+denial of service, publication of confidential data and the involvement of associated partners. A step further consists
+in the migration from a one-time ransom to a request for 1 BTC a day in exchange for 'protecting' the victim company
+from their attacks
 
 \subsubsection{Denial of service}
 Útok zaměřený na kolaps infrastruktury.
@@ -480,8 +758,6 @@ Jedno zařízení jen těžce může konkurovat statisícím v množství požad
 A to i za předpokladu, že je mnohem výkonnější.
 %todo more? zdroje?
 
-\subsubsection{Internet threats}
-%todo dopln
 
 \subsection{Ostatní}
 Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie ale jsou často využívány v kombinaci s jinými kategoriemi útoků.
@@ -498,6 +774,13 @@ Další oblíbenou implementací útoku je použití malware.
 Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.\cite{cisco_most_common_attack}
 %todo more?
 
+In January 2022 the FBI issued a warning409 concerning criminals using QR codes to redirect victims to malicious
+sites that steal login and financial information. A similar effort was observed by the Phishing Defence Centre where
+threat actors used malicious QR codes to target users of German banking410. It is important to realise is that these
+type of scams can happen both in the digital space as well as in the physical realm411.
+It is likely that the trend of abusing QR codes for phishing will further continue, especially considering the wide
+adaptation of QR codes in everyday life.
+
 \subsubsection{Zero day exploit}
 \textit{Zero day exploit} je slabina na kterou ještě neexistuje patch.
 Tato situace může nastat pokud byla slabina nahlášena a ještě ji výrobce systému nestihl opravit.
@@ -506,6 +789,25 @@ Ten ji pouze bude chtít využít, rozhodně ne nahlásit.
 Tyto slabiny se také snaží získat státní složky zaměřené na špehování.
 Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
 %todo more? zdroje?
+
+A side effect of the investment in resources is that the number of 0-days being discovered675 has increased
+substantially676. And although in a lot of cases the disclosure of such 0-days is done responsibly (with accompanying
+vendor communication and patches), the mere fact of the publication leads to further attempts at exploitation by
+opportunistic threat actors seeking an easy win.
+It is very likely that we will see an increased investment677 of resources into vulnerability research in these supply
+chains in the near future. It is also very likely we will continue to see attempts to exploit the situation by opportunistic
+threat actors following the disclosure of vulnerabilities in popular business technologies.
+
+Vulnerability research is very expensive and requires a lot of investment in resources, partly because of the improved
+security of such technologies but also because there is always a risk that a freshly discovered vulnerability can be
+exposed (and patched) before an attacker can make use of it. This is one of the reasons why threat groups also start
+targeting security researchers directly678 679 680 681. After all, instead of doing the hard research yourself, why not let
+someone else do the heavy lifting and then just steal that information from them? And while the mere abuse of a
+vulnerability in a business technology does not constitute a supply chain attack according to our ETL definition,
+targeting specific researchers first and then using the information obtained to gain access to a predetermined victim is
+certainly considered to be a supply chain attack.
+Considering the cost of vulnerability research for threat actors, it is likely we will see increased targeting of those
+individuals or organisations doing research on security flaws or vulnerabilities with the goal of stealing their findings.
 
 \subsubsection{DNS tunneling}
 \textit{DNS tunneling} je možné použít pro legitimní účely, tato práce však zkoumá jeho zneužití.
@@ -522,6 +824,66 @@ příchozí naopak pro posílání příkazů již nainstalovanému malware nebo
 
 \subsubsection{Supply-chain útoky}
 %todo add
+
+A supply chain attack targets the relationship between organisations and their suppliers. For this ETL report we use
+the definition laid down in the ENISA Threat Landscape for Supply Chain Attacks653 where an attack is considered a
+supply chain attack when it consists of a combination of at least two attacks. More specifically, a first attack on a
+supplier that is then used to attack a target to gain access to its assets. This target can be the final customer or
+another supplier. Thus, for an attack to be classified as a supply chain attack, both the supplier and the customer
+have to be targets.
+
+The European Commission
+paved the way for the NIS2 Directive658 which should address the security of supply chains, presented its
+Cybersecurity Strategy659 with proposals to strengthen defences and improve responses against malicious activities
+affecting the supply chain and undertook an in-depth review660 of strategic areas for Europe’s interests.
+
+
+Malware distribution is also achieved by so-called supply chain attacks. Open-source frameworks are either cloned
+with infected malware, with the goal of infecting anyone who implements these as tools or packages within their
+projects. As anyone can publish packages to open-source platforms, malware injection often remains under the radar
+for a long time.
+A common way this is leveraged is through 'typo squatting'. By introducing a new package in such repositories, with a
+name very similar to popular packages, the chance increases that the package can either be referenced
+unintentionally by a developer, or that the dependency is introduced by the attacker on the original project through a
+PR, without standing out as an attack. In August 2021, researchers tracked around 8 malicious python libraries,
+downloaded more than 30,000 times back then340.
+Another use case is the use of rogue python libraries to steal information such as credentials. In June 2022 pygrata
+and loglib were found to extract AWS keys341. In august 2022, research uncovered more than 10 such packages.
+AsciI2text is an example of this type of malware; it will look for local passwords and upload them back to the
+attacker's infrastructure342.
+These attacks are found on common and popular repositories like NPM343 344, Python345, and RubyGems
+
+
+This was a first warning of the increased interest of threat groups, and predominantly those
+coming from Russia and China, and to a lesser extent North Korea, in supply chain attacks.
+
+Furthermore the impact of operations, especially those focussed on espionage, by nation-state actors via supply
+chain attacks might not always be immediately noticeable by victims. And although in general the median dwell
+time703 has dropped significantly, these types of threat actors can lurk in the dark for a very long time.
+
+State-sponsored groups are not the only threat actors in this playing field. This was painfully demonstrated by the
+operators of LockBit (ransomware) when the criminal gang stole and leaked704 705 documents from the technology
+supplier Abiom. Abiom supplies communication technology for the Dutch emergency network C2000, the Dutch
+Ministry of Defence, the National Police and security services, amongst several other government entities
+
+
+%todo log4shell
+Log4Shell is a zero-day vulnerability reported in 2021 in Log4j706, a Java logging framework, that can lead to the
+execution of arbitrary code. Although, according to the definition that is used for supply chain attacks in this ETL,
+Log4Shell is not considered a supply chain attack (there is no combination of two attacks), due to the overwhelming
+presence of Log4j in IT infrastructure707 it is worth covering it.
+In December 2021 Crowdstrike revealed708 an operation by Aquatic Panda709, a China-based threat group that used
+a modified version of Log4Shell to target a vulnerable VMware Horizon instance at a large academic institution. This
+was not the only operation linked to instances in which VMware Horizon was abused. In June 2022, both CISA and
+CGCYBER released an advisory710 711 in which they report on multiple threat actor groups that have exploited
+Log4Shell on unpatched, public-facing VMware Horizon and Unified Access Gateway servers. These threat actors
+used Log4Shell as an initial access to the environment of their victims, in one case a disaster recovery network, to
+then exfiltrate sensitive data or enable remote access to these target environments.
+It is expected712 that many state-operated actors are very likely going to continue to integrate Log4Shell exploits with
+their arsenal, since this library provides a valuable entry point and organisations are having a hard time identifying
+which of their assets run a vulnerable version of Log4Shell. From the point of view of these threat actors, Log4Shell is
+however just a very lucrative access vector among a long list of other vectors.
+
 
 \section{Kategorie útočníků}
 Pro kompletnost je při zkoumání bezpečnostního nutné uvažovat i typu útočníka, který útok uskutečňuje.
@@ -926,7 +1288,6 @@ Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jso
 
 \subsection{Nástroje}
 ~\clfig{cso_mitre_open-source_attck_test_tools}{\linewidth}{Porovnání vybraných nástrojů}{\cite{csoonline_4_testing_frameworks}}{fig:OpenSourceTestTools}
-% TODO maybe make my own table?
 
 Než je zvolen finální framework pro testování, je nutné si nejdříve připravit co možná nejvíce informací týkajících se testování.
 Je jasné, že každý z vybraných frameworků má své silné a slabé stránky.
@@ -962,9 +1323,6 @@ Dalším problémem je generace výstupních reportů.
 Na rozdíl od dalších přístupů Atomic Red nevytváří automaticky stručný report o technikách které byly v útoku zkoumány.
 Tato funkcionalita je bohužel až v pokročilejším placeném software který Red Canary nabízí.\cite{csoonline_4_testing_frameworks}
 
-%todo add more after using it?
-% TODO WRITER: text
-%todo co to je, porovnání
 
 \subsubsection{Endgame RTA}
 \ac{RTA} v tomto kontextu znamená \firstac{RTA}.
@@ -981,9 +1339,6 @@ Práce se skripty proto vyžaduje více úsilí a určitou známost matice ATT\&
 Naštěstí jsou přesná označení technik, jako T1107 dohledatelné přímo ve skriptu.
 Pro složitější testování je možné spouště všechny skripty najednou nebo vybrat některé pomocí podmíněného příkazu \textit{IF} přímo v kodu.
 Pro základní automatizaci stačí, pro hlubší testovaní je tento nástroj však omezen.\cite{csoonline_4_testing_frameworks}
-
-%todo probably better to use never EQL analytics library? https://eqllib.readthedocs.io/en/latest/
-% TODO WRITER: text
 
 
 \subsubsection{Mitre Caldera}
@@ -1019,12 +1374,16 @@ Caldera je oproti dříve představeným nástrojům složitý framework.
 To je však více nežli dostatečně vyváženo dobrou dokumentací a hlavně možnostmi, které zkušenému uživateli Caldera nabízí.
 Caldera dovoluje nastavení autonomních red-team nebo blue-team operací, a to plnohodnotně včetně závěrečného výpisu a exportování logů.
 Existuje také možnost manuálních red-team operací, hlavně v případech nahrazování a testování pomocí vlastních nástrojů.\cite{mitre_caldera_docs}
-%todo add more after using it?
+
 
 \section{Praktická část}
-% todosem narvat hafo obrázků
+Praktická část této práce je zaměřená na zjišťování možností testování.
+Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK.
+Za tímto účelem jsou představeny vybrané testovací nástroje založené nebo kompatibilní s MITRE ATT\&CK.
+Je popsáno testovací prostředí, instalaca vybraných nástrojů, možné problémy, které při přípravě mohou nastat a také jak tyto problémy vyřešit.
+Dále je ukázáno a a vysvětleno, jak tyto nástroje používat k docílení testování a také proč jsou testovány techniky a taktiky, které jsou testovány.
+Výsledná práce by tedy měla stačit ktomu, aby i neznalý uživatel byl shopen nastavit testovací prostředí a otestovat základní vlastnosti svojí infrastruktury nebo zařízení.
 
-% TODO WRITER: text , úvod, bla bla
 
 \subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}
 Jako testovací prostředí bylo zvoleno Kali Linux, které bude spouštěno v Oracle VM VirtualBox.
@@ -1554,9 +1913,10 @@ public interface AccountDao {
 					nn1006    & 27.9129 & 0.8438 & 4.0683 \\
 					nn1007    & 27.5834 & 0.8360 & 4.2082 \\
 					\hline
-				\end{tabular}
+				\end{tabular}\label{tab:table}
 			\end{table}
 
 			\newpage
 
-			Další text
+
+
