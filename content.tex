@@ -476,32 +476,6 @@ Dalším možným příkladem je vydávání se za atraktivní ženu na sociáln
 Cílem je buďto postupně z cílů postupně extrahovat informace nebo po dlouhodobějším kontaktu a získání důvěry zaslat škodlivé dokumenty, po jejichž otevření je kompromitováno zařízení oběti útoku.
 Bohužel tyto kampaně bývají velmi úspěšné a tak je téměř jisté jejich využití i v budoucnu.\cite{Enisa_thread_landscape}
 
-
-%todo implement
-An extension of PhaaS is the use of Initial Access Brokers (IAB). This supply chain of social engineering specialists
-first opens the 'flood gates' to an organisation, after which they hand over their access, often credentials or installed
-remote access tools, to follow-up actors386. As the DBIR stated earlier, this can then be used by the attackers to
-engage with victims or find their way further into an organisation. This market for IAB has further flourished387 in
-recent years, mostly because of the constant demand from criminal organisations for easy access to organisation
-
-A noteworthy campaign by an initial access broker referred to as 'Exotic Lily' was documented by Google's TAG
-(Threat Analysis Group)388 in March 2022. The group used phishing e-mails to deliver an exploit for a vulnerability in
-Microsoft MSHTML and appears to be providing initial access for groups spreading Conti and Diavol ransomware.
-The payload of the mails included the use of disk image (ISO) files. But they were not the only threat actors that were
-observed that were using disk images.
-
-The use of multi-factor authentication (MFA) has reduced the opportunities for attackers to use compromised
-accounts as a pivot point for starting social engineering campaigns. So instead of targeting individual mailboxes, we
-have witnessed attackers shifting to abuse legitimate infrastructure to execute their operations.
-An example of such a shift in tactics is where attackers register trial tenants for services at Office 365 which make
-their e-mail appear much more legitimate. Other ways include compromising a Microsoft Exchange server via
-ProxyShell or ProxyLogin and then distributing phishing e-mails to internal and external user accounts. To
-further deceive potential victims, attackers also hijack mail conversations and in some cases modified the typeface
-and language of the reply messages for each attack to increase the chances of success.
-It is likely that we will see further use of known (and sometimes 'trusted') accounts or legitimate infrastructure to
-execute phishing campaigns, either by exploiting vulnerabilities in systems such as Microsoft Exchange or by making
-use of exploitation efforts by other threat actors.
-
 \nlparagraph{Typy útoků}
 Je možné rozlišovat několik hlavních kategorií sociálního inženýrství.
 Je jasné, že kategorie jsou různě rozsáhlé a obsahují vlastní pod-kategorie, pro pochopení je však vhodné jednodušší roztřídění.
@@ -515,126 +489,65 @@ Hlavní kategorie jsou představeny v tomto seznamu:
 
 
 \subsubsection{Phishing}
-%todo rework
-Podvodné komunikaci, která předstírá že pochází z legitimního zdroje, se říká Phishing\cite{cisco_most_common_attack}.
-Nejčastěji se jedná o emailovou komunikaci, existují však i formy přes sms nebo telefonní hovor.
-Nejnebezpečnější jsou specializované útoky, zvané whaling a spear-phishing.
-Většina útoků se snaží pokrýt velké spektrum populace, většinou omezené pouze záminkou, která je k útoku využita.
-Specializované útoky jsou však tvořeny pro jednu specifickou osoby.
+Phishing jsou podvodné emaily, kde největší roli hraje zvolená záminka.
+Nejčastěji je cílem nasměrovat cíl na podvodné stránky pro krádež nebo ověření informací, druhým nejčastějším cílem je získat prvotní přístup do uzavřeného systému.
+Zajímavé informace pro útočníka jsou například přihlašovací údaje, které se pokusí zjistit vytvořením kopie přihlašovací stránky banky a na tuto stránku zašle cíli emailem odkaz.
+V získání přístupu naopak často figurují infikované soubory.
+Phishing existuje v mnoha podobách.
+Velmi známé jsou emaily typu \textit{Nigerijský princ}, které fungují na zasílání velkého počtu emailů a přirozené filtraci v podobě odpovědí.
+Genius tohoto útoku je v tom, že na emaily s takto jasným podvodem budou odpovídat pouze lidé, kteří jsou náchylní k podlehnutí danému podvodu.
+Hlavní nebezpečí phishingu však tkví ve specializovaných útocích, zaměřených na jednu určitou osobu.
 Útočník stráví týdny nebo i měsíce zjišťováním informací o cílené osobě a poté vytváří jeden specifický útok, který je v drtivé většině případů úspěšný.
-Tato hrozba mívá 2 primární cíle.
-Prvním je ověření nebo zisk informací, které lze použít k dalšímu útoku.
-Druhým je kompromitace zařízení, například pomocí malware.
-Nejčastěji je to pomocí odkazů, které se v podvodném emailu nachází, popřípadě pomocí infikovaných souborů.
-Znepokojující je také každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
+Tato podkategorie má název \textit{spear-phishing}.
+Ještě specializovanější podkategorií je \textit{whaling}, kdy je útok zaměřen na jednu vysoce postavenou osobu ve společnosti, jako je například vedoucí oddělení nebo prezident organizace.
+Velmi znepokojující je každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
 
-
-Phishing se snaží o krádež důležitých informací, jako jsou čísla kreditních karet a hesla, prostřednictvím e-mailů využívajících sociálního inženýrství a klamání. Spear-phishing je sofistikovanější verze phishingu, která cílí na konkrétní organizace nebo jednotlivce. Whaling je spear-phishingový útok zaměřený na uživatele ve vysokých pozicích (vedoucí pracovníky, politiky atd.). Smishing, termín odvozený z kombinace slov 'SMS' a 'phishing', nastává, když jsou finanční nebo osobní informace obětí získávány prostřednictvím SMS zpráv. Další související hrozbou je vishing, což je kombinace slov 'phishing' a 'voice', který nastává, když jsou informace poskytovány prostřednictvím telefonu, kde zlomyslní aktéři využívají sociálně-inženýrských technik k získání citlivých informací od uživatelů.
-
-
-%todo eng del
-Phishing aims at stealing important information like credit card numbers and passwords, through e-mails involving
-social engineering and deception. Spear-phishing is a more sophisticated version of phishing that targets specific
-organisations or individuals. Whaling is a spear-phishing attack aimed at users in high positions (executives,
-politicians etc.). Smishing, a term derived as a combination of 'SMS' and 'phishing', occurs when financial or
-personal information of victims are gathered via the use of SMS messages. Another related threat is vishing, a
-combination of phishing and voice that occurs when information is given via phone, where malicious actors using
-social engineering techniques to extract sensitive information from users.
-
-\nlparagraph{Phaas}
-
-Vytváření phishingových webových stránek a nastavení základní infrastruktury pro kampaň sociálního inženýrství může být nudnou prací. Kriminálníci se stále častěji obrací na hotový materiál nabízený phishingovými sadami nebo využívají služební model nazývaný 'Phishing-as-a-Service'.
-
-Nasazení phishingových sad obvykle má krátkou životnost, přičemž téměř třetina nasazených sad se použije ne déle než jeden den.
-Podle společnosti Microsoft jsou moderní phishingové sady dostatečně sofistikované na to, aby se vydávaly za legitimní obsah s použitím správného pravopisu, gramatiky a obrazových prvků.
-Ve stejné zprávě Microsoft poznamenává, že i pachatelé, kteří tyto sady používají, mohou být klamáni.
-Některé sady obsahují "dodatečnou" funkčnost, která nejenže odesílá získané přihlašovací údaje phisherům, ale také původnímu autorovi sady nebo sofistikovanému zprostředkovateli.
-Z pohledu oběti může mít tato skutečnost vážné důsledky, protože odcizené přihlašovací údaje se dostanou do rukou několika různým zločineckým skupinám.
-Phishingové sady také zohledňují regionální rozdíly (s použitím blokování na základě geografické polohy), filtrování nežádoucích agentů, možnosti zamlžení a jsou prodávány jako součást balíčku software-as-a-service: Phishing-as-a-Service (PhaaS).
-Tyto služby nejsou nové, ale zpráva od společnosti Microsoft o operaci BulletProofLink ukazuje její úroveň sofistikace, profesionální obchodní model a využití automatizace.
-
-
-%todo eng del
-Creating phishing websites and setting up the underlying infrastructure for a social engineering campaign can be a
-tedious job. Instead, criminals turn more and more to ready-made material offered by phishing kits or they make use
-of a service model through 'Phishing-as-a-Service'
-
-deployments of phishing kits generally have a short lifespan, with almost one-third of deployed kits
-being used for no longer than a day.
-According to Microsoft, modern phishing kits are sufficiently sophisticated to
-masquerade as legitimate content in their use of spelling, grammar and imagery.
-In the same report Microsoft notes
-that the miscreants making use of these kits can also be fooled.
-Some of the kits contain 'added' functionality that not
-only sends the credentials obtained to phishers but also to the kit’s originating author or a sophisticated intermediary.
-From a victim's point of view this can severely aggravate the impact of an incident as stolen credentials now end up
-in the hands of several different gangs.
-Phishing kits also take into account regional differences (with geo-blocking), filter out unwelcome agents, add
-obfuscation options and are sold as part of a software-as-a-service package: Phishing-as-a-Service (PhaaS).
-These services are not new but a report from Microsoft on the BulletProofLink operation show its level of
-sophistication, professional business model and its use of automation.
-
-%trend
-Kampaň, kterou v březnu 2022 upozornila společnost Proofpoint397, se týká pravděpodobné phishingové kampaně sponzorované státem, která použila možná ohrožený e-mailový účet člena ukrajinských ozbrojených sil k cílení na zaměstnance evropských vlád, kteří se zabývají logistikou uprchlíků prchajících z Ukrajiny. V rámci kampaně byl použit e-mail s předmětem odkazujícím na rozhodnutí Rady bezpečnosti Ukrajiny.
-Tým Google TAG pozoroval neustále rostoucí počet aktérů hrozeb, kteří využívají válku na Ukrajině jako návnadu v phishingových a malware kampaních. Jedna z kampaní zahrnovala skupinu COLDRIVER, která je údajně ruským aktérem hrozeb někdy nazývaným také Callisto, který používal phishingové e-maily na získávání přístupových údajů od vládních a obranných úředníků, politiků, nevládních organizací, think tanků a novinářů39.
-
-%trend
-A campaign highlighted in March 2022 by Proofpoint397 is about a likely nation-state sponsored phishing campaign
-that used a possibly compromised Ukrainian armed service member’s e-mail account to target European government
-personnel involved in managing the logistics for refugees fleeing Ukraine. The campaign used an e-mail with a
-subject referring to a decision of the Security Counsel of Ukraine.
-Google's TAG has observed a continuously growing number of threat actors using the war in Ukraine as a lure in
-phishing and malware campaigns. One of the campaigns involved COLDRIVER, an allegedly Russian based threat
-actor sometimes referred to as Callisto, which used credential phishing e-mails to target government and defence
-officials, politicians, NGOs, think tanks and journalists39
-
-
-Phishing útoky jsou prováděny ve velkém objemu a cílí na širokou veřejnost, zatímco jiné útoky sociálního inženýrství využívají vlastní kampaně přizpůsobené konkrétním zaměstnancům.
-Při použití sociálního inženýrství útočníci využívají přístup zaměstnanců uvnitř organizace k získání technického základu v síti, ze které provádějí další útoky.
+\nlparagraph{PhaaS}
+Jedním z důvodů zvýšení sofistikovanosti útoků a jejich rozšíření je \firstac{PhaaS}
+Útočníci stále častěji využívají již připravené materiály nabízené phishingovými sadami místo tvorby vlastních.
+Využití těchto sad mívá jen krátkou životnost, většina dokonce není využívána déle jak jeden den.
+Výhodou však bývají perfektní lokalizace pro útok a základní informace pro tvorbu obsahu nerozeznatelného od legitimního.
+Dříve bylo možné poznat phishingový email pomocí špatné gramatiky, dnes už tomu tak není.
+Zajímavým úskalím je však šance podvodu.
+Některé sady obsahují \textit{dodatečnou} funkcionalitu, která například odesílá získané přihlašovací údaje nejen útočníkům ale i vlastníkům phishingové sady.
+To pro oběti útoku znamená, že odcizené informace se šíří rychleji a nikdo nad nimi nemá úplnou kontrolu.\cite{Enisa_thread_landscape}
 
 
 \subsubsection{Vishing}
-Forma sociálního inženýrsvtý zaměřená na podvodné telefonáty se nazývá vishing.
-Oproti phishingu však klade mnohem větší důraz na improvizaci a komunikační schopnosti útočníka.
-hlavní změnou oproti phishingu je silná zpětná vazba.
-Útočník je tak schopen měnit plán útoku pomocí nově zjištěných informací, pokud však útočník není dostatečně schopný nebo nemá dostatečně propracovanou zámiku, je snadné ho odhalit.
-
-%todo refine
-Podle Europolu se bezpečnostní podvod s bankovním účtem stává novým způsobem provádění vishingu.
-V rámci tohoto podvodu útočníci přesvědčují oběti, aby převedly peníze na "bezpečný účet", tím, že jim řeknou, že jejich bankovní účet byl napaden.
-Aby byl příběh více přesvědčivý, často se vydávají za policejního důstojníka nebo zaměstnance finanční instituce.
-Bohužel, tento takzvaný bezpečný účet je pod kontrolou podvodníků a po dokončení převodů peněz zjistí oběti, že za pár minut ztratily celoživotní úspory.
-Objem případů vishingu se rovněž značně zvýšil, jak uvádějí Agari a PhishLabs, a to o ne méně než 550\% za posledních dvanáct měsíců (1. čtvrtletí 2022 ve srovnání s 1. čtvrtletím 2021).
-Je velmi pravděpodobné, že budeme i nadále pozorovat tento trend i v blízké budoucnosti.
-
-%Vishing
-According to Europol425 the safe account scam is an emerging modus operandi in vishing. In such a scam attackers
-convince victims into transferring funds to a 'safe account' by telling them their bank account has been compromised.
-To make the story more convincing, they often pose as a police officer or an employee of their financial institution.
-Unfortunately this so called safe account is under the control of fraudsters and after the money transfers have been
-completed victims find that they have lost their life’s savings in the space of a few minutes.
-The volume of vishing cases has also increased substantially, according426 to Agari and PhishLabs, no less than 550
-per cent over the last twelve months (Q1 2022 compared to Q1 2021). It is very likely we will continue to witness this
-trend in the near future.
+Forma sociálního inženýrství zaměřená na podvodné telefonáty se nazývá vishing.
+Hlavní rozdíl oproti již představenému phishingu je silná zpětná vazba, kterou má útočník k dispozici během hovoru.
+Vishing tak klade mnohem větší důraz na improvizaci a komunikační schopnosti útočníka.
+Útok, který nebyl tak dobře připraven je možné zachránit dobrým využitím nově získaných informací.
+Je to také mnohem rychlejší a interaktivnější forma sociálního inženýrství.
+Při zaslání phishingového emaily můžeme čekat dny nebo i týdny na zjištění úspěšnosti útoku, při vishingu je to otázka minut.
+všechny okolnosti však nejsou jen ve prospěch útočníka.
+Rychlost a komunikace také znamená, že náhodná interakce může zkazit výborně připravený útok.
+Je jasné, že v komunikaci po telefonu nelze poslat škodlivý link.
+Proto je primárním cílem útočníka zisk nebo ověření informací.
+Jako nový trend se ukazují podvody s bankovními účty, kdy útočník přesvědčí oběť, aby převedla peníze na \textit{bezpečný} účet.
+Princip je snadný, útočník se vydává za policistu nebo zaměstnance finanční instituce a obeznámí oběť o faktu, že jejich běžný účet je napaden a mohli by tak o své peníze přijít.
+\textit{Bezpečný} účet je však pod kontrolou útočníka a tak jedním převodem některé oběti za pár minut ztratily celoživotní úspory.
+Report společnosti \ac{ENISA} jasně ukazuje, že ve sledovaném období (1. čtvrtletí 2021 až 1. čtvrtletí 2022) se počet případů vishingu zvýšil o více jak 550\%.
+Je nepochybné, že tento trend bude nadále pokračovat díky vzrůstající oblíbenosti u útočníků.\cite{Enisa_thread_landscape, moje_bakalarka}
 
 \subsubsection{Smshing}
-mezi phsihingem a vishingem, bere části od obou, rychlé ale psaný text
-
-%todo refine
-Jedním z mobilních bankovních malwarů, který byl pozorován s vysokou intenzitou, je FluBot. Cílí na uživatele zařízení s operačním systémem Android většiny Evropy a šíří se prostřednictvím SMS a MMS zpráv. Oběti nejprve obdrží SMS zprávu (nazývanou smishing nebo SMS phishing), která se vydává za doručovatelské společnosti, hlasové záznamy nebo falešný software. Zpráva obsahuje odkaz, který směřuje na webovou stránku, která instruuje oběť, aby nainstalovala aplikaci. Jakmile je aplikace nainstalována, udělují se požadovaná oprávnění nebo jsou někdy deaktivovány bezpečnostní funkce. FluBot se šíří samošířením tím, že odesílá phishingové textové zprávy z nakaženého zařízení do kontaktů na seznamu. Bude také sdílet tento seznam kontaktů s provozovateli kampaní, ale nejproblémovější pro oběti je, že sbírá čísla kreditních karet a přihlašovací údaje do online bankovnictví, zachytává SMS zprávy (jako jednorázová hesla) a zaznamenává snímky obrazovky.
-
-%SMShing
-A mobile banking malware that's been heavily observed is FluBot. It targets users of Android devices in most of
-Europe and is spread via SMS and MMS. Victims first receive an SMS message (called smishing or SMS phishing)
-that impersonates parcel delivery companies, voicemail memos or fake software. The message contains a link that
-points to a website, instructing the victim to install an app. Once the app is installed, the requested permissions are
-granted or, sometimes, security features are disabled. FluBot spreads through self-propagation by sending phishing
-text messages from the infected device to its contact list. It will also share this contact list with the campaign
-operators but, most problematic for the victims, it also collects credit card numbers and online banking credentials,
-intercepts SMS messages (such as one-time passwords) and captures screenshots417 418 419 420 421.
+Smshing je verze sociálního inženýrství prováděná přes sms zprávy.
+Forma je velmi podobná phishingu, liší se však v přístupu lidí k sms.
+Příchozí email oběť vyřizuje v prostředí, kde má čas se mu věnovat a dávat si pozor na podezřelé detaily.
+Sms je však vyřizována většinou hned při jejím příchodu, obzvláště pokud vypadá jako krize.
+Příkladem může být kampaň FluBot, jejím cílem jsou Android zařízení.
+Oběť nejprve obdrží SMS zprávu, která se vydává za doručovatelské společnosti nebo falešný software.
+Cílem zprávy je přimět uživatele, aby nainstaloval podvodnou aplikaci a dodal jí oprávnění.
+Podvodná aplikace je pak schopna monitorovat seznam kontaktů, uložená nebo zadávaná číla kreditních karet, přihlašovací údaje do internetového bankovnictví nebo zachytává sms a v nich přicházející jednorázová hesla.
+FluBot se navíc sám šíří z napadeného zařízení právě zasíláním zpráv na záznamy v seznamu kontaktů.\cite{Enisa_thread_landscape, moje_bakalarka}
 
 \subsubsection{Personální útok}
-%todo na první dobrou
+Speciální kategorie útoků sociálního inženýrství, kdy se útočník snaží fyzicky dostat k citlivým datům společnosti.
+Tento typ útoku je v porovnání s ostatními velmi vzácný, většinou se jedná o předem domluvené testovací akce.
+Důvod, proč tento útok stojí za zmínku je jeho efektivnost.
+V dnešní době jsou servery velmi dobře chráněné proti přístupu z internetu, co když ale někdo přijde a zapojí do něj usb flash disk?
+Je jasné, že tento typ útoku je pro útočníka velmi nebezpečný a náročný, vyžaduje schopnosti které nejsou standardní a dokonce i specializované nástroje.
+Jejich efektivita však nelze popřít a jsou mnohdy opomíjeny jako možný vektor útoku.\cite{moje_bakalarka}
 
 
 \subsection{Threat against data}
@@ -808,7 +721,7 @@ A to i za předpokladu, že je mnohem výkonnější.
 
 \subsection{Ostatní}
 Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie ale jsou často využívány v kombinaci s jinými kategoriemi útoků.
-je nutné je v tomto výčtu zmínit kvůli jejich nebezpečnosti, rozšířenosti a nízkému veřejnému povědomí.
+Je nutné je v tomto výčtu zmínit kvůli jejich nebezpečnosti, rozšířenosti a nízkému veřejnému povědomí.
 
 \subsubsection{Man-in-the-middle}
 Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
@@ -819,7 +732,8 @@ Mezi nejčastější implementace tohoto útoky patří napodobování veřejné
 Lidé si tak nemusí uvědomit, že útočník existuje a nedávají si tak pozor na svoji činnost na takto odposlouchávané síti.
 Další oblíbenou implementací útoku je použití malware.
 Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.\cite{cisco_most_common_attack}
-%todo more?
+
+%todo eng refine
 
 In January 2022 the FBI issued a warning409 concerning criminals using QR codes to redirect victims to malicious
 sites that steal login and financial information. A similar effort was observed by the Phishing Defence Centre where
@@ -835,7 +749,8 @@ Mnohem častější je případ, kdy slabinu našel sám útočník.
 Ten ji pouze bude chtít využít, rozhodně ne nahlásit.
 Tyto slabiny se také snaží získat státní složky zaměřené na špehování.
 Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
-%todo more? zdroje?
+
+%todo eng refine
 
 A side effect of the investment in resources is that the number of 0-days being discovered675 has increased
 substantially676. And although in a lot of cases the disclosure of such 0-days is done responsibly (with accompanying
@@ -867,7 +782,6 @@ Mnoho společností ho navíc nekontroluje dostatečně, aby mohlo tento typ út
 Útočník v \ac{DNS} requestech a responsech zakódovává vlastní komunikaci za účelem jejího skrytí.
 Odchozí komunikace může být použita pro exfiltraci kritických dat nebo přijímání odpovědí od nainstalovaného malware.
 příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
-%todo more? zdroje?
 
 \subsubsection{Supply-chain útoky}
 %todo add
