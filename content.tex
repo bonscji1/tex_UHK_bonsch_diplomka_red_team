@@ -1357,34 +1357,68 @@ Je však nežádoucí zmínit přesnou verzi systému nebo již zmíněnou ip ad
 
 
 \nlparagraph{Internet}
- ------TODO-------%todo del
 Je překvapivé, kolik dat o cíli může útočník získat čistě pomocí vyhledávání na internetu.
 Nejen, že cíl měl webové stránky, dokonce v porovnání s dalšími stránkami podobných organizací vyplynulo, že mají jiného jednotného správce a jsou to pouze upravovány z jednotné šablony.
 Lze tedy očekávat, že problémy nalezené na jedné implementaci šablony budou platiti pro všechny.
-Bylo proto využito veřejných databázových repozitářů \textbf{WHOIS} a \textbf{CenSys} pro zjištění více informací.
-
-V technických databázích byly o doméně organizace zjištěny následující údaje:
--	Zkrácená jména administrátorů domény
--	Datum registrace domény
--	Kontakt na administrátory systému – jméno, adresa, název organizace
--	Název organizace, pod kterou je doména zaregistrována
+Bylo proto využito veřejných databázových repozitářů \textbf{WHOIS} a \textbf{CenSys} pro zjištění více informací o doméně.
+například bylo zjištěno:
+\begin{itemize}
+	\item Zkrácená jména administrátorů domény,
+	\item Datum registrace domény,
+	\item Kontakt na administrátory systému – jméno, adresa, název organizace,
+	\item Název organizace, pod kterou je doména zaregistrována.
+\end{itemize}
 
 To jsou informace, které sice nevedou přímo k útoku ale ukazují na osoby a organizace, na které je dobré se více zaměřit.
 Není nutné tedy hledat slepě ale je jasné, jakým směrem se vydat.
+Zde lze například při využití běžného vyhledávače DuckDuckGo a sociálních sítí LinkedIn a Facebook údaje o administrátorovi.
+Například se povedlo nalézt osobní i pracovní emailovou adresu (vhodné pro phishing), místo bydliště a pracovní i osobní telefonní číslo (Vishing).
+Třešničkou na pomyslném dortu však byla anonymizovaná smlouva podepsaná daným administrátorem.
+To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah jako plaintext.
 
-%todo del redundant
+--Censys
+- po zadání doménového jména nebo IP adresy serveru načte informace o službách a jejich portech
+- není tak detailní jako nmap, ale je online a bez nutnosti instalace dalších nástrojů
+-nalezeny 2 záznamy, informace jsou:
 
-Zde záleží na typu útočníka. Autor práce zkusil využít pro zjištění informací vyhledávač Google a sociální sítě Linkedin a Facebook. U hned prvního administrátora byla do 2 hodin zjištěna osobní i pracovní emailová adresa, místo bydliště, pracovní i osobní telefonní číslo, a dokonce byla nalezena podepsaná anonymizovaná smlouva touto osobou.
+
+Webový server
+-	IP adresa
+-	Provozovaný operační systém – Linux Ubuntu
+-	Veřejné porty a služby – 80/HTTP, 443/HTTPS, 500/IKE a 10443/http
+Emailový server
+-	Reverzní DNS záznam – mail.názevOrganizace.cz
+-	Provozovaný operační systém – Fortinet FortiOS
+-	Veřejné porty a služby – 10443/HTTP
 
 
+--Na webovém serveru je spuštěna samotná internetová stránka, specificky porty 80 a 443.
+--protokolu na výměnu bezpečnostních klíčů IKE na portu 500
+--spuštěná webová služba na portu 10443
+--Při zadání adresy sportem do prohlížeče je uživatel přesměrován na přihlášení do systému od společnosti Sophos, která se zabývá vytvářením bezpečnostního softwaru a hardwaru.
 
-
+--10443 přes HTTP protokol přihlašovací formulář do služby společnosti Fortinet
+--Uživatel má možnost zadat přihlašovací jméno a heslo, popřípadě spustit aplikaci FortiClient.
+--možný access point pro supply-chain útok
 
 \nlparagraph{Nmap}
 Nástroj pro skenování portů nmap je dlouhodobě využívaný nástroj mnoha útočníků a tak je dobré vědět, co s ním jde o daném cíli zjistit.
 
 
+
+
 %todo del redundant
+Jedná se o nástroj umožňující aktivní skenování vsíti.
+Uživatel musí zadat potřebné vlastnosti prováděného skenu a definovat svůj cíl.
+Jako cíl je možné zvolit doménu, adresu či skupinu adres. (informace co jsme již nalezli)
+Zároveň je možné definovat skenování portů, kdy se program pokusí získat informace o aktivních portech, protokolech, spuštěných službách a jejich verzích.
+Následně bylo nastaveno, aby program po ukončení své funkce vyexportoval výsledek do textového souboru.
+
+--vysledek potvrdil již zjištěné informace ale poskytl i nové webového serveru, na které je spuštěn internetový portál.
+--pokusil zjistit verze běžících služeb na daných portech. Zajímavou informací je verze webového serveru, na které je spuštěn internetový portál. Jedná se o dnes již starší verzi serveru Apache 2.4.29 vydané vdruhé polovině roku 2017.
+-- Jedná se o dnes již starší verzi serveru Apache 2.4.29 vydané vdruhé polovině roku 2017 <- zastaralé
+--Na tuto verzi je možné na internetu nalézt několik chyb a zranitelností. Dále byl nalezen port 5060 sprotokolem SIP a port 8443 se službou OpenVPN.
+
 
 
 \subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}%todo texit všude nebo nikde, kouknout jak to vypadá
