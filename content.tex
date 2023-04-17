@@ -1394,21 +1394,26 @@ Jedná se tedy opět o možnost vzdáleného přístupu a u obou serverů je ted
 Nástroj pro aktivní skenování portů \textit{nmap} je dlouhodobě využívaný nástroj mnoha útočníků a tak je dobré vědět, co s ním jde o daném cíli zjistit.
 Pro zahájení skenování je nutné zadat potřebné vlastnosti skenu a definovat cíl.
 Cílem je samozřejmě již zmíněná organizace, nmap přijímá informace o doméně, jedné nebo i skupině adres což jsou již nalezené informace.
+Nutné je specifikovat možnosti skenování portů, je například možné získat informace o aktivních portech, protokolech, spuštěných službách a jejich verzích.
+V rámci sbírání přehledných dat bylo také nastaveno, aby po ukončení práce nmap vyexportoval výsledek do textového souboru.
 
+\begin{codeblock}
+	\begin{verbatim}
+# nmap -v -A -p- -sV -version-all -O -oN vysledek.txt "cíl_útoku"
+	\end{verbatim}
+	\captionsource{Ukázka možného pžíkazu.}{[Vlastní]}
+\end{codeblock}
 
-
-
-%todo del redundant
-
-Zároveň je možné definovat skenování portů, kdy se program pokusí získat informace o aktivních portech, protokolech, spuštěných službách a jejich verzích.
-Následně bylo nastaveno, aby program po ukončení své funkce vyexportoval výsledek do textového souboru.
-
---vysledek potvrdil již zjištěné informace ale poskytl i nové webového serveru, na které je spuštěn internetový portál.
---pokusil zjistit verze běžících služeb na daných portech. Zajímavou informací je verze webového serveru, na které je spuštěn internetový portál. Jedná se o dnes již starší verzi serveru Apache 2.4.29 vydané vdruhé polovině roku 2017.
--- Jedná se o dnes již starší verzi serveru Apache 2.4.29 vydané vdruhé polovině roku 2017 <- zastaralé
---Na tuto verzi je možné na internetu nalézt několik chyb a zranitelností. Dále byl nalezen port 5060 sprotokolem SIP a port 8443 se službou OpenVPN.
-
-
+Výše ukázaný příkaz byl proveden a výsledek byl vypsán do souboru \textbf{vysledek.txt}, což je nastaveno přízviskem \textbf{-oN}.
+Příznak \textbf{-v} označuje vyšší level podrobnosti, takzvané verbosity.
+Pro detekci operačního systému a detekci verzí je využito příznaku \textbf{-A} a příznaku \textbf{-O}.
+K detekci portů slouží \textbf{-sV -version-all}, kde -version-all znamená testování všech všech možností.
+finálně \textbf{-p-} je explicitní označení pro skenování všech portů, kde -p určuje rozsah.
+Výsledek tohoto scanu potvrdil již nalezené informace a nepřekvapivě tyto znalosti rozšířil o nové poznatky.
+Obzvláště zajímavá je verze webového serveru, na které je spuštěn internetový portál.
+Jedná se o totiž o starší verzi serveru Apache vydanou v roce 2017.
+Tato informace dává útočníkovi možnost nalézt zranitelnosti pro tuto specifickou verzi a je to tedy značným bezpečnostním rizikem.
+Posledním zajímavým poznatkem bylo nalezení portu 5060 s protokolem SIP a port 8443 se službou OpenVPN\@.
 
 \subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}%todo texit všude nebo nikde, kouknout jak to vypadá
 Scénář 2 navazuje na scénář 1.
