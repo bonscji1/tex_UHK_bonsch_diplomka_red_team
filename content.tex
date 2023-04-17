@@ -1361,7 +1361,7 @@ Je překvapivé, kolik dat o cíli může útočník získat čistě pomocí vyh
 Nejen, že cíl měl webové stránky, dokonce v porovnání s dalšími stránkami podobných organizací vyplynulo, že mají jiného jednotného správce a jsou to pouze upravovány z jednotné šablony.
 Lze tedy očekávat, že problémy nalezené na jedné implementaci šablony budou platiti pro všechny.
 Bylo proto využito veřejných databázových repozitářů \textbf{WHOIS} a \textbf{CenSys} pro zjištění více informací o doméně.
-například bylo zjištěno:
+Například byla zjištěna tyto data:
 \begin{itemize}
 	\item Zkrácená jména administrátorů domény,
 	\item Datum registrace domény,
@@ -1376,30 +1376,19 @@ Například se povedlo nalézt osobní i pracovní emailovou adresu (vhodné pro
 Třešničkou na pomyslném dortu však byla anonymizovaná smlouva podepsaná daným administrátorem.
 To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah jako plaintext.
 
---Censys
-- po zadání doménového jména nebo IP adresy serveru načte informace o službách a jejich portech
-- není tak detailní jako nmap, ale je online a bez nutnosti instalace dalších nástrojů
--nalezeny 2 záznamy, informace jsou:
-
-
-Webový server
--	IP adresa
--	Provozovaný operační systém – Linux Ubuntu
--	Veřejné porty a služby – 80/HTTP, 443/HTTPS, 500/IKE a 10443/http
-Emailový server
--	Reverzní DNS záznam – mail.názevOrganizace.cz
--	Provozovaný operační systém – Fortinet FortiOS
--	Veřejné porty a služby – 10443/HTTP
-
-
---Na webovém serveru je spuštěna samotná internetová stránka, specificky porty 80 a 443.
---protokolu na výměnu bezpečnostních klíčů IKE na portu 500
---spuštěná webová služba na portu 10443
---Při zadání adresy sportem do prohlížeče je uživatel přesměrován na přihlášení do systému od společnosti Sophos, která se zabývá vytvářením bezpečnostního softwaru a hardwaru.
-
---10443 přes HTTP protokol přihlašovací formulář do služby společnosti Fortinet
---Uživatel má možnost zadat přihlašovací jméno a heslo, popřípadě spustit aplikaci FortiClient.
---možný access point pro supply-chain útok
+\nlparagraph{Censys}
+Pro kontrolu a doplnění informací bylo využito platformy Censys.
+Tato platforma je schopná po zadání doménového jména nebo IP adresy serveru najít informace o službách a portech, na kterých služba komunikuje.
+Je jasné, že tato platforma nemůže nahradit plnohodnotný nástroj jako nmap, je však dostupná online a není nutné instalovat další nástroje.
+Pomocí platformy Censys byly nalezeny 2 důležité záznamy: \textit{webový server} a \textit{emailový server}.
+Záznam o \textit{webovém serveru} poskytuje informace o IP adrese, provozovaném operačním systému (Ubuntu) a veřejných portech.
+Na portech 80 a 443 je již zmíněná internetová stránka, zajímavější jsou však port 500, kde je protokol \firstac{IKE}, a port 10443, kde se nachází webová služba.
+Při zadání adresy do prohlížeče je  uživatel přesměrován na přihlášení do systému od společnosti Sophos.
+Tato společnost se zabývá vytvářením bezpečnostního software a monitorováním bezpečnosti klientů.
+Lze tedy očekávat, že na portu 10443 je vzdálený přístup právě pro tyto účely.
+Záznam o \textit{emailovém serveru} také obsahuje zajímavé informace.
+Jsou to Reverzní DNS záznam, provozovaný operační systém (FortiOS) a také port 10443, jehož prozkoumání vede do přihlašovacího formuláře společnosti fortinet.
+Jedná se tedy opět o možnost vzdáleného přístupu a u obou serverů je tedy možné získat přístup pomocí supply-chain útoku.
 
 \nlparagraph{Nmap}
 Nástroj pro skenování portů nmap je dlouhodobě využívaný nástroj mnoha útočníků a tak je dobré vědět, co s ním jde o daném cíli zjistit.
