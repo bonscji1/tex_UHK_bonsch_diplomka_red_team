@@ -26,7 +26,7 @@ pozor na zkratky -> check
 
 Cíle, hypotézy/ výzkumné otázky, způsob hledání odpovědí na výzkumné otázky včetně metodiky vlastního výzkumu/šetření, literární rešerše.
 
-\section{Úvod do problematiky kybernetické bezpečnosti}
+\section{Úvod do problematiky kybernetické bezpečnosti}\label{sec:uvod-do-problematiky-kyberneticke-bezpecnosti}
 V dnešní době díky rozvoji moderních technologií tráví velká část lidské populace značné množství času interakcemi s těmito technologiemi.
 Ať už se jedná o Internet, \firstac{IoT}, mobilní bankovnictví nebo sociální sítě, lidé se na technologií stávají čím dál více závislí.
 Technologie nám usnadňují všední život, dovolují práci z domova nebo přináší příležitosti, které jen pár let předem neexistovaly.
@@ -46,7 +46,7 @@ Rozdíly mezi cyber-útokem, cyber-zločinem a cyber-válkou jsou ve většině 
 Způsob útoku či hrozby na zatřídění do předchozích kategorií klade minimální vliv, zohledněn bývá pouze výsledek.
 
 
-\section{Relevance}
+\section{Relevance}\label{sec:relevance}
 Relevantnost problematiky cyber-bezpečnosti potvrzuje nejen množství akademických textů které zkoumají tuto problematiku, ale také stále větší zájem všeobecné veřejnosti.
 Hlavním důvodem je vzrůstající povědomí populace, způsobené medializací útoků sociálního inženýrství nebo ransomware které populaci v poslední době ovlivňovaly.
 V době psaní je v popředí například ransomware útok na dětskou nemocnici SickKids.\cite{bleep_sickkids_ransom}
@@ -66,8 +66,8 @@ Jsou hrozby, kterým je sice obtížné se bránit, ale jsou omezené rozsahem a
 Ale také jsou hrozby, na které obrana zatím neexistuje.
 Tyto hrozby je nutné najít a zkoumat, aby bylo možné ochranu vytvořit.
 
-\subsection{Studie trendů Cyber-security}
-Dlouhodobě můžeme v rámci Cyber-security rozeznávat několik klíčových zaměření.
+\subsection{Studie trendů kybernetické bezpečnosti}\label{subsec:studie-trendu-kyberneticke-bezpecnosti}
+Dlouhodobě můžeme v rámci kybernetické bezpečnosti rozeznávat několik klíčových zaměření.
 Zajímavé jsou změny v prioritách zaměření v ohledu na čas, které můžeme zkoumat na literatuře.
 Velké změny lze zaznamenat především před a po pandemii Covidu-19.\cite{KUMAR2022102821}
 Jako i u jiných odvětví můžeme dělit celou sféru na 2 části, část akademickou a část veřejnou.
@@ -136,6 +136,7 @@ Navíc sama skupina NSO uvedla, že pět států \firstac{EU} používá jejich 
 
 \nlparagraph{Další entity v průmyslu špehování na zakázku}
 ~\clfig{Facebook_banned_entities}{\linewidth}{Entity identifikované společností Meta}{\cite{pegasus_facebook}}{fig:FacebookThreads}
+
 Facebook je jeden ze zdrojů informací, které se používají pro špehování.
 Meta se snaží tuto činnost zredukovat a tak provedla kroky proti 7 různým entitám operujícím špehování na zakázku.
 Tyto entity sídlily působícím z Číny, Izraele, Indie a Severní Makedonie.
@@ -232,7 +233,7 @@ Právě z těchto důvodů je nutné podívat se nejčastější kategorie útok
 V předchozím textu byly mnohé zmíněny, následuje jejich rozbor do hloubky.
 Kategorie byly zvoleny z kombinaci několika zdrojů, jako je \ac{ENISA}\cite{Enisa_thread_landscape}, Cisco\cite{cisco_most_common_attack} nebo \firstac{NIST}\cite{nist_risks}.
 
-\subsection{Malware}
+\subsection{Malware}\label{subsec:malware}
 Tento termín se používá pro škodlivý software.
 Zahrnuje známé hrozby jako viry, červy, trojské koně, spyware a ransomware.
 Do systému se dostávají pomocí jeho slabin, často díky nepozornosti uživatele.\cite{cisco_most_common_attack}
@@ -771,7 +772,7 @@ Také není neobvyklá spolupráce s Insidery, kteří sdílí jejich přesvěd�
 Lze tedy říci, že hacktivisté mohou dle svého přesvědčení být kvalifikování jako síla dobra i zla.
 
 
-\subsection{Hacker na objednávku}
+\subsection{Hacker na objednávku}\label{subsec:hacker-na-objednavku}
 Skupina schopných hackerů kteří své vědomosti a znalosti propůjčují jiným osobám či organizacím jsou hackeři na objednávku.
 Nemůže být překvapením, že velká většina hackerů více či méně spadá do této skupiny.
 Skupina se totiž navíc dle motivace,metodologie a záměru dělí na podskupiny, zvané \textit{White hat, Gray hat} a \textit{Black hat} hackeři.
@@ -1196,7 +1197,7 @@ Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic red
 Autoři se snaží podporovat široké spektrum cílových systémů.
 Proto existují 2 typy požadavků, povinné a doporučené.
 Povinné určují, kde může být vůbec Caldera připravena.
-Jádro frameworku může být nainstalováno na operačních systémech Linux nebo MacOS.
+Jádro frameworku může být nainstalováno na operačních systémech Linux nebo MacOS\@.
 Pro fungování je vyžadován Python verze 3.7, 3.8, nebo 3.9 samozřejmě s rozhraním pip3.
 Pip3 je vyžadován pro instalaci podpůrných balíčků uvedených v souboru \textit{requirements} přímo v repozitáři Caldery.
 Ke správnému ovládání je vyžadován moderní prohlížeč.
@@ -1215,8 +1216,8 @@ Existuje také možnost manuálních red-team operací, hlavně v případech na
 
 \section{Praktická část}\label{sec:prakticka-cast}
 Praktická část této práce je zaměřená na zjišťování možností testování.
-Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK.
-Za tímto účelem jsou představeny vybrané testovací nástroje založené nebo kompatibilní s MITRE ATT\&CK.
+Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK\@.
+Za tímto účelem jsou představeny vybrané testovací nástroje založené nebo kompatibilní s MITRE ATT\&CK\@.
 Je popsáno testovací prostředí, instalace vybraných nástrojů, možné problémy, které při přípravě mohou nastat a také jak tyto problémy vyřešit.
 Dále je ukázáno a a vysvětleno, jak tyto nástroje používat k docílení testování a také proč jsou testovány techniky a taktiky, které jsou testovány.
 Výsledná práce by tedy měla stačit k tomu, aby i neznalý uživatel byl schopen nastavit testovací prostředí a otestovat základní vlastnosti svojí infrastruktury nebo zařízení.
@@ -1609,8 +1610,8 @@ Stačí velmi jednoduše z databáze verzí získat oficiální označení verze
 S tímto kódem je pak možné z některé z mnoha přístupných databází nalézt příslušné kódy slabin slabin, viz obrázek~\ref{fig:21h2_vulnerabilities}
 V tuto chvíli není nic jednodušší než nalézt aplikovatelnou slabinu a využít ji.
 
-\clfig{lab/data_about_system_and_machine}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{Vlastní}{fig:data_about_system_and_machine}
-\clfig{21h2_vulnerabilities}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{\cite{21h2_vulnerabilities}}{fig:21h2_vulnerabilities}
+~\clfig{lab/data_about_system_and_machine}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{Vlastní}{fig:data_about_system_and_machine}
+~\clfig{21h2_vulnerabilities}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{\cite{21h2_vulnerabilities}}{fig:21h2_vulnerabilities}
 
 Dalším důležitým poznáním z této operace je nejen zjištění přítomnosti firewallu a antiviru na testovaném zařízení ale dokonce i jejich identifikace.
 Výstupy zkoumající tyto fakty je možné vidět na obrázcích~\ref{fig:antivirus_discovery,fig:firewall_discovery}.
@@ -1636,12 +1637,12 @@ Nemůže tak být překvapením, že se tato taktika nezdařila.
 Důležité je však poznamenat, že v systému Windows ale také nevyvolala v tomto kroku operace žádné hlášení.
 Hlášení nastala, až kdy se simulovaný útočník pokoušel získat administrátorská práva.
 V rámci testování se tato práva snažil získat všemi možnostmi, které Caldera nabízí.
-Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a \ref{fig:specific_threat}.
+Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a~\ref{fig:specific_threat}.%todo check spaces
 
 %todo remake, show some antivirus disablin and then this, its in the other operation
-\clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
-\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
-\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
+~\clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
+~\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
+~\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
 
 Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
 Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace o kterých je nutné uživatele informovat.
