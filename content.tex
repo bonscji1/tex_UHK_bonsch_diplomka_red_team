@@ -10,15 +10,23 @@ Zde vysvětlit problémovou situaci a otázky, které se budou v bakalářské/d
 
 Smysl a účel, výzkumné otázky.
 
-%teoretická část
 \section{Metodika zpracování}\label{sec:metodika-zpracovani}
 
 % TODO WRITER: text
 
+%todo nutnost
+cyber -> kybernetické
+ciber -> kybernetické
+kiber -> kybernetické
+
+pozor na zkratky -> check
+%todo end
+
+
+
 Cíle, hypotézy/ výzkumné otázky, způsob hledání odpovědí na výzkumné otázky včetně metodiky vlastního výzkumu/šetření, literární rešerše.
 
-\section{Úvod do problematiky Cyber-security}
-%todo writer clean whole text, add as needed
+\section{Úvod do problematiky kybernetické bezpečnosti}
 V dnešní době díky rozvoji moderních technologií tráví velká část lidské populace značné množství času interakcemi s těmito technologiemi.
 Ať už se jedná o Internet, \firstac{IoT}, mobilní bankovnictví nebo sociální sítě, lidé se na technologií stávají čím dál více závislí.
 Technologie nám usnadňují všední život, dovolují práci z domova nebo přináší příležitosti, které jen pár let předem neexistovaly.
@@ -145,15 +153,15 @@ V neposlední řadě jsou data sbírána z `dark web' stránek, kde lze naleznou
 \textit{Navázání kontaktu} je druhá fáze řetězce.
 Typicky je právě zde největší možnost odhalit sledování a s ním spojený útok.
 Obezřetnost je tedy opět nejdůležitější krok k předcházení hrozeb.
-tato část řetězce je zaměřena na navázání kontaktu s cíli nebo lidmi v jejich blízkosti.
+Tato část řetězce je zaměřena na navázání kontaktu s cíli nebo lidmi v jejich blízkosti.
 Primárním cílem je vybudovat s cílem důvěru, získat nebo ověřit informace z předchozího kroku a v neposlední řadě připravit cíl na třetí fázi řetězce.
 Za tímto účelem jsou zde využívány taktiky sociálního inženýrství.
 Používají se fiktivní nebo ukradené identity aby oslovili lidi prostřednictvím e-mailů, telefonních hovorů, textových zpráv nebo zpráv na sociálních médiích.
 \textit{Využitím} se myslí manipulace cíle.
 Tato poslední část řetězce sledování obnáší vytváření phishingových domén, které jsou navržené tak, aby cíle oklamaly.
-domený se snaží získat od cíle informace noho ho přesvědčit k provedení akce, která není v jeho nejlepším zájmu.
+Domený se snaží získat od cíle informace noho ho přesvědčit k provedení akce, která není v jeho nejlepším zájmu.
 Jako cenné informace jsou brány přihlašovací údaje, například k  e-mailovému účtu, sociálním médiím, finančním službám nebo do  firemní sítě.
-za nežádoucí akce se považuje instalace malware, specificky spyware pro další zisk informací nebo ransomware pro peněžitý zisk.\cite{pegasus_facebook}
+Za nežádoucí akce se považuje instalace malware, specificky spyware pro další zisk informací nebo ransomware pro peněžitý zisk.\cite{pegasus_facebook}
 
 \nlparagraph{Nejvíce napadené odvětví}
 ~\clfig{ENISA_targeted_sectors}{\linewidth}{Nejvíce napadené sektory (v období červenec 2021 - červen 2022)}{\cite{Enisa_thread_landscape}}{fig:TargetedSectors}
@@ -179,7 +187,7 @@ I když společnosti začínají být zodpovědnější v nahlašování útoků
 Ve vojenském sektoru bude limitace informací prioritou.
 Proto bude v kombinaci s propagandou obou stran konfliktu a limitací nežádoucích informací velmi obtížné sestavovat jakoukoli přesnou reprezentaci útoků.
 
-\section{Nejčastější cyber-útoky}
+\section{Nejčastější kybernetické útoky}\label{sec:nejcastejsi-kyberneticke-utoky}
 Mezi nejčastější útoky dlouhodobě patří \textit{denial-of-service}, \textit{man-in-the-middle}, \textit{malware} a samozřejmě \textit{sociální inženýrství}\cite{LI20218176}.
 Také zaznamenané útoky v roce 2022 jsou v souladu s tímto trendem.
 Jsou to však velmi obecné kategorie, kde se specifika velmi liší.
@@ -445,7 +453,7 @@ Výsledkem je používaní stejných manipulačních technik, které lze pozorov
 Využívá nejen legitimní chyby lidského myšlení, jako například bias, ale také dokonce v jiných okolnostech chvályhodného charakteru.
 Velká část sociálního inženýrství je postavena na představení věrohodné záminky.
 To je možné zaznamenat v mnoha podobách, ať už se jedná o podvodný email kde útočník předstírá, že je vaší bankou nebo podvodný telefonát, kde útočník přesvědčí nápomocného operátora, aby my pomohl převést \textit{ztracené} číslo na novou sim kartu.
-v zámince však spočívá také nejlepší obrana.
+V zámince však spočívá také nejlepší obrana.
 Malé detaily jsou to, co nejčastěji odhalí útok sociálního inženýrství.
 V již zmíněném emailu od banky je v adrese například \textbf{M0NETA(S nulou místo O)} nebo při hovoru s operátorem není daný člověk schopen odpovědět na základní otázky jako místo a rok narození.
 S tím však souvisí další další bod ochrany, omezení veřejně dostupných informací
@@ -520,7 +528,7 @@ Vishing tak klade mnohem větší důraz na improvizaci a komunikační schopnos
 Útok, který nebyl tak dobře připraven je možné zachránit dobrým využitím nově získaných informací.
 Je to také mnohem rychlejší a interaktivnější forma sociálního inženýrství.
 Při zaslání phishingového emaily můžeme čekat dny nebo i týdny na zjištění úspěšnosti útoku, při vishingu je to otázka minut.
-všechny okolnosti však nejsou jen ve prospěch útočníka.
+Všechny okolnosti však nejsou jen ve prospěch útočníka.
 Rychlost a komunikace také znamená, že náhodná interakce může zkazit výborně připravený útok.
 Je jasné, že v komunikaci po telefonu nelze poslat škodlivý link.
 Proto je primárním cílem útočníka zisk nebo ověření informací.
@@ -554,7 +562,7 @@ Jejich efektivita však nelze popřít a jsou mnohdy opomíjeny jako možný vek
 Tato sekce se zabývá útoky, které primárně ohrožují integritu a bezpečí dat.
 Každá společnost v dnešní době vytváří, shromažďuje a zpracovává ohromné množství dat.
 To vedlo k rozvoji správy a analýzy dat, kde lepší techniky a postupy vedou k rychlejším procesům, lepšímu řízení zákaznických vztahů a nižším provozním nákladům.
-nemalá závislost také existuje mezi modely strojového učení ne umělé inteligence, které jsou přímo závislé na správných vstupních datech.
+Nemalá závislost také existuje mezi modely strojového učení ne umělé inteligence, které jsou přímo závislé na správných vstupních datech.
 Je proto dobré uvědomovat si hrozby, které cílí na zdroje dat s cílem získat k nim neoprávněný přístup.
 Poté můžeme rozlišovat 2 hlavní cíle, které vysvětlují chování útočníků při zisku přístupu k datům.
 Prvním cílem jsou úniky a krádeže dat, kdy dochází ke zveřejnění nebo ztrátě citlivých informací.
@@ -579,7 +587,7 @@ Krádež identity je nejčastěji využívána pro bankovní podvody.\cite{Enisa
 Důvěryhodná data jsou nejdůležitějším předpokladem pro implementaci bezpečných autonomních a adaptivních systémů.
 Možná nejvíce zasažené kategorie jsou tvorba umělé inteligence a strojové učení.
 I malá chyba v prvotních učících datech má velkou šanci absolutně zničit celý systém.
-s možnostmi zpracování dat však narůstá také možnost data cíleně měnit.
+S možnostmi zpracování dat však narůstá také možnost data cíleně měnit.
 Dříve byl televizní přenos nebo video téměř nepopíratelný důkaz událostí, dnes pomocí deepfake možné vytvořit cokoli.
 V době psaní tohoto textu jsou například velmi oblíbená deepfake videa prezidentů USA, kteří v nich hrají počítačové hry.
 To se nikdy nestalo, proto je použití deepfake očividné a vtipné.
@@ -609,7 +617,7 @@ Znepokojivá je současná situace právě ve spojení s válkou na ukrajině.
 Hrozby a úrovně vydírání se celkově zvýšily a bohužel stále více útoků je vedeno státem podporovanými skupinami.
 Nepříjemné je také zaměření útočníků na \ac{IoT}, kde senzory a zařízení mají často nedostatečnou ochranu.
 Atraktivní jsou tyto cíle pro zisk informací nebo jako část botnetu.
-Jednou z příčin slabého zabezpečení jsou velmi často slabé přihlašovací údaje, například "admin" (uživatelské jméno) a "1234" (heslo), které uživatelé využívají.
+Jednou z příčin slabého zabezpečení jsou velmi často slabé přihlašovací údaje, například \textbf{admin} (uživatelské jméno) a \textbf{1234} (heslo), které uživatelé využívají.
 Také aktualizace jsou mnohdy problém, například botnet Mozi stále k šíření využívá zranitelností objevených před osmi lety a je odhadováno, že úspěšně napadl až stovky tisíc zařízení.\cite{Enisa_thread_landscape}
 
 
@@ -637,9 +645,9 @@ Jako nová forma útoků se objevilo \ac{RDoS}.
 Jedná se o útok \ac{DoS} nebo i \ac{DDoS}, kde však primárním cílem není vyřazení z služby z provozu.
 Výpadek provozu je však efektivní prostředek pro získání pravé motivace, peněz.
 Stejně jako jiné již zmíněné formy ransomware i \ac{RDoS} existuje ve dvou hlavních podobách v závislosti na to, zda nejdříve nastane útok nebo výhružka.
-první možnost je, že nejdříve nastane útok, a po jeho pozastavení je poslána výhružka, kde je požadováno výkupné jinak útok znovu začne.
+První možnost je, že nejdříve nastane útok, a po jeho pozastavení je poslána výhružka, kde je požadováno výkupné jinak útok znovu začne.
 Druhou možností je zaslání výhružky rovnou a pouze při nezaplacení nebo nutnosti prokázání možností útočníka je proveden skutečný útok.
-začíná zde s cílem útoku psychologická hra, protože útočník mnohdy nemá možnosti pro silný a dlouhodobý útok, to však cíl při rozhodování, zda zaplatí výkupné, neví.
+Začíná zde s cílem útoku psychologická hra, protože útočník mnohdy nemá možnosti pro silný a dlouhodobý útok, to však cíl při rozhodování, zda zaplatí výkupné, neví.
 \ac{RDoS} často cílí na poskytovatele internetových služeb, finanční instituce a malé až střední podniky.
 Možná nejpřekvapivější je návrat plateb za \textit{ochranu}, tedy každodenních plateb, například v hodnotě 1BTC denně, za nenapadnutí společnosti.\cite{Enisa_thread_landscape}
 
@@ -661,7 +669,7 @@ Zajímavým trendem poslední doby je použití QR kódů.
 V lednu 2022 dokonce FBI vydalo varování ohledně zločinců, kteří používají QR kódy k přesměrování obětí na podvodné veby a kradou tak přihlašovací informace.
 Není to však jen otázka USA, podobné útoky metodologie útoky využívali i útočníci v německu.
 QR kódy jsou pro útočníky výhodné, protože člověk není schopen rozeznat pravdivý od škodlivého.
-pokud tedy útočník zamíchá mezi legitimní kódy své podvodné, je pro běžného člověka nemožné je odhalit.\cite{Enisa_thread_landscape, cisco_most_common_attack}
+Pokud tedy útočník zamíchá mezi legitimní kódy své podvodné, je pro běžného člověka nemožné je odhalit.\cite{Enisa_thread_landscape, cisco_most_common_attack}
 
 
 \subsubsection{Zero day exploit}
@@ -690,7 +698,7 @@ To však dovoluje jeho zneužití.
 Mnoho společností ho navíc nekontroluje dostatečně, aby mohlo tento typ útoku možné odhalit.
 Útočník v \ac{DNS} requestech a responsech zakódovává vlastní komunikaci za účelem jejího skrytí.
 Odchozí komunikace může být použita pro exfiltraci kritických dat nebo přijímání odpovědí od nainstalovaného malware.
-příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
+Příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
 
 \subsubsection{Supply-chain útoky}
 Supply-chain útoky využívají vztahy mezi organizacemi.
@@ -912,7 +920,7 @@ Lze takto testovat správnou segmentaci infrastruktury a resistivity jednotlivý
 Z velkého a otevřeného rozsahu však vyplývá jen omezená možnost testování do hloubky a zaměření se na specifické části infrastruktury.
 \textit{Red team} má pouze omezený čas a prostředky, proto nachází pouze nejčastější slabiny na celém rozsahu testování ale nemá možnost testovat jednotlivé části do hloubky a pro všechny možné hrozby.
 Při nesprávném provedení nebo nepochopení cíle tohoto testování může vznikat falešný pocit bezpečnosti, který je pro zabezpečení nebezpečný.
-cílem tohoto testu je získat celkové povědomí o ochraně a poté pokračovat s podrobnějším testováním.
+Cílem tohoto testu je získat celkové povědomí o ochraně a poté pokračovat s podrobnějším testováním.
 %todo add picture?
 
 \subsubsection{Specifický pokus o kompromitaci}
@@ -943,8 +951,8 @@ Ve chvíli kdy nastane problém je však většinou pozdě.
 Proto tento typ testování představuje nástroj prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
 
 \subsection{Metodologie testování}\label{subsec:metodologie-testovani}
-ještě důležitějším rozhodnutím než jak široce testovat je způsob testování.
-možná nejznámější jsou 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
+Ještě důležitějším rozhodnutím než jak široce testovat je způsob testování.
+Možná nejznámější jsou 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
 Samozřejmě stejně jako i u rozsahu testování i u těchto metodologií existuje určitý přesah.
 Z tohoto důvodu jsou tyto metodologie nepřesně definovány, někdy zaměňovány nebo dokonce považovány za jedinou metodologii s několik různými názvy.
 Je proto nutné si je představit v kontextu tohoto textu.
@@ -1002,7 +1010,7 @@ Tato znalostní báze je založená na pozorování v rámci reálného světa, 
 Samozřejmě jsou začleněny i veřejné výzkumy technik útočníků.
 Je aktivně udržována, nové informace jsou přidávány dvakrát do roka\cite{mitre_attack_framework_faq}.
 Hlavním přínosem tohoto projektu však není pouze mapování útočníků, ale celková klasifikace útoků do jednotlivých \textit{taktik, technik a sub-technik}.
-framework tak obráncům nabízí možnost rozložit složitý útok na jeho jednotlivé stavební kameny.
+Framework tak obráncům nabízí možnost rozložit složitý útok na jeho jednotlivé stavební kameny.
 ATT\&CK je velmi podrobný a dokonce u jednotlivých technik útočníků nabízí možnosti detekce a obrany.
 Obránci proto mohou snáze porozumět stylu práce útočníků, technikám které používají ale nejdůležitěji, jak tyto informace využít k vytvoření lepší obrany.
 Všechny tyto informace jsou navíc přehledně dostupné v interaktivní formě pomocí ATT\&CK navigátoru\cite{mitre_attack_navigator}.
@@ -1106,7 +1114,7 @@ Pouze to znamená, že daná skupina tento software v minulosti použila.\cite{M
 \nlparagraph{Campaigns - kampaně}
 Pojem kampaň označuje rozsáhlou intruzivní aktivitu, která proběhla během určitého období s obecnými cíli a úkoly a byla značnou kybernetickou hrozbou.
 Jedná se například o dlouhodobou průmyslovou špionáž nebo špionáž proti vládě určité země.
-není neobvyklé, že do složité kybernetické operace je zapojeno několik přidružených skupin, přičemž každá hraje jedinečnou roli.
+Není neobvyklé, že do složité kybernetické operace je zapojeno několik přidružených skupin, přičemž každá hraje jedinečnou roli.
 Například může být jedna skupina zodpovědná za počáteční průnik do systému a jiná za exfiltraci dat
 Kampaň je označována názvem uvedeným ve veřejných zprávách nebo jedinečným identifikátorem ATT\&CK pokud kampaň ještě nebyla pojmenována.
 Zaznamenání a sledování kampaní je obtížné.
@@ -1128,7 +1136,7 @@ Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nást
 Proto lze předpokládat použití více nástrojů právě podle okruhu testování, na který je testování zaměřeno.
 
 \subsubsection{Red Canary Atomic Red}
-Ze všech uváděných příkladů je \textit{Atomic Red} nejvíce přívětivý rychlému začátku .
+Ze všech uváděných příkladů je \textit{Atomic Red} nejvíce přívětivý rychlému začátku.
 Pro jeho funkčnost není potřeba nic stahovat ani nastavovat, lze ho jednoduše použít z příkazové řádky\cite{redcanary_atomic_red}.
 Další odlišnost je jeho ovládání.
 Většina ostatních frameworků je založena na jazyku Python, popřípadě jiném skriptovacím jazyce.
@@ -1179,7 +1187,7 @@ Framework caldera lze rozdělit na 2 hlavní části.
 První je \textit{Jádro systému}.
 Tento framework je dostupný v github repozitáři.
 Zahrnuje asynchronní server pro řízení příkazů a kontrolu (command-and-control, C2) s REST API a webovým rozhraním.
-druhou složkou jsou \textit{pluginy}.
+Druhou složkou jsou \textit{pluginy}.
 Jsou to rozšíření pro možnosti jádra frameworku poskytující dodatečnou funkcionalitu.
 Většinou se jedná o samostatné repozitáře.
 Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic red team.\cite{mitre_caldera}
@@ -1305,7 +1313,7 @@ Nástroj Nmap je připraven již s instalací této distribuce a proto nebylo pr
 
 
 \subsection{Popis testované infrastruktury}\label{subsec:popis-testovane-infrastruktury}
-v rámci pokusu o simulování co možná nejreálnějšího testování bylo i testované prostředí vytvářeno na základě reálného.
+V rámci pokusu o simulování co možná nejreálnějšího testování bylo i testované prostředí vytvářeno na základě reálného.
 Vzniklo na základě dotazníku a po rozhovoru s odborníkem, který reálné prostředí udržuje.
 Je jasné, že simulované prostředí podléhá simplifikace, byla však snaha zachovat všechny nejdůležitější prvky.
 Prvotní návrh topologie je jednoduchý a reflektuje získaná data, viz obrázek~\ref{fig:prvotni_navrh}.
@@ -1341,18 +1349,18 @@ Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění repr
 
 
 \subsubsection{Scénář 1 - recon}
-první scénář je zaměřen ná práci s informacemi.
+První scénář je zaměřen ná práci s informacemi.
 Jen velmi malé množství útoků probíhá bez prvotní fáze získávání informací a drtivá většina z nich je neúspěšná právě kvůli tomu, že útočníci podcenili tento první krok.
 Sběr informací lze provádět mnoha způsoby.
-v dnešní moderní době není problém informace získat, je však problém určit, která informace je důležitá a která ne.
-nejjednodušší řešení je zakoupit informace na černém trhu, dokonce existují balíčky informací setříděné právě pro přípravu útoků.
+V dnešní moderní době není problém informace získat, je však problém určit, která informace je důležitá a která ne.
+Nejjednodušší řešení je zakoupit informace na černém trhu, dokonce existují balíčky informací setříděné právě pro přípravu útoků.
 To však není cílem tohoto scénáře.
 Cílem je ukázat vybrané techniky a nástroje, pomocí kterých získávají útočníci \ac{OSINT}, neboli volně dostupné informace.
 Sběr informací je prováděn na již zmíněném reálném cíli, podle kterého je i modelováno testovací prostředí.
 Z důvodu zachování anonymity vybraného cíle nebudou v práci zveřejňována specifická data, ale pouze typ nalezeného údaje nebo záznam, který není identifikovatelný.
 Příkladem je nalezení webového serveru.
 Je možné říci, že byla nalezena ip adresa a specifický operační systém serveru.
-je také možné říci, o jaký operační systém se jedná.
+Je také možné říci, o jaký operační systém se jedná.
 Je však nežádoucí zmínit přesnou verzi systému nebo již zmíněnou ip adresu.
 
 
@@ -1396,7 +1404,7 @@ Pro zahájení skenování je nutné zadat potřebné vlastnosti skenu a definov
 Cílem je samozřejmě již zmíněná organizace, nmap přijímá informace o doméně, jedné nebo i skupině adres což jsou již nalezené informace.
 Nutné je specifikovat možnosti skenování portů, je například možné získat informace o aktivních portech, protokolech, spuštěných službách a jejich verzích.
 V rámci sbírání přehledných dat bylo také nastaveno, aby po ukončení práce nmap vyexportoval výsledek do textového souboru.
-
+%todo check
 \begin{codeblock}
 	\begin{verbatim}
 # nmap -v -A -p- -sV -version-all -O -oN vysledek.txt "cíl_útoku"
@@ -1408,7 +1416,7 @@ Výše ukázaný příkaz byl proveden a výsledek byl vypsán do souboru \textb
 Příznak \textbf{-v} označuje vyšší level podrobnosti, takzvané verbosity.
 Pro detekci operačního systému a detekci verzí je využito příznaku \textbf{-A} a příznaku \textbf{-O}.
 K detekci portů slouží \textbf{-sV -version-all}, kde -version-all znamená testování všech všech možností.
-finálně \textbf{-p-} je explicitní označení pro skenování všech portů, kde -p určuje rozsah.
+Finálně \textbf{-p-} je explicitní označení pro skenování všech portů, kde -p určuje rozsah.
 Výsledek tohoto scanu potvrdil již nalezené informace a nepřekvapivě tyto znalosti rozšířil o nové poznatky.
 Obzvláště zajímavá je verze webového serveru, na které je spuštěn internetový portál.
 Jedná se o totiž o starší verzi serveru Apache vydanou v roce 2017.
@@ -1466,9 +1474,9 @@ Za povšimnutí stojí všechny údaje, které jsou s agentem spojené.
 Základní údaje jsou \textit{id} a \textit{host}, které agenta jednoznačně identifikují.
 \textit{Platform} identifikuje, na jaké platformě je agent spuštěn.
 Nejdůležitější údaje jsou však \textit{group} a \textit{privilege}.
-\textit{group} označuje pracovní skupino, do které agent patří.
+\textit{Group} označuje pracovní skupino, do které agent patří.
 To je důležité pro spouštění operací, kde právě pomocí \textit{group} určujeme, kteří agenti mají operace vykonávat.
-\textit{privilege} určuje, jaká práva má agent na daném zařízení.
+\textit{Privilege} určuje, jaká práva má agent na daném zařízení.
 \textbf{User} znamená, že tento agent byl spuštěn běžným uživatelem a zdědil tak jeho základní práva.
 Pokud by agenta spustil privilegovaný uživatel, v této kolonce by bylo označení \textbf{elevated}, jak je možné vidět na pozdějším obrázku~\ref{fig:dead_agent}.
 Je také možné identifikovat, jak s caldera serverem agent komunikuje pomocí atributu \textit{contact}.
@@ -1496,7 +1504,7 @@ Proto je možno u \textit{adversaries} vybírat techniky podle taktik z Mitre AR
 \noindent
 Nový \textit{adversary} je vytvořen pomocí tlačítka \textit{new profile}.
 To otevře formulář pro vyplnění názvu a popisu tohoto profilu útočníka.
-poté je nutné přidat techniky, které bude tento útočník provádět.
+Poté je nutné přidat techniky, které bude tento útočník provádět.
 To lze udělat 2 způsoby.
 Prvním je přidání  technik jiného profilu pomocí tlačítka \textit{Add adversary}.
 Samozřejmostí je výběr technik, které lze z jiného profilu přidat.
@@ -1516,7 +1524,7 @@ Volba taktiky pak vede k volbě technik, které vedou na volbu sub-technik nebo 
 Tímto způsobem může dále upravovat chování útočníka na bázi jednotlivých technik.
 
 %todo make picture for add ability search
-todo add picture\label{fig:ability_selection}
+%todo add picture\label{fig:ability_selection}
 %\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
 
 \nlparagraph{Adversary pro scénář 2}
@@ -1531,6 +1539,7 @@ Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto zámě
 
 
 \nlparagraph{Spuštění operace}
+%todo check? dunno
 %\clfig{lab/operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:operation}
 Finálním krokem testování je spuštění operace.
 K tomuto účelu v Caldeře slouží záložka \textit{Operations}, viz obrázek~\ref{fig:operation}.
@@ -1546,7 +1555,7 @@ Je to předpřipravené poznatky, například o testovaném zařízení, které 
 V rozšířené sekci se pak nachází složitější nastavení.
 Jsou zde nastavení pro cílovou skupinu[\textit{Group}], tedy určení, kteří agenti mají provádět úkony
 \textit{Planner} určuje, jak budou operace prováděny.
-základem je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází u \textit{adversary}.
+Základním je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází u \textit{adversary}.
 Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitre_caldera_docs}.
 V neposlední řadě se zne nachází přepínače pro řízení chodu operací a možnosti zakódovaní a krytí operace.
 %todo crop
@@ -1583,7 +1592,7 @@ Příkladem je jméno uživatele a jeho doména, viz obrázek~\ref{fig:username_
 \clfig{lab/username_and_domain}{\linewidth}{Výstup taktiky pro zjištění uživatele a jemu příslušné domény}{Vlastní}{fig:username_and_domain}
 
 Dalším krokem může být zjištění všech účtů na daném zařízení.
-tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, zde existuje metodologie vytváření jmen ve velkých organizacích.
+Tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, zde existuje metodologie vytváření jmen ve velkých organizacích.
 Třešničkou na pomyslném dortu jsou účty typu \textit{Admin} nebo \textit{Guest}, kde velmi často dochází k porušení praktik dobrých hesel.
 Není neobvyklé, že tyto účtu mají hesla stejná jako jméno, nebo v případě účtů admin je stejné heslo pro všechna zařízení.
 Kompromitace jediného admin účtu by tak kompromitovala všechna zařízení s tímto účtem.
@@ -1637,7 +1646,7 @@ Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\r
 Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
 Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace o kterých je nutné uživatele informovat.
 Již při vytváření operace bylo jasné, že šance úspěchu předchozích operací je malá.
-proto jejich neúspěch není překvapením ale očekávaným a správným výsledkem.
+Proto jejich neúspěch není překvapením ale očekávaným a správným výsledkem.
 Naopak by bylo nemilým překvapením, kdyby se nám takto jednoduchým způsobem povedlo administrátorská práva získat.
 Poslední částí této operace jsou pokusy o získání dalších důležitých dat, která by útočníkovi mohla pomoci získat administrátorský přístup.
 Příkladem je například politika hesel, která existuje na daném zařízení.
@@ -1671,7 +1680,7 @@ To potvrzuje domněnku robustního systému, kde celkový stabilita a dostatečn
 Zajímavá jsou však data z operace \textit{Lab02v2}.
 Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nejsou značné odchylky.
 \textit{Lab02v2} byl na získání vyšších uživatelských práv, což popravdě nedává s administrátorským účtem smysl.
-zajímavé je, že se nám podařilo částečně vyřadit fungování antivirového programu.
+Zajímavé je, že se nám podařilo částečně vyřadit fungování antivirového programu.
 Další překvapivé zjištění také bylo, že místo selhání všech hrozeb pro zisk privilegií se jedna technika vydařila.
 Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění.
 %todo add picture with succesfull technique
