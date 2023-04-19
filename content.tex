@@ -20,6 +20,8 @@ ciber -> kybernetické
 kiber -> kybernetické
 
 pozor na zkratky -> check
+
+slabiny -> zranitelnosti
 %todo end
 
 
@@ -150,164 +152,145 @@ Z již zmíněného reportu\cite{Enisa_thread_landscape} je možné vyčíst, ve
 Tento pohled na sektory je i přesto důležitý právě kvůli připravenosti jednotlivých sektorů na útoky.
 Můžeme očekávat, že sektor zabývající se zprostředkováním digitálních služeb bude mít jinak připravenou ochranu než například vládní sektor.
 A to nejen díky primárnímu zaměření sektoru, ale také dopadu úspěšných útoků v minulosti a předvídanému dopadu budoucích útoků.
-Na první pohled je z ~\ref{fig:TargetedSectors} vidět, že téměř čtvrtina útoků byla zaznamenána ve vládním sektoru.
-Kolem 13 procent pak spadá jak sektoru zprostředkování digitálních služeb tak veřejnosti.
-Lze očekávat, že množství útoků v těchto sektorech je ovlivněné dopadem, snadností propagace útoku a v případě veřejnosti taky celkovému množství možných cílů.
+Na první pohled je z obrázku~\ref{fig:TargetedSectors} vidět, že téměř čtvrtina útoků byla zaznamenána ve vládním sektoru.
+Kolem 13\% útoků  míří na sektor zprostředkování digitálních služeb a dalších 13\% na širokou veřejnost.
+Lze očekávat, že množství útoků v těchto sektorech je ovlivněno snadností propagace útoku a v případě veřejnosti navíc ještě celkovým množstvím možných cílů.
 Zajímavá je také poznámka v reportu týkající se sektorů bankovnictví a zdravotnictví.
-V době sledování byly tyto sektory napadané konzistentně v rámci celé sledované periody.
-Zajímavý, hlavně v kontextu wálky na Ukrajině, je také armádní sektor, kde je zaznamenáno kolem 3 procent útoků.
+V době sledování byly tyto sektory v rámci celé sledované periody napadány konzistentně.
+Zajímavý, hlavně v kontextu války na Ukrajině, je také armádní sektor, kde je zaznamenáno kolem 3 procent útoků.
 Tato nízká procentní reprezentace by mohla být způsobena metodologií sestavování tohoto reportu.
 Útoky byly zaznamenávány pomocí \firstac{OSINT}, neboli volně dostupných informací\cite{moje_bakalarka}.
 Volně dostupné informace mají mnohá omezení.
-Je jich velké množství a proto je nutné užitečná data dolovat.
-Jen málokdy je na první pohled zřejmé, která informace je užitečná.
-Hlavním problémem v tomto případě je však jejich vznik.
-Volné informace jsou volné protože je tvůrce volně zpřístupnil široké veřejnosti.
-I když společnosti začínají být zodpovědnější v nahlašování útoků, stále lze předpokládat že některé byly přehlédnuty nebo nenahlášeny.
+Je jich velké množství a proto je nutné užitečná data dolovat, nicméně jen málokdy je na první pohled zřejmé, která informace je užitečná.
+V tomto případě je však hlavním problémem jejich vznik.
+Informace se nazývají volně dostupné, protože je tvůrce volně zpřístupnil široké veřejnosti.
+I když společnosti začínají být zodpovědnější v nahlašování útoků, lze stále předpokládat, že některé byly přehlédnuty nebo nenahlášeny.
 Ve vojenském sektoru bude limitace informací prioritou.
 Proto bude v kombinaci s propagandou obou stran konfliktu a limitací nežádoucích informací velmi obtížné sestavovat jakoukoli přesnou reprezentaci útoků.
 
 \section{Nejčastější kybernetické útoky}\label{sec:nejcastejsi-kyberneticke-utoky}
 Mezi nejčastější útoky dlouhodobě patří \textit{denial-of-service}, \textit{man-in-the-middle}, \textit{malware} a samozřejmě \textit{sociální inženýrství}\cite{LI20218176}.
 Také zaznamenané útoky v roce 2022 jsou v souladu s tímto trendem.
-Jsou to však velmi obecné kategorie, kde se specifika velmi liší.
+Jsou to však velmi obecné kategorie, v nichž se specifika velmi liší.
 Například pod malware se řadí již zmíněný spyware ale také ransomware, adware, rootkits, etc.
-Pouze použití ransomware v roce 2022 vzrostlo o 41\%, primárně v první polovině roku.
-Také čas na odhalení a nápravů úspěšného útoku trval o 49 dní déle, než bylo běžné.
-V kategorii sociální inženýrství převládá phishing.
-Ten je stále nejčastějším útokem.
+Pouze použití ransomwaru v roce 2022 vzrostlo o 41 \%, primárně v první polovině roku, a také čas na odhalení a nápravu úspěšného útoku trval o 49 dní déle, než bylo běžné.
+V kategorii sociální inženýrství je již dlouhodobě nejčastějším útokem phishing.
 Jeho oblíbenost spočívá v jeho efektivitě a relativně nízkých nákladech na provedení.
-Počet zaznamenaných útoků téměř každoročně stoupá\cite{moje_bakalarka}.
-Není tak divu, že jen za první polovinu roku 2022 byl zaznamenán nárůst v četnosti útoků o 48\%.
-V této době bylo nahlášeno přes 11 tisíc útoků které stály cíle 12.3 milionů dolarů.
+Počet zaznamenaných útoků téměř každoročně stoupá\cite{moje_bakalarka}, není tak divu, že jen za první polovinu roku 2022 byl zaznamenán nárůst v četnosti útoků o 48 \%.
+V této době bylo nahlášeno přes 11 tisíc útoků, které stály cíle 12.3 milionů dolarů.
 Je nutné poznamenat, že statistiky se týkají pouze \textit{zaznamenaných} útoků.
-Mnoho společností tyto útoky veřejně neoznamuje.
-Může tomu být z pokusu zachování dobré pověsti.
-Horší možnost je že útok nezaznamenali.\cite{securityintelligence_most_common_2022_attacks}
+Mnoho společností tyto útoky veřejně neoznamuje, nejčastěji z důvodu zachování dobré pověsti.
+Horší možností může být to, že útok ani nezaznamenali.\cite{securityintelligence_most_common_2022_attacks}
 
 \nlparagraph{Nové cíle}
 Stále více útoků se zaměřuje na \textit{Supply-chain} a \ac{IoT}.
-To nemůže být překvapením.
-Již v předchozích letech bylo možné zaznamenat neklid mezi ruskem a ukrajinou.
-Plné vypuknutí války samozřejmě zahrnuje útoky na infrastrukturu, a to i v online prostředí.
+To ovšem není překvapující, protože už v předchozích letech bylo možné zaznamenat neklid mezi Ruskem a Ukrajinou.
+Přípravy na ozbrojený konflikt samozřejmě zahrnují útoky na infrastrukturu, a to i v online prostředí.
 \textit{Supply-chain} je výborným cílem ze dvou důvodů.
-Úspěšný útok v jedné části řetězce dovoluje šířit se po celku a dopad úspěšného útoku je proto významný.
+Úspěšný útok v jedné části řetězce dovoluje šíření po celku a dopad úspěšného útoku je proto významný.
 Výzkumná zpráva od Accenture\cite{accenture_supply-chain-disruption} odhadla škody způsobené v Eurozóně těmito útoky na 112.7 bilionů euro.
-Odhad na období 2022/2023 spojený právě s várkou je 242 bilionů euro a v nejhorším případě až 920 bilionů.
+Odhad na období 2022/2023 spojený právě s válkou je v nejlepším případě 242 bilionů euro a v nejhorším případě až 920 bilionů.
 Také útoky na \ac{IoT} zařízení stoupají.
-Není tomu však díky zvýšené oblíbenosti u útočníků nebo lepších metodách útoku.
-Zvýšení plyne téměř čistě ze zvyšujícího množství zařízení.
+Není tomu však díky zvýšené oblíbenosti u útočníků nebo lepších metodách útoku, zvýšení plyne téměř čistě ze zvyšujícího množství zařízení.
 \ac{IoT} zařízení jsou používána všude, najdeme je v domácnostech, firmách, továrnách nebo kasinech.
-Tato zařízení ulehčují lidský život, bohužel jsou také novým rizikem.
-Obzvláště protože jejich zabezpečení není priorita při vývoji těchto zařízení.
-Proto jsou cílem útočníku at už jako přídavek do botnetu nebo jako slabý článek obrany samotné.
-Zní opravdu špatně když se povede útočníkům ukrást důvěrné informace z kasína pomocí chytrého thermometeru akvária\cite{casino_thermometer}.
-O vážnosti situace svědčí i veřejná prohlášení o slabinách, která vydávají přímo státy.
+Tato zařízení ulehčují lidský život, bohužel jsou také novým rizikem, protože zabezpečení není při vývoji těchto zařízení priorita.
+Proto jsou cílem útočníku ať už jako přídavek do botnetu nebo jako slabý článek obrany společnosti.
+Zní opravdu špatně, když se povede útočníkům ukrást důvěrné informace z kasina pomocí chytrého thermometeru akvária\cite{casino_thermometer}.
+O vážnosti situace svědčí i veřejná prohlášení o zranitelnostech, která vydávají přímo státy.
 Například pro monitorovací zařízení vozidel MiCODUS MV720 toto prohlášení vydala americká vláda\cite{america_gov_advisories_micodus}.
-A není divu, toto zařízení nejen monitoruje vozidlo ale je i schopné odpojit přívod paliva.
+A není divu, toto zařízení nejen monitoruje vozidlo, ale je i schopné odpojit přívod paliva.
 Jelikož je toto zařízení nachází hlavně v armádní a policejní technice, je to opravdu velký problém.\cite{securityintelligence_most_common_2022_attacks}
 
 \nlparagraph{Zdroje nejčastějších útoků}
-Právě z těchto důvodů je nutné podívat se nejčastější kategorie útoků.
+Právě z těchto důvodů je nutné podívat se na nejčastější kategorie útoků.
 V předchozím textu byly mnohé zmíněny, následuje jejich rozbor do hloubky.
-Kategorie byly zvoleny z kombinaci několika zdrojů, jako je \ac{ENISA}\cite{Enisa_thread_landscape}, Cisco\cite{cisco_most_common_attack} nebo \firstac{NIST}\cite{nist_risks}.
+Kategorie byly zvoleny z kombinací několika zdrojů, jako je \ac{ENISA}\cite{Enisa_thread_landscape}, Cisco\cite{cisco_most_common_attack} nebo \firstac{NIST}\cite{nist_risks}.
 
 \subsection{Malware}\label{subsec:malware}
-Tento termín se používá pro škodlivý software.
-Zahrnuje známé hrozby jako viry, červy, trojské koně, spyware a ransomware.
-Do systému se dostávají pomocí jeho slabin, často díky nepozornosti uživatele.\cite{cisco_most_common_attack}
-Malware je důvod, proč si uživatele musí dávat pozor na jaké linky klikají a jaké programy instalují.
-Je také nutné dávat si pozor odkud je program stažen.
+Tento termín se používá pro škodlivý software a zahrnuje známé hrozby jako jsou viry, červy, trojské koně, spyware a ransomware.
+Do systému se dostávají díky nepozornosti uživatele nebo s využitím některé z mnoha zranitelností\cite{cisco_most_common_attack}.
+Malware je důvod, proč si uživatelé musí dávat pozor, na jaké linky klikají, jaké programy instalují a také odkud programy stahují.
 Stále častěji malware předstírá, že je legitimní software.
-Mezi nejznámější napodobované programy patří Skype, Adobe Acrobat, VLC nebo 7zip.\cite{virustotal_report_findings}
-Škodlivému software se bohužel nevyhnul ani státní sektor.
-Není však jen jeho cílem ale je také používán k šíření.
-Zkoumání z roku 2022 ukazuje, že je možné najít desítky instancí hostování škodlivého software přímo v doménách spojených se státními institucemi.\cite{virustotal_report_findings_goverment}
-Tento problém není specifický pro jeden stát ale je to celosvětový problém, jak je možné vidět na ~\ref{fig:MaliciousGoverments}.
-Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra.
-Proto je tento problém opravdu závažný.
+Mezi nejznámější napodobované programy patří Skype, Adobe Acrobat, VLC nebo 7zip\cite{virustotal_report_findings}.
+Škodlivému softwaru se bohužel nevyhnul ani státní sektor, nicméně není jen jeho cílem, ale také prostředkem k šíření.
+Zkoumání z roku 2022 ukazuje, že je možné najít desítky instancí hostování škodlivého softwaru přímo v doménách spojených se státními institucemi\cite{virustotal_report_findings_goverment}.
+Tento problém není specifický pro jeden stát, ale je to celosvětový problém, jak je možné vidět na obrázku~\ref{fig:MaliciousGoverments}.
+Závažnost problému tkví hlavně v přístupu uživatelů.
+Státní stránky nejsou blokované, naopak k nim existuje implicitní důvěra a tak běžné uživatele ani nenapadne, že musí být obezřetní.
+
 ~\clfig{malicious_govs_domains}{\linewidth}{Zneužití státní infrastruktury}{\cite{virustotal_report_findings_goverment}}{fig:MaliciousGoverments}
 
 \nlparagraph{Obrana a detekce}
-Obrana proti malware je složitá.
-Nelze totiž ukázat na jednu specifickou chybu, kterou je nutné opravit aby tento problém nenastal znovu.
-Existují však dobré uživatelské praktiky, které riziko infikování stroje malware snižují.
+Obrana proti malwaru je složitá, nelze totiž ukázat na jednu specifickou chybu, kterou je nutné opravit, aby bylo zabráněno opětovnému nakažení.
+Existují však dobré uživatelské praktiky, které riziko infikování stroje malwarem snižují.
 Absolutním základem je aktualizování softwaru používaného zařízení.
 Mnoho velkých firem aktivně sleduje bezpečnostní incidenty spojené s jejich zařízeními a snaží se své uživatele chránit pomocí bezpečnostních aktualizací.
-Pro detekci malware je vhodný antivirus, který je schopný z online databází nalézt nejznámější rysy malware kampaní a ty pak detekovat v nainstalovaných souborech.
-Pokud nastane podezření na malware, je proto dobré pomocí antiviry zkontrolovat soubory.
+Pro detekci malwaru je vhodný antivirus, který je schopný v online databází nalézt nejznámější rysy malwarových kampaní a ty pak detekovat v nainstalovaných souborech.
+Pokud nastane podezření na malware, je proto dobré pomocí antiviru zkontrolovat soubory.
 Podezření by mělo nastat při výrazném zpomalení zařízení, nemožnosti vypínat programy, vyskakování reklam nebo cizích pokusech o přihlášení k osobním účtům.
-Aby se předešlo samotné instalaci malware, je nutné dbát na bezpečné chování uživatele co se týče procházení internetu, instalace programů a klikání na soubory nebo odkazy v emailech.
-Jak již bylo zmíněno, malware může být zabalen společně s legitimním software, je proto velmi důležité instalovat programy pouze z ověřených, ideálně oficiálních zdrojů.
-Pozor na stránky, které napodobují oficiální stránky daného produktu.
-Na nich lze malware očekávat s jistotou.
-Nutné je také dávat pozor na podezřelé odkazy nebo soubory v emaily.
-I přes tyto vektory se do zařízení může dostat malware.
-V poslední řadě je nutné zmínit USB zařízení.
-Pokud je to možné, uživatel by neměl nikdy zapojovat ke svému zařízení neznámé usb zařízení.
-Ty jsou totiž nejen hrozba v podobě přenašeče malware ale dokonce i hrozba samotnému zařízení.
+Aby se předešlo samotné instalaci malwaru, je nutné dbát na bezpečné chování uživatele, hlavně co se týče procházení internetu, instalace programů a klikání na soubory nebo odkazy v e-mailech.
+Jak již bylo zmíněno, malware může být zabalen společně s legitimním softwarem, je proto velmi důležité instalovat programy pouze z ověřených, ideálně oficiálních zdrojů.
+Pozor na stránky, které napodobují oficiální stránky daného produktu, protože na nich lze malware očekávat s jistotou.
+Nutné je také dávat pozor na podezřelé odkazy nebo soubory v emailech, to jsou totiž hlavní vektory útoku, přes které se do zařízení může dostat malware.
+V poslední řadě je nutné zmínit \firstac{USB} zařízení.
+Pokud je to možné, uživatel by neměl nikdy zapojovat ke svému zařízení neznámé \ac{USB} zařízení.
+Ty jsou totiž nejen hrozba v podobě přenašeče malwaru ale dokonce i hrozba samotnému zařízení.
 Příkladem takto nebezpečného zařízení je USBKill\cite{usb_kill}.
-Toto zařízení na testování hardwaru se při napojení do usb portu nabije a pak vypustí svůj náboj zpět do portu.
-Novější verze jsou dokonce schopné nabití dopředu.
-To znamená, že jsou schopna útočit na vypnutá zařízení a obchází všechny známé bezpečnostní protokoly.
+Toto zařízení na testování hardwaru se při napojení do \ac{USB} portu nabije a pak vypustí svůj náboj zpět do portu.
+Novější verze jsou dokonce schopné nabití dopředu, což znamená, že jsou schopná útočit na vypnutá zařízení a obchází všechny známé bezpečnostní protokoly.
 
 \subsubsection{Ransomware}
 Za zvláštní zmínku stojí ransomware, jelikož je to velmi nebezpečný a útočníky oblíbený malware.
-Jedná se o typ útoku, kdy útočníci přebírají kontrolu nad cílovými daty a požadují výkupné výměnou za obnovení dostupnosti těchto dat nebo zachování tajnosti dat.
+Jedná se o typ útoku, při němž útočníci přebírají kontrolu nad cílovými daty a požadují výkupné výměnou za obnovení dostupnosti těchto dat nebo zachování jejich tajnosti.
 Útočníci tak přímo ohrožují dostupnost, důvěrnost i integritu dat.
-Jednoduché ransomware útoky data pouze odcizí a vyhrožují vypuštěním, popřípadě uzamknou systém, aby nebylo možné se k datům dostat.
-Nejčastější jsou však sofistikované ransomware útoky, kde jsou data zašifrována a klič nebo dokonce program pro jejich odšifrování je oběti poskytnut až po zaplacení výkupného.
+Jednoduché ransomwarové útoky data pouze odcizí a vyhrožují vypuštěním, popřípadě uzamknou systém, aby nebylo možné se k datům dostat.
+Nejčastější jsou však sofistikované ransomwarové útoky, kde jsou data zašifrována a klič nebo program pro jejich odšifrování je oběti poskytnut až po zaplacení výkupného.
 Ve výjimečných případech se stává, že klíč k odšifrování dat není poskytnut nikdy.
-Důvod proč jsou tyto situace výjimečné je však zřejmý.
-Není to dobré pro business ransomware skupin.
-Nejen že neposkytování klíčů by vedlo k neplacení výkupného ale také to snižuje okruh cílů.
-Zašifrovaná data totiž nemá cenu znovu napadat a žádat o další výkupné.
+Důvodem, proč jsou tyto situace výjimečné, je dlouhodobý pohled ransomwarových skupin na svůj business.
+Nejen že neposkytování klíčů by vedlo k neplacení výkupného, ale také to snižuje okruh cílů, které mohou v budoucnu napadnout.
+Zašifrovaná data nemá cenu znovu napadat, nikdo za ně nezaplatí druhé výkupné.
+Navíc by takové chování mohlo vézt k celkové nechuti společností výkupné platit, protože by neměli jistotu získání dat nazpět.
 Tyto myšlenkové pochody útočníků nemůžou být překvapením.
-Z interních dokumentů a logů skupiny Conti je zřejmé, že alespoň některé ransomware skupiny operují jako běžná společnost\cite{Conti_logs}.
-Ve skupině pracovali manažeři, útočníci pracovali převážně během pracovního týdne a dokonce měli nárok na placenou dovolenou a jiné benefity.
-K rozšíření tohoto typy útoku přispívá také koncept \ac{RaaS}.
-Ten dovoluje i nezkušeným útočníkům operovat s velice sofistikovaným software.
-Naopak zkušení útočníci nemusí ztrácet čas hledáním cílů ale soustředí se pouze na vyvíjení ransomware nástrojů a technickou podporu.
+Z interních dokumentů a logů skupiny Conti je zřejmé, že alespoň některé ransomwarové skupiny operují jako běžná společnost\cite{Conti_logs}.
+Ve skupině byli zaměstnáni manažeři a náboráři, útočníci pracovali převážně během pracovního týdne a dokonce měli nárok na placenou dovolenou a jiné benefity.
+K rozšíření tohoto typu útoku přispívá také koncept \ac{RaaS}, ten dovoluje i nezkušeným útočníkům operovat s velice sofistikovaným softwarem.
+Naopak zkušení útočníci nemusí ztrácet čas hledáním cílů, ale soustředí se pouze na vyvíjení ransomwarových nástrojů a technickou podporu.
 Z každého úspěšně provedeného útoku jim totiž náleží část peněz.\cite{Enisa_thread_landscape}
 
 
 \nlparagraph{Monitorování}
 ~\clfig{ENISA_Ransomware}{\linewidth}{Počet zaznamenaných Ransomware incidentů a velikost ukradených dat ve sledovaném období květen 2021 až červen 2022}{\cite{Enisa_thread_landscape}}{fig:ENISA_Ransomware}
-Jak je vidět z ~\ref{fig:ENISA_Ransomware}, Ransomware útoky byly v době sledování, tedy období od Května 2021 do červen 2022, časté a dopad na data byl značný.
-Sledování těchto útoků je však velmi obtížné.
-Pokud dochází pouze k vydírání, firmy mohou výkupné zaplatit a pokusit se zamlčet existenci útoku.
-Se stoupajícími částkami výkupného je tato možnost stále méně validní.
-Spíše se firmy obrací na pojištění proti ransomware.
-To však ironicky zvyšuje jejich atraktivnost jako cíl, protože je jistota zaplacení výkupného
+Jak je vidět z obrázku~\ref{fig:ENISA_Ransomware}, ransomwarové útoky byly v době sledování, tedy období od května 2021 do června 2022, časté a dopad na data byl značný.
+Sledování těchto útoků je však velmi obtížné, protože pokud dochází pouze k vydírání, firmy mohou výkupné zaplatit a pokusit se zamlčet existenci útoku.
+Se stoupajícími částkami výkupného je nicméně tato možnost stále méně validní.
+Spíše se firmy obrací na pojištění proti ransomwaru, což však ironicky zvyšuje jejich atraktivnost coby cíle, jelikož je zde jisté zaplacení výkupného.
 Dalším problémem monitorování je abstrakce ze strany útočníka.
-Pro zmatení vyšetřovatelů nejsou pro ransomware skupiny neobvyklé změny názvu spolu s falešným odchodem do důchodu.
-Tato stejná skupina pak se změněným jménem operuje nadále, můžou však pozměnit styl provádění útoků nebo nástroje.
-Díky rivalitě mezi skupinami často dochází ke kradení zdrojových kódy, což však znesnadňuje identifikování této skupiny se skupinou původní.
-Častým vodítkem bývají adresy krypto peněženek.
-Výplaty výkupného v jsou vždy v kryptoměně, například Bitcoinu.
+Pro zmatení vyšetřovatelů nejsou pro ransomwarové skupiny neobvyklé změny názvu spolu s falešným odchodem do důchodu.
+Stejná skupina pak pod jiným názvem operuje nadále, může však pozměnit styl provádění útoků nebo používané nástroje.
+Díky rivalitě mezi skupinami často dochází ke krádežím zdrojových kódů, což zase znesnadňuje identifikování vztahu s původní skupinou.
+Častým vodítkem bývají adresy krypto peněženek, protože výplaty výkupného jsou vždy v kryptoměně, například v Bitcoinu.
 To samozřejmě také ztěžuje vystopování a trestní stíhání pachatelů.
-Bez nadsázky lze říci, že monitorování ransomware skupin je složitější než se ransomware bránit.\cite{Enisa_thread_landscape}
+Bez nadsázky lze říci, že monitorování ransomwarových skupin je složitější než obrana proti jejich útokům.\cite{Enisa_thread_landscape}
 
 \nlparagraph{Změny v metodice}
-Ze zaznamenaných dat jasně vyplývá pokles útoky s počátečním vektorem prostřednictvím \firstac{RDP}, neboli protokolem vzdálené plochy.
+Ze zaznamenaných dat jasně vyplývá pokles útoků s počátečním vektorem prostřednictvím \firstac{RDP}, neboli protokolem vzdálené plochy.
 Stále je to však druhý nejpoužívanější vektor útoku pro ransomware.
 Útočníci stále prolamují slabá \ac{RDP} přihlašovací jména a hesla, zejména pokud není povolena \firstac{MFA}, v překladu vícefaktorová autentizace.
-\ac{MFA} je velmi dobrou obranou proti neznalým útočníkům a jednodušším útoků, bohužel není nepřekonatelná.
+\ac{MFA} je velmi dobrou obranou proti neznalým útočníkům a jednodušším útokům, bohužel není nepřekonatelná.
 Nejpoužívanějším vektorem útoku je samozřejmě phishing.
-Za povšimnutí stojí nízké nakladu na využití těchto metod útoku a jejich značný výnos, což je jeden z hlavních důvodů jejich oblíbenosti mezi útočníky
-Zajímavým trendem jsou změny ve způsobu vydírání společností.
-Klasický útok ransomware nejdříve sbírá informace, poté k nim zamezí přístup a posléze vydírá společnost.
+Za povšimnutí stojí nízké náklady na využití těchto metod útoku a jejich značný výnos, což je jeden z hlavních důvodů jejich oblíbenosti mezi útočníky.
+Zajímavým trendem jsou změny ve způsobu vydírání společností - klasický ransomwarový útok nejdříve sbírá informace, poté k nim zamezí přístup a posléze vydírá společnost.
 Teprve pokud společnost odmítne zaplatit výkupné je útok veřejně oznámen.
-Získaná data jsou také prodávána nebo volně dostupná na internetových fórech dark webu.
-Některé ransomware skupiny však začali používat jiný postup.
+Získaná data jsou také prodávána nebo volně dostupná na internetových fórech \textit{dark webu}.
+Některé ransomwarové skupiny však začaly používat jiný postup.
 Oběti je nabídnuto, aby si data \textit{koupila} dříve, než je zakoupí její konkurenti.
-Útočníci také již po provedení útoku změnili vzhled webových stránek oběti aby o útoku oznámili.
-Takto prováděný útok vede k veřejnému hanobení oběti útoku a má přímý vliv na vztahy s veřejností a reputaci společnosti.
+Útočníci také již po provedení útoku změnili vzhled webových stránek oběti, aby na útok upozornili.
+Takto prováděný útok vede k veřejnému hanobení oběti a má přímý vliv na vztahy s veřejností a reputaci společnosti.
 Dalším znepokojivým trendem je vytváření dedikovaných stránek s daty o napadených přímo na veřejném internetu.
 Tento postup zvolil \textit{ALPHV}, také známý jako \textit{BlackCat} ransomware, který operuje jako \ac{RaaS}\cite{ALPHV_blackcat}.
 Na tomto webu se nacházely informace o zákaznících i zaměstnancích a ti si tak mohli snadno zkontrolovat, zda byli útokem zasaženi.
 Vytvoření takto veřejného repozitáře se stalo novým způsobem, jak donutit třetí strany, aby se identifikovaly.
-Lze předpokládat, že postižení zákazníci sami kontaktují majitele webu aby zaplatili za stažení dat.
+Lze předpokládat, že postižení zákazníci sami kontaktují majitele webu, aby zaplatili za stažení dat.
 
 \subsubsection{Spyware}
 Specifický malware, jehož primárním cílem je shromažďování dat s nazývá spyware.
