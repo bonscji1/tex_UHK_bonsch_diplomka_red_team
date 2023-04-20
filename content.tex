@@ -809,28 +809,27 @@ Je jasné, že v mnoha případech může být obtížné rozeznat, zda se jedn�
 
 \section{Testování}\label{sec:testovani}
 Smyslem testování je simulovat útok na infrastrukturu systému.
-Vě většině případů to znamená, že se specialista na bezpečnost snaží provádět stejné kroky jako potencionální útočník.
-Většina případů však nejsou všechny.
+Ve většině případů to znamená, že se specialista na bezpečnost snaží provádět stejné kroky jako potencionální útočník.
 Ideální postup vylučuje nejen nepředvídatelnost útočníka, ale ve výjimečných případech i jeho neschopnost nebo neznalost.
 Stejně jako v každém odvětví existují i mezi útočníky sféry kompetence a znalostí.
-Existuje mnoho útočníků, kteří se touto činností nejen živí ale je to také jejich vášeň.
+Existuje mnoho útočníků, kteří se touto činností nejen živí, ale je to také jejich vášeň.
 Takovýto útočník bude disponovat znalostmi a technikami které nejsou běžné.
 Při útoku bude postupovat co možná nejoptimálněji za účelem dosažení výsledků.
-Je možné od něj očekávat pozorné zkoumání cíle a vytrvalost, díky které se si cíl zvolí.
+Je možné od něj očekávat pozorné zkoumání cíle a vytrvalost, díky nimž si cíl zvolí.
 Tiše hledá slabiny a proniká do střežených systémů bez povšimnutí.
 Ne každý útočník je však takto nebezpečný.
 Drtivá většina útoků je prováděna nadšenci nebo útočníky bez obsáhlých znalostí a technik útoku.
-Není tak vyloučeno použití snadno detekovatelných `hlučných' technik nebo prostých chyb, kterými na sebe při útoku upozorní.
+Není tak vyloučeno použití snadno detekovatelných \textit{hlučných} technik nebo prostých chyb, kterými na sebe při útoku upozorní.
 Nebezpečnost této skupiny v posledních letech vzrostla díky propagaci \firstac{MaaS}\cite{MaaS_ATaT} a \firstac{RaaS}\cite{RaaS_microsoft}.
-Existence nástrojů, které dovolují provézt úspěšný útok za pomocí znalostí zkušenějšího útočníka znamená, že ani nezkušené útočníky není možné podceňovat.
+Existence nástrojů, které dovolují provézt úspěšný útok za pomocí znalostí zkušenějšího útočníka, znamená, že ani nezkušené útočníky není možné podceňovat.
 
 \paragraph{}
 Testování je jedna z nejlepších možností, jak zlepšit obranyschopnost organizace.
 Nemilou samozřejmostí je, že největší změny v ochraně přichází po bezpečnostním incidentu.
-Ztráta dat, poškození reputace organizace nebo i finanční postihy jsou výborné motivace nejen pro obránce ale i management organizace věnovat zabezpečení větší úsilí.
+Ztráta dat, poškození reputace organizace nebo i finanční postihy jsou výbornou motivací, proč věnovat zabezpečení větší úsilí, nejen pro obránce, ale i pro management organizace.
 Pokud se útočníkovi podařilo prolomit ochranu organizace, jasně to ukazuje na nedostatky, které je nutné napravit.
-Bezpečnostní incident tak se kromě mnoha nepříjemností ukazuje, jak dobře byla organizace připravena.
-Dle reakce obránců lze zkoumat jejich celková připravenost.
+Bezpečnostní incident tak kromě mnoha nepříjemností ukazuje, jak dobře byla organizace připravena.
+Dle reakce obránců lze zkoumat jejich celkovou připravenost.
 Dobře připravení obránci mohou nebezpečný incident zaznamenat včas a pokud jeho následku nejde zabránit, mohou ho alespoň omezit.
 Nepřipravení obránci nemusejí zaznamenat incident ani měsíce po jeho uskutečnění a několikanásobném zopakování.
 Organizace a její obránci musí vědět, jak postupovat v případě incidentu.
@@ -838,22 +837,22 @@ Testování je simulace bezpečnostního incidentu ale bez většiny jeho negati
 V závislosti na druhu testování je možné vyzkoušet připravenost obránců, jejich obezřetnost a postupy v případě detekce podezřelé činnosti.
 Můžeme testovat robustnost infrastruktury, zda je kvalitně navržena a správně nastavena.
 Můžeme testovat zařízení, zda fungují správně a nelze je zneužít.
-Můžeme testovat technologie, zda jsou správně využívány popřípadě zda je jejich využívání nutno omezit nebo naopak rozšířit.
+Můžeme testovat technologie, zda jsou správně využívány, popřípadě zda je jejich využívání nutno omezit nebo naopak rozšířit.
 Důvodů, proč by mělo být testování součástí zlepšování obranyschopnosti každé organizace je tedy mnoho.
-Testování přináší tolik benefitů protože to není prostá reakce na událost ale příprava.
+Testování přináší tolik benefitů, protože to není prostá reakce na událost, ale především příprava.
 Cílem organizace je zajistit, aby žádný bezpečnostní incident nebylo možné stejně uskutečnit dvakrát.
 Čím více je poprvé uskutečněno pomocí testování, tím více jich bude zaznamenáno a zastaveno při skutečném útoku.
 
 
 \subsection{Rozsah testování}\label{subsec:rozsah-testovni}
 Obránci se musí přizpůsobovat a testovat nejen nejběžnější a nejefektivnější útoky ale i krajní scénáře.
-Toto přizpůsobování vedlo nejen k různým testovacím metodikám jako \textit{Red teaming} a \textit{Penetration testing} ale také k testování různých scénářů a hlavně rozsahů.
+Takovéto přizpůsobování vedlo nejen k různým testovacím metodikám, jako \textit{Red teaming} a \textit{Penetration testing}, ale také k testování různých scénářů a hlavně rozsahů.
 Mezi nejznámější patří \textit{celkový pokus o kompromitaci}, \textit{specifický pokus o kompromitaci} nebo \textit{předpokládaný kompromis}.
 Je samozřejmé, že každá tato kategorie obsahuje další podkategorie.
 Toto základní rozdělení je však vhodné pro rozpoznání hlavních výzev, složitostí ale i přínosů testování.
 Nelze říci, zda je jeden scénář lepší nežli jiné, naopak se doplňují a každý slouží pro určitou situaci.\cite{red_team_oakley_2019}
 
-\subsubsection{Celkový pokus o kompromitaci}
+\subsubsection{Celkový pokus o kompromitaci}%todo here
 Základní situací je \textit{celkový pokus o kompromitaci obrany}.
 Lze definovat jako snaha \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
 Tato strategie je vhodná pro celkové testování infrastruktury.
