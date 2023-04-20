@@ -153,7 +153,7 @@ Tento pohled na sektory je i přesto důležitý právě kvůli připravenosti j
 Můžeme očekávat, že sektor zabývající se zprostředkováním digitálních služeb bude mít jinak připravenou ochranu než například vládní sektor.
 A to nejen díky primárnímu zaměření sektoru, ale také dopadu úspěšných útoků v minulosti a předvídanému dopadu budoucích útoků.
 Na první pohled je z obrázku~\ref{fig:TargetedSectors} vidět, že téměř čtvrtina útoků byla zaznamenána ve vládním sektoru.
-Kolem 13\% útoků  míří na sektor zprostředkování digitálních služeb a dalších 13\% na širokou veřejnost.
+Kolem 13\% útoků  míří na sektor zprostředkování digitálních služeb a dalších 13 \% na širokou veřejnost.
 Lze očekávat, že množství útoků v těchto sektorech je ovlivněno snadností propagace útoku a v případě veřejnosti navíc ještě celkovým množstvím možných cílů.
 Zajímavá je také poznámka v reportu týkající se sektorů bankovnictví a zdravotnictví.
 V době sledování byly tyto sektory v rámci celé sledované periody napadány konzistentně.
@@ -293,24 +293,22 @@ Vytvoření takto veřejného repozitáře se stalo novým způsobem, jak donuti
 Lze předpokládat, že postižení zákazníci sami kontaktují majitele webu, aby zaplatili za stažení dat.
 
 \subsubsection{Spyware}
-Specifický malware, jehož primárním cílem je shromažďování dat s nazývá spyware.
-Při infikování zařízení sbírá osobní a citlivé informace nejen o uživateli ale i o samotném zařízení.
-Získané informace spyware posílá nazpět svému tvůrci.
+Specifický malware, jehož primárním cílem je shromažďování dat, se nazývá spyware.
+Při infikování zařízení sbírá osobní a citlivé informace nejen o uživateli, ale i o samotném zařízení a získané informace spyware posílá nazpět svému tvůrci.
 Všechny tyto činnosti samozřejmě provádí spyware bez souhlasu a znalosti uživatele.
-Infikování je stejné jako většina malware, spyware je nevědomky nainstalován uživatelem.
-Oblíbenou metodou je přibalení spyware k jinému programu nebo přes podvodné odkazy a soubory, které spouští instalační skripty.
+Infikování je stejné jako u většiny malwaru - spyware je nevědomky nainstalován uživatelem.
+Oblíbenou metodou je přibalení spywaru k jinému programu nebo přes podvodné odkazy a soubory, které spouští instalační skripty.
 Data, na která se útočníci zaměřují, jsou převážně přihlašovací údaje, údaje o bankovních účtech a kreditních kartách nebo také chování na internetu.
-Všechna tato dala zde totiž prodat na černém trhu nebo rovnou využít k další nelegální činnosti.
+Všechna tato data lze totiž prodat na černém trhu nebo rovnou využít k další nelegální činnosti.
 Spyware je jedním z nejčastěji používaných způsobů kybernetických útoků.
-Jeho oblíbenost spočívá v obtížnosti odhalení a při štěstí velkém výnosu.\cite{avast_spyware, fortinet_spyware}
+Jeho oblíbenost spočívá v obtížnosti odhalení a při štěstí ve velkém výnosu.\cite{avast_spyware, fortinet_spyware}
 
 \nlparagraph{Typy}
-Všechny typy spyware monitorují uživatelskou aktivitu, rozlišujeme je na další typy podle toho, k čemu takto získaná data využívají a jak data získávají.
-Některé spyware pořizují snímky obrazovky, jiné pouze monitorují běžící programy nebo jen vstup z klávesnice.
+Všechny typy spywaru monitorují uživatelskou aktivitu, rozlišujeme je na další typy podle toho, k čemu takto získaná data využívají a jak data získávají.
+Některé spywary pořizují snímky obrazovky, jiné pouze monitorují běžící programy nebo jen vstup z klávesnice.
 Vzácně je tento software dokonce schopen zapínat kameru či mikrofon a z nich nahrávat záznamy.
 Dalším možným bodem odlišení jednotlivých typů jsou jejich dodatečné vlastnosti.
-Některý typy spyware mají schopnost instalovat další software.
-To umožňuje útočníkovi rozšířit své kompetence na zařízení, at už se jedná o pokročilejší sběr dat nebo manipulaci dat a nastavení přímo na daném zařízení.
+Některé typy spywaru mají schopnost instalovat další software, což umožňuje útočníkovi rozšířit své kompetence na zařízení, ať už se jedná o pokročilejší sběr dat, manipulaci dat nebo změny nastavení přímo na daném zařízení.
 Mezi nejpoužívanější typy patří:
 \begin{itemize}
 	\item Adware,
@@ -319,123 +317,117 @@ Mezi nejpoužívanější typy patří:
 	\item Red Shell spyware,
 	\item Cookies,
 	\item Rootkit.
-\end{itemize}\cite{avast_spyware, fortinet_spyware}
+\end{itemize}\cite{avast_spyware, fortinet_spyware}%todo check if i can do this better
 
 \nlparagraph{Adware}
-Cílem adware je automatické zobrazování reklam bud přímo v prohlížeči nebo přímo v operačním systému zařízení.
-V kontextu malware se jedná o tajně nainstalovaný software bez souhlasu uživatele.
-Problémem je časté využíván k zobrazování invazivních nebo klamavých reklam.\cite{avast_spyware}
+Cílem adwaru je automatické zobrazování reklam bud přímo v prohlížeči nebo přímo v operačním systému zařízení.
+V kontextu malwaru se jedná o tajně nainstalovaný software bez souhlasu uživatele.
+Problémem je časté využívání k zobrazování invazivních nebo klamavých reklam.\cite{avast_spyware}
 
 \nlparagraph{Keylogger}
-Keyloggery jsou specifické programy pro zaznamenávání stisknutí kláves uživatelem.
-Tyto informace jsou poté ukládány a zašifrovány.
-Pokud keylogger funguje samostatně, tak tyto data také zasílá útočníkovi.
-Častější je však použití keyloggeru spolu s dalším spyware.
-Primárním cílem útočníka jsou běžně zadávané věci, které jsou v software chráněny.
-Jedná se tedy například o přístupové údaje, soukromé zprávy a emaily.\cite{avast_spyware}
+Keyloggery jsou specifické programy pro zaznamenávání stisknutí kláves uživatelem, kde po zaznamenání získané informace ukládá v plaintextové nebo zašifrované formě.
+Pokud keylogger funguje samostatně, tak tyto data také zasílá útočníkovi, častější je však použití keyloggeru spolu s dalším spyware.
+Primárním cílem útočníka jsou běžně zadávané věci, které jsou v softwarem chráněny.
+Jedná se například o přístupové údaje, soukromé zprávy a emaily.\cite{avast_spyware}
 
 \nlparagraph{Infostealer}
-Asi neklasičtější představa spyware, infostealer je útočníky využíván pro shromažďování informací z napadeného zařízení.
-Již zmíněné keyloggery je možné uvažovat jako podtřídu tohoto spyware.
+Infostealer, asi neklasičtější představa spywaru, je útočníky využíván pro shromažďování informací z napadeného zařízení.
+Již zmíněné keyloggery je možné uvažovat jako podtřídu tohoto spywaru.
 Jiné infostealery jsou například schopné prohledávat data na zařízení pro určité informace, určité soubory nebo typy souborů.
 Častým cílem jsou přístupové údaje, emaily, zápisy z komunikačních aplikací nebo internetová historie.
-Hlavní rozdíly jsou však ve způsobu operace.
+Hlavní rozdíly mezi infostealery jsou však ve způsobu operace.
 Některé infostealery existují na zařízení až do jejich objevení nebo zničení zařízení.
-Stále zasílají útočníkovi informace a to bývá primární důvod jejich objevení.
-Zákeřnější jsou schopné najít a exfiltrovat všechna žádaná data najednou a pak se vymazat.
+Stále zasílají útočníkovi informace, což bývá primárním důvodem jejich objevení.
+Zákeřnější typy jsou schopné najít a exfiltrovat všechna žádaná data najednou a posléze vymazat nejen sama sebe, ale také se pokusit po sobě odstranit všechny stopy.
 Pokud nejsou detekovány při tomto jednom přenosu, není pak možnost pro uživatele poznat, že byl napaden.\cite{avast_spyware}
 
 \nlparagraph{Red Shell spyware}
-Specializovaný spyware na sledování online aktivity hráčů.
-Je nainstalován právě s danou hrou, u které sbírá data.
+Specializovaný spyware na sledování online aktivity hráčů, který je nainstalován právě s danou hrou.
+Jeho cílem je sbírat data spojená s danou hrou, která zasílá vývojáři.
 Původní záměr tvůrců je využít takto získaná data pro vývoj lepších her a pomáhat společnostem dělat lepší marketingová rozhodnutí.
-Hlavním problémem je však instalace tohoto software bez vědomí uživatelů a jejich výslovného souhlasu.\cite{avast_spyware}
+Hlavním problémem je však instalace tohoto softwaru bez vědomí uživatelů a jejich výslovného souhlasu.\cite{avast_spyware}
 
 \nlparagraph{Cookies}
 Cookies původně vznikly jako užitečná pomůcka, například pro přihlášení do oblíbených webových stránek uživatele nebo zachování instance v e-shopu.
 Jsou také využívány pro zobrazování reklam spojených se zájmem uživatele, kterého sledují.
 Jak již bylo naznačeno, problém je ve sledování online chování uživatele na internetu.
-To cookies plně kvalifikuje jako spyware, který sleduje nejen historii prohlížení ale zaznamenává i pokusy o přihlášení.
+To cookies plně kvalifikuje jako spyware, který sleduje nejen historii prohlížení, ale zaznamenává i pokusy o přihlášení.
 Útočník s dostatečnými znalostmi a vybavením je tak schopen zpětně obnovit přihlášenou instanci.
 Není proto divu, že o cookies se již delší dobu zajímá legislativa a hlavní internetové prohlížeče jejich činnost již v základu omezují nebo dokonce kompletně zakazují.\cite{avast_spyware}
 
 \nlparagraph{Rootkit}
-Možná nejnebezpečnějším typem spyware je Rootkit.
-Ten umožňuje útočníkovi infiltrovat zařízení a získat přístup na velmi hluboké úrovni.
+Možná nejnebezpečnějším typem spyware je Rootkit, jenž umožňuje útočníkovi infiltrovat zařízení a získat přístup na velmi hluboké úrovni.
 Rootkit je proto velmi obtížné odhalit.
-Díky hlubokému přístupu má útočník značnou kontrolu nad zařízením, kterou většinou využije k instalaci a skrytí dalšího malware.
-Při prvotním nakažení rootkit pro zisk přístupu nejčastěji využívá bezpečnostní zranitelnosti v samotném systému zařízení nebo administrátorské přístupy.
-Jeho prvotní kroky jsou však detekovatelné dobrým antivirovým software.\cite{avast_spyware}
+Díky hlubokému přístupu má útočník značnou kontrolu nad zařízením, kterou většinou využije k instalaci a skrytí dalšího malwaru.
+Při prvotním nakažení využívá rootkit pro získání přístupu nejčastěji bezpečnostní zranitelnosti v samotném systému zařízení nebo administrátorské přístupy.
+Jeho prvotní kroky jsou však detekovatelné dobrým antivirovým softwarem.\cite{avast_spyware}
 
 \nlparagraph{Dopad}
 Jedním z nejčastějších problémů způsobených spywarem je krádež dat.
 Všechna data mají pro útočníky cenu, některá jsou však vyhledávaná více nežli jiná.
-Útočník se například může snažit sestavit falešnou identitu, kterou pak sám použije k další trestné činnosti nebo prodá na černém trhu.
+Útočník se například může snažit sestavit falešnou identitu, kterou pak sám použije k další trestné činnosti nebo ji prodá na černém trhu.
 Také přístupové údaje k účtům mohou být cenná data, vzácné účty se na černém trhu prodávají i za stovky dolarů.
-Dalším příkladem cenných dat jsou přístupové práva, které může útočník použít k většímu kybernetickému útoku.
-Vedlejším efektem spyware jsou problémy s přístupem k internetu nebo samotnou sítí.
-Tyto problémy vznikají právě kvůli komunikaci dat zpět tvůrci.
-Je to také jedním z ukazatelů na existenci spyware.
-Dalším je zpomalení zařízení, jelikož v závislosti na sofistikovanosti spyware běžícího na pozadí bude zařízení ovlivněno.
+Dalším příkladem cenných dat jsou přístupová práva, která může útočník použít k většímu kybernetickému útoku.
+Vedlejším efektem spywaru jsou problémy s přístupem k internetu nebo problémy na interní síti, které vznikají právě kvůli zasílání získaných dat tvůrci spywaru.
+Dalším ukazatelem je zpomalení zařízení, jelikož v závislosti na sofistikovanosti spywaru běžícího na pozadí bude zařízení ovlivněno.
 V horších případech může spyware zařízení dokonce nevratně poškodit.
-To se stává pokud je špatně navrženo nebo nezáleží na dlouhodobém sledování ale jde pouze o krátkodobou extrakci dat.\cite{avast_spyware, fortinet_spyware}
+To se stává, pokud je spyware špatně navržen nebo nezáleží na dlouhodobém sledování, ale jde pouze o krátkodobou extrakci dat.\cite{avast_spyware, fortinet_spyware}
 
 \nlparagraph{Pegasus spyware}
 Jak již bylo zmíněno, spyware je také používán pro špehování na zakázku.
 Již zmíněný Pegasus spyware spadá právě do této kategorie a je to výborný příklad.
 Také více jak 30,000 aktivistů za lidská práva, novinářů a právníků po celém světě bylo cílem špehování.
 Jeho použití ve státech \ac{EU} potvrdil i samotný tvůrce NSO\@.
-Pegasus je velmi sofistikovaný spyware.
-O jeho schopnostech svědčí i fakt, že společnost NSO musí získat povolení od izraelského ministerstva obrany předtím, než může být nástroj licencován pro jakéhokoli klienta.
-V minulosti u něj výzkumníci pozorovali použití hned několik zero-day slabin za sebou k získání kontroly nad celým zařízením.
-Po získání kontroly Pegasus zapnul mikrofon, kameru, četl zprávy, poslouchal hovory a sledoval polohu zařízení.
+Pegasus je velmi sofistikovaný spyware, o jeho schopnostech svědčí fakt, že společnost NSO musí získat povolení od izraelského ministerstva obrany předtím, než může být nástroj licencován pro jakéhokoli klienta.
+V minulosti u něj výzkumníci pozorovali použití hned několika \textit{zero-day} slabin zřetězených za sebou k získání kontroly nad celým zařízením.
+Pegasus poté zapnul mikrofon, kameru, četl zprávy, poslouchal hovory a sledoval polohu zařízení.
 Všechna tato data posléze zasílal na NSO servery, kde k nim měli přístup zadavatelé špehování.
-Při pohledu na oznámené případy používání Pegasus se často objevuje velmi nepříjemný společný motiv.
+Při pohledu na oznámené případy používání Pegasus spywaru se často objevuje velmi nepříjemný společný motiv.
 Proti cílené oběti dochází znepokojivě často k nějaké fyzické akci.
 Existují případy, které vedly k uvěznění, fyzickým hrozbám, útokům a zastrašování.
 Nejhorším případem je však vražda.
-Jamal Khashoggi byl novinář ze Saúdské Arábie.
-Původně blízký přítel královské rodiny byl nucen uprchnout ze země po jmenování Mohameda bin Salmána korunním princem.
-Po úniku začal velmi otevřeně mluvit o represi v Saúdské Arábie.
+Jamal Khashoggi byl novinář ze Saúdské Arábie a původně blízký přítel královské rodiny.
+Po jmenování Mohameda bin Salmána korunním princem byl však nucen uprchnout ze země, začal proto velmi otevřeně mluvit o represi v Saúdské Arábii.
 V říjnu 2018 byl v Turecku nalákán do budovy saúdského konzulátu kvůli zřízení dokumentů pro bezpečný návrat do Saúdské Arábie.
-z budovy však nikdy neodešel, byl uškrcen a rozčtvrcen.
+Z budovy však nikdy nevyšel, byl uškrcen a rozčtvrcen.
 Zkoumání odhalilo, že NSO nainstalovalo Pegasus na telefon jeho manželky Hanan Elatr jen několik měsíců před jeho smrtí\cite{khashoggi_wife_pegasus}.
-Taká číslo telefonu jeho snoubenky bylo nalezeno mezi potencionálními cíli instalace Pegasus spyware.
-Lze předpokládat, že Jamal Khashoggi byl také cílem sledování.
+Mezi potencionálními cíli instalace Pegasus spyware bylo nalezeno taká číslo telefonu jeho snoubenky, lze předpokládat, že cílem sledování byl i sám Jamal Khashoggi.
 Při zohlednění těchto skutečností je použití Pegasus spyware zcela neetické.\cite{darknet_100_NSO,Enisa_thread_landscape}
 
 \subsection{Sociální inženýrství}\label{subsec:socialni-inzenyrstvi}
-Definice sociálního inženýrství je tato:
-Jedná so o útok, kdy se útočník snaží přimět cíl útoku, aby provedl akce, které nejsou v jeho nejlepším zájmu.
-Příkladem akcí může být instalace malware, vydání informací nebo třeba jen povolení vstupu do budovy nebo areálu.
+Sociálního inženýrství je možné definovat takto:
+Jedná so o útok, kdy se útočník snaží přimět cíl útoku, aby provedl akce, které nejsou v jeho nejlepším zájmu\cite{moje_bakalarka}.
+Příkladem akcí může být instalace malwaru, vydání informací nebo třeba jen povolení vstupu do budovy nebo areálu.
 V době psaní tohoto textu je sociální inženýrství jedním z nejpoužívanějších útoků.
 Zaměření tohoto útoku na lidský faktor znamená, že obrana je často obtížně proveditelná.
 Rutinně tomuto typu útoku propadají specialisté na bezpečnost nebo bezpečnostní výzkumníci.
 Za efektivitou tohoto útoku stojí využívání faktů z psychologie, sociologie a studia interakce lidí s technologiemi.
 Výsledkem je používaní stejných manipulačních technik, které lze pozorovat v mnoha dalších odvětvích, jako je například marketing.
-Využívá nejen legitimní chyby lidského myšlení, jako například bias, ale také dokonce v jiných okolnostech chvályhodného charakteru.
+Využívá nejen legitimní chyby lidského myšlení, jako například bias, ale také lidské zvyky a charakter.
+Například otevírání dveří člověku, který nese těžké věci.
+To je pro většinu lidí slušnost, avšak i to je jeden ze způsobů, jak může útočník překonat ochranu budovy.
+Dveře zabezpečené čtečkou karet nejsou překážkou, pokud vám je legitimní pracovník pomůže otevřít.
 Velká část sociálního inženýrství je postavena na představení věrohodné záminky.
-To je možné zaznamenat v mnoha podobách, ať už se jedná o podvodný email kde útočník předstírá, že je vaší bankou nebo podvodný telefonát, kde útočník přesvědčí nápomocného operátora, aby my pomohl převést \textit{ztracené} číslo na novou sim kartu.
-V zámince však spočívá také nejlepší obrana.
-Malé detaily jsou to, co nejčastěji odhalí útok sociálního inženýrství.
-V již zmíněném emailu od banky je v adrese například \textbf{M0NETA(S nulou místo O)} nebo při hovoru s operátorem není daný člověk schopen odpovědět na základní otázky jako místo a rok narození.
-S tím však souvisí další další bod ochrany, omezení veřejně dostupných informací
+To je možné zaznamenat v mnoha podobách, ať už se jedná o podvodný e-mail, v němž útočník předstírá, že je vaší bankou, nebo podvodný telefonát, kde útočník přesvědčí nápomocného operátora, aby mu pomohl převést \textit{ztracené} číslo na novou \ac{SIM} kartu.
+V zámince však spočívá také nejlepší obrana, jelikož malé detaily jsou to, co nejčastěji odhalí útok sociálního inženýrství.
+V již zmíněném emailu od banky je v adrese například \textbf{M0NETA(s nulou místo velkého O)} nebo při hovoru s operátorem není daný člověk schopen odpovědět na základní otázky, které se například týkají místa nebo roku narození.
+S tím však souvisí další další bod ochrany, omezení veřejně dostupných informací.
 O naprosto každém člověku existují veřejně dostupné informace, rozhoduje však to, jak těžké je tyto informace získat.
-Jedním z nejhorších provinění jsou veřejné profily na sociálních sítích blízko následované špatnou komunikační hygienou.
-Pokud na Twitter cíl napíše, že jeho banka stojí za nic a zmíní přesné jméno banky, útočník vík které jméno banky má použít a nemusí posílat emaily náhodně.
-Pokud na veřejném Facebook profilu má cíl zadané datum narození, zná ho automaticky i útočník.
-V nepříjemném místě proto stojí pracovní sociální sítě jako LinkedIn, kde kvůli pracovním příležitostem je chtěné zadávat mnoho identifikačních údajů, je však možné, že ty použije někdo proti vám.\cite{moje_bakalarka}
+Jedním z nejhorších provinění jsou veřejné profily na sociálních sítích, dvojnásob pokud daná osoba vykazuje špatnou komunikační hygienu.
+Pokud na Twitter cíl napíše, že jeho banka stojí za nic a zmíní přesné jméno banky, útočník ví, které jméno banky má použít a nemusí posílat emaily náhodně.
+Pokud na veřejném Facebookovém profilu má cíl zadané datum narození, zná ho automaticky i útočník.
+V nepříjemném místě proto stojí pracovní sociální sítě jako LinkedIn, kde kvůli pracovním příležitostem je žádoucí zadávat mnoho identifikačních údajů, je však možné, že je zneužije útočník.\cite{moje_bakalarka}
 
 
 \nlparagraph{Trendy}
-Report od společnosti \ac{ENISA} poukazuje na fakt, že ve zhruba 82\% závažných bezpečnostních incidentů figuruje lidský faktor a minimálně 60\% incidentů v Evropě, na Středním východě a v Africe zahrnuje využití sociálního inženýrství.
-Takto velká čísla spočívá jv oblíbenosti tohoto typu útoků.
+Report od společnosti \ac{ENISA} poukazuje na fakt, že ve zhruba 82 \% závažných bezpečnostních incidentů figuruje lidský faktor a minimálně 60 \% incidentů v Evropě, na Středním východě a v Africe zahrnuje využití sociálního inženýrství.
+Takto velká čísla spočívá v oblíbenosti tohoto typu útoků.
 Výhod pro útočníka je totiž mnoho.
-V rámci většiny typů útoků útočník není ovlivněn lokací, jeho počáteční náklady bývají minimální a přesto výnosnost těchto útoků je značná.
-Navíc ačkoli jsou prováděny kurzu a semináře na zvýšení povědomí o těchto útocích, jejich účinnost bývá smíšená.
+V rámci většiny typů útoků není útočník ovlivněn lokací, jeho počáteční náklady bývají minimální, a přesto je výnosnost těchto útoků značná.
+Navíc ačkoli jsou prováděny kurzy a semináře na zvýšení povědomí o těchto útocích, jejich účinnost bývá smíšená.
 Také skupiny provádějící ransomware se silně spoléhají na prvotní přístup pomocí sociálního inženýrství.
 Nemůže proto být divu, že už jen samotný přístup je prodejný a jsou útočníci, kteří se na něj specializují a další kroky operací nechávají na jiných skupinách.
-Velmi často napadanými cíly jsou finanční instituce, které útočníci velmi rádi napodobují.
+Velmi často napadanými cíli jsou finanční instituce, které útočníci velmi rádi napodobují.
 Útoky jsou ve formě platebních podvodů, jejichž počet i sofistikovanost rok od roku narůstá.
 Dalšími často napadanými sektory jsou zdravotnický nebo technologický sektor.
 Není proto divu, že náklady spojené specificky s phishingem byly v roce 2021 v porovnání s rokem 2015 více než trojnásobné.
@@ -444,23 +436,23 @@ V poslední době byly také zaznamenány dlouhodobé podvody zaměřené na kyb
 Útočníci se vydávají například za vědce, kteří zvou své kolegy a novináře na falešnou konferenci.
 Pozvánky na tuto konferenci vedly na  webové stránky zaměřené na krádež přihlašovacích údajů.
 Dalším možným příkladem je vydávání se za atraktivní ženu na sociálních médiích.
-Cílem je buďto postupně z cílů postupně extrahovat informace nebo po dlouhodobějším kontaktu a získání důvěry zaslat škodlivé dokumenty, po jejichž otevření je kompromitováno zařízení oběti útoku.
-Bohužel tyto kampaně bývají velmi úspěšné a tak je téměř jisté jejich využití i v budoucnu.\cite{Enisa_thread_landscape}
+Cílem je buďto z cílů postupně extrahovat informace nebo po dlouhodobějším kontaktu a získání důvěry zaslat škodlivé dokumenty, po jejichž otevření je kompromitováno zařízení oběti útoku.
+Bohužel tyto kampaně bývají velmi úspěšné, a tak je téměř jisté jejich využití i v budoucnu.\cite{Enisa_thread_landscape}
 
 \nlparagraph{Typy útoků}
 Je možné rozlišovat několik hlavních kategorií sociálního inženýrství.
 Je jasné, že kategorie jsou různě rozsáhlé a obsahují vlastní pod-kategorie, pro pochopení je však vhodné jednodušší roztřídění.
 Hlavní kategorie jsou představeny v tomto seznamu:
 \begin{itemize}
-	\item Phishing - podvodné emaily,
+	\item Phishing - podvodné e-maily,
 	\item Vishing - podvodné telefonáty,
-	\item Smsing - podvodné SMS,
+	\item SMSing - podvodné \ac{SMS},
 	\item Personální útok - útočník osobně napadá lokaci.
-\end{itemize}\cite{Enisa_thread_landscape, moje_bakalarka}.
+\end{itemize}\cite{Enisa_thread_landscape, moje_bakalarka}%todo check
 
 
 \subsubsection{Phishing}
-Phishing jsou podvodné emaily, kde největší roli hraje zvolená záminka.
+Phishing jsou podvodné e-maily, kde největší roli hraje zvolená záminka.
 Nejčastěji je cílem nasměrovat cíl na podvodné stránky pro krádež nebo ověření informací, druhým nejčastějším cílem je získat prvotní přístup do uzavřeného systému.
 Zajímavé informace pro útočníka jsou například přihlašovací údaje, které se pokusí zjistit vytvořením kopie přihlašovací stránky banky a na tuto stránku zašle cíli emailem odkaz.
 V získání přístupu naopak často figurují infikované soubory.
@@ -471,7 +463,7 @@ Hlavní nebezpečí phishingu však tkví ve specializovaných útocích, zamě�
 Útočník stráví týdny nebo i měsíce zjišťováním informací o cílené osobě a poté vytváří jeden specifický útok, který je v drtivé většině případů úspěšný.
 Tato podkategorie má název \textit{spear-phishing}.
 Ještě specializovanější podkategorií je \textit{whaling}, kdy je útok zaměřen na jednu vysoce postavenou osobu ve společnosti, jako je například vedoucí oddělení nebo prezident organizace.
-Velmi znepokojující je každoroční nárostu počtu těchto útoků.\cite{moje_bakalarka}
+Velmi znepokojující je každoroční nárůst počtu těchto útoků.\cite{moje_bakalarka}
 
 \nlparagraph{PhaaS}
 Jedním z důvodů zvýšení sofistikovanosti útoků a jejich rozšíření je \firstac{PhaaS}
@@ -488,67 +480,66 @@ To pro oběti útoku znamená, že odcizené informace se šíří rychleji a ni
 Forma sociálního inženýrství zaměřená na podvodné telefonáty se nazývá vishing.
 Hlavní rozdíl oproti již představenému phishingu je silná zpětná vazba, kterou má útočník k dispozici během hovoru.
 Vishing tak klade mnohem větší důraz na improvizaci a komunikační schopnosti útočníka.
-Útok, který nebyl tak dobře připraven je možné zachránit dobrým využitím nově získaných informací.
+Útok, který nebyl tak dobře připraven, je možné zachránit dobrým využitím nově získaných informací.
 Je to také mnohem rychlejší a interaktivnější forma sociálního inženýrství.
-Při zaslání phishingového emaily můžeme čekat dny nebo i týdny na zjištění úspěšnosti útoku, při vishingu je to otázka minut.
+Při zaslání phishingového e-mailu můžeme čekat dny nebo i týdny na zjištění úspěšnosti útoku, při vishingu je to otázka minut.
 Všechny okolnosti však nejsou jen ve prospěch útočníka.
 Rychlost a komunikace také znamená, že náhodná interakce může zkazit výborně připravený útok.
 Je jasné, že v komunikaci po telefonu nelze poslat škodlivý link.
 Proto je primárním cílem útočníka zisk nebo ověření informací.
 Jako nový trend se ukazují podvody s bankovními účty, kdy útočník přesvědčí oběť, aby převedla peníze na \textit{bezpečný} účet.
 Princip je snadný, útočník se vydává za policistu nebo zaměstnance finanční instituce a obeznámí oběť o faktu, že jejich běžný účet je napaden a mohli by tak o své peníze přijít.
-\textit{Bezpečný} účet je však pod kontrolou útočníka a tak jedním převodem některé oběti za pár minut ztratily celoživotní úspory.
-Report společnosti \ac{ENISA} jasně ukazuje, že ve sledovaném období (1. čtvrtletí 2021 až 1. čtvrtletí 2022) se počet případů vishingu zvýšil o více jak 550\%.
+\textit{Bezpečný} účet je však pod kontrolou útočníka, a tak jedním převodem některé oběti za pár minut ztratili celoživotní úspory.
+Report společnosti \ac{ENISA} jasně ukazuje, že ve sledovaném období (1. čtvrtletí 2021 až 1. čtvrtletí 2022) se počet případů vishingu zvýšil o více jak 550 \%.
 Je nepochybné, že tento trend bude nadále pokračovat díky vzrůstající oblíbenosti u útočníků.\cite{Enisa_thread_landscape, moje_bakalarka}
 
-\subsubsection{Smshing}
-Smshing je verze sociálního inženýrství prováděná přes sms zprávy.
-Forma je velmi podobná phishingu, liší se však v přístupu lidí k sms.
+\subsubsection{SMShing}
+SMShing je verze sociálního inženýrství prováděná přes \ac{SMS} zprávy.
+Forma je velmi podobná phishingu, liší se však v přístupu lidí k \ac{SMS}.
 Příchozí email oběť vyřizuje v prostředí, kde má čas se mu věnovat a dávat si pozor na podezřelé detaily.
-Sms je však vyřizována většinou hned při jejím příchodu, obzvláště pokud vypadá jako krize.
-Příkladem může být kampaň FluBot, jejím cílem jsou Android zařízení.
-Oběť nejprve obdrží SMS zprávu, která se vydává za doručovatelské společnosti nebo falešný software.
+\ac{SMS} je však vyřizována většinou hned při jejím příchodu, obzvláště pokud vypadá jako krize.
+Příkladem může být kampaň FluBot, jejímž cílem jsou Android zařízení.
+Oběť nejprve obdrží \ac{SMS} zprávu, která se vydává za doručovatelské společnosti nebo falešný software.
 Cílem zprávy je přimět uživatele, aby nainstaloval podvodnou aplikaci a dodal jí oprávnění.
-Podvodná aplikace je pak schopna monitorovat seznam kontaktů, uložená nebo zadávaná číla kreditních karet, přihlašovací údaje do internetového bankovnictví nebo zachytává sms a v nich přicházející jednorázová hesla.
+Podvodná aplikace je pak schopna monitorovat seznam kontaktů, uložená nebo zadávaná čísla kreditních karet, přihlašovací údaje do internetového bankovnictví nebo zachytává \ac{SMS} a v nich přicházející jednorázová hesla.
 FluBot se navíc sám šíří z napadeného zařízení právě zasíláním zpráv na záznamy v seznamu kontaktů.\cite{Enisa_thread_landscape, moje_bakalarka}
 
 \subsubsection{Personální útok}
-Speciální kategorie útoků sociálního inženýrství, kdy se útočník snaží fyzicky dostat k citlivým datům společnosti.
+Personální útoky jsou speciální kategorií útoků sociálního inženýrství, kdy se útočník snaží fyzicky dostat k citlivým datům společnosti.
 Tento typ útoku je v porovnání s ostatními velmi vzácný, většinou se jedná o předem domluvené testovací akce.
-Důvod, proč tento útok stojí za zmínku je jeho efektivnost.
-V dnešní době jsou servery velmi dobře chráněné proti přístupu z internetu, co když ale někdo přijde a zapojí do něj usb flash disk?
-Je jasné, že tento typ útoku je pro útočníka velmi nebezpečný a náročný, vyžaduje schopnosti které nejsou standardní a dokonce i specializované nástroje.
-Jejich efektivita však nelze popřít a jsou mnohdy opomíjeny jako možný vektor útoku.\cite{moje_bakalarka}
+Důvod, proč tento útok stojí za zmínku, je jeho efektivnost.
+V dnešní době jsou servery velmi dobře chráněné proti přístupu z internetu, co když ale někdo přijde a zapojí do něj \ac{USB} flash disk?
+Je jasné, že tento typ útoku je pro útočníka velmi nebezpečný a náročný, vyžaduje schopnosti, které nejsou standardní, a dokonce i specializované nástroje.
+Jejich efektivitu však nelze popřít a jsou mnohdy opomíjeny jako možný vektor útoku.\cite{moje_bakalarka}
 
 
 \subsection{Threat against data}\label{subsec:threat-against-data}
 Tato sekce se zabývá útoky, které primárně ohrožují integritu a bezpečí dat.
 Každá společnost v dnešní době vytváří, shromažďuje a zpracovává ohromné množství dat.
 To vedlo k rozvoji správy a analýzy dat, kde lepší techniky a postupy vedou k rychlejším procesům, lepšímu řízení zákaznických vztahů a nižším provozním nákladům.
-Nemalá závislost také existuje mezi modely strojového učení ne umělé inteligence, které jsou přímo závislé na správných vstupních datech.
+Nemalá závislost také existuje mezi modely strojového učení nebo umělé inteligence, které jsou přímo závislé na správných vstupních datech.
 Je proto dobré uvědomovat si hrozby, které cílí na zdroje dat s cílem získat k nim neoprávněný přístup.
-Poté můžeme rozlišovat 2 hlavní cíle, které vysvětlují chování útočníků při zisku přístupu k datům.
+Poté můžeme rozlišovat dva hlavní cíle, které vysvětlují chování útočníků při zisku přístupu k datům.
 Prvním cílem jsou úniky a krádeže dat, kdy dochází ke zveřejnění nebo ztrátě citlivých informací.
-Do této kategorie spadá průmyslová špionáž ale také ransomware útoky.
-Druhým je manipulace, aby se zasáhlo do chování systému na datech závislých.
+Do této kategorie spadá průmyslová špionáž ale také ransomwarové útoky.
+Druhým je manipulace, aby se zasáhlo do chování systému závislého na datech.
 Příkladem je šíření dezinformace nebo takzvané \textit{otravování dat\textbf{[Data poisoning]}}, kde účelná manipulace dat znehodnotí výsledky umělé inteligence nebo strojového učení.
 Je dobré připomenout, že do této sekce spadají i chybné modifikace dat a neúmyslné úniky informací.
 To je právě rozlišení mezi porušením bezpečnosti dat (vždy útok) a únikem dat (neúmyslná chyba).
 Samozřejmě je v mnoha případech těžké nastavit přesnou hranici.
 Příkladem může být chybná konfigurace bezpečnosti serveru, která vedla ke krádeži dat útočníkem.
-Z reportu od společnosti \ac{ENISA} je vidět, že zhruba 80\% útoků s cílem kompromitovat data pochází z vnějšku cílové organizace, zatímco zhruba 20\% vzniká přímo uvnitř organizace.
-Motivací pro tyto útoky je stále převážně finanční zisk (asi 90\% útoků) a špionáž (méně než 10\%).\cite{Enisa_thread_landscape}
+Z reportu od společnosti \ac{ENISA} je vidět, že zhruba 80 \% útoků s cílem kompromitovat data pochází z vnějšku cílové organizace, zatímco zhruba 20 \% vzniká přímo uvnitř organizace.
+Motivací pro tyto útoky je stále převážně finanční zisk (asi 90 \% útoků) a špionáž (méně než 10 \%).\cite{Enisa_thread_landscape}
 
 \subsubsection{Krádež identity}
 V důsledku nárůstu úniků dat jsou osobní a citlivá data snadno dostupná útočníkům na \textit{dark webu}.
 Nemůže tak být překvapením kaskádový efekt, který tato skutečnost měla na krádeže identity.
-Krádež identity znamená, že útočníci používají odcizená osobní údaje k tomu, aby se vydávali za uživatele.
-Za zmínku stojí, že více jak polovina útoků zaměřených na supply-chain v roce 2021 měla jako koncový cíl právě osobní údaje o uživatelích.
-Krádež identity je nejčastěji využívána pro bankovní podvody.\cite{Enisa_thread_landscape}
+Krádež identity znamená, že útočníci používají odcizená osobní údaje k tomu, aby se vydávali za uživatele, nejčastěji s cílem provedení bankovního podvodu.
+Za zmínku stojí skutečnost, že více jak polovina útoků zaměřených na supply-chain v roce 2021 měla jako koncový cíl právě osobní údaje o uživatelích.
 
-\subsubsection{Otravování dat[Data poisoning]}
+\subsubsection{Otravování dat [Data poisoning]}
 Důvěryhodná data jsou nejdůležitějším předpokladem pro implementaci bezpečných autonomních a adaptivních systémů.
-Možná nejvíce zasažené kategorie jsou tvorba umělé inteligence a strojové učení.
+Možná nejvíce zasaženými kategoriemi jsou tvorba umělé inteligence a strojové učení.
 I malá chyba v prvotních učících datech má velkou šanci absolutně zničit celý systém.
 S možnostmi zpracování dat však narůstá také možnost data cíleně měnit.
 Dříve byl televizní přenos nebo video téměř nepopíratelný důkaz událostí, dnes pomocí deepfake možné vytvořit cokoli.
@@ -557,138 +548,132 @@ To se nikdy nestalo, proto je použití deepfake očividné a vtipné.
 Co když ale útočník použije deepfake hlasového hovoru pro podvodný bankovní převod ve výši téměř 35 milionů?
 Je nutné se připravit na budoucnost, kde je stále obtížnější rozpoznat fikci od skutečnosti.\cite{Enisa_thread_landscape}
 
-\subsubsection{Sql injection}
-Možná nejznámějším příkladem lidské chyby je útok Sql injection.
+\subsubsection{SQL injection}
+Možná nejznámějším příkladem lidské chyby je útok \firstac{SQL} injection.
 Tento známý útok využívá špatného nastavení databáze pro provádění za normálních okolností nepovolených operací.
 Pokud útočník nalezne špatně zabezpečený vstup, například vyhledávací box, může do databáze zadávat vlastní příkazy.
-To je možné pomocí řetězení příkazů, kdy útočník vytvoří specifický řetězec, který mu dovolí vyvolat nejen očekávané chování ale i další chování které je na původní chování přidané.
+To je možné pomocí řetězení příkazů, kdy útočník vytvoří specifický řetězec, který mu dovolí vyvolat nejen očekávané chování ale i další chování, které je na původní chování přidané.
 Nejčastěji takto útočník získává výpis celé databáze.\cite{cisco_most_common_attack}
 
 
 \subsection{Threat against availability}\label{subsec:threat-against-availability}
 Útoky ohrožující dostupnost dat a systémů jsou používané již více jak 20 let a stále hrají významnou roli v repertoáru útočníků.
-Je samozřejmé, že přesné postupy byly během let vyvíjeny ale základní myšlenka je stále stejná.
-Zajistit, aby uživatelé nemohli získat přístup k datům nebo službám.
-To může být dosaženo vyčerpáním služby a jejích zdrojů nebo zahlcením komponenty síťové infrastruktury.
+Je samozřejmé, že přesné postupy byly během let vyvíjeny, ale základní myšlenka je stále stejná, zajistit, aby uživatelé nemohli získat přístup k datům nebo službám.
+Tohp může být dosaženo vyčerpáním služby a jejích zdrojů nebo zahlcením komponenty síťové infrastruktury.
 Zajímavé je, že tento typ útoku lze provést i nechtěně.
-Když známá osoba například náhodně zmíní malý internetový obchod, velké množství fanoušků může svým přístupem vyřadit webové stránky obchodu z provozu.
-To však není běžná situace.
+Když známá osoba například náhodně zmíní malý internetový obchod, velké množství fanoušků může svým přístupem vyřadit webové stránky obchodu z provozu, není to však zcela běžné.
 Ve většině příkladů je tento typ útoku využíván cíleně a s drtivou efektivitou.
-Dokonce se o těchto typech útoku mluví jako o 5 rozměru války.
+Dokonce se o těchto typech útoků mluví jako o pátém rozměru války, po bojích ve vzduchu, na moři, na souši a dokonce i ve vesmíru.
 Většinou se jedná o útoky typu \firstac{DoS}, \firstac{DDoS} nebo \firstac{RDoS}.
-Znepokojivá je současná situace právě ve spojení s válkou na ukrajině.
+Znepokojivá je současná situace právě ve spojení s válkou na Ukrajině.
 Hrozby a úrovně vydírání se celkově zvýšily a bohužel stále více útoků je vedeno státem podporovanými skupinami.
-Nepříjemné je také zaměření útočníků na \ac{IoT}, kde senzory a zařízení mají často nedostatečnou ochranu.
+Nepříjemné je také zaměření útočníků na \ac{IoT}, kde mají senzory a zařízení často nedostatečnou ochranu.
 Atraktivní jsou tyto cíle pro zisk informací nebo jako část botnetu.
 Jednou z příčin slabého zabezpečení jsou velmi často slabé přihlašovací údaje, například \textbf{admin} (uživatelské jméno) a \textbf{1234} (heslo), které uživatelé využívají.
 Také aktualizace jsou mnohdy problém, například botnet Mozi stále k šíření využívá zranitelností objevených před osmi lety a je odhadováno, že úspěšně napadl až stovky tisíc zařízení.\cite{Enisa_thread_landscape}
 
 
 \subsubsection{Denial of service}
-Útok zaměřený na kolaps infrastruktury.
-\textit{Denial-of-service}, také znám jako \ac{DoS} útok se snaží vyčerpat zdroje služby množství zasílaných požadavků.
-Další možností je ovládnutí nebo alespoň vyřazení z provozu dané služby za pomocí známe zranitelnosti.\cite{cisco_most_common_attack}
-
+\textit{Denial-of-service}, také znám jako \ac{DoS}, je útok zaměřený na kolaps infrastruktury tím.
+Útok se snaží vyčerpat zdroje služby množstvím zasílaných požadavků nebo získat přístup k ovládnutí služby a vyřadit ji tak z provozu.
+Přístup k ovládání dané služby je prováděn s využitím známe zranitelnosti nebo ziskem přístupových údajů administrátora.\cite{cisco_most_common_attack}
 
 \subsubsection{Distributed denial of service}
-Známější a více používaná je však podkategorie tohoto útoky zvaná \ac{DDoS}.
+Známější a více používaná je však podkategorie tohoto útoku zvaná \ac{DDoS}.
 Hlavní změnou je využívání mnoha zařízení, takzvaného \textit{Botnetu}, která na příkaz zahltí službu množstvím požadavků.
 Problematika tohoto útoku spočívá v 2 hlavních bodech.
-Při útoku \ac{DoS} je možné příchozí požadavky z jednoho zařízení snadno zablokovat pomocí \textit{blacklistu} daného zařízení.
-To však není proveditelné, pokud tyto požadavky přichází z tisíců nebo i statisíců zařízení.
-S tím souvisí i druhý problém, kterým je rozsah celého útoku.
-Jedno zařízení jen těžce může konkurovat statisícím v množství požadavků, které je schopné odeslat.
+Při útoku \ac{DoS} je možné příchozí požadavky z jednoho zařízení snadno zablokovat pomocí \textit{blacklistu} daného zařízení, není to však proveditelné, pokud tyto požadavky přichází z tisíců nebo i statisíců zařízení.
+S tím souvisí i druhý problém -rozsah celého útoku.
+Jedno zařízení může jen těžce konkurovat statisícím v množství požadavků, které je schopné odeslat.
 A to i za předpokladu, že je mnohem výkonnější.
-Proto jsou do \textit{botnetů} často přidávaná jakákoli možná zařízení s přístupem k internetu jako smart televize, pračky, ledničky nebo i kamery a jiné typy \ac{IoT} zařízení.\cite{cisco_most_common_attack}
+Proto jsou do \textit{botnetů} často přidávána jakákoli možná zařízení s přístupem k internetu, jako smart televize, pračky, ledničky nebo i kamery a jiné typy \ac{IoT} zařízení.\cite{cisco_most_common_attack}
 
 
 
 \subsubsection{Ransomware denial of service}
 Jako nová forma útoků se objevilo \ac{RDoS}.
-Jedná se o útok \ac{DoS} nebo i \ac{DDoS}, kde však primárním cílem není vyřazení z služby z provozu.
-Výpadek provozu je však efektivní prostředek pro získání pravé motivace, peněz.
-Stejně jako jiné již zmíněné formy ransomware i \ac{RDoS} existuje ve dvou hlavních podobách v závislosti na to, zda nejdříve nastane útok nebo výhružka.
-První možnost je, že nejdříve nastane útok, a po jeho pozastavení je poslána výhružka, kde je požadováno výkupné jinak útok znovu začne.
+Jedná se o útok \ac{DoS} nebo i \ac{DDoS}, kde však primárním cílem není vyřazení služby z provozu.
+Výpadek provozu je však efektivní prostředek pro získání pravé motivace - peněz.
+Stejně jako jiné již zmíněné formy ransomwaru, i \ac{RDoS} existuje ve dvou hlavních podobách v závislosti na tom, zda nejdříve nastane útok, nebo výhružka.
+První možnost je, že nejdříve nastane útok.
+Po jeho pozastavení je poslána výhružka, v níž je požadováno výkupné, jinak útok znovu začne.
 Druhou možností je zaslání výhružky rovnou a pouze při nezaplacení nebo nutnosti prokázání možností útočníka je proveden skutečný útok.
 Začíná zde s cílem útoku psychologická hra, protože útočník mnohdy nemá možnosti pro silný a dlouhodobý útok, to však cíl při rozhodování, zda zaplatí výkupné, neví.
 \ac{RDoS} často cílí na poskytovatele internetových služeb, finanční instituce a malé až střední podniky.
-Možná nejpřekvapivější je návrat plateb za \textit{ochranu}, tedy každodenních plateb, například v hodnotě 1BTC denně, za nenapadnutí společnosti.\cite{Enisa_thread_landscape}
+Možná nejpřekvapivější je návrat plateb za \textit{ochranu}, tedy každodenních plateb, například v hodnotě 1 BTC denně, za nenapadnutí společnosti.\cite{Enisa_thread_landscape}
 
 
 \subsection{Ostatní útoky}\label{subsec:ostatni-utoky}
-Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie ale jsou často využívány v kombinaci s jinými kategoriemi útoků.
+Tato kategorie se skládá z útoků, hrozeb a technik, které nelze zařadit samostatně do jedné kategorie.
+Často jsou však využívány v kombinaci s jinými kategoriemi útoků pro dosažení lepších výsledků.
 Je nutné je v tomto výčtu zmínit kvůli jejich nebezpečnosti, rozšířenosti a nízkému veřejnému povědomí.
 
 \subsubsection{Man-in-the-middle}
-Útoky \textit{Man-in-the-middle} jsou také zvané odposlouchávací útoky.
-Útočník se při tomto útoku dostává doprostřed komunikace 2 subjektů.
+Při útoku \textit{Man-in-the-middle},také zvaném odposlouchávací útoky, se útočník dostává doprostřed komunikace dvou subjektů.
 Hlavním cílem je filtrování, kradení a nahrazování dat proudících v komunikaci.
-Mezi nejčastější implementace tohoto útoky patří napodobování veřejné \textit{Wi-Fi}.
-Útočník se představuje jako vstupní bod na tuto veřejnou wifi kap posléze odesílá veškerou komunikaci.
-Lidé si tak nemusí uvědomit, že útočník existuje a nedávají si tak pozor na svoji činnost na takto odposlouchávané síti.
-Další oblíbenou implementací útoku je použití malware.
+Mezi nejčastější implementace tohoto útoku patří napodobování veřejné \textit{Wi-Fi}.
+Útočník se představuje jako vstupní bod na tuto veřejnou Wi-Fi, kam posléze odesílá veškerou komunikaci.
+Lidé si tak nemusí uvědomit, že útočník existuje, a nedávají si tak pozor na svoji činnost na takto odposlouchávané síti.
+Další oblíbenou implementací útoku je použití malwaru.
 Ten po nainstalování přesměrovává komunikaci nebo pouze odposlouchává činnost na daném stroji.
 Zajímavým trendem poslední doby je použití QR kódů.
-V lednu 2022 dokonce FBI vydalo varování ohledně zločinců, kteří používají QR kódy k přesměrování obětí na podvodné veby a kradou tak přihlašovací informace.
-Není to však jen otázka USA, podobné útoky metodologie útoky využívali i útočníci v německu.
+V lednu 2022 dokonce FBI vydalo varování ohledně zločinců, kteří používají QR kódy k přesměrování obětí na podvodné weby a kradou tak přihlašovací informace.
+Není to však jen otázka USA, podobné metodologie útoků využívali i útočníci v Německu.
 QR kódy jsou pro útočníky výhodné, protože člověk není schopen rozeznat pravdivý od škodlivého.
 Pokud tedy útočník zamíchá mezi legitimní kódy své podvodné, je pro běžného člověka nemožné je odhalit.\cite{Enisa_thread_landscape, cisco_most_common_attack}
 
 
 \subsubsection{Zero day exploit}
-\textit{Zero day exploit} je zranitelnost systému, na kterou ještě neexistuje patch.
-Tato situace může nastat pokud byla zranitelnost nahlášena a ještě ji výrobce systému nestihl opravit.
+\textit{Zero day exploit} je zranitelnost systému, na niž ještě neexistuje patch.
+Tato situace může nastat, pokud byla zranitelnost nahlášena a výrobce systému ji ještě nestihl opravit.
 Mnohem častější je případ, kdy zranitelnost našel sám útočník.
-Ten ji pouze bude chtít využít, rozhodně ne nahlásit.
+Ten ji ale bude chtít využít, rozhodně ne nahlásit.
 Tyto zranitelnosti se také snaží získat státní složky zaměřené na špehování.
-Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021} kde se prodávají až za miliony dolarů.
+Nemůže tak být divu, že s těmito slabinami existuje černý trh\cite{world_end_2021}, na němž se prodávají až za miliony dolarů.
 Ani výzkum zranitelností není levná záležitost a vyžaduje velké množství zdrojů.
-Částečně je to z důvodů lepší bezpečnosti a technologií, částečně je to faktor kompetice, kde první nálezce má ze zranitelnosti největší nebo i jediný zisk.
-To je jeden z důvodů, proč se skupiny útočníků začaly zaměřovat na napadání bezpečnostních výzkumníky.
+Částečně je to z důvodů lepší bezpečnosti a lepších technologií, částečně je to faktor kompetice, kde první nálezce má ze zranitelnosti největší nebo i jediný zisk.
+To je jeden z důvodů, proč se skupiny útočníků začaly zaměřovat na napadání bezpečnostních výzkumníků.
 Proč investovat zdroje, když je možné nechat to na někom jiném.
-Z podobného důvodu je i samotný fakt veřejného nahlášení zranitelnosti nebezpečný, protože vede k pokusům o zneužití ze strany útočníků kteří výzkumníky dlouhodobě sledují.
+Z podobného důvodu je i samotný fakt veřejného nahlášení zranitelnosti nebezpečný, protože vede k pokusům o zneužití ze strany útočníků, kteří výzkumníky dlouhodobě sledují.
 Bohužel však existují společnosti, které ignorují nahlášené slabiny právě do chvíle, než jsou upozorněni na veřejné nahlášení v rámci následujících dnů či měsíců.
-Časová lhůta existuje právě kvůli nutnému času na opravu, je však nutné aby tuto výhrůžku nahlašovatel dodržel, jinak přestane být efektivní.\cite{Enisa_thread_landscape}
+Časová lhůta existuje právě kvůli nutnému času na opravu, je však nutné, aby tuto výhrůžku nahlašovatel dodržel, jinak přestane být efektivní.\cite{Enisa_thread_landscape}
 
 
 \subsubsection{DNS tunneling}
 \textit{DNS tunneling} je možné použít pro legitimní účely, tato práce však zkoumá jeho zneužití.
-Není to samotný útok ale podpora útoku.
-Je založený na \firstac{DNS}.
-Tento protokol je využíván prakticky neustále pro běžné účely a je velmi flexibilní.
-To však dovoluje jeho zneužití.
-\ac{DNS} je tak často používán, že malé navýšení není poznat.
+Není to samotný útok, ale podpora útoku založená na \firstac{DNS}.
+Tento protokol je využíván prakticky neustále pro běžné účely a je velmi flexibilní, to však dovoluje jeho zneužití.
+\ac{DNS} je používán tak často, že malé navýšení není poznat.
 Mnoho společností ho navíc nekontroluje dostatečně, aby mohlo tento typ útoku možné odhalit.
 Útočník v \ac{DNS} requestech a responsech zakódovává vlastní komunikaci za účelem jejího skrytí.
-Odchozí komunikace může být použita pro exfiltraci kritických dat nebo přijímání odpovědí od nainstalovaného malware.
-Příchozí naopak pro posílání příkazů již nainstalovanému malware nebo dokonce stahování dalšího malware.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
+Odchozí komunikace může být použita pro exfiltraci kritických dat nebo přijímání odpovědí od nainstalovaného malwaru, příchozí komunikace naopak pro posílání příkazů již nainstalovanému malwaru nebo dokonce stahování dalšího malwaru.\cite{cisco_most_common_attack, bright_sec_dns_tunneling}
 
 \subsubsection{Supply-chain útoky}
 Supply-chain útoky využívají vztahy mezi organizacemi.
 V dnešní době je provázanost nevyhnutelná, bohužel to však představuje značnou bezpečnostní slabinu.
-\ac{ENISA} definuje tyto útoky, které se skládají z kombinace alespoň dvou útoků, jeden na dodavatele a další na spotřebitele.
+\ac{ENISA} uvádí, že se tyto útoky skládají z kombinace alespoň dvou útoků, jeden na dodavatele a další na spotřebitele.
 První útok na dodavatele je použit primárně k útoku na skutečný cíl, tedy spotřebitele.
 To však neznamená, že spotřebitel jedné služby nemůže být dodavatelem další.
 Útočník mnohdy může útoky řetězit a mít až překvapivý dosah.
 Efektivita plyne v malých možnostech přípravy na tento typ útoku ze strany spotřebitele.
-Velmi nepříjemnou verzí supply-chain útoků jsou útoky na Open-source knihovny.
-Reálné knihovny bývají nakaženy skrytým malware s cílem nakazit kohokoli, kdo knihovnu bude využívat.
+Velmi nepříjemnou verzí supply-chain útoků jsou útoky na open-source knihovny.
+Reálné knihovny bývají nakaženy skrytým malwarem s cílem nakazit kohokoli, kdo knihovnu bude využívat.
 Tento proces by měli zastavit udržovatelé knihoven, kteří kontrolují přidávané změny, bohužel však mohou udělat chybu.
 Další možností pro útočníky je napodobit jména a funkcionalitu legitimních knihoven.
-Je pak šance, že vývojáři omylem použijí tuto podvodnou knihovnu aniž by si to uvědomili.
+Je pak šance, že vývojáři omylem použijí tuto podvodnou knihovnu, aniž by si to uvědomili.
 Například v červnu 2022 bylo zjištěno, že knihovny pygrata a loglib extrahují AWS klíče.
 Za speciální zmínku stojí útok skupiny provozující ransomware LockBit oproti společnosti Abiom.
 To byl velice závažný útok protože Abiom dodává komunikační technologii pro nizozemskou záchrannou síť C2000,
 Nizozemské ministerstvo obrany, národní policii a bezpečnostní služby.
 Situace okolo supply-chain útoků je natolik vážná, že vedla ke vzniku evropské směrnice \textbf{NIS2}, která by měla řešit bezpečnost dodavatelských řetězců.
 Představuje kybernetickou strategii s návrhy na posílení obrany a zlepšení reakcí proti zákeřným aktivitám.
-Jedinou obranou proti supply-chain útok je posílení obrany všech článků řetězce.\cite{Enisa_thread_landscape}
+Jedinou obranou proti supply-chain útokům je posílení obrany všech článků řetězce.\cite{Enisa_thread_landscape}
 
 
 \section{Kategorie útočníků}\label{sec:kategorie-utocniku}
-Pro kompletnost je při zkoumání bezpečnostního nutné uvažovat i typu útočníka, který útok uskutečňuje.
+Pro kompletnost je při bezpečnostním zkoumání nutné uvažovat i typ útočníka, který útok uskutečňuje.
 Různé typy se chovají během útoku různě, mají jiné cíle, možnosti a motivace.
-Pokud je cílem komplexní ochrana, je nutné zvážit, se kterými typy útočníku bude nejčastější konflikt.
+Pokud je cílem komplexní ochrana, je nutné zvážit, se kterými typy útočníků bude nejčastější konflikt.
 Pro zjednodušení je možné útočníky zařadit do několika skupin.
 Stejně jako u útoků mezi skupinami existují návaznosti a překrývání, je nutné skupiny brát pouze jako hrubé zařazení a ne definitivní výčet.
 Skupinami jsou:
@@ -697,7 +682,7 @@ Skupinami jsou:
 	\item Script kiddie,
 	\item Hacktivista,
 	\item Hacker na objednávku,
-	\item Cyber kriminálník,
+	\item Kyberkriminálník,
 	\item Státem podporovaný útočník,
 	\item Insider (vnitřní osoba).
 \end{itemize}\cite{Enisa_thread_landscape,data_flair_attackers}
@@ -706,43 +691,42 @@ Skupinami jsou:
 Tento typ útočníka by bylo možné nazývat také hobby útočník.
 Mají omezené zdroje a bývají velmi specifičtí v rámci postupů a zranitelností, které využívají k dosažení svého záměru.
 Tito útočníci nejsou plně zaměřeni na hackování, je to pro ně spíše zábava a zpestření života.
-Z toho také vyplývají hlavní motivace těchto útočníků.
-Cílem je získat proslulost.
-Existují fora dedikované těmto útočníkům, kde se navzájem chlubí svými útoky ostatním.
-Můžeme tak očekávat, že útoky budou směřovány k jasně viditelným avšak málo destruktivním typům.
+Z toho také vyplývají hlavní motivace těchto útočníků - získat proslulost.
+Existují fóra dedikovaná těmto útočníkům, kde se navzájem chlubí svými útoky ostatním.
+Můžeme tak očekávat, že útoky budou směřovány k jasně viditelným, avšak málo destruktivním typům.
 
 \subsection{Script kiddie}\label{subsec:script-kiddie}
-Vě většině případů nejméně schopní útočníci.
+Ve většině případů jsou script kiddies nejméně schopní útočníci.
 Jsou to amatéři, kteří používají volně dostupné nebo zakoupené nástroje bez hlubších znalostí systémů a hackování.
-Většinou bývají neškodní, teprve se učí a mají omezené znalosti a možnosti útoku.
-Proto jsou jejich útoky málokdy úspěšné a i v případě úspěchu často nevědí, jak pokračovat.
-Lze tak předpokládat nízkou úroveň poškození u útoků, snadno odhalitelné útoky a nízkou sofistikovanost.
+Většinou bývají neškodní, teprve se učí a mají omezené znalosti a možnosti útoku, a proto jsou jejich útoky málokdy úspěšné.
+V případě úspěchu často ani nevědí, jak v útoku pokračovat.
+Lze tak u útoků předpokládat nízkou úroveň poškození, snadno odhalitelné útoky a nízkou sofistikovanost.
 Jediným výrazným rizikem jsou zakoupené nástroje pro specifické účely.
-Ve výjimečných případech kdy bývá motivací pomsta zakupují script kiddies na černém trhu nástroje pro konkrétní devastující útok.
-Ve většině případů se však jedná o nováčky kteří hledají výzvy a adrenalin.
-Pokud má skript kiddie pro hackování talent, může se díky zisku zkušeností a znalostí stát v průběhu času profesionálním hackerem.
+Ve výjimečných případech, u nichž bývá motivací pomsta, zakupují script kiddies na černém trhu nástroje pro konkrétní devastující útok.
+Ve většině případů se však jedná o nováčky, kteří hledají výzvy a adrenalin.
+Pokud má nicméně skript kiddie pro hackování talent, může se díky zisku zkušeností a znalostí stát v průběhu času profesionálním hackerem.
 
 \subsection{Hacktivista}\label{subsec:hacktivista}
-Útočníci motivování politickými nebo ideologickými názory jsou nazýváni hackticvisti.
+Útočníci motivovaní politickými nebo ideologickými názory jsou nazýváni hacktivisti.
 Provádějí škodlivé útoky pro zviditelnění a prosazení své agendy.
 Možná nejznámějším příslušníkem je skupina Anonymous.
-S velikostí skupiny je očekávaná jistá fragmentace, a tak se anonymous hlásí k množství incidentů s různými agendami.
-Za speciální zmínku stojí jejich kybernetické útoky proti Rusku v souvislosti s válkou na ukrajině\cite{anonymous_russian_attacks}.
-Jak je jasné, motivací hacktivistů není zisk, ale snaha bojovat za spravedlnost.
-Jejich útoky tak bývají ve vážnosti v rozmezí od neškodných, jako je změna webové stránky, po drastické kde vede k poškození infrastruktury a zničení nebo vyzrazení citlivých dat.
+S velikostí skupiny je očekávaná jistá fragmentace, a tak se Anonymous hlásí k množství incidentů s různými agendami.
+Za speciální zmínku stojí jejich kybernetické útoky proti Rusku v souvislosti s válkou na Ukrajině\cite{anonymous_russian_attacks}.
+Motivací hacktivistů není zisk, ale snaha bojovat za spravedlnost.
+Jejich útoky tak bývají ve vážnosti v rozmezí od neškodných, jako je změna webové stránky, po drastické, kde vede k poškození infrastruktury a zničení nebo vyzrazení citlivých dat.
 Také není neobvyklá spolupráce s Insidery, kteří sdílí jejich přesvědčení nebo je upozornili na objekt jejich zájmu.
 Lze tedy říci, že hacktivisté mohou dle svého přesvědčení být kvalifikování jako síla dobra i zla.
 
 
 \subsection{Hacker na objednávku}\label{subsec:hacker-na-objednavku}
-Skupina schopných hackerů kteří své vědomosti a znalosti propůjčují jiným osobám či organizacím jsou hackeři na objednávku.
+Skupina schopných hackerů, kteří své vědomosti a znalosti propůjčují jiným osobám či organizacím, jsou hackeři na objednávku.
 Nemůže být překvapením, že velká většina hackerů více či méně spadá do této skupiny.
 Skupina se totiž navíc dle motivace,metodologie a záměru dělí na podskupiny, zvané \textit{White hat, Gray hat} a \textit{Black hat} hackeři.
 
 \nlparagraph{White hat hackeři}
 \textit{White hat hackeři} využívají své schopnosti ve spolupráci s organizacemi k určení jejich slabých míst v zabezpečení.
 Tito hackeři se řídí silným etickým kompasem, který je jasně zřetelný z jejich činnosti a zaměření pro zlepšení zabezpečení.
-Pracují s svolením organizace a v jasně vymezených hranicích, což však může vázat jejich schopnost odhalit veškeré slabiny.
+Pracují se svolením organizace a v jasně vymezených hranicích, což však může limitovat jejich schopnost odhalit veškeré slabiny.
 
 \nlparagraph{Black hat hackeři}
 \textit{Black hat hackeři} jsou neetický opak white hat hackerů.
@@ -750,77 +734,73 @@ Jejich primární metodikou je prolamování obrany systémů a sítí bez vědo
 Cílem těchto hackerů je vždy svůj vlastní prospěch.
 Existuje mnoho možností, jak tohoto prospěchu dosáhnou.
 Někteří napadají společnosti a exfiltrují data uživatelů, která pak prodávají na černém trhu.
-Jiný využívají tato data k bankovním podvodům, kampaním sociálního inženýrství nebo kradení účtů.
+Jiní využívají tato data k bankovním podvodům, kampaním sociálního inženýrství nebo kradení účtů.
 Další možností je pouze vyhledávání slabin a jejich následný prodej na trhu slabin.
 Státní organizace jsou za takzvané \textit{zero day slabiny} ochotné zaplatit i statisíce dolarů\cite{world_end_2021}.
-Tam kde by slabinu etický hacker ohlásil aby mohla být napravena ji neetický hacker prodá za značnou sumu peněz.
+Tam, kde by slabinu etický hacker ohlásil, aby mohla být napravena, ji neetický hacker prodá za značnou sumu peněz.
 
 \nlparagraph{Gray hat hackeři}
 \textit{Gray hat hackeři} jsou na pomezí předchozích kategorií.
 Jestli boudou klasifikování blíže k white hat hackerovi nebo black hat hackerovi závisí na situaci.
 Mnohdy využívají metodologii black hat hackerů k odhalení slabin, ale místo prodeje nebo zneužití slabiny ji dané organizaci nahlásí.
-Nesnaží se tak způsobovat škodu, ale odhalit slabiny zabezpečení, které by mohly být nemožné odhalit pro white hat hackera.
-To však bohužel stále znamená napadení organizace či osoby a ty nemusí reagovat kladně na pozdější oznámení útoku.
+Nesnaží se tak způsobovat škodu, ale odhalit slabiny zabezpečení, které by mohlo být nemožné odhalit pro white hat hackera.
+To však bohužel stále znamená napadení organizace či osoby, které nemusí reagovat kladně na pozdější oznámení útoku.
 Také občasné požadavky platby za napravení slabiny nebo její nevyzrazení jim nedělá nejlepší jméno.
 Asi nejlepším příkladem tohoto fenoménu je kauza okolo Twitteru Donalda Trumpa, jeho hesel a hackerů nazývaných \textit{The Guild of the Grumpy Old Hackers}\cite{darknet_87_grumpy}.
-Této skupině hackerů se povedlo několikrát získat přístup k Twitter účtu Donalda Trumpa, a to v letech 2016 a 2020.
-Pro kontext, Donalt Trump byl v roce 2016 kandidát na prezidenta Ameriky a v roce 2020 dokonce prezident.
+Této skupině hackerů se povedlo několikrát získat přístup ke Twitter účtu Donalda Trumpa, a to v letech 2016 a 2020.
+Pro kontext, Donald Trump byl v roce 2016 kandidát na prezidenta Spojených států amerických a v roce 2020 prezident.
 Po obou těchto úspěšných útocích to sami hackeři nahlásili, avšak i tak se nevyhnuli soudnímu řízení.
-Naštěstí byl jejich postup zcela legální a byly tak zproštěni viny.
+Naštěstí byl jejich postup zcela legální a byli tak zproštěni viny.
 
-\subsection{Cyber kriminálník}\label{subsec:cyber-kriminalnik}
-Tato skupina útočníků jsou jednotlivci nebo dokonce organizované skupiny zaměřené na finanční zisk pomocí kriminální aktivity.
-Mezi jejich činnosti patří ransomware, těžba kryptoměn, krádež kryptoměn nebo krádež přihlašovacích údajů, které využívají pro další činnosti.
-Množství těchto útočníků stoupá také díky stále nižší vstupním nárokům díky \ac{MaaS}\cite{MaaS_ATaT} a \ac{RaaS}\cite{RaaS_microsoft}.
+\subsection{Kyberkriminálník}\label{subsec:cyber-kriminalnik}
+Tento druh útočníků působí jako jednotlivci nebo dokonce organizované skupiny zaměřené na finanční zisk pomocí kriminální aktivity.
+Mezi jejich činnosti patří ransomware, těžba kryptoměn, krádež kryptoměn nebo krádež přihlašovacích údajů, které posléze využívají pro další trestnou činnost.
+Množství těchto útočníků stoupá také díky stále nižším vstupním nárokům díky \ac{MaaS}\cite{MaaS_ATaT} a \ac{RaaS}\cite{RaaS_microsoft}.
 Zajímavým trendem posledních let je navíc neustálé přejmenovávání a `odcházení do důchodu' kriminálních skupin.
 Cílem je vyhýbání se zákonnému stíhání a sankcím, jelikož je na tyto skupiny kladena stále větší pozornost.
 
 \subsection{Státem podporovaný útočník}\label{subsec:statem-podporovany-utocnik}
-Útočníci úzce spojeni s určitým státem.
-Jejich motivace a cíle jsou vždy v zájmu jejich státu.
-Útoky jsou tedy často zaměřené na posílení svého státu v politické nebo vojenské sféře.
+Útočníci úzce spojeni s určitým státem, jejichž motivace a cíle jsou vždy v zájmu jejich státu.
+Útoky jsou tedy často zaměřené na posílení státu v politické nebo vojenské sféře.
 Je jasné, že tito útočníci mají téměř neomezené zdroje, vyspělé technologie a prvotřídní znalosti.
 Proto jsou od nich časté sofistikované a rozsáhlé útoky.
-Lze tedy očekávat průmyslovou špionáž, úniky státních tajemství, cílené kybernetické útoky na infrastrukturu ale také rozsáhlé ransomware kampaně a podvody s kryptoměnou.
+Lze tedy očekávat průmyslovou špionáž, úniky státních tajemství, cílené kybernetické útoky na infrastrukturu ale také rozsáhlé ransomwarové kampaně a podvody s kryptoměnou.
 Není neobvyklé, že státy rekrutují úspěšné hackery ze všech možných zdrojů.
-Existují spekulace o rekrutování i mezi kriminálníky.
+Existují dokonce doměnky o rekrutování i mezi kriminálníky.
 Mnoho spekulací koluje například kolem skupiny REvil, kterou Rusko zatklo na začátku roku 2022\cite{REvil_story}.
 Bohužel již o pár měsíců později se znovu začaly objevovat známky jejich aktivity.
 Jak je však u státem sponzorovaných akcí trendem, daný stát jakoukoli vazbu popírá a tento fakt lze jen těžko vyvrátit.
-Bylo identifikováno hned několik skupin, kde je návaznost na stát téměř jistá.
-Příkladem je \textit{Lazarus Group} pro Severní koreu, \textit{Sandworm Team} pro Rusko nebo \textit{APT41} spojený s Čínou\cite{Mitre_groups}.
+Přesto bylo identifikováno hned několik skupin, kde je návaznost na stát téměř jistá.
+Příkladem je \textit{Lazarus Group} pro Severní Koreu, \textit{Sandworm Team} pro Rusko nebo \textit{APT41} spojený s Čínou\cite{Mitre_groups}.
 
 \subsection{Insider (vnitřní osoba)}\label{subsec:insider-(vnitrni-osoba)}
-Insider je osoba pocházející z organizace, která způsobila chtěně nebo nechtěně bezpečnostní incident.
-Představuje tak značnou hrozbu pro bezpečnost celé organizace.
+Insider je osoba pocházející z organizace, která způsobila chtěně nebo nechtěně bezpečnostní incident, představuje proto značnou hrozbu pro bezpečnost celé organizace.
 Většina bezpečnosti je nastavena na venkovní hrozby.
 Nebezpečí insidera je právě v naprosté neefektivitě takto postavené obrany vůči němu.
-Systém nemůže být nikdy stejně chráněný z venku jako zevnitř
+Systém totiž nemůže být nikdy stejně chráněný z venku jako zevnitř.
 Insider takto nastavenou ochranu obejde a dostane se přímo ke zranitelným místům.
 Velmi často jsou těmito insidery nespokojení zaměstnanci, bývalí zaměstnanci, dočasní pracovníci nebo dokonce zákazníci.
 Je proto velmi důležité správně nastavit přístupy do systému a při odchodu zaměstnanců jim přístup včasně odebrat.
 Insidery můžeme dle úmyslu dělit na tři hlavní kategorie, kterými jsou \textit{Úmyslný insider}, \textit{Nechtěný insider} a \textit{Nedbalý insider}.
 
 \nlparagraph{Úmyslný insider}
-Úmyslný insider je ten, kdo vědomě způsobí svojí organizaci újmu.
+Úmyslný insider je ten, kdo vědomě způsobí své organizaci újmu.
 Mezi příklady se řadí krádeže dat, úmyslné poškození infrastruktury nebo vydání přístupu třetí neoprávněné osobě.
 Cílem těchto insiderů bývá často pomsta nebo jen peněžní zisk.
-Speciálním případem této kategorie je takzvaný \textit{whistleblowing}.
-Tento termín označuje veřejné upozorňování na trestné, neetické nebo podezřelé jednání firem či státních institucí jejich zaměstnanci.
+Speciálním případem této kategorie je takzvaný \textit{whistleblowing}, což termín označující situaci, při níž současný nebo bývalý zaměstnanec upozorní na trestné, neetické nebo podezřelé jednání firmy či státní instituce.
 Tohoto zaměstnance lze tedy také považovat za úmyslného insidera, který však vyzrazuje informace v dobré víře a nejedná ve vlastní prospěch.
 Velice známým zástupcem je Edward Snowden, který v roce 2013 veřejnosti odhalil existenci rozsáhlých programů na sběr informací fungujících pod záštitou \firstac{NSA}\cite{Edward_Snowden}.
 
 \nlparagraph{Nechtěný insider}
-Může se stát, že insiderem se stane běžný zaměstnanec.
-Shodou okolností se dopustil nějaké chyby která poškodila firmu.
+Může se stát, že insiderem se stane běžný zaměstnanec, který se shodou okolností dopustil nějaké chyby a poškodil firmu.
 To však nebylo úmyslem a ani tato situace nenastala v rámci zanedbání povinností.
 Může se například jednat o náhodné smazání nebo modifikace důležitých souborů, nechtěné vypojení zařízení ze zásuvky.
 
 \nlparagraph{Nedbalý insider}
-Některé hrozby vznikly kvůli nedbalosti zaměstnance.
-Tne pak figuruje jako nedbalý insider.
+Některé hrozby vznikly kvůli nedbalosti zaměstnance,
+Ten pak figuruje jako nedbalý insider.
 Situace nastane, když zaměstnanec nedodržuje správné postupy, politiky nebo metodologie, které organizace stanovila.
-Tyto postupy vzniklý právě pro ochranu důvěrnosti, integrity a dostupnost dat.
+Tyto postupy vznikly právě pro ochranu důvěrnosti, integrity a dostupnost dat.
 Jejich nedodržování je proto značný bezpečnostní problém.
 Je však nutné zkoumat, zda toto nedodržování plyne z nerealisticky nastavených politik nebo pouze chyb zaměstnance.
 Další možností jsou také nedostatečné znalosti a zaškolování zaměstnanců pro vykonávání možné činnosti.
