@@ -663,8 +663,7 @@ Další možností pro útočníky je napodobit jména a funkcionalitu legitimn�
 Je pak šance, že vývojáři omylem použijí tuto podvodnou knihovnu, aniž by si to uvědomili.
 Například v červnu 2022 bylo zjištěno, že knihovny pygrata a loglib extrahují AWS klíče.
 Za speciální zmínku stojí útok skupiny provozující ransomware LockBit oproti společnosti Abiom.
-To byl velice závažný útok protože Abiom dodává komunikační technologii pro nizozemskou záchrannou síť C2000,
-Nizozemské ministerstvo obrany, národní policii a bezpečnostní služby.
+To byl velice závažný útok protože Abiom dodává komunikační technologii pro nizozemskou záchrannou síť C2000, Nizozemské ministerstvo obrany, národní policii a bezpečnostní služby.
 Situace okolo supply-chain útoků je natolik vážná, že vedla ke vzniku evropské směrnice \textbf{NIS2}, která by měla řešit bezpečnost dodavatelských řetězců.
 Představuje kybernetickou strategii s návrhy na posílení obrany a zlepšení reakcí proti zákeřným aktivitám.
 Jedinou obranou proti supply-chain útokům je posílení obrany všech článků řetězce.\cite{Enisa_thread_landscape}
@@ -852,98 +851,84 @@ Je samozřejmé, že každá tato kategorie obsahuje další podkategorie.
 Toto základní rozdělení je však vhodné pro rozpoznání hlavních výzev, složitostí ale i přínosů testování.
 Nelze říci, zda je jeden scénář lepší nežli jiné, naopak se doplňují a každý slouží pro určitou situaci.\cite{red_team_oakley_2019}
 
-\subsubsection{Celkový pokus o kompromitaci}%todo here
-Základní situací je \textit{celkový pokus o kompromitaci obrany}.
-Lze definovat jako snaha \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
-Tato strategie je vhodná pro celkové testování infrastruktury.
-Je to nejbližší emulace skutečného útoku.
+\subsubsection{Celkový pokus o kompromitaci}
+Základní situací je \textit{celkový pokus o kompromitaci obrany}, který lze definovat jako snahu \textit{red teamu} napadnout celou infrastrukturu organizace a pokusit se kompromitovat co možná největší možnou část.
+Tato strategie je vhodná pro celkové testování infrastruktury, jedná se totiž o emulaci skutečného útoku.
 Testování ve většině případů začíná ze stejného bodu, který je běžně dostupný veřejnosti a tím pádem i útočníkům.
-Lze takto testovat správnou segmentaci infrastruktury a resistivity jednotlivých segmentů.
-Z velkého a otevřeného rozsahu však vyplývá jen omezená možnost testování do hloubky a zaměření se na specifické části infrastruktury.
-\textit{Red team} má pouze omezený čas a prostředky, proto nachází pouze nejčastější slabiny na celém rozsahu testování ale nemá možnost testovat jednotlivé části do hloubky a pro všechny možné hrozby.
+Lze takto testovat správnou segmentaci infrastruktury a rezistivitu jednotlivých segmentů.
+Z velkého a otevřeného rozsahu však vyplývá jen omezená možnost testování do hloubky, není možné zaměřit se na specifické části infrastruktury.
+\textit{Red team} má pouze omezený čas a prostředky, proto nachází pouze nejčastější slabiny na celém rozsahu testování, je nerealistické předpokládat, že by mohl testovat jednotlivé části infrastruktury do hloubky nebo pro všechny možné hrozby.
 Při nesprávném provedení nebo nepochopení cíle tohoto testování může vznikat falešný pocit bezpečnosti, který je pro zabezpečení nebezpečný.
 Cílem tohoto testu je získat celkové povědomí o ochraně a poté pokračovat s podrobnějším testováním.
-%todo add picture?
 
 \subsubsection{Specifický pokus o kompromitaci}
 Pro testování omezené části infrastruktury se využívá \textit{specifický pokus o kompromitaci}.
 Cílem je důkladně otestovat omezenou část infrastruktury bez využití, zásahu nebo omezení částí infrastruktury nacházející se mimo testovaný rozsah.
-\textit{Red team} prování podrobné testování, které při korektním provedení vede k nalezení všech slabin.
-Výhodou tohoto testování je jeho specificita, je možné testovat určitou oblast infrastruktury nebo jen určité zařízení a to pouze za určitých podmínek.
+\textit{Red team} provádí podrobné testování, které při korektním provedení vede k nalezení všech slabin.
+Výhodou tohoto testování je jeho specificita, je možné testovat určitou oblast infrastruktury nebo jen určité zařízení, kde bývá výhodné testovat za určitých podmínek.
 Příkladem může být testování za použití specifického účtu a s ním spojených pravomocí přístupu.
-Další výhoda je možnost testování v běžném provozu.
-Krátkodobě vyřadit a testovat část infrastruktury je proveditelnější nežli celkové vyřazení nebo testování za běžného provozu.
-V takovém případě je však nutné dávat pozor na správné vybrání rozsahu.
+Další výhodou je možnost testování v běžném provozu.
+Krátkodobě vyřadit a testovat část infrastruktury je proveditelnější než celkové vyřazení nebo testování za běžného provozu.
+V takovém případě je však nutné dávat pozor na správný výběr rozsahu.
 Při důkladném testování není neobvyklé vyřazení testovacího zařízení z běžného provozu nebo jeho zhroucení.
-Je tak důležité aby nebyl testován systém, který je kriticky důležitý nebo zrovna používaný.
+Je proto důležité, aby nebyl testován systém, který je kriticky důležitý nebo zrovna používaný.
 
 \subsubsection{Předpokládaná kompromitace}
 Z názvu je jasné, že toto testování zkoumá, jakou škodu může útočník napáchat při úspěšném útoku.
 Počáteční bod tohoto testování je založen na předpokladu úspěšné infiltrace útočníkem.
 Přístup k takto identifikovanému bodu je s příslušnými právy poskytnut \textit{red teamu}, který nemusí prolamovat obranu systému.
 \textit{Red team} se tak může plně soustředit na zkoumání dopadu úspěšného útoku.
-Důvod, proč toto testování není pouze součástí předchozích testování je úspora času a prostředků.
+Důvod, proč toto testování není pouze součástí předchozích testování, je úspora času a prostředků.
 Vhodným příkladem jsou útoky sociálního inženýrství a phishing.
-Jsou to často testované útoky díky jejich četnosti, jejich výsledek a prolomení systému však není okamžité.
-Může trvat i týdny než uživatel otevře email a nainstaluje malware.\cite{red_team_oakley_2019}
-Z důvodu efektivity je tedy lepší předpokládat úspěch útoku a začít testovat z bodu malware nakaženého uživatelského stroje.
+Jsou to často testované útoky právě díky jejich četnosti ale jejich výsledeky nejsou okamžité, a tak není možné vytvořit rychlou zpětnou vazbu.
+Může totiž trvat i týdny než uživatel otevře e-mail a nainstaluje malware.\cite{red_team_oakley_2019}
+Z důvodu efektivity je tedy lepší předpokládat úspěch útoku a začít testovat z bodu malwarem nakaženého uživatelského stroje.
 Tento typ testování je výhodný pro ukázku dopadu úspěšného útoku.
-Častým problémem bezpečnosti je její nedocenění dokud funguje správně.
-Ve chvíli kdy nastane problém je však většinou pozdě.
-Proto tento typ testování představuje nástroj prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
+Častým problémem bezpečnosti je její nedocenění, dokud funguje správně, specialisti se zdají být nepotřební.
+Ve chvíli, kdy nastane problém, je však většinou pozdě.
+Proto tento typ testování představuje nástroj k prokázání důležitosti kvalitní obrany ukázkou důsledků jejího selhání.
 
 \subsection{Metodologie testování}\label{subsec:metodologie-testovani}
-Ještě důležitějším rozhodnutím než jak široce testovat je způsob testování.
-Možná nejznámější jsou 3 hlavní testovací metodologie: Penetration testing, Red team assessment a Purple team/kontrolní cvičení.
-Samozřejmě stejně jako i u rozsahu testování i u těchto metodologií existuje určitý přesah.
+Důležitým aspektem testování je již zmíněný rozsah, ještě důležitější je však správný výběr způsobu testování.
+Mezi nejznámější testovací metodologie patří: \textit{Penetration testování}, \textit{Red team vyhodnocení} a \textit{Purple team testování}, také známé jako \textit{kontrolní cvičení}.
+Stejně jako u rozsahu testování, tak i u těchto metodologií existuje určitý přesah.
 Z tohoto důvodu jsou tyto metodologie nepřesně definovány, někdy zaměňovány nebo dokonce považovány za jedinou metodologii s několik různými názvy.
 Je proto nutné si je představit v kontextu tohoto textu.
 K tomu slouží následující sekce.\cite{securityInteligence_pen_test_red_team_purple_team}
 
-\subsubsection{Penetration testing}
+\subsubsection{Penetration testování}
+Penetration testování, často také zkracován na Pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
+Takto důkladné hledání je omezeno pouze na zadaný rozsah, neboli část testovaného systému.
+Aby bylo dosaženo co největší efektivity, tento typ testování se svoji činnost nesnaží schovávat, naopak bývá velmi snadné ho detekovat.
+To však nevadí, protože ochrana daného systému by o jeho provádění měla být předem informována a může tak zkoušet, zda i detekce funguje optimálně.
+Tento typ testování může být také z části automatizován, což vede k dalšímu zlepšení efektivnosti na úkor flexibility.
+V neposlední řadě Penetration testování vyžaduje menší množství zdrojů než Red team vyhodnocení, ať už v podobě času, lidí či kapitálu.
 
-Penetration testing, často také zkracován na pen testing, je metodologie s cílem vyhledání co nejvíce možných zranitelností testovaného systému.
-Takto důkladné hledání je omezeno pouze na zadaný `scope', neboli část testovaného systému.
-Aby bylo dosaženo co největší efektivity, tento typ testování se svoji činnost nesnaží schovávat, naopak bývá velmi snadné ho detekovat, to však nevadí protože ochrana daného systému by o jeho provádění měla být předem informována.
-Tento typ testování může být také z části automatizován, což vede k dalšímu zlepšení efektivnosti na úkor flexibilitě.
-V neposlední řadě Penetration testing vyžaduje menší množství zdrojů, ať už v podobě času, lidí či kapitálu, než red team assessment.
-\paragraph{}
-Ve shrnutí, Penetration testing je hledání co nejvíce zranitelnosti v zadané oblasti bez nutnosti svoji činnost maskovat před ochranou systému.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
+\subsubsection{Red team vyhodnocení}
+Red team vyhodnocení, také referovaný jako Red teaming, je na rozdíl od Penetration testování zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
+To také znamená, že Red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
+Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby,v rámci možností, co nejvíce simulovala skutečný útok.
+Výhodou je, že za předpokladu detekce bude obrana systému postupovat stejně, jako kdyby se jednalo o skutečnou hrozbu a získají tak cenná data a zpětnou vazbu pro zlepšení budoucí obrany.
+Je jasné, že pro správné provedení Red teamingu je potřeba více zdrojů než v případě Pen testingu, ať už se jedná o čas nebo lidskou práci,.
+Také automatizace zde bývá složitá, jedná se totiž o specifickou strategii pro každé testování, při němž je nutné reagovat na všechny události vzniklé při testování.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
 
-
-\subsubsection{Red team assessment}
-
-Red team assessment, také referovaný jako red teaming, je na rozdíl od pen-testingu zaměřen na dosažení zadaných cílů, například získání přístupu k citlivým datům, nebo testování všímavosti ochranných systémů.
-To také znamená, že red teaming není omezen oblastí, kterou může v rámci dosažení svého cíle využít.
-Obrana systému není ze zřejmých důvodů seznámena s nadcházejícím testováním, proto tato metodika vyžaduje maskování a opatrný přístup, aby pokud možno co nejvíce simulovala skutečný útok.
-Výhodou je, že za předpokladu detekce testování bude obrana systému postupovat stejně, jako kdyby se jednalo o skutečnou hrozbu a získáme tak cenná data a zpětnou vazbu pro zlepšení budoucí obrany.
-Je jasné, že pro správné provedení red teamingu je potřeba více zdrojů, at už se jedná o čas nebo lidskou práci, než v případě pen testingu.
-Také automatizace zde bývá složitá, jedná se totiž o specifickou strategii pro každé testování kde je nutnost reagovat na všechny události vzniklé testováním.\cite{securityInteligence_pen_test_red_team_purple_team, lootsec_pen_test_vs_red_team, astra_pen_test_vs_red_teaming}
-
-\paragraph{}
-Ve shrnutí, red team assessment je zaměřen na testování obranyschopnosti cíle s omezeními vznikajícími pouze ze snahy simulovat reálný útok.
-
-
-\subsubsection{Purple team/Kontrolní cvičení}
-Specifická situace je pak blízká spolupráce útočníků (Red team) a obránců (Blue Team).
-Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, kde se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
-Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnějším strategií, at už se jedná o útočníky nebo obránce.
-\paragraph{}
-Tato cvičení lze uskutečňovat pouze jednou pro vyzkoušení techniky nebo také opakovaně.
+\subsubsection{Purple team testování/Kontrolní cvičení}
+Specifickou situací je blízká spolupráce útočníků (Red team) a obránců (Blue Team).
+Hlavní výhodou tohoto postupu je zpětná vazba mezi útočníky a obránci, díky níž se dá testovat detekce a následná odezva obránců při testování specifických technik obsažených v MITRE ATT\&CK frameworku.
+Další výhodou je seznámení s postupy druhé strany pro tvorbu efektivnější strategie obrany, ať už se jedná o útočníky nebo obránce.
+Tato cvičení lze uskutečňovat pro vyzkoušení techniky jednou, lepší však bývá opakované testování.
 Částečná automatizace za použití open-source nástrojů, které mají v této práci vlastní kapitolu, je také jednou z možností.
-Výhodou opakovaného testování s automatizací je možnost měřit a porovnávat výsledky za stejných stupních podmínek, což vede k jasně viditelnému zlepšení obranné strategie.\cite{securityInteligence_pen_test_red_team_purple_team,redscan_team_purple_team}
+Výhodou opakovaného testování s automatizací je možnost měřit a porovnávat výsledky za vstejných stupních podmínek, což vede k jasně viditelnému zlepšení obranné strategie.\cite{securityInteligence_pen_test_red_team_purple_team,redscan_team_purple_team}
 
 \section{Zavedené nástroje v problematice Testování}\label{sec:zavedene-nastroje-v-problematice-testovani}
 Pro účely testování je dobré využívat stávající technologie.
-Je jasné, že každé testování prostředí je jedinečné.
-To však neznamená, že není možné těžit z poznatku ostatních obránců.
-Vzniklo mnoho nástrojů, jejichž cílem je pomoci nejen s rozeznáváním útoků ale i se samotným testováním.
+Je jasné, že každé testování prostředí je jedinečné, to však neznamená, že není možné těžit z poznatku ostatních obránců.
+Vzniklo mnoho nástrojů, jejichž cílem je pomoci nejen s rozeznáváním útoků, ale i se samotným testováním.
 Asi nejznámějším frameworkem pro kolekci útoků a jejich rozeznávání je MITRE ATT\&CK\cite{mitre_attack_framework}.
 Tento framework je open-source, volně dostupný a obsáhlý.
 Existuje množství testovacích frameworků, které jsou s MITRE ATT\&CK kompatibilní\cite{csoonline_4_testing_frameworks}.
 Příkladem \firstac{RTA}, Caldera nebo Atomic Red.
-Tyto frameworky jsou na rozdíl od jiných zdarma a proto se hodí pro začátek testování.
-Je dobré si nejdříve vymezit testovanou oblast.
+Tyto frameworky jsou na rozdíl od jiných zdarma, a proto se hodí pro začátek testování, kdy je dobré si nejdříve vymezit testovanou oblast a nutné nástroje.
 Všechny tyto frameworky budou více probrány a porovnány v následujících kapitolách.
 
 \subsection{MITRE ATT\&CK}\label{subsec:mitre-att&ck}
@@ -953,11 +938,11 @@ Samozřejmě jsou začleněny i veřejné výzkumy technik útočníků.
 Je aktivně udržována, nové informace jsou přidávány dvakrát do roka\cite{mitre_attack_framework_faq}.
 Hlavním přínosem tohoto projektu však není pouze mapování útočníků, ale celková klasifikace útoků do jednotlivých \textit{taktik, technik a sub-technik}.
 Framework tak obráncům nabízí možnost rozložit složitý útok na jeho jednotlivé stavební kameny.
-ATT\&CK je velmi podrobný a dokonce u jednotlivých technik útočníků nabízí možnosti detekce a obrany.
-Obránci proto mohou snáze porozumět stylu práce útočníků, technikám které používají ale nejdůležitěji, jak tyto informace využít k vytvoření lepší obrany.
+ATT\&CK je velmi podrobný, a dokonce u jednotlivých technik útočníků nabízí možnosti detekce a obrany.
+Obránci proto mohou snáze porozumět stylu práce útočníků, technikám, které používají, ale nejdůležitěji, jak tyto informace využít k vytvoření lepší obrany.
 Všechny tyto informace jsou navíc přehledně dostupné v interaktivní formě pomocí ATT\&CK navigátoru\cite{mitre_attack_navigator}.
 V něm je možné provádět vizualizaci a porovnávání útoků.
-Je tedy snadné prezentovat rozbor útoku dalším osobám a díky exportování a importování je snadné studovat již popsané útoky a sledovat nejpoužívanější taktiky a techniky.
+Je tedy snadné prezentovat rozbor útoku dalším osobám,  díky exportování a importování studovat již popsané útoky a sledovat nejpoužívanější taktiky a techniky.
 Není proto divu, že je MITRE ATT\&CK v době psaní tohoto textu považován jako jeden z nejvýznamnějších standardů pro popis technik používaných útočníky při kybernetických útocích.\cite{mitre_attack_framework}
 
 ~\clfig{Mitre_Attack_Navigator}{\linewidth}{Mitre ATT@CK Navigátor}{\cite{mitre_attack_framework}}{fig:navigator}
@@ -977,79 +962,74 @@ Proto existují specifikace pro určitá odvětví:
 \paragraph{}
 Samozřejmě i jednotlivá odvětví jsou dále rozdělena na domény dle zaměření útočníků.
 U Enterprise je rozlišování pro Windows, macOS nebo Linux a také cloud, network a containers.
-Mobilní platforma odlišuje Android a iOS\@.
+Mobilní platforma obsahuje techniky pro Android a iOS\@.
 Toto rozdělení dává smysl, stejná technika bude jinak aplikována na různých systémech a díky tomuto rozdělení je možné zamířit se právě na jeden určitý use-case útoku.
 
 \subsubsection{Taktika}
 Taktika představuje nejvyšší úroveň abstrakce modelu ATT\&CK\@.
 Představuje cíl útočníka, ne však jak se tohoto cíle útočník snaží dosáhnout.
-Příkladem můžeme zmínit \textit{Impact(Dopad)}.
-Taktika dopadu je zaměřená na způsobení škody v podobě ohrožení integrity nebo dostupnosti dat.
-Spadají do této taktiky techniky zaměřené na ničení nebo manipulaci dat.
+Jako příklad je možné zmínit taktiku \textit{Impact(Dopad)}, která je zaměřená na způsobení škody v podobě ohrožení integrity nebo dostupnosti dat.
 Rozdělení na taktiky není ojedinělé, naopak na této abstraktní úrovni ATT\&CK těsně připomíná další modely hrozeb zaměřené na postup útoku a útočníka.
-Důvod, proč je ATT\&CK preferován před jinými modely je jeho rozsah, provázanost a modelování namapované na proces navigace útočníka v napadaném systému.
+Důvod, proč je ATT\&CK preferován před jinými modely, je jeho rozsah, provázanost a modelování namapované na proces navigace útočníka v napadaném systému.
 Další výhodou je jasná rozlišitelnost taktik.
-Jsou označené jedinečným řetězcem ve tvaru \textbf{TA0XXX} kde XXX je nahrazeno číslem jednotlivé taktiky.
-Pozor na fakt, že taktika se stejným názvem, například \textit{Initial access(Počáteční přístup)}, bude označena jiným řetězcem v závislosti na odvětví do kterého spadá.
+Jsou označené jedinečným řetězcem ve tvaru \textbf{TA0XXX}, kde je XXX nahrazeno číslem jednotlivé taktiky.
+Pozor na fakt, že taktika se stejným názvem, například \textit{Initial access(Počáteční přístup)}, bude označena jiným řetězcem v závislosti na odvětví, do něhož spadá.
 Pro enterprise je to \textbf{TA0001}, pro mobile \textbf{TA0027} a pro ICS se tato taktika značí \textbf{TA0108}.
-Nelze tak dojít k záměně a nahlížet na techniky, které nejsou aplikovatelné na dané odvětví.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
+Nemůže proto dojít k záměně a nahlížet na techniky, které nejsou aplikovatelné na dané odvětví.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
 
 \subsubsection{Technika a sub-technika}
 Techniky jsou způsob, kterým útočník dosahuje svého taktického cíle.
 To znamená, že v rámci každé taktiky existuje konečný počet popsaných akcí, jejichž provedením útočník dosáhne svého cíle.
 Je jasné, že použité techniky se mění v závislosti na znalostech i možnostech útočníka.
-Také je nutné brát v potaz prostředí, kde útok probíhá.
+Také je nutné brát v potaz prostředí, v němž útok probíhá.
 Popis taktik je však od těchto specifik oproštěn.
 Důvodem je opět nutnost klasifikace, kdy není možné vytvořit téměř nekonečné množství technik pro jednotlivé útoky.
-Jsou proto klasifikovány do kategorií technik, kde změny v metodologii nebo jednotlivé kroky jsou přidány pomocí sub-technik.
+Jsou proto klasifikovány do kategorií technik, v nichž jsou změny v metodologii nebo jednotlivé kroky přidány pomocí sub-technik.
 Tento postup umožňuje popsat nejdůležitější kroky chování útočníka aniž by se obránce ztratil v detailech.
-Další výhodou je izolace od neustále vyvíjejícího kodu.
+Další výhodou je izolace od neustále vyvíjejícího kódu.
 Základní metodika zůstává zachována, avšak jednotlivé implementace se v čase rapidně mění.
-Stejně jako taktiky i techniky jsou označeny jedinečným řetězcem, který je ve tvary \textbf{TXXXX} kde XXXX je nahrazeno číslem jednotlivé techniky.
-Pokud pro tuto techniku existují sub-techniky, připojuje se na konec řetězce \textbf{.XXX} jde XXX reprezentuje jednotlivou subtechniku.
-Za příklad je možno uvézt techniku \textit{Phishing}, která je identifikována řetězcem \textbf{T1566}.
-Technika phishing má také 3 sub-techniky, kterými jsou \textit{Spearphishing Attachment \textbf{[T1566.001]}}, \textit{Spearphishing Link \textbf{[T1566.002]}} a \textit{Spearphishing via Service \textbf{[T1566.003]}}
-
+Stejně jako taktiky jsou i techniky označeny jedinečným řetězcem, který je ve tvaru \textbf{TXXXX}, kde je XXXX nahrazeno číslem jednotlivé techniky.
+Pokud pro tuto techniku existují sub-techniky, připojuje se na konec řetězce \textbf{.XXX}, dde XXX reprezentuje jednotlivou sub-techniku.
+Za příklad je možno uvézt techniku \textit{Phishing}, identifikovanou řetězcem \textbf{T1566}.
+Technika \textit{Phishing} má také 3 sub-techniky, kterými jsou \textit{Spearphishing attachment \textbf{[T1566.001]}}, \textit{Spearphishing link \textbf{[T1566.002]}} a \textit{Spearphishing via service \textbf{[T1566.003]}}
 
 \paragraph{}
-Techniky se jen málokdy vyskytují v izolaci, většinou na sebe stejně jako celé taktiky navazují.
+Techniky se jen málokdy vyskytují v izolaci, většinou na sebe, stejně jako celé taktiky, navazují.
 Vytvářejí tak sled událostí, které vedou k úspěšnému útoku.
-Schopnost identifikovat a propojit navazující druhy událostí je důležitou součástí obrany.
-Cílem modelu ATT\&CK je totu schopnost co nejvíce usnadnit.
-Data získaná z každého kroku v sekvenci pak nejen vypovídají o tom, zda se jedná o útok ale také obránci dovolují lépe vyhledávat další postup útočníka.
+Schopnost identifikovat a propojit navazující druhy událostí je důležitou součástí obrany, cílem modelu ATT\&CK je to co možná nejvíce usnadnit.
+Data získaná z každého kroku v sekvenci pak nejen vypovídají o tom, zda se jedná o útok, ale také obránci dovolují lépe vyhledávat další postup útočníka.
 Je také možné, že podle cíle techniky je daná technika zařazena do více taktik zároveň.
-Jedním takovýmto příkladem může být technika \textit{input capture(zachycení vstupy)}.
-Ta spadá ve stejnou chvíli do taktik \textit{Collection(Sběr dat)} a \textit{Credential access(Pověření k přístupu)}.
+Jedním takovýmto příkladem může být technika \textit{Input capture (Zachycení vstupu)}.
+Ta spadá ve stejnou chvíli do taktik \textit{Collection (Sběr dat)} a \textit{Credential access (Pověření k přístupu)}.
 Je jasné, že framework ATT\&CK nevypisuje všechny existující techniky útoku z dané taktiky.
 Jeho založení na informacích získaných z opravdových bezpečnostních incidentů a komunity výzkumníků však vede k upřednostnění nejznámějších a nejpoužívanějších technik.
 Zdá se to být nejlepší způsob, jak shromažďovat účinné informace o použití technik útočníka a jak je propojovat do užitečného analytického nástroje.\cite{Mitre_finding_cyber_threats, mitre_attack_framework}
 
 \subsubsection{Další přínos}
-V neposlední řade ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
+V neposlední řadě ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
 Tyto záložky jsou na hlavní stránce, specificky se jedná o \textit{Groups, Software} a \textit{Campaigns}.
 
-\nlparagraph{Groups - skupiny}
-Skupiny označují shluky útočníků, kteří operují se stejným cílem a je rozumná domněnka, že jsou mezi sebou v kontaktu.
+\nlparagraph{Groups - skupiny}%todo here
+Skupiny označují shluky útočníků, kteří operují se stejným cílem, je proto logické se domnívat, že jsou mezi sebou v kontaktu.
 Analytici sledují skupiny pomocí různých  metodologií a termínů.
-Je proto možné, že různé skupiny analytiků nazývají jistou skupinu různými jmény, ATT\&CK se snaží tyto různá pojmenování respektovat.
-Proto jsou u skupin zaznamenávány i alternativní názvy.
-Také mezi jednotlivými skupinami dochází k částečnému překrytí, a to z důvodu pohyby útočníků a složitosti sledování skupin.
-U kriminálních skupin je častý takzvaný \textit{rebranding}, kdy skupina změní své oficiální jméno nebo identifikační rysi za účelem zmatení autorit.
-Pro zmatení ja také časté použití identifikačních rysů jiných skupin.
-Proto je zaznamenávání a sledování obtížné.
+Je tedy možné, že různé skupiny analytiků nazývají jistou skupinu různými jmény, proto jsou u skupin zaznamenávány i alternativní názvy.
+ATT\&CK se snaží tato různá pojmenování respektovat.
+Také mezi jednotlivými skupinami dochází k částečnému překrytí, a to z důvodu pohybu útočníků a složitosti sledování skupin.
+U kriminálních skupin je častý takzvaný \textit{rebranding}, kdy skupina změní své oficiální jméno nebo identifikační rysy za účelem zmatení autorit.
+Pro zmatení je také časté použití identifikačních rysů jiných skupin, i z toho důvodu je zaznamenávání a sledování skupin obtížné.
 Hlavním přínosem sledování skupin jsou informace o postupech a metodologiích útoku, které daná skupina preferuje.
-Tyto informace jsou získány mapováním na veřejně oznámené použití technik a jsou uvedeny původní odkazy.
-Je důležité zmínit, že informace nezobrazují všechny možné použití technik skupin, ale pouze podmnožinu, která byla zaznamenána.
+Tyto informace jsou získány mapováním na veřejně oznámené útoky a jsou uvedeny původní odkazy.
+Je důležité zmínit, že informace nezobrazují všechna možná použití technik skupin, ale pouze podmnožinu, která byla zaznamenána.
 I tak je to pro obránce značný přínos.
 Při identifikaci metodologie útoku na určitou skupinu je možné předpovídat další kroky z předchozích záznamů a zmírnit tak dopad útoku.\cite{Mitre_groups}
 
 
 \nlparagraph{Software}
-Software je termín pro vlastní nebo komerční kod a nástroje používané útočníky pro provádění technik nebo taktik.
-Stejně jako u skupin můžeme u software najít alternativní názvy právě díky sledování několika skupin.
-Překrývání je týmem ATT\&CK a tyto názvy jsou označeny jako \textit{Associated Software}.
-Informace o software pochází z veřejně oznámených technik a často bývají mapované na skupiny, které tento software využívají.
-Je tedy opět nutné zmínit, že použití určitého software neznamená, že se jedná o související skupinu.
+Software je termín pro vlastní nebo komerční kód a nástroje používané útočníky pro provádění technik nebo taktik.
+Stejně jako u skupin můžeme u softwaru najít alternativní názvy právě díky sledování několika skupin.
+Překrývání je sledováno týmem ATT\&CK a tyto názvy jsou označeny jako \textit{Associated Software}.
+Informace o softwaru pochází z veřejně oznámených technik a často bývají mapované na skupiny, které tento software využívají.
+Je tedy opět nutné zmínit, že použití určitého softwaru neznamená, že se jedná o související skupinu.
 Pouze to znamená, že daná skupina tento software v minulosti použila.\cite{Mitre_software}
 
 
@@ -1058,9 +1038,9 @@ Pojem kampaň označuje rozsáhlou intruzivní aktivitu, která proběhla během
 Jedná se například o dlouhodobou průmyslovou špionáž nebo špionáž proti vládě určité země.
 Není neobvyklé, že do složité kybernetické operace je zapojeno několik přidružených skupin, přičemž každá hraje jedinečnou roli.
 Například může být jedna skupina zodpovědná za počáteční průnik do systému a jiná za exfiltraci dat
-Kampaň je označována názvem uvedeným ve veřejných zprávách nebo jedinečným identifikátorem ATT\&CK pokud kampaň ještě nebyla pojmenována.
+Kampaň je označována názvem uvedeným ve veřejných zprávách nebo jedinečným identifikátorem ATT\&CK, pokud kampaň ještě nebyla pojmenována.
 Zaznamenání a sledování kampaní je obtížné.
-Různé organizace zaznamenávající útok patřící do kampaně ho mohou oznámit pod různými jmény, a stejný útok navíc může být popsán z různých úhlů pohledu.
+Různé organizace zaznamenávající útok patřící do kampaně ho mohou oznámit pod různými jmény a stejný útok navíc může být popsán z různých úhlů pohledu.
 Tým ATT\&CK pro jednotlivé kampaně činí nejlepší úsilí o sledování překrývajících se jmen, která jsou označena jako `Přidružené kampaně'.
 Toto sledování je výhodné, protože poskytuje informace nejen o existenci kampaně, ale také informace o technikách, které jsou využívány.
 Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jsou v nich zahrnuty původní reference.\cite{Mitre_campaigns}
@@ -1071,81 +1051,78 @@ Pro referenci jsou tak kampaně mapovány na veřejně uváděné techniky a jso
 Než je zvolen finální framework pro testování, je nutné si nejdříve připravit co možná nejvíce informací týkajících se testování.
 Je jasné, že každý z vybraných frameworků má své silné a slabé stránky.
 Jak je vidět v tabulce ~\ref{fig:OpenSourceTestTools}, jedním z ovlivňujících parametrů je například testovaný operační systém.
-Kde s atomic red je možné testovat na všech třech hlavních platformách, \ac{RTA} je přizpůsobené pouze pro Windows.
+S atomic red je možné testovat na všech třech hlavních platformách, \ac{RTA} je přizpůsobené pouze pro Windows.
 Specializace sama o sobě není špatná vlastnost, naopak většinou bývá přínosem.
-Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nástroj který toho není schopen.
-Žádný z frameworků také nepokrývá celou MITRE ATT\&CK matice.
+Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nástroj, který toho není schopen.
+Žádný z frameworků také nepokrývá celou MITRE ATT\&CK matici.
 Proto lze předpokládat použití více nástrojů právě podle okruhu testování, na který je testování zaměřeno.
 
-\subsubsection{Red Canary Atomic Red}
+\subsubsection{Red Canary Atomic Red}%todo here
 Ze všech uváděných příkladů je \textit{Atomic Red} nejvíce přívětivý rychlému začátku.
 Pro jeho funkčnost není potřeba nic stahovat ani nastavovat, lze ho jednoduše použít z příkazové řádky\cite{redcanary_atomic_red}.
-Další odlišnost je jeho ovládání.
-Většina ostatních frameworků je založena na jazyku Python, popřípadě jiném skriptovacím jazyce.
-Atomic red je ale spíše sada instrukcí odpovídajících jednotlivým taktikám a technikám Mitre ATT\&CK\@.
-Atomic Red tedy není testovací software ale instrukce, jak testovat jednotlivé ATT\&CK taktiky s nástroji, které jsou již pravděpodobně nainstalované v počítači.
-Je tedy vhodný pro naučení testovacích postupů ne však pro automatizované testování.
+Další odlišností je jeho ovládání.
+Většina ostatních frameworků je založena na jazyku Python, popřípadě jiném skriptovacím jazyku.
+Atomic Red je ale spíše sada instrukcí odpovídajících jednotlivým taktikám a technikám Mitre ATT\&CK\@.
+Atomic Red tedy není testovací software ale instrukce, pro testování jednotlivých ATT\&CK taktik s nástroji, které jsou již pravděpodobně nainstalované v počítači.
+Je tedy vhodný pro naučení testovacích postupů, ne však pro automatizované testování.
 Uživatel při testování vždy musí provézt kroky útoku a sledovat výsledek.
 To neznamená, že není možné simulovat složité útoky využívající hned několik technik.
-Atomic red dovoluje techniky za sebou řetězit a vytvářet složité sequence útoků.
-Výborným příkladem přímo od tvůrců je kod zvaný \textit{Dragons tail}\cite{redcanary_dragons_tail}.
+Atomic Red dovoluje techniky za sebou řetězit a vytvářet složité sekvence útoků.
+Výborným příkladem přímo od tvůrců je kód zvaný \textit{Dragons tail}\cite{redcanary_dragons_tail}.
 Tento příklad se snaží napodobit chování skutečných útočníků.
 Samozřejmě napodobení není dokonalé, ale dobře ukazuje možnosti Atomic Red pro složitější testování.\cite{csoonline_4_testing_frameworks}
 
 \nlparagraph{Nevýhody}
 Hlavní nedokonalostí tohoto přístupu je nutnost vytvářet nebo najít vlastní pomůcky.
-Atomic Red je nástroj pro obránce a nechce útočníkům všechny potřebné prostředky pro provedení útoku.
+Atomic Red je nástroj pro obránce a nechce dát útočníkům všechny potřebné prostředky pro provedení útoku.
 To znamená že pomocné nástroje pro útok si musí obránce připravit sám.
 Příkladem může být malware vložený v Microsoft Word dokumentu.
-Atomic Red se snaží ukázat, jak malware operuje a jek ho útočníci využívají bez toho, aby ho útočníkům poskytl.
+Atomic Red se snaží ukázat, jak malware operuje a jak ho útočníci využívají bez toho, aby ho útočníkům poskytl.
 Dalším problémem je generace výstupních reportů.
-Na rozdíl od dalších přístupů Atomic Red nevytváří automaticky stručný report o technikách které byly v útoku zkoumány.
-Tato funkcionalita je bohužel až v pokročilejším placeném software který Red Canary nabízí.\cite{csoonline_4_testing_frameworks}
+Na rozdíl od dalších přístupů Atomic Red nevytváří automaticky stručný report o technikách zkoumaných v útoku.
+Tato funkcionalita je bohužel až v pokročilejším placeném softwaru, který Red Canary nabízí.\cite{csoonline_4_testing_frameworks}
 
 
 \subsubsection{Endgame RTA}
 \ac{RTA} v tomto kontextu znamená \firstac{RTA}.
-Z představených nástrojů je to stále jednodušší, i když mocný nástroj.
-Jediný povinný požadavek je Python verze 2.7, kde pro instalaci stačí rozbalit z gitu stažený repozitář.
-Pro plnou funkcionalitu je však doporučeno navíc do podadresáře \textit{bin} vložit Sysinternals Suite a MsXsl.
-Stále je to však jednoduchá instalace a celý návod se nachází přímo v git repozitáři.\cite{endgame_rta}
+Z představených nástrojů je to stále jednodušší, třebaže mocný nástroj.
+Jediný povinný požadavek je Python verze 2.7, kde pro instalaci stačí rozbalit repozitář, který je volně dostupný na GitHubu.
+Pro plnou funkcionalitu je však doporučeno navíc do podadresáře \textit{bin} vložit \textbf{Sysinternals Suite} a \textbf{MsXsl}.
+Stále je to však jednoduchá instalace a celý návod se nachází přímo v GitHub repozitáři.\cite{endgame_rta}
 
 \nlparagraph{Schopnosti}
 \ac{RTA} je složení téměř 50 různých skriptů simulujících útoky.
-Bohužel jména těchto skriptů neodpovídají přesně Mitre ATT\&CK, i když jsou na ni založené.
-Také zde neexistuje hyperlink navigace jako například u Atomic Red.
+Bohužel jména těchto skriptů neodpovídají přesně Mitre ATT\&CK, i když jsou na ní založené.
+Také zde neexistuje hyperlinkuvá navigace, jako například u Atomic Red.
 Práce se skripty proto vyžaduje více úsilí a určitou známost matice ATT\&CK\@.
-Naštěstí jsou přesná označení technik, jako T1107 dohledatelné přímo ve skriptu.
-Pro složitější testování je možné spouště všechny skripty najednou nebo vybrat některé pomocí podmíněného příkazu \textit{IF} přímo v kodu.
+Naštěstí jsou přesná označení technik, jako \textbf{T1107}, snadno dohledatelná přímo ve skriptu.
+Pro složitější testování je možné spouštět všechny skripty najednou nebo vybrat některé pomocí podmíněného příkazu \textit{IF} přímo v kódu.
 Pro základní automatizaci stačí, pro hlubší testovaní je tento nástroj však omezen.\cite{csoonline_4_testing_frameworks}
 
 
 \subsubsection{Mitre Caldera}
 Caldera je od stejných vývojářů jako ATT\&CK, tedy Mitre.
 Lze tak očekávat dobrou integraci a kompatibilitu mezi těmito nástroji.
-Na rozdíl od dříve představených nástrojů je Mitre Caldera komparativně náročnější nástroj, což se projevili i v instalaci.
-Ani tak však není instalace náročná, a to hlavně díky přípravě tvůrců a dobré dokumentaci\cite{mitre_caldera_docs}.
-Framework caldera lze rozdělit na 2 hlavní části.
-První je \textit{Jádro systému}.
-Tento framework je dostupný v github repozitáři.
-Zahrnuje asynchronní server pro řízení příkazů a kontrolu (command-and-control, C2) s REST API a webovým rozhraním.
-Druhou složkou jsou \textit{pluginy}.
-Jsou to rozšíření pro možnosti jádra frameworku poskytující dodatečnou funkcionalitu.
-Většinou se jedná o samostatné repozitáře.
-Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic red team.\cite{mitre_caldera}
+Na rozdíl od dříve představených nástrojů je Mitre Caldera komparativně náročnější nástroj, což se projeví i v instalaci.
+Ani tak není instalace náročná, a to hlavně díky přípravě tvůrců a dobré dokumentaci\cite{mitre_caldera_docs}.
+
+Framework caldera lze rozdělit na 2 hlavní části: \textit{jádro systému} a \textit{pluginy}.
+\textit{Jádro systému} je dostupné v GitHub repozitáři, zahrnuje asynchronní server pro řízení příkazů a kontrolu (command-and-control, C2) s REST API a webovým rozhraním.
+\textit{Pluginy} jsou rozšíření možností jádra frameworku, které poskytují dodatečnou funkcionalitu.
+Ve většině případů se nachází ve vlastních repozitářích, jsou však v hlavním repozitáři referencovány.
+Jako příklady je dobré uvézt agenty, hlášení, nebo  techniky z Atomic Red teamu.\cite{mitre_caldera}
 
 \nlparagraph{Systémové požadavky}
 Autoři se snaží podporovat široké spektrum cílových systémů.
-Proto existují 2 typy požadavků, povinné a doporučené.
-Povinné určují, kde může být vůbec Caldera připravena.
+Proto existují 2 typy požadavků: povinné a doporučené.
+Povinné požadavky určují minimální prostředí, kde může být Caldera připravena.
 Jádro frameworku může být nainstalováno na operačních systémech Linux nebo MacOS\@.
-Pro fungování je vyžadován Python verze 3.7, 3.8, nebo 3.9 samozřejmě s rozhraním pip3.
+Pro fungování je vyžadován Python verze 3.7, 3.8, nebo 3.9, samozřejmě s rozhraním pip3.
 Pip3 je vyžadován pro instalaci podpůrných balíčků uvedených v souboru \textit{requirements} přímo v repozitáři Caldery.
-Ke správnému ovládání je vyžadován moderní prohlížeč.
-Doporučený je Google Chrome.
+Ke správnému ovládání je vyžadován moderní prohlížeč, doporučený je Google Chrome.
 Doporučené požadavky se týkají vývoje a správného fungování Caldery.
 Je doporučený hardware s 8GB+ RAM a 2+ CPU\@.
-Dále je pro správnou kompilaci a funkčnost Golang agentů doporučen GoLang 1.17+.
+Dále je pro správnou kompilaci a funkčnost GoLang agentů doporučen GoLang 1.17+.
 Za zmínku stojí také možnost instalovat a pracovat s Calderou v Docker kontejneru.\cite{mitre_caldera_docs}
 
 \nlparagraph{Možnosti}
@@ -1155,7 +1132,7 @@ Caldera dovoluje nastavení autonomních red-team nebo blue-team operací, a to 
 Existuje také možnost manuálních red-team operací, hlavně v případech nahrazování a testování pomocí vlastních nástrojů.\cite{mitre_caldera_docs}
 
 
-\section{Praktická část}\label{sec:prakticka-cast}
+\section{Praktická část}\label{sec:prakticka-cast}%todo here
 Praktická část této práce je zaměřená na zjišťování možností testování.
 Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK\@.
 Za tímto účelem jsou představeny vybrané testovací nástroje založené nebo kompatibilní s MITRE ATT\&CK\@.
@@ -1570,7 +1547,7 @@ Stejně se ale jedná o cenná data, které může v mnoha případech útoční
 \nlparagraph{Lab02v2}
 Tato operace a adversary využívají již zjištěných dat k upřesnění specifických cílů.
 Simulujeme zde situaci, kdy útočník získal základní data o napadeném zařízení.
-Jeho cílem je ted nejen získat vyšší práva nad tímto zařízením
+Jeho cílem je ted nejen získat vyšší práva nad tímto zařízením.
 Prvním krokem je tak zlepšení šancí na dosažení těchto cílů.
 Za tímto účelem se simulovaný útočník pokusí vypnout antivirová opatření, na která narazil v předchozí operaci, viz obrázek~\ref{fig:antivirus_discovery}.
 To však není zcela úspěšné, jak již bylo psáno nacházíme se na nové verzi Windows, která je adekvátně aktualizovaná.
@@ -1684,8 +1661,7 @@ Možná nejznámějším příkladem je \textit{Metasploit}\cite{metasploit}.
 
 Kritická diskuze nad výsledky, ke kterým autor dospěl (soulad výsledků  literaturou či předpoklady;
 výsledky a okolnosti, které zvláště ovlivnily předkládanou práci atd.).
-Je vhodné naznačit i případné další
-(popř. alternativní) možnosti zkoumání dané problematiky a otevřené problémy pro další studium.
+Je vhodné naznačit i případné další(popř. alternativní) možnosti zkoumání dané problematiky a otevřené problémy pro další studium.
 
 
 %todo reshape
