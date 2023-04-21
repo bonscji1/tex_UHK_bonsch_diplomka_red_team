@@ -1239,12 +1239,12 @@ Nástroj Nmap je připraven již s instalací této distribuce a proto nebylo pr
 \subsection{Popis testované infrastruktury}\label{subsec:popis-testovane-infrastruktury}
 V rámci pokusu o simulování co možná nejreálnějšího testování bylo i testované prostředí vytvářeno na základě reálného.
 Vzniklo na základě dotazníku a po rozhovoru s odborníkem, který reálné prostředí udržuje.
-Je jasné, že simulované prostředí podléhá simplifikace, byla však snaha zachovat všechny nejdůležitější prvky.
-Prvotní návrh topologie je jednoduchý a reflektuje získaná data, viz obrázek~\ref{fig:prvotni_navrh}.
+Je jasné, že simulované prostředí podléhá simplifikaci, byla však snaha zachovat všechny nejdůležitější prvky.
+Prvotní návrh topologie byl jednoduchý a reflektoval získaná data, viz obrázek~\ref{fig:prvotni_navrh}.
 
 \clfig{prvotni_navrh}{\linewidth}{Prvotní návrh testovaného prostředí}{Vlastní}{fig:prvotni_navrh}
 
-Tento jednoduchý návrh byl posléze vymodelován v programu Cisco Packet Tracer do použitelného návrhu prostředí.
+Posléze byl vymodelován v programu Cisco Packet Tracer do použitelného návrhu prostředí.
 Je jasně vidět zachování základní myšlenky, byly ale přesně definované prvky topologie a jejich vlastnosti jako IP adresy koncových stanic, rozsahy jednotlivých sítí a zařazení do \firstac{VLAN} skupin.
 V rámci programu Packet Tracer byla také na prvcích provedena potřebná konfigurace a otestování funkčnosti.
 Model prostředí je na obrázku~\ref{fig:ptmodel}.
@@ -1254,18 +1254,17 @@ Model prostředí je na obrázku~\ref{fig:ptmodel}.
 
 Posledním krokem je implementace infrastruktury na skutečných zařízeních.
 Za tímto účelem byla využita síťová laboratoř J-5 Univerzity Hradec Králové.
-Specificky byly využito 6 počítačů v učebně, router Cisco 2911 a switch Catalyst 2960.
-Jeden z počítačů funguje jako simulační server, kde jsou ve virtuálním prostředí nasazeny 2 samostatné serverové implementace.
-Jsou to \textit{Windows Server 2012 R2} a \textit{Ubuntu Server 20.04.4 Focal Fossa}.
+Specificky bylo využito 6 počítačů v učebně, router Cisco 2911 a switch Catalyst 2960.
+Jeden z počítačů funguje jako simulační server, kde jsou ve virtuálním prostředí nasazeny 2 samostatné serverové implementace - \textit{Windows Server 2012 R2} a \textit{Ubuntu Server 20.04.4 Focal Fossa}.
 Nasazení infrastruktury s použitím fyzických zařízení opět vyžaduje otestování správného propojení všech komponentů.
 Důležitým bodem je hlavně možnost komunikovat se servery ve virtuálních prostředích.
 Proto bylo otestováno u každého zařízení postupně připojení sama na sebe, připojení na switch a router, připojení na ostatní prvky v daném \ac{VLAN} a nakonec komunikace s prvky v ostatních \ac{VLAN}.
-Po úspěšném otestování všech zařízení je možné považovat  infrastrukturu za připravenou pro testovaní v labech.
+Po úspěšném otestování všech zařízení je možné považovat infrastrukturu za připravenou pro testování v labech.
 
 \subsection{Testované scénáře}\label{subsec:testovane-scenare}
 Cílem této kapitoly je představit práci s nástroji a simulovat útok na vybranou organizaci.
-Byli za tímto účelem vybrány hrozby a vytvořeny scénáře, které na sebe volně navazují a představují možné kroky útočníka.
-Je však nutné podotknout, že každý útok je jedinečný a proto není možné vytvořit jeden testovací, který reprezentuje všechny možnosti.
+Byly za tímto účelem vybrány hrozby a vytvořeny scénáře, které na sebe volně navazují a představují možné kroky útočníka.
+Je však nutné podotknout, že každý útok je jedinečný, a proto není možné vytvořit jeden testovací, který reprezentuje všechny možnosti.
 Je však možné ukázat nejčastější kroky, poukázat na jejich návaznost a připravit potencionální obránce tak, aby byli schopni s pomocí již zmíněných nástrojů vytvořit vlastní scénáře pro jejich specifické potřeby a testování.
 Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění reprezentace jednotlivých scénářů.
 
