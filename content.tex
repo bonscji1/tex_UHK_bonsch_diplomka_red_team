@@ -1132,102 +1132,107 @@ Caldera dovoluje nastavení autonomních red-team nebo blue-team operací, a to 
 Existuje také možnost manuálních red-team operací, hlavně v případech nahrazování a testování pomocí vlastních nástrojů.\cite{mitre_caldera_docs}
 
 
-\section{Praktická část}\label{sec:prakticka-cast}%todo here
+\section{Praktická část}\label{sec:prakticka-cast}
 Praktická část této práce je zaměřená na zjišťování možností testování.
 Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK\@.
-Za tímto účelem jsou představeny vybrané testovací nástroje založené nebo kompatibilní s MITRE ATT\&CK\@.
-Je popsáno testovací prostředí, instalace vybraných nástrojů, možné problémy, které při přípravě mohou nastat a také jak tyto problémy vyřešit.
-Dále je ukázáno a a vysvětleno, jak tyto nástroje používat k docílení testování a také proč jsou testovány techniky a taktiky, které jsou testovány.
-Výsledná práce by tedy měla stačit k tomu, aby i neznalý uživatel byl schopen nastavit testovací prostředí a otestovat základní vlastnosti svojí infrastruktury nebo zařízení.
+Za tímto účelem jsou představeny vybrané testovací nástroje založené na MITRE ATT\&CK\@ nebo s ním kompatibilní.
+Je popsáno testovací prostředí, instalace vybraných nástrojů, možné problémy, které při přípravě mohou nastat, a také jak tyto problémy vyřešit.
+Dále je ukázáno a vysvětleno, jak tyto nástroje používat k docílení testování, a také jak testovat vybrané taktiky a techniky.
+Výsledná práce by tedy měla stačit k tomu, aby i neznalý uživatel byl schopen nastavit testovací prostředí a otestovat základní vlastnosti své infrastruktury nebo zařízení.
 
 
-\subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}
+\subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}%todo here
 Jako testovací prostředí bylo zvoleno Kali Linux, které bude spouštěno v Oracle VM VirtualBox.
-Kali Linux je operační systém založený na Debianu, který je od základu navržen pro testování zabezpečení a penetrační testování.
-Jedná se o možná nejznámější a nejrozšířenější distribuci linuxu s tímto zaměřením, oblíbeným mezi profesionály i nadšenci.
+Kali Linux je operační systém založený na Debianu, jenž je od základu navržen pro testování zabezpečení a penetrační testování.
+Jedná se o možná nejznámější a nejrozšířenější distribuci Linuxu s tímto zaměřením, oblíbeným mezi profesionály i nadšenci.
 Obsahuje množství specializovaných nástrojů pro testování zabezpečení, odhalování zranitelností nebo monitorování sítě.
-Velkou výhodou je zaměření na open-source nástroje, které často vytváří profesionálové pro své specifické potřeby.
-Lze tak jednoduše využít jejich znalosti k zjednodušení práce ostatních uživatelů.
-V případě potřeby se však stále jedná o distribuci linuxu a proto je v rámci kmenové distribuce jednoduché naistalovat jakýkoli nástroj, který by mohl uživatel potřebovat.
-Repozitáře kali linuxu však zjednodušují instalaci právě testovacích nástrojů.\cite{kali_mainpage}
+Velkou výhodou je zaměření na open-source nástroje, často vytvářené profesionály pro své specifické potřeby.
+Lze tak jednoduše využít jejich znalosti ke zjednodušení práce ostatních uživatelů.
+V případě potřeby se však stále jedná o distribuci Linuxu a proto je v rámci kmenové distribuce jednoduché nainstalovat jakýkoli nástroj, který by mohl uživatel potřebovat.
+Repozitáře Kali Linuxu však zjednodušují instalaci právě testovacích nástrojů.\cite{kali_mainpage}
 
 \clfig{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí}{Vlastní}{fig:kali_purple}
 
-Menší změna od původního plánu využít kali nastala při 10 výročí této distribuce\cite{kali_purple}.
+Menší změna od původního plánu využít Kali nastala při 10. výročí této distribuce\cite{kali_purple}.
 Vývojáři představili Kali Purple, kterou je možné vidět na obrázku~\ref{fig:kali_purple}.
-Tato verze Kali Linux je více orientována na defenzivní testování oproti klasické ofenzivně zaměřené Kali.
+Tato verze Kali Linuxu je oproti klasické ofenzivně zaměřené Kali více orientována na defenzivní testování.
 Proto byl původní plán pozměněn a pro implementaci prostředí byla použita právě Kali Purple.
-Zvědavost a možnost testování nové distribuce byly také faktory vedoucí k této změně.
-S tímto rozhodnutím se však váže i menší problém.
-Kali nabízí na svých stránkách ke stáhnutí mnoho různých verzí \textit{image}, mezi kterými je i specifická verze připravená pro VirtualBox.
-Kali Purple je však zatím dostupná pouze v podobě klasického instalačního \textit{image}.
-Prvotní příprava je proto o instalační krok ztížena.
-To však není velký problém.
+Dalšími faktory vědoucími k této změně byla i zvědavost a možnost testování nové distribuce.
+S tímto rozhodnutím se však váže i menší problém - Kali nabízí na svých stránkách ke stáhnutí mnoho různých verzí \textit{image}, mezi nimiž je i specifická verze připravená pro VirtualBox.
+Kali Purple je v době psaní tohoto textu dostupná pouze v podobě klasického instalačního \textit{image}.
+Prvotní příprava je proto o instalační krok ztížena, to však není zásadní problém.
 
 \nlparagraph{Caldera}
-Po připravení operačního systému ve virtuálním prostředí je čas nainstalovat nástroj Mitre Caldera.
-Při samotné instalaci Caldery nastal další problém.
-Nejnovější verze Caldery v době psaní je 4.1.0 která vyšla 19.9.2022.
-V době testování však tato verze Caldery nejde zkompilovat na nové verzi Kali Purple.
+Po přípravě operačního systému ve virtuálním prostředí je čas nainstalovat nástroj Mitre Caldera.
+Při samotné instalaci Caldery však nastal další problém, nejnovější verze Caldery v době psaní je 4.1.0, která vyšla 19. 9. 2022 a v době testování tato verze Caldery nejde na nové verzi Kali Purple zkompilovat.
 Tento fakt je vidět na obrázku~\ref{fig:caldera_error}.
 %todo upravit
 \clfig{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku}{Vlastní}{fig:caldera_error}
 
 
-\noindent Tento problém vyplývá ze starších balíčků, které calder vyžaduje pro svoji funkčnost.
-Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují.
-Nabízí se tedy několik řešení, jak tento problém vyřešit.
+\noindent %todo last, play with no indents?
+Problém vyplývá ze starších balíčků, které Caldera vyžaduje pro svoji funkčnost.
+Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují, což vede k chybám kompilace.
+Nabízí se několik řešení, jak problém vyřešit.
 Prvním a velmi líným řešením je oznámit problém a počkat na vydání nové verze.
 Toto řešení zachovává stabilitu systému a frameworku, je to však na úkor času.
-Autoři kaldery mají nejlepší znalosti a možnosti otestovat, zda změny v závislostech neovlivnili správnou funkčnost frameworku.
+Autoři Caldery mají nejlepší znalosti a možnosti otestovat, zda změny v závislostech neovlivnily správnou funkčnost frameworku.
 Z časových důvodů to však není pro tuto práci možné.
 Dalším možným řešením je změna verze pythonu pro celý systém.
 To je však velmi drastický zásah do celého systému a mohl by vézt ke ztrátě stability aplikací nebo dokonce celého systému.
 Realističtější možností je vytvořit virtualizaci pythonu a využívat nižší verzi pythonu pouze pro specifické aplikace, v tomto případě pro Calderu.
-Caldera je však složitá aplikace, využívající nestandardní serverovou strukturu.
-Není tak zajištěno, že při zkompilování pod určitým pythonem se aplikace nepokusí využívat systémovou vyšší verzi.
+Caldera je však složitá aplikace využívající nestandardní serverovou strukturu.
+Není tak zajištěno, že se při zkompilování pod určitým pythonem aplikace nepokusí využívat systémovou vyšší verzi.
 Posledním řešením je zkusit identifikovat problematické balíčky a najít, zda existují novější kompatibilní verze.
 Problémem tohoto řešení je možná nefunkčnost aplikace v závislosti na tom, jak velký rozdíl je mezi verzemi balíčků.
-Lze však očekávat, že novější balíčky mají zpětnou kompatibilitu, není však neomezená.
+Lze však očekávat, že novější balíčky mají zpětnou kompatibilitu, není ale neomezená.
 
 \nlparagraph{Výsledné řešení}
 Po porovnání přístupů se jako nejlepší řešení jeví využití novějších verzí balíčků.
 Virtualizace pythonu je druhé nejlepší řešení.
-Zde je však větší šance problémů a tak slouží jako záloha v případě, že první řešení nebude fungovat.
+Zde je však větší šance problémů, a tak slouží jako záloha v případě, že první řešení nebude fungovat.
 Identifikace problémových balíčků je jednoduchá přímo ze zpětné vazby při kompilování, jak je možné vidět na obrázku~\ref{fig:caldera_error}.
-Prvním problémovým balíčkem je aiohttp, který je ve verzi 3.8.1.
-V repozitáři balíčků je možné najít nejnovější aiohttp ve verzi 3.8.4.
+Prvním problémovým balíčkem je \textbf{aiohttp}, který je ve verzi 3.8.1.
+V repozitáři balíčků je možné najít nejnovější \textbf{aiohttp} ve verzi 3.8.4.
 To je možné vidět na obrázku~\ref{fig:pypi_aiohttp}
+
 \clfig{pypi_aiohttp}{\linewidth}{Nejnovější verze balíčku aiohttp v repozitáři Pypi}{Vlastní}{fig:pypi_aiohttp}
 
 Po změně na tuto novou verzí byl identifikován další problémový balíček.
-Je jím reportlab ve verzi 3.5.67, kde je opět možné nahradit novější verzi 3.6.12.
+Je jím \textbf{reportlab} ve verzi 3.5.67, ten je ale opět možné nahradit novější verzí 3.6.12.
 Následný pokus o zkompilování proběhl úspěšně.
-V tuto chvíli vypadá soubor s požadovanými balíčky takto ~\ref{fig:new_setup}.
+Upravený soubor s požadovanými balíčky je vidět na obrázku~\ref{fig:new_setup}.
 %todo remake, just the requirements
 \clfig{new_setup}{\linewidth}{Nová podoba souboru requirements.txt}{Vlastní}{fig:new_setup}
 
-Po spuštění serveru existuje propojení přes localhost:8888.
-I přihlášení pomocí základního uživatele red s heslem admin proběhlo úspěšně a tak lze předpokládat, že caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
+Po spuštění serveru existuje propojení přes \textbf{localhost:8888}.
+I přihlášení pomocí základního uživatele \textbf{red} s heslem \textbf{admin} proběhlo úspěšně a tak lze předpokládat, že Caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
 %todo remake
 \clfig{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení}{Vlastní}{fig:Caldera_running}
 
 \nlparagraph{Recon-ng}
-Zajímavým nástrojem, který byl připraven ale nakonec nebyl využit je \textit{Recon-ng}.
+Zajímavým nástrojem, který byl připraven, ale nakonec nebyl využit, je \textit{Recon-ng}.
 Jedná se o open-source \ac{OSINT} nástroj v příkazové řádce.
-Díky volbě Kali Purple jako testovacího prostředí je jeho instalace opravdu snadná.
-Stačí v příkazové řádce vykonat příkaz \textbf{sudo apt-get install recon-ng}.
+Díky volbě Kali Purple jako testovacího prostředí je jeho instalace opravdu snadná, stačí v příkazové řádce vykonat příkaz:
+
+\begin{codeblock}
+	\begin{verbatim}
+$ sudo apt-get install recon-ng
+	\end{verbatim}
+	\captionsource{Ukázka příkazu pro instalaci nástroje Recon-ng}{[Vlastní]}
+\end{codeblock}
+
 Zajímavějším a důležitějším krokem je však instalace modulů.
 Po zapnutí nástroje příkazem \textbf{recon-ng} je možné instalovat jednotlivé moduly přes marketplace.
 Všechny moduly je možné zobrazit příkazem \textbf{marketplace search}.
-Vybrané moduly jsou nainstalovány příkazem \textbf{marketplace install \textit{jméno\_modulu}}.
+Vybrané moduly jsou nainstalovány příkazem \textbf{marketplace install \textit{"jméno\_modulu"}}.
 Při testování však byla zjištěna zastaralost a nefunkčnost důležitých modulů.
-Také ovládání tohoto nástroje je zvláštní a po otestování bylo od použití tohoto nástroje v labech odstoupeno.
-Recon-ng je totiž možné nahradit specializovanými nástroji a technikami, jako je například \textit{nmap}.
+Také ovládání tohoto nástroje je zvláštní a po otestování bylo od použití tohoto nástroje v testovaných scénářích odstoupeno.
+Recon-ng je totiž možné nahradit specializovanými nástroji a technikami, jako je například \textit{Nmap}.
 
 
 \nlparagraph{Nmap}
-Zde je důležitá právě volba kali purple jako testovacího prostředí.
+Zde je důležitá právě volba Kali Purple jako testovacího prostředí.
 Nástroj Nmap je připraven již s instalací této distribuce a proto nebylo pro jeho používání nutné provádět žádné další kroky.
 
 
@@ -1267,7 +1272,7 @@ Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění repr
 \clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
 
-\subsubsection{Scénář 1 - recon}
+\subsubsection{Scénář 1 - recon}%todo here
 První scénář je zaměřen ná práci s informacemi.
 Jen velmi malé množství útoků probíhá bez prvotní fáze získávání informací a drtivá většina z nich je neúspěšná právě kvůli tomu, že útočníci podcenili tento první krok.
 Sběr informací lze provádět mnoha způsoby.
@@ -1328,7 +1333,7 @@ V rámci sbírání přehledných dat bylo také nastaveno, aby po ukončení pr
 	\begin{verbatim}
 # nmap -v -A -p- -sV -version-all -O -oN vysledek.txt "cíl_útoku"
 	\end{verbatim}
-	\captionsource{Ukázka možného pžíkazu.}{[Vlastní]}
+	\captionsource{Ukázka možného příkazu pro Nmap}{[Vlastní]}
 \end{codeblock}
 
 Výše ukázaný příkaz byl proveden a výsledek byl vypsán do souboru \textbf{vysledek.txt}, což je nastaveno přízviskem \textbf{-oN}.
