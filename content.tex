@@ -1271,121 +1271,119 @@ Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění repr
 \clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
 
-\subsubsection{Scénář 1 - recon}%todo here
-První scénář je zaměřen ná práci s informacemi.
+\subsubsection{Scénář 1 - \textit{Recon}}
+První scénář je zaměřen na práci s informacemi.
 Jen velmi malé množství útoků probíhá bez prvotní fáze získávání informací a drtivá většina z nich je neúspěšná právě kvůli tomu, že útočníci podcenili tento první krok.
 Sběr informací lze provádět mnoha způsoby.
 V dnešní moderní době není problém informace získat, je však problém určit, která informace je důležitá a která ne.
 Nejjednodušší řešení je zakoupit informace na černém trhu, dokonce existují balíčky informací setříděné právě pro přípravu útoků.
 To však není cílem tohoto scénáře.
 Cílem je ukázat vybrané techniky a nástroje, pomocí kterých získávají útočníci \ac{OSINT}, neboli volně dostupné informace.
-Sběr informací je prováděn na již zmíněném reálném cíli, podle kterého je i modelováno testovací prostředí.
+Sběr informací je prováděn na již zmíněném reálném cíli, podle něhož je i modelováno testovací prostředí.
 Z důvodu zachování anonymity vybraného cíle nebudou v práci zveřejňována specifická data, ale pouze typ nalezeného údaje nebo záznam, který není identifikovatelný.
 Příkladem je nalezení webového serveru.
-Je možné říci, že byla nalezena ip adresa a specifický operační systém serveru.
+Je možné říci, že byla nalezena IP adresa a specifický operační systém serveru.
 Je také možné říci, o jaký operační systém se jedná.
-Je však nežádoucí zmínit přesnou verzi systému nebo již zmíněnou ip adresu.
+Je však nežádoucí zmínit přesnou verzi systému nebo již zmíněnou IP adresu.
 
 
 \nlparagraph{Internet}
 Je překvapivé, kolik dat o cíli může útočník získat čistě pomocí vyhledávání na internetu.
-Nejen, že cíl měl webové stránky, dokonce v porovnání s dalšími stránkami podobných organizací vyplynulo, že mají jiného jednotného správce a jsou to pouze upravovány z jednotné šablony.
-Lze tedy očekávat, že problémy nalezené na jedné implementaci šablony budou platiti pro všechny.
-Bylo proto využito veřejných databázových repozitářů \textbf{WHOIS} a \textbf{CenSys} pro zjištění více informací o doméně.
-Například byla zjištěna tyto data:
+Nejen, že cíl provozuje webové stránky, dokonce v porovnání s dalšími stránkami podobných organizací vyplynulo, že mají jiného jednotného správce a jsou pouze upravovány z jednotné šablony.
+Lze tedy očekávat, že problémy nalezené na jedné implementaci šablony budou platit pro všechny.
+Bylo proto využito veřejných databázových repozitářů \textbf{WHOIS} a \textbf{CenSys} pro zjištění více informací.
+V technických databázích byly o doméně organizace zjištěny následující údaje:
 \begin{itemize}
-	\item Zkrácená jména administrátorů domény,
-	\item Datum registrace domény,
-	\item Kontakt na administrátory systému – jméno, adresa, název organizace,
-	\item Název organizace, pod kterou je doména zaregistrována.
+	\item zkrácená jména administrátorů domény,
+	\item datum registrace domény,
+	\item kontakt na administrátory systému – jméno, adresa, název organizace,
+	\item název organizace, pod kterou je doména zaregistrována.
 \end{itemize}
 
-To jsou informace, které sice nevedou přímo k útoku ale ukazují na osoby a organizace, na které je dobré se více zaměřit.
-Není nutné tedy hledat slepě ale je jasné, jakým směrem se vydat.
+To jsou informace, které sice nevedou přímo k útoku, ale ukazují na osoby a organizace, na než je dobré se více zaměřit.
+Není nutné tedy hledat slepě, ale je pro potencionálního útočníka jasné, jakým směrem se vydat.
 Zde lze například při využití běžného vyhledávače DuckDuckGo a sociálních sítí LinkedIn a Facebook údaje o administrátorovi.
-Například se povedlo nalézt osobní i pracovní emailovou adresu (vhodné pro phishing), místo bydliště a pracovní i osobní telefonní číslo (Vishing).
+Například bylo možné nalézt osobní i pracovní emailovou adresu (vhodné pro phishing), místo bydliště a pracovní i osobní telefonní číslo (Vishing).
 Třešničkou na pomyslném dortu však byla anonymizovaná smlouva podepsaná daným administrátorem.
-To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah jako plaintext.
+To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah v plaintextové formě.
 
-\nlparagraph{Censys}
+\nlparagraph{Censys}%todo here
 Pro kontrolu a doplnění informací bylo využito platformy Censys.
 Tato platforma je schopná po zadání doménového jména nebo IP adresy serveru najít informace o službách a portech, na kterých služba komunikuje.
-Je jasné, že tato platforma nemůže nahradit plnohodnotný nástroj jako nmap, je však dostupná online a není nutné instalovat další nástroje.
-Pomocí platformy Censys byly nalezeny 2 důležité záznamy: \textit{webový server} a \textit{emailový server}.
+Je jasné, že tato platforma nemůže nahradit plnohodnotný nástroj jako Nmap, je však dostupná online a není nutné instalovat další nástroje.
+Pomocí platformy Censys byly nalezeny 2 důležité záznamy - \textit{webový server} a \textit{emailový server}.
 Záznam o \textit{webovém serveru} poskytuje informace o IP adrese, provozovaném operačním systému (Ubuntu) a veřejných portech.
-Na portech 80 a 443 je již zmíněná internetová stránka, zajímavější jsou však port 500, kde je protokol \firstac{IKE}, a port 10443, kde se nachází webová služba.
-Při zadání adresy do prohlížeče je  uživatel přesměrován na přihlášení do systému od společnosti Sophos.
+Na portech 80 a 443 je již zmíněná internetová stránka, zajímavější jsou však porty 500, kde je protokol \firstac{IKE}, a 10443, kde se nachází webová služba.
+Při zadání adresy do prohlížeče je uživatel přesměrován na přihlášení do systému od společnosti Sophos.
 Tato společnost se zabývá vytvářením bezpečnostního software a monitorováním bezpečnosti klientů.
 Lze tedy očekávat, že na portu 10443 je vzdálený přístup právě pro tyto účely.
-Záznam o \textit{emailovém serveru} také obsahuje zajímavé informace.
-Jsou to Reverzní DNS záznam, provozovaný operační systém (FortiOS) a také port 10443, jehož prozkoumání vede do přihlašovacího formuláře společnosti fortinet.
-Jedná se tedy opět o možnost vzdáleného přístupu a u obou serverů je tedy možné získat přístup pomocí supply-chain útoku.
+Záznam o \textit{emailovém serveru} také obsahuje zajímavé informace, jako například reverzní \ac{DNS} záznam, operační systém serveru (FortiOS) a také port 10443, jehož prozkoumání vede do přihlašovacího formuláře společnosti fortinet.
+Jedná se tedy opět o možnost vzdáleného přístupu a u obou serverů je tedy možné získat přístup pomocí supply-chain útoků.
 
 \nlparagraph{Nmap}
-Nástroj pro aktivní skenování portů \textit{nmap} je dlouhodobě využívaný nástroj mnoha útočníků a tak je dobré vědět, co s ním jde o daném cíli zjistit.
+Nástroj pro aktivní skenování portů \textit{Nmap} je dlouhodobě využívaný nástroj mnoha útočníků i obránců, a tak je dobré vědět, co s ním jde o daném cíli zjistit.
 Pro zahájení skenování je nutné zadat potřebné vlastnosti skenu a definovat cíl.
-Cílem je samozřejmě již zmíněná organizace, nmap přijímá informace o doméně, jedné nebo i skupině adres což jsou již nalezené informace.
+Cílem je samozřejmě již zmíněná organizace, Nmap přijímá informace o doméně, jedné nebo i skupině adres, což jsou informace nalezené v předchozím kroku.
 Nutné je specifikovat možnosti skenování portů, je například možné získat informace o aktivních portech, protokolech, spuštěných službách a jejich verzích.
-V rámci sbírání přehledných dat bylo také nastaveno, aby po ukončení práce nmap vyexportoval výsledek do textového souboru.
-%todo check
+V rámci sbírání přehledných dat bylo také nastaveno, aby po ukončení práce Nmap vyexportoval výsledek do textového souboru.
+
 \begin{codeblock}
 	\begin{verbatim}
 # nmap -v -A -p- -sV -version-all -O -oN vysledek.txt "cíl_útoku"
 	\end{verbatim}
-	\captionsource{Ukázka možného příkazu pro Nmap}{[Vlastní]}
+	\captionsource{Ukázka příkazu pro Nmap}{[Vlastní]}
 \end{codeblock}
 
 Výše ukázaný příkaz byl proveden a výsledek byl vypsán do souboru \textbf{vysledek.txt}, což je nastaveno přízviskem \textbf{-oN}.
 Příznak \textbf{-v} označuje vyšší level podrobnosti, takzvané verbosity.
 Pro detekci operačního systému a detekci verzí je využito příznaku \textbf{-A} a příznaku \textbf{-O}.
-K detekci portů slouží \textbf{-sV -version-all}, kde -version-all znamená testování všech všech možností.
-Finálně \textbf{-p-} je explicitní označení pro skenování všech portů, kde -p určuje rozsah.
-Výsledek tohoto scanu potvrdil již nalezené informace a nepřekvapivě tyto znalosti rozšířil o nové poznatky.
+K detekci portů slouží \textbf{-sV -version-all}, v němž -version-all znamená testování všech možností.
+Pro skenování portů slouží \textbf{-p-}, což je zkratka pro explicitní skenování všech portů.
+Výsledek tohoto scanu potvrdil již nalezené informace, ale také tyto znalosti rozšířil o nové poznatky.
 Obzvláště zajímavá je verze webového serveru, na které je spuštěn internetový portál.
 Jedná se o totiž o starší verzi serveru Apache vydanou v roce 2017.
 Tato informace dává útočníkovi možnost nalézt zranitelnosti pro tuto specifickou verzi a je to tedy značným bezpečnostním rizikem.
 Posledním zajímavým poznatkem bylo nalezení portu 5060 s protokolem SIP a port 8443 se službou OpenVPN\@.
 
-\subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}%todo texit všude nebo nikde, kouknout jak to vypadá
+\subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}
 Scénář 2 navazuje na scénář 1.
 Snahou je simulovat možné kroky útočníka poté, co provedl sběr informací o cíli.
 Cílem útočníka je tedy využít získaná data ve svůj prospěch a provést kompromitaci systému.
 Jak již bylo zmíněno v teoretické části textu, jedním z nejpoužívanějších vektorů pro prvotní kompromitaci systému je \textit{phishing}.
 Útočník využije již získaných dat ze scénáře 1 pro vytvoření \textit{phishingové kampaně}, jejímž cílem je kompromitovat zařízení.
-Pro účely scénáře 2 uvažujeme, že se útočníkovi tímto vektorem povedlo získat prvotní vstup.
-Je totiž těžké simulovat phishing v laboratoři.
+Pro účely scénáře 2 uvažujeme, že se útočníkovi tímto vektorem povedlo získat prvotní vstup, je totiž velmi obtížné simulovat phishing v laboratoři.
 Jeho založení na psychologii a zranitelnostech lidského chování lze sice jednoduše napodobit, nemá však velký vypovídající význam.
 Pro účely testování tedy uvažujeme, že běžný uživatel klikl na podvodný email, který útočníkovi poskytl vzdálený přístup k jeho zařízení.
 Důležité je, že se jedná o běžného uživatele.
 V pozdějších částech tohoto labu je ukázáno, jaký je rozdíl v možnostech útočníka v případě, že by se jednalo o privilegovaného uživatele.
-Tento scénář bude simulován na již popsané testovací infrastructure.
+Tento scénář bude simulován na již popsané testovací infrastruktuře.
 V roli útočníka bude působit Caldera, jakožto nástroj pro testování.
 Za zmínku stojí fakt, že většina infrastruktury obsahuje nejnovější operační systémy.
-Výjimkou jsou servery, kde lze očekávat dlouhodobě podporován starší verze.
-Pozor však na fakt, že na všechna zařízení byly uplatněny nejnovější bezpečnostní aktualizace.
+Výjimkou jsou servery, kde lze očekávat dlouhodobě podporovanou starší verzi operačního systému.
+Pozor však na fakt, že na všechna zařízení byly, v rozumné míře, uplatněny bezpečnostní aktualizace.
 To znamená, že tato infrastruktura je proti útokům stejně odolná, jako nejlepší možná varianta skutečné infrastruktury.
 Pokud však správce skutečné infrastruktury podcenil aktualizace zařízení, lze očekávat, že bude na útoky náchylnější.
 Výsledkem je tedy nelichotivá komparace testovací a skutečné infrastruktury.
 Pokud se útok povede na testovací infrastruktuře, zcela jistě ho bude možné provézt i na skutečné.
 I nevydařený útok na testovacím prostředí má však šanci na skutečné infrastruktuře uspět.
-Tento fakt pouze svědčí o tom, že je nutné aktualizovat zařízení kvůli bezpečnosti.
+Tento fakt pouze svědčí o tom, že je nutné aktualizovat zařízení z důvodu optimální bezpečnosti.
 
 
 \nlparagraph{Příprava scénáře}
 Pro simulaci scénáře je nutné připravit agenta v testovacím nástroji Caldera.
-Tento agent pak simuluji kompromitování zařízení a provádí testování, které mu nastavíme.
+Tento agent pak simuluje kompromitování zařízení a provádí testování, které mu nastavíme.
 V Caldeře je možné sledovat a vytvářet agenty v záložce agents, viz obrázek~\ref{fig:caldera_agents}.
 %todo crop image
 \clfig{lab/Agent_mainpage}{\linewidth}{Stránka pro ovládání agentů}{Vlastní}{fig:caldera_agents}
 
-Agenta lze vytvořit stiskem tlačítka \textit{Deploy an agent}.
+Agenta lze vytvořit stiskem tlačítka \textit{deploy an agent}.
 Po stisknutí je uživateli představen formulář pro bližší specifikaci agenta, viz obrázek~\ref{fig:agent_creation}.
 V tomto formuláři je nutné nastavit platformu a kontaktní adresu Caldera serveru.
-Vhodné je také změnit \textit{implant\_name}, což je název, pod kterým bude agent vidět na infikovaném stroji.
+Vhodné je také změnit \textit{implant\_name}, což je název, pod nímž bude agent vidět na infikovaném stroji.
 V rámci testování bylo použito jasně rozeznatelné jméno \textbf{caldera}.
 Pro složitější testování, kde se snaží útočníci red teamu vyhnout detekci členy obrany v blue teamu by mohlo být zvoleno méně nápadné jméno, jako například \textbf{svchost}.
 Na obrázku jsou pak také vidět příkazy, které je nutné spustit na simulovaném napadeném zařízení pro instalaci a nastavení agenta.
-Existuje několik verzí příkazů, pro tuto práci jsou však aplikovatelné příkazu na obrázku~\ref{fig:agent_creation}, které jsou určené pro windows powershell.
+Existuje několik verzí příkazů, pro tuto práci jsou však aplikovatelné příkazy na obrázku~\ref{fig:agent_creation}, které jsou určené pro windows powershell.
 Po provedení příkazů agent sám naváže komunikaci se serverem Caldera.
 Agent navíc pravidelně ohlašuje svoje informace serveru, a to až do doby svého ukončení.
 Caldera naopak o agentovi vede záznam a může mu posílat instrukce.
@@ -1397,53 +1395,50 @@ Za povšimnutí stojí všechny údaje, které jsou s agentem spojené.
 Základní údaje jsou \textit{id} a \textit{host}, které agenta jednoznačně identifikují.
 \textit{Platform} identifikuje, na jaké platformě je agent spuštěn.
 Nejdůležitější údaje jsou však \textit{group} a \textit{privilege}.
-\textit{Group} označuje pracovní skupino, do které agent patří.
+\textit{Group} označuje pracovní skupinu, do níž agent patří.
 To je důležité pro spouštění operací, kde právě pomocí \textit{group} určujeme, kteří agenti mají operace vykonávat.
 \textit{Privilege} určuje, jaká práva má agent na daném zařízení.
 \textbf{User} znamená, že tento agent byl spuštěn běžným uživatelem a zdědil tak jeho základní práva.
 Pokud by agenta spustil privilegovaný uživatel, v této kolonce by bylo označení \textbf{elevated}, jak je možné vidět na pozdějším obrázku~\ref{fig:dead_agent}.
-Je také možné identifikovat, jak s caldera serverem agent komunikuje pomocí atributu \textit{contact}.
-Poslední důležité údaje vypovídají o stavu agenta[\textit{status}] a informací o čase posledního kontaktu agenta se serverem[\textit{last seen}].
+Je také možné identifikovat, jak s Caldera serverem agent komunikuje pomocí atributu \textit{contact}.
+Poslední důležité údaje vypovídají o stavu agenta [\textit{status}] a informací o čase posledního kontaktu agenta se serverem [\textit{last seen}].
 Samozřejmě existuje i podrobnější výpis přímo po rozkliknutí agenta, viz obrázek~\ref{fig:dead_agent}.
 Za povšimnutí zde stojí informace, které mohou být využitelné pro útočníka.
-Jsou jimi \textit{Host IP addresses, Architecture} a primárně \textit{Executors}.
-Důležité je tlačítko \textit{Kill agent}, kterým se zastaví funkčnost agenta.
-Černý křížek na hlavní stránce agentů, viz obrázek~\ref{fig:caldera_agents}, nezpůsobí ukončení agenta ale pouze ho odstraní se seznamu agentů.
+Jsou jimi \textit{host IP addresses, architecture} a primárně \textit{executors}.
+Důležité je tlačítko \textit{kill agent}, kterým se zastaví funkčnost agenta.
+Černý křížek na hlavní stránce agentů, viz obrázek~\ref{fig:caldera_agents}, nezpůsobí ukončení agenta, ale pouze ho odstraní ze seznamu agentů.
 Stále fungující agent se proto v tomto seznamu znovu objeví při jeho další komunikaci se serverem.
 
 \clfig{lab/dead_agent}{\linewidth}{Detaily specifického agenta}{Vlastní}{fig:dead_agent}
 
-\nlparagraph{Výběr chování při útoku - Adversary}
+\nlparagraph{Výběr chování při útoku - \textit{Adversary}}
 Dalším důležitým krokem je příprava chování útočníka.
-To je v Caldeře simulované pomocí takzvaných \textit{Adversaries}.
-\textit{Adversary} je simulovaný útočník, kterému vybereme techniky, které bude v operaci provádět.
+To je v Caldeře simulované pomocí takzvaných \textit{adversaries}.
+\textit{Adversary} je simulovaný útočník, kterému je možné vybrat techniky, které bude v operaci provádět.
 To je možné vidět na obrázku~\ref{fig:adversary_show_techniques}.
-Jak již bylo zmíněno, Caldera je založena na Frameworku Mitre ARR\&CK\@.
-Proto je možno u \textit{adversaries} vybírat techniky podle taktik z Mitre ARR\&CK\@.
+Jak již bylo zmíněno, Caldera je založena na frameworku Mitre ATT\&CK, proto je možno u \textit{adversaries} vybírat techniky podle taktik z Mitre ATT\&CK\@.
 
 %todo remake with create profile button and proper crop
 \clfig{lab/adversary_show_techniques}{\linewidth}{Ukázka technik u simulovaného útočníka}{Vlastní}{fig:adversary_show_techniques}
 
-\noindent
+\noindent %todo play with no indets at end
 Nový \textit{adversary} je vytvořen pomocí tlačítka \textit{new profile}.
 To otevře formulář pro vyplnění názvu a popisu tohoto profilu útočníka.
 Poté je nutné přidat techniky, které bude tento útočník provádět.
-To lze udělat 2 způsoby.
-Prvním je přidání  technik jiného profilu pomocí tlačítka \textit{Add adversary}.
+To lze udělat dvěma způsoby.
+Prvním je přidání  technik jiného profilu pomocí tlačítka \textit{add adversary}.
 Samozřejmostí je výběr technik, které lze z jiného profilu přidat.
-Pokud tedy existuje profil, který z velké části odpovídá potřebám testování, toto je nejrychlejší volba jak bez úpravy původního profilu lze vytvořit nový.
-V Caldeře existuje mnoho předpřipravených profilů útočníka.
-Příkladem může být worm, viz obrázek~\ref{fig:worm3}, který dokonce existuje v několika podobách s lehkými úpravami.
-Je tak na zvážení, zda vytvářet nového útočníka zcela od začátku nebo využít jednu z předpřipravených šablon a na ni dále stavět.
+Pokud tedy existuje profil z velké části odpovídající potřebám testování, toto je nejrychlejší volba, jak bez úpravy původního profilu lze vytvořit nový.
+V Caldeře existuje mnoho před-připravených profilů útočníka, příkladem může být worm, viz obrázek~\ref{fig:worm3}, který dokonce existuje v několika podobách s minimálními úpravami.
+Je tak na zvážení, zda vytvářet nového útočníka zcela od začátku nebo využít jednu z před-připravených šablon a na ní dále stavět.
 
 \clfig{lab/worm3}{\linewidth}{Příklad předpřipraveného adversary}{Vlastní}{fig:worm3}
 
-
-Druhým způsobem přidávání technik je tlačítko add ability, kde přidáváme jednotlivé požadované techniky.
-Jak je vidět na obrázku~\ref{fig:ability_selection}, vyhledávání technik lze provádět 2 způsoby.
+Druhým způsobem přidávání technik je tlačítko \textit{add ability}, kde přidáváme jednotlivé požadované techniky.
+Jak je vidět na obrázku~\ref{fig:ability_selection}, vyhledávání technik lze provádět dvěma způsoby.
 Pokud je známo jméno techniky nebo alespoň přibližné zaměření, lze použít přímé vyhledávání technik.
 Naopak pokud je vyžadováno využití určité taktiky, je možné vyhledávat selektivně podle nich.
-Volba taktiky pak vede k volbě technik, které vedou na volbu sub-technik nebo specifických provedení dané techniky.
+Volba taktiky pak vede k volbě technik vedoucím na volbu sub-technik nebo specifických provedení dané techniky.
 Tímto způsobem může dále upravovat chování útočníka na bázi jednotlivých technik.
 
 %todo make picture for add ability search
@@ -1451,10 +1446,10 @@ Tímto způsobem může dále upravovat chování útočníka na bázi jednotliv
 %\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
 
 \nlparagraph{Adversary pro scénář 2}
-Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byli pojmenováni \textit{Lab02} a \textit{Lab02v2}.
+Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byly pojmenovány \textit{Lab02} a \textit{Lab02v2}.
 Pro přehlednost budou i operace pojmenované podle \textit{adversary}, který v nich figuruje.
-Operace \textit{Lab02} je zaměřena na rozsáhlé testování testování.
-Předpokládáme útočníka, který nezná vnitřní prostředí a jeho cílem je získat co nejvíce informací a vyzkoušet základní taktiky, které jsou pro něj přínosné.
+Operace \textit{Lab02} je zaměřena na rozsáhlé testování.
+Předpokládáme útočníka, který nezná vnitřní prostředí a jeho cílem je získat co nejvíce informací a vyzkoušet základní a pro útočníka přínosné taktiky.
 \textit{Adversary} pro tuto operaci obsahuje 74 technik.
 Útočník v operaci \textit{Lab02v2} využije znalosti z předchozí operace a pokusí se dosáhnout specifických cílů.
 V tomto případě se jedná specificky o získání privilegií administrátora a vypnutí monitorování.
@@ -1465,107 +1460,104 @@ Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto zámě
 %todo check? dunno
 %\clfig{lab/operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:operation}
 Finálním krokem testování je spuštění operace.
-K tomuto účelu v Caldeře slouží záložka \textit{Operations}, viz obrázek~\ref{fig:operation}.
-Zde je možné spouštět nebo vytvářet nové operace.
-Zároveň tato záložka slouží pro správu operací, které již byly uskutečněny.
+K tomuto účelu v Caldeře slouží záložka \textit{operations}, viz obrázek~\ref{fig:operation}.
+Zde je možné spouštět nebo vytvářet nové operace, ale zároveň tato záložka slouží pro správu již uskutečněných operací.
 Zachovávají se zde informace o průběhu operace a případných výstupech z daných technik.
-Jelikož již bylo připraveno vše pro správnou činnost operace, je načase kliknout na tlačítko \textit{Create operation}.
-Tím je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:operation_creation}.
+Jelikož již bylo připraveno vše pro správnou činnost operace, je na čase kliknout na tlačítko \textit{create operation}, čímž je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:operation_creation}.
 Je zde několik důležitých nastavení.
 Jméno operace a nastavení požadovaného \textit{adversary} je přímočaré.
-\textit{Fact source} je zajímavější.
-Je to předpřipravené poznatky, například o testovaném zařízení, které lze přímo zadat nebo použít zjištění z předchozích operací.
+\textit{Fact source} je zajímavější, jedná se o před-připravené poznatky, například o testovaném zařízení, které lze přímo zadat nebo použít zjištěné z předchozích operací.
 V rozšířené sekci se pak nachází složitější nastavení.
-Jsou zde nastavení pro cílovou skupinu[\textit{Group}], tedy určení, kteří agenti mají provádět úkony
+Jsou zde nastavení pro cílovou skupinu[\textit{group}], tedy určení, kteří agenti mají provádět úkony útoku zadané v \textit{adversary}.
 \textit{Planner} určuje, jak budou operace prováděny.
-Základním je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází u \textit{adversary}.
+Základním je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází v \textit{adversary}.
 Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitre_caldera_docs}.
-V neposlední řadě se zne nachází přepínače pro řízení chodu operací a možnosti zakódovaní a krytí operace.
+V neposlední řadě se zde nachází přepínače pro řízení chodu operací a možnosti zakódovaní a skrytí operace.
 %todo crop
 \clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:operation_creation}
 
 Pro účely této práce jsou všechny operace nastaveny na automatické spuštění při vytvoření a také automatické uzavření a kolekci dat.
-Automatické spuštění je zřejmé, již máme připraveny všechny stavební bloky pro vykonání operace a tak není třeba nic dalšího připravovat a čekat.
+Automatické spuštění je zřejmé, již máme připraveny všechny stavební bloky pro vykonání operace, a tak není třeba nic dalšího připravovat a čekat.
 Automatické uzavření a kolekce vyplývá z faktu, že se jedná o kompletní operace, nechceme v běhu operace přidávat další kroky ani přistupovat k napadenému zařízení na přímo a vykonávat vlastní příkazy.
-V rámci automatizace je tedy výhodnější zvolit automatické uzavření a kolekci, protože není nutné hlídat zda jsme již provedly všechny požadované kroky operace a je nutné zadat příkaz ke kolekci.
+V rámci automatizace je tedy výhodnější zvolit možnosti automatického uzavření a kolekce dat, protože není nutné hlídat, zda se již provedly všechny požadované kroky operace a je nutné zadat příkaz pro uzavření operace.
 Z pohledu efektivity to také uvolňuje čas testovatele, který může během průběhu jedné operace vytvářet jinou nebo zkoumat data z jiné operace.
-Pro referenci, operace může běžet i několik hodin a pokud tedy není dozor potřeba, je dobré se mu vyhnout.
+Pro referenci, operace může běžet i několik hodin, a pokud tedy není dozor nutný, je dobré se mu vyhnout.
 
 \nlparagraph{Lab02}
 První z připravených operací má název \textit{Lab02}.
 Jak již bylo zmíněno, cílem je simulovat prvotní kroky útočníka v nově infikovaném systému.
 Útočník má v tuto chvíli o systému pouze minimální informace.
 Proto lze předpokládat, že se pokusí co nejvíce informací získat.
-Důvod, proč byla vybrána pro první scénář tato situace je vyzkoušení možností samotné Caldery.
+Důvod, proč byla vybrána pro první scénář tato situace, je vyzkoušení možností samotné Caldery.
 Z tohoto důvodu operace pro \textit{lab02} provádí 74 technik zaměřených na zisk dat, která by běžného útočníka zajímala.
-Cílem je vyhodnotit, která data je pro útočníka jednoduché získat.
+Cílem je vyhodnotit, jaká data je pro útočníka jednoduché získat a kde je naopak jeho snaha zastavena.
 Výhodou pro testovatele je zde barevné značení technik Caldery, jak je vidět na obrázku~\ref{fig:lab02}.
 Rozlišuje 3 barevné stavy techniky, červená barva pro neúspěch, zelená pro úspěch a žlutá pro právě provádějící operaci.
-Pozor je však nutné dávat na fakt, že úspěšná operace nemusí vždy vracet očekávaná data.
+Je však nutné dávat pozor na fakt, že úspěšná operace nemusí vždy vracet očekávaná data.
 Také definice úspěšnosti může být u některých technik pro nezkušeného operátora Caldery zvláštní.
-Například se stalo, že caldera vyhodnotila techniko kontaktování \ac{DNS} jako úspěšnou, i když celá infrastruktura \ac{DNS} nevyužívá.
+Například se stalo, že Caldera vyhodnotila techniku o kontaktování \ac{DNS} jako úspěšnou, i když celá infrastruktura \ac{DNS} nevyužívá.
 Tyto případy jsou však ojedinělé a není problém je nalézt, pokud nastanou.
 
 \clfig{lab/lab02}{\linewidth}{Ukázka probíhající operace}{Vlastní}{fig:lab02}
 
-Je jasné, že existují úrovně dat co se týče složitosti zjištění, složitosti pochopení a nebo důležitosti pro útočníka.
+Je jasné, že pro útočníka existují úrovně dat, jenž jsou řazené podle složitosti zjištění, složitosti pochopení nebo důležitosti.
 Proto i v simulované operaci můžeme vidět, že útočník se nejdříve zaměřil na snadno zjistitelná data s nízkým rizikem odhalení.
 Příkladem je jméno uživatele a jeho doména, viz obrázek~\ref{fig:username_and_domain}.
 %todo crop
 \clfig{lab/username_and_domain}{\linewidth}{Výstup taktiky pro zjištění uživatele a jemu příslušné domény}{Vlastní}{fig:username_and_domain}
 
 Dalším krokem může být zjištění všech účtů na daném zařízení.
-Tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, zde existuje metodologie vytváření jmen ve velkých organizacích.
+Tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, ale i jestli v organizaci existuje striktní metodologie vytváření přihlašovacích jmen.
 Třešničkou na pomyslném dortu jsou účty typu \textit{Admin} nebo \textit{Guest}, kde velmi často dochází k porušení praktik dobrých hesel.
-Není neobvyklé, že tyto účtu mají hesla stejná jako jméno, nebo v případě účtů admin je stejné heslo pro všechna zařízení.
-Kompromitace jediného admin účtu by tak kompromitovala všechna zařízení s tímto účtem.
+Není neobvyklé, že tyto účty mají hesla stejná jako jméno, nebo v případě účtů Admin je stejné heslo pro všechna zařízení.
+Kompromitace jediného Admin účtu by tak kompromitovala všechna zařízení s tímto účtem.
 Výstup z techniky pro zjištění bude vypadat jako výstup na obrázku~\ref{find_all_accounts}.
 
 \clfig{lab/find_all_accounts}{\linewidth}{Výstup taktiky pro zjištění všech uživatelských účtů}{Vlastní}{fig:find_all_accounts}
 
 Také je možné zjistit přesné informace o operačním systému, viz obrázek~\ref{data_about_system_and_machine}.
-Také data o samotné zařízení jsou pro útočníka zajímavá v kontextu hledání využitelných zranitelností.
+Tato data o zařízení jsou pro útočníka zajímavá v kontextu hledání využitelných zranitelností.
 Na obrázku je vidět \textit{OS Version}, tedy přesná verze operačního systému.
-Podle tohoto údaje lze z otevřených databází jednoduše vyhledat nejen o kterou aktualizaci se jedná ale také zda existují novější verze.
-Největším nebezpečím jsou však databáze slabin, které existují nejen na dark vebu ale i na klasickém internetu.
-Stačí velmi jednoduše z databáze verzí získat oficiální označení verze, pro tento případ se jedná o 21H2\cite{win_versions}.
-S tímto kódem je pak možné z některé z mnoha přístupných databází nalézt příslušné kódy slabin slabin, viz obrázek~\ref{fig:21h2_vulnerabilities}
-V tuto chvíli není nic jednodušší než nalézt aplikovatelnou slabinu a využít ji.
+Podle tohoto údaje lze z otevřených databází jednoduše vyhledat nejen o kterou aktualizaci se jedná, ale také zda existují novější verze.
+Největším nebezpečím jsou však databáze slabin, existující nejen na dark webu, ale i na klasickém internetu.
+Stačí velmi jednoduše z databáze verzí získat oficiální označení verze, pro tento scénář se jedná o 21H2\cite{win_versions}.
+S tímto kódem je pak možné z některé z mnoha přístupných databází nalézt příslušné kódy zranitelností, viz obrázek~\ref{fig:21h2_vulnerabilities}.
+V tuto chvíli není nic jednoduššího než nalézt aplikovatelnou zranitelnost a využít ji.
 
 ~\clfig{lab/data_about_system_and_machine}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{Vlastní}{fig:data_about_system_and_machine}
 ~\clfig{21h2_vulnerabilities}{\linewidth}{Ukázka zjištění specifické verze operačního systému}{\cite{21h2_vulnerabilities}}{fig:21h2_vulnerabilities}
 
-Dalším důležitým poznáním z této operace je nejen zjištění přítomnosti firewallu a antiviru na testovaném zařízení ale dokonce i jejich identifikace.
-Výstupy zkoumající tyto fakty je možné vidět na obrázcích~\ref{fig:antivirus_discovery,fig:firewall_discovery}.
-Stejně jako u operačních systémů i u zabezpečení existují slabiny a způsoby obcházení jejich činnosti.
+Dalším důležitým poznáním z této operace je nejen zjištění přítomnosti firewallu a antiviru na testovaném zařízení, ale dokonce i jejich identifikace.
+Výstupy zkoumající tyto fakty je možné vidět na obrázcích~\ref{fig:antivirus_discovery} a~\ref{fig:firewall_discovery}.
+Stejně jako u operačních systémů, i u zabezpečení existují zranitelnosti a způsoby obcházení jejich činnosti.
 Znalost ochranných prostředků proto útočníkovi nabízí podstatnou výhodu.
 
 \clfig{lab/antivirus_discovery}{\linewidth}{Nalezené informace o antiviry na testovaném zařízení}{Vlastní}{fig:antivirus_discovery}
 \clfig{lab/firewall_discovery}{\linewidth}{Nalezené informace o firewall na testovaném zařízení}{Vlastní}{fig:firewall_discovery}
 
 V neposlední řadě se útočník může pokusit získat data z prohlížeče.
-Informace na kterém se v tomto kontextu útočník zaměřuje jsou cookies, záložky, historie prohlížení nebo uložená hesla.
+Informace, na které se v tomto kontextu útočník zaměřuje, jsou cookies, záložky, historie prohlížení nebo uložená hesla.
 Oproti předchozím případům se zde primárně nejedná o data, která může útočník použít k dalším útokům na dané zařízení.
-Stejně se ale jedná o cenná data, které může v mnoha případech útočník prodat nebo použít k jiným typům útoků.
+Stejně se ale jedná o cenná data, která může v mnoha případech útočník prodat nebo použít k jiným typům útoků.
 
 \nlparagraph{Lab02v2}
 Tato operace a adversary využívají již zjištěných dat k upřesnění specifických cílů.
 Simulujeme zde situaci, kdy útočník získal základní data o napadeném zařízení.
-Jeho cílem je ted nejen získat vyšší práva nad tímto zařízením.
-Prvním krokem je tak zlepšení šancí na dosažení těchto cílů.
-Za tímto účelem se simulovaný útočník pokusí vypnout antivirová opatření, na která narazil v předchozí operaci, viz obrázek~\ref{fig:antivirus_discovery}.
-To však není zcela úspěšné, jak již bylo psáno nacházíme se na nové verzi Windows, která je adekvátně aktualizovaná.
+Jeho cílem je teď nejen získat vyšší práva nad tímto zařízením ale také získat informace vhodné pro zajištění dlouhodobého přístupu k zařízení.
+Prvním krokem je zlepšení šancí na dosažení těchto cílů, za tímto účelem se simulovaný útočník pokusí vypnout antivirová opatření, na než narazil v předchozí operaci, viz obrázek~\ref{fig:antivirus_discovery}.
+To však není zcela úspěšné, jak již bylo psáno, nacházíme se na novější verzi operačního systému Windows, která je adekvátně aktualizovaná.
 Nemůže tak být překvapením, že se tato taktika nezdařila.
-Důležité je však poznamenat, že v systému Windows ale také nevyvolala v tomto kroku operace žádné hlášení.
-Hlášení nastala, až kdy se simulovaný útočník pokoušel získat administrátorská práva.
+Důležité je však poznamenat, že tento krok operace v systému Windows nevyvolal žádné hlášení.
+Hlášení nastala až ve chvíli, kdy se simulovaný útočník pokoušel získat administrátorská práva.
 V rámci testování se tato práva snažil získat všemi možnostmi, které Caldera nabízí.
-Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a~\ref{fig:specific_threat}.%todo check spaces
+Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a~\ref{fig:specific_threat}.
 
 %todo remake, show some antivirus disablin and then this, its in the other operation
 ~\clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
 ~\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
 ~\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
 
+%todo here
 Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
 Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace o kterých je nutné uživatele informovat.
 Již při vytváření operace bylo jasné, že šance úspěchu předchozích operací je malá.
@@ -1609,7 +1601,7 @@ Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění
 %todo add picture with succesfull technique
 
 
-\subsubsection{Scénář 3 - discovery, impact a worm}
+\subsubsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
 Zaměřením tohoto scénáře je otestování možností šíření útočníkova dosahu v infrastruktuře a impact jeho činnosti.
 Scénář 2 byl primárně zaměřen na jedno zařízení a zisk informací, scénář 3 je zaměřen na infrastrukturu a dopad na uživatele a společnost.
 Předpokladem je, že útočník již zjistil minimální potřebná data ze scénáře 2, již ho nezajímá být tak skrytý ale naopak chce napadenému cíli uškodit.
