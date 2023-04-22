@@ -1047,7 +1047,7 @@ Zdá se to být nejlepší způsob, jak shromažďovat účinné informace o pou
 V neposlední řadě ATT\&CK také sleduje původ útoků, využitý software a zařazuje útoky do předpokládaných kampaní.
 Tyto záložky jsou na hlavní stránce, specificky se jedná o \textit{Groups, Software} a \textit{Campaigns}.
 
-\nlparagraph{Groups - skupiny}%todo here
+\nlparagraph{Groups - skupiny}
 Skupiny označují shluky útočníků, kteří operují se stejným cílem, je proto logické se domnívat, že jsou mezi sebou v kontaktu.
 Analytici sledují skupiny pomocí různých  metodologií a termínů.
 Je tedy možné, že různé skupiny analytiků nazývají jistou skupinu různými jmény, proto jsou u skupin zaznamenávány i alternativní názvy.
@@ -1095,7 +1095,7 @@ Pokud však potřebujeme testovat Linux, je jasné že nemůžeme použít nást
 Žádný z frameworků také nepokrývá celou MITRE ATT\&CK matici.
 Proto lze předpokládat použití více nástrojů právě podle okruhu testování, na který je testování zaměřeno.
 
-\subsubsection{Red Canary Atomic Red}%todo here
+\subsubsection{Red Canary Atomic Red}
 Ze všech uváděných příkladů je \textit{Atomic Red} nejvíce přívětivý rychlému začátku.
 Pro jeho funkčnost není potřeba nic stahovat ani nastavovat, lze ho jednoduše použít z příkazové řádky\cite{redcanary_atomic_red}.
 Další odlišností je jeho ovládání.
@@ -1179,7 +1179,7 @@ Dále je ukázáno a vysvětleno, jak tyto nástroje používat k docílení tes
 Výsledná práce by tedy měla stačit k tomu, aby i neznalý uživatel byl schopen nastavit testovací prostředí a otestovat základní vlastnosti své infrastruktury nebo zařízení.
 
 
-\subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}%todo here
+\subsection{Popis testovacího prostředí}\label{subsec:popis-testovaciho-prostredi}
 Jako testovací prostředí bylo zvoleno Kali Linux, které bude spouštěno v Oracle VM VirtualBox.
 Kali Linux je operační systém založený na Debianu, jenž je od základu navržen pro testování zabezpečení a penetrační testování.
 Jedná se o možná nejznámější a nejrozšířenější distribuci Linuxu s tímto zaměřením, oblíbeným mezi profesionály i nadšenci.
@@ -1345,7 +1345,7 @@ Například bylo možné nalézt osobní i pracovní emailovou adresu (vhodné p
 Třešničkou na pomyslném dortu však byla anonymizovaná smlouva podepsaná daným administrátorem.
 To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah v plaintextové formě.
 
-\nlparagraph{Censys}%todo here
+\nlparagraph{Censys}
 Pro kontrolu a doplnění informací bylo využito platformy Censys.
 Tato platforma je schopná po zadání doménového jména nebo IP adresy serveru najít informace o službách a portech, na kterých služba komunikuje.
 Je jasné, že tato platforma nemůže nahradit plnohodnotný nástroj jako Nmap, je však dostupná online a není nutné instalovat další nástroje.
@@ -1595,11 +1595,11 @@ Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\r
 ~\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
 ~\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
 
-%todo here
+
 Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
-Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace o kterých je nutné uživatele informovat.
+Je tedy zřejmé, že testování systému opravu provádí nebezpečné operace, o nichž je nutné uživatele informovat.
 Již při vytváření operace bylo jasné, že šance úspěchu předchozích operací je malá.
-Proto jejich neúspěch není překvapením ale očekávaným a správným výsledkem.
+Proto jejich neúspěch není překvapením, ale očekávaným a správným výsledkem.
 Naopak by bylo nemilým překvapením, kdyby se nám takto jednoduchým způsobem povedlo administrátorská práva získat.
 Poslední částí této operace jsou pokusy o získání dalších důležitých dat, která by útočníkovi mohla pomoci získat administrátorský přístup.
 Příkladem je například politika hesel, která existuje na daném zařízení.
@@ -1614,12 +1614,12 @@ Jak je vidět na obrázku~\ref{fig:show_user_processes}, pro útočníka je mož
 To je důležité hned z několika důvodů.
 Znalost procesů dovoluje útočníkovi napodobit jména často používaných procesů a tak je před uživatelem chovat.
 Ještě důležitější je pro útočníka tato znalost z důvodu hledání slabin.
-Znalost procesů omezuji množinu programů, které musí útočník zkontrolovat pro využitelné slabiny.
-Navíc nemusí řešit dodatečnou instalaci nástrojů nebo hledat slabiny přímo v operačním systému, pokud může využít slabin již nainstalovaných programů se stejným výsledkem.
+Znalost procesů omezuje množinu programů, které musí útočník zkontrolovat pro využitelné zranitelnosti.
+Navíc nemusí řešit dodatečnou instalaci nástrojů nebo hledat zranitelnosti přímo v operačním systému, pokud může využít slabin již nainstalovaných programů se stejným výsledkem.
 Tato možnost není uplatnitelná vždy, ale je dobré mít ji na paměti.
-Posledním důvodem, proč procesu uživatele útočníka zajímají jsou data, která z těchto procesů může útočník vytěžit.
+Posledním důvodem, proč procesy uživatele útočníka zajímají, jsou data, která z těchto procesů může útočník vytěžit.
 Pokud narazí na proces, který ho zajímá, může na něj zaměřit další fáze útoku.
-Například už jen zjištění, který prohlížeč uživatel preferuje zjednodušuje následující útoky na data.
+Například už jen zjištění, jaký prohlížeč uživatel preferuje, zjednodušuje následující útoky na data.
 Nebo fakt, že uživatel využívá nějaké cloudové uložiště, jak je například vidět na obrázku~\ref{fig:show_user_processes}.
 %todo crop
 \clfig{lab/show_user_processes}{\linewidth}{Ukázka všech procesů uživatele}{Vlastní}{fig:show_user_processes}
@@ -1627,43 +1627,41 @@ Nebo fakt, že uživatel využívá nějaké cloudové uložiště, jak je např
 
 \nlparagraph{Změny s privilegovaným uživatelem}
 %todo add more or pictures?
-V rámci zvědavosti byly stejné operace, tedy \textit{Lab02} a \textit{Lab02v2}, pouštěny na jiném zařízení v infrastruktuře tentokrát s privilegovaným přístupem.
+V rámci kompletnosti testování byly stejné operace, tedy \textit{Lab02} a \textit{Lab02v2}, pouštěny na jiném zařízení v infrastruktuře, tentokrát s privilegovaným přístupem.
 Získaná data byla až na pár operací stejná.
-To potvrzuje domněnku robustního systému, kde celkový stabilita a dostatečné zabezpečení v podobě antiviru odbouralo alespoň část hrozby.
+To potvrzuje domněnku robustního systému, kde celková stabilita a dostatečné zabezpečení v podobě antiviru odbouralo alespoň část hrozby.
 Zajímavá jsou však data z operace \textit{Lab02v2}.
-Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nejsou značné odchylky.
+Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nevznikly významné odchylky.
 \textit{Lab02v2} byl na získání vyšších uživatelských práv, což popravdě nedává s administrátorským účtem smysl.
-Zajímavé je, že se nám podařilo částečně vyřadit fungování antivirového programu.
-Další překvapivé zjištění také bylo, že místo selhání všech hrozeb pro zisk privilegií se jedna technika vydařila.
+Zajímavé je, že se podařilo částečně vyřadit fungování antivirového programu.
+Další překvapivé zjištění také nastalo, když se místo selhání všech hrozeb pro zisk privilegií jedna technika vydařila.
 Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění.
 %todo add picture with succesfull technique
 
 
 \subsubsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
-Zaměřením tohoto scénáře je otestování možností šíření útočníkova dosahu v infrastruktuře a impact jeho činnosti.
+Zaměřením tohoto scénáře je otestování možností šíření útočníkova dosahu v infrastruktuře a dopad jeho činnosti.
 Scénář 2 byl primárně zaměřen na jedno zařízení a zisk informací, scénář 3 je zaměřen na infrastrukturu a dopad na uživatele a společnost.
-Předpokladem je, že útočník již zjistil minimální potřebná data ze scénáře 2, již ho nezajímá být tak skrytý ale naopak chce napadenému cíli uškodit.
-V rámci možností Caldery proto budou simulovány možné techniky, které jsou v souladu s cíly útočníka.
+Předpokladem je, že útočník již zjistil minimální potřebná data ze scénáře 2, již ho nezajímá být tak skrytý, ale naopak chce napadenému cíli uškodit.
+V rámci možností Caldery proto budou simulovány možné techniky, které jsou v souladu s cíli útočníka.
 
 \nlparagraph{Lab03}
-Operace na šíření po infrastruktuře má název \textit{Lab03}.
-Jako \textit{adversary} je využit základní útočník \textbf{Worm}.
+Operace na šíření po infrastruktuře má název \textit{Lab03}, jako \textit{adversary} je využit základní útočník \textbf{Worm}.
 Tento útočník v Caldeře existuje hned v několika verzích s malými rozdíly, zajímavou myšlenkou proto bylo použít několik verzí a porovnat jejich výsledky.
 Specificky byla tato operace testována s útočníky \textbf{Worm, Worm2} a \textbf{Worm 3}.
 Pro ukázku je možné techniky útočníka \textbf{Worm 3} vidět na obrázku~\ref{fig:worm3}.
 Při testování vybraných útočníků typu worm však nebyly rozeznatelné rozdíly v jejich účinnosti.
 Proto bude v dalším textu popisována pouze generická operace s útočníkem worm zahrnující všechny specifické iterace.
 Jak je z obrázku~\ref{fig:worm3} jasné, cílem útočníka worm je rozšířit se v infrastruktuře.
-Prvním krokem tohoto útočníka je proto zjištění dalším připojených zařízení.
+Prvním krokem tohoto útočníka je proto zjištění dalších připojených zařízení.
 Výsledek tohoto kroku je vidět na obrázku~\ref{fig:show_IP_in_VLAN}.
 
 \clfig{lab/show_IP_in_VLAN}{\linewidth}{Ukázka nalezených IP adres}{Vlastní}{fig:show_IP_in_VLAN}
 
-Je zřejmé, že útočník tímto krokem nenalezl všechna zařízení v sítě ale pouze zařízení v jeho \ac{VLAN}.
+Je zřejmé, že útočník tímto krokem nenalezl všechna zařízení v síti, ale pouze zařízení v jeho \ac{VLAN}.
 Tento fakt potvrzuje nutnost dobré segmentace infrastruktury za cílem její obrany.
-Dalším krokem útočníka je provézt \textit{Reverse IP nslookup} pro všechny nalezené IP adresy.
-Tento krok však selže, protože v síti není využívané \ac{DNS}.
-Z důvodu velikosti a bezpečnosti implementace nedávala smysl.
+Dalším krokem útočníka je provézt \textit{reverse IP nslookup} pro všechny nalezené IP adresy.
+Tento krok však selže, protože v síti není využívané \ac{DNS}, implementace totiž z důvodu velikosti a bezpečnosti nedávala smysl.
 Překvapivé je, že neexistence \ac{DNS} nejen že zastavila další šíření útočníka worm, ale navíc byly techniky provádějící tuto operaci chybně označeny za úspěšné.
 Tento fakt je možný vidět na obrázku~\ref{fig:nslookup_fail}.
 %todo create this one
@@ -1673,18 +1671,17 @@ Z výsledků je jasné, že testovaný infrastruktura je vůči tomuto útoku ve
 Nejen že správně nastavená infrastruktura omezila zisk informací útočníka, ale také kompletně zamezila jeho dalšímu šíření.
 
 \nlparagraph{Lab03v2}
-Druhá část scénáře 3 je zaměřena na testování taktiky Impact.
+Druhá část scénáře 3 je zaměřena na testování taktiky \textit{Impact}, jenž je zaměřena na manipulaci, přerušení nebo destrukci systémů a dat.
 V Caldeře byl proto vytvořen \textit{adversary}, který obsahuje techniky s tímto zaměřením.
 Průběh operace s tímto útočníkem je vidět na obrázku~\ref{fig:operation_ransom}.
-V první části je simulován útok ransomware.
-To je nejčastější a nejzávažnější typ hrozby, proto dává smysl zjistit, zda lze pomocí Caldery testovat.
+V první části je simulován ransomwarový útok, protože to je nejčastější a nejzávažnější typ hrozby.
+Dává proto smysl zjistit, zda je možné pomocí Caldery testovat bezpečnost zařízení vůči tomuto útoku.
 Jak je vidět z obrázku~\ref{fig:operation_ransom}, úspěšně se povedlo na ploše uživateli vytvořit textový soubor \textit{ransomware note}.
 Naštěstí pokus o zakódování dat byl obranou systému úspěšně zastaven.
 Také přepisování souborů bylo zastaveno.
-Naopak práce se \textit{staging directory} byla úspěšná.
-Povedlo se nejen vytvořil, ale při ukončování operace po sobě i smazat tento adresář.
-Je tedy nutné podotknout, že pokud i volně dostupný testovací framework je chopen provést tyto operace, je na zvážení, co vše je schopen udělat specifický software zaměřeným přímo pro tyto úkony.
-Takového software je hned řada, část nelegální část legální.
+Naopak práce se \textit{staging directory} byla úspěšná, povedlo se nejen vytvořit, ale při ukončování operace po sobě i smazat, tento adresář.
+Je tedy nutné podotknout, že pokud je i volně dostupný testovací framework chopen provést tyto operace, je na zvážení, co vše je schopen udělat specifický software zaměřený přímo pro tyto úkony.
+Takových softwarů je hned řada, velká část je samozřejmě nelegální, existují však i legálně dostupné softwary.
 Možná nejznámějším příkladem je \textit{Metasploit}\cite{metasploit}.
 
 \clfig{lab/operation_ransom}{\linewidth}{Ukázka operace pro Lab03v2}{Vlastní}{fig:operation_ransom}
