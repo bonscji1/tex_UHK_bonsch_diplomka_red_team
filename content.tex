@@ -1170,7 +1170,7 @@ Caldera dovoluje nastavení autonomních red-team nebo blue-team operací, a to 
 Existuje také možnost manuálních red-team operací, hlavně v případech nahrazování a testování pomocí vlastních nástrojů.\cite{mitre_caldera_docs}
 
 
-\section{Praktická část}\label{sec:prakticka-cast}
+\section{Příprava praktické části práce}\label{sec:prakticka-cast}
 Praktická část této práce je zaměřená na zjišťování možností testování.
 Cílem je vytvořit jednoduché a srozumitelné testovací prostředí a návod, jak provádět základní testování taktik a technik MITRE ATT\&CK\@.
 Za tímto účelem jsou představeny vybrané testovací nástroje založené na MITRE ATT\&CK\@ nebo s ním kompatibilní.
@@ -1200,7 +1200,7 @@ S tímto rozhodnutím se však váže i menší problém - Kali nabízí na svý
 Kali Purple je v době psaní tohoto textu dostupná pouze v podobě klasického instalačního \textit{image}.
 Prvotní příprava je proto o instalační krok ztížena, to však není zásadní problém.
 
-\nlparagraph{Caldera}
+\subsubsection{Caldera}
 Po přípravě operačního systému ve virtuálním prostředí je čas nainstalovat nástroj Mitre Caldera.
 Při samotné instalaci Caldery však nastal další problém, nejnovější verze Caldery v době psaní je 4.1.0, která vyšla 19. 9. 2022 a v době testování tato verze Caldery nejde na nové verzi Kali Purple zkompilovat.
 Tento fakt je vidět na obrázku~\ref{fig:caldera_error}.
@@ -1248,7 +1248,7 @@ I přihlášení pomocí základního uživatele \textbf{red} s heslem \textbf{a
 %todo remake
 \clfig{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení}{Vlastní}{fig:Caldera_running}
 
-\nlparagraph{Recon-ng}
+\subsubsection{Recon-ng}
 Zajímavým nástrojem, který byl připraven, ale nakonec nebyl využit, je \textit{Recon-ng}.
 Jedná se o open-source \ac{OSINT} nástroj v příkazové řádce.
 Díky volbě Kali Purple jako testovacího prostředí je jeho instalace opravdu snadná, stačí v příkazové řádce vykonat příkaz:
@@ -1269,7 +1269,7 @@ Také ovládání tohoto nástroje je zvláštní a po otestování bylo od pou�
 Recon-ng je totiž možné nahradit specializovanými nástroji a technikami, jako je například \textit{Nmap}.
 
 
-\nlparagraph{Nmap}
+\subsubsection{Nmap}
 Zde je důležitá právě volba Kali Purple jako testovacího prostředí.
 Nástroj Nmap je připraven již s instalací této distribuce a proto nebylo pro jeho používání nutné provádět žádné další kroky.
 
@@ -1299,7 +1299,7 @@ Důležitým bodem je hlavně možnost komunikovat se servery ve virtuálních p
 Proto bylo otestováno u každého zařízení postupně připojení sama na sebe, připojení na switch a router, připojení na ostatní prvky v daném \ac{VLAN} a nakonec komunikace s prvky v ostatních \ac{VLAN}.
 Po úspěšném otestování všech zařízení je možné považovat infrastrukturu za připravenou pro testování v labech.
 
-\subsection{Testované scénáře}\label{subsec:testovane-scenare}
+\section{Testované scénáře}\label{subsec:testovane-scenare}
 Cílem této kapitoly je představit práci s nástroji a simulovat útok na vybranou organizaci.
 Byly za tímto účelem vybrány hrozby a vytvořeny scénáře, které na sebe volně navazují a představují možné kroky útočníka.
 Je však nutné podotknout, že každý útok je jedinečný, a proto není možné vytvořit jeden testovací, který reprezentuje všechny možnosti.
@@ -1309,7 +1309,7 @@ Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění repr
 \clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
 
-\subsubsection{Scénář 1 - \textit{Recon}}
+\subsection{Scénář 1 - \textit{Recon}}
 První scénář je zaměřen na práci s informacemi.
 Jen velmi malé množství útoků probíhá bez prvotní fáze získávání informací a drtivá většina z nich je neúspěšná právě kvůli tomu, že útočníci podcenili tento první krok.
 Sběr informací lze provádět mnoha způsoby.
@@ -1325,7 +1325,7 @@ Je také možné říci, o jaký operační systém se jedná.
 Je však nežádoucí zmínit přesnou verzi systému nebo již zmíněnou IP adresu.
 
 
-\nlparagraph{Internet}
+\subsubsection{Internet}
 Je překvapivé, kolik dat o cíli může útočník získat čistě pomocí vyhledávání na internetu.
 Nejen, že cíl provozuje webové stránky, dokonce v porovnání s dalšími stránkami podobných organizací vyplynulo, že mají jiného jednotného správce a jsou pouze upravovány z jednotné šablony.
 Lze tedy očekávat, že problémy nalezené na jedné implementaci šablony budou platit pro všechny.
@@ -1345,7 +1345,7 @@ Například bylo možné nalézt osobní i pracovní emailovou adresu (vhodné p
 Třešničkou na pomyslném dortu však byla anonymizovaná smlouva podepsaná daným administrátorem.
 To by samo o sobě nebyl problém, pokud by nestačilo začernalý text označit a překopírovat do editoru, kde je již vidět ten stejný obsah v plaintextové formě.
 
-\nlparagraph{Censys}
+\subsubsection{Censys}
 Pro kontrolu a doplnění informací bylo využito platformy Censys.
 Tato platforma je schopná po zadání doménového jména nebo IP adresy serveru najít informace o službách a portech, na kterých služba komunikuje.
 Je jasné, že tato platforma nemůže nahradit plnohodnotný nástroj jako Nmap, je však dostupná online a není nutné instalovat další nástroje.
@@ -1358,7 +1358,7 @@ Lze tedy očekávat, že na portu 10443 je vzdálený přístup právě pro tyto
 Záznam o \textit{emailovém serveru} také obsahuje zajímavé informace, jako například reverzní \ac{DNS} záznam, operační systém serveru (FortiOS) a také port 10443, jehož prozkoumání vede do přihlašovacího formuláře společnosti fortinet.
 Jedná se tedy opět o možnost vzdáleného přístupu a u obou serverů je tedy možné získat přístup pomocí supply-chain útoků.
 
-\nlparagraph{Nmap}
+\subsubsection{Nmap}
 Nástroj pro aktivní skenování portů \textit{Nmap} je dlouhodobě využívaný nástroj mnoha útočníků i obránců, a tak je dobré vědět, co s ním jde o daném cíli zjistit.
 Pro zahájení skenování je nutné zadat potřebné vlastnosti skenu a definovat cíl.
 Cílem je samozřejmě již zmíněná organizace, Nmap přijímá informace o doméně, jedné nebo i skupině adres, což jsou informace nalezené v předchozím kroku.
@@ -1383,7 +1383,7 @@ Jedná se o totiž o starší verzi serveru Apache vydanou v roce 2017.
 Tato informace dává útočníkovi možnost nalézt zranitelnosti pro tuto specifickou verzi a je to tedy značným bezpečnostním rizikem.
 Posledním zajímavým poznatkem bylo nalezení portu 5060 s protokolem SIP a port 8443 se službou OpenVPN\@.
 
-\subsubsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}
+\subsection{Scénář 2 - \textit{Discovery} a \textit{Elevate-privileges}}
 Scénář 2 navazuje na scénář 1.
 Snahou je simulovat možné kroky útočníka poté, co provedl sběr informací o cíli.
 Cílem útočníka je tedy využít získaná data ve svůj prospěch a provést kompromitaci systému.
@@ -1407,7 +1407,7 @@ I nevydařený útok na testovacím prostředí má však šanci na skutečné i
 Tento fakt pouze svědčí o tom, že je nutné aktualizovat zařízení z důvodu optimální bezpečnosti.
 
 
-\nlparagraph{Příprava scénáře}
+\subsubsection{Příprava scénáře}
 Pro simulaci scénáře je nutné připravit agenta v testovacím nástroji Caldera.
 Tento agent pak simuluje kompromitování zařízení a provádí testování, které mu nastavíme.
 V Caldeře je možné sledovat a vytvářet agenty v záložce agents, viz obrázek~\ref{fig:caldera_agents}.
@@ -1494,7 +1494,7 @@ V tomto případě se jedná specificky o získání privilegií administrátora
 Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto záměru.
 
 
-\nlparagraph{Spuštění operace}
+\subsubsection{Spuštění operace}
 %todo check? dunno
 %\clfig{lab/operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:operation}
 Finálním krokem testování je spuštění operace.
@@ -1521,7 +1521,7 @@ V rámci automatizace je tedy výhodnější zvolit možnosti automatického uza
 Z pohledu efektivity to také uvolňuje čas testovatele, který může během průběhu jedné operace vytvářet jinou nebo zkoumat data z jiné operace.
 Pro referenci, operace může běžet i několik hodin, a pokud tedy není dozor nutný, je dobré se mu vyhnout.
 
-\nlparagraph{Lab02}
+\subsubsection{Lab02}
 První z připravených operací má název \textit{Lab02}.
 Jak již bylo zmíněno, cílem je simulovat prvotní kroky útočníka v nově infikovaném systému.
 Útočník má v tuto chvíli o systému pouze minimální informace.
@@ -1578,7 +1578,7 @@ Informace, na které se v tomto kontextu útočník zaměřuje, jsou cookies, z�
 Oproti předchozím případům se zde primárně nejedná o data, která může útočník použít k dalším útokům na dané zařízení.
 Stejně se ale jedná o cenná data, která může v mnoha případech útočník prodat nebo použít k jiným typům útoků.
 
-\nlparagraph{Lab02v2}
+\subsubsection{Lab02v2}
 Tato operace a adversary využívají již zjištěných dat k upřesnění specifických cílů.
 Simulujeme zde situaci, kdy útočník získal základní data o napadeném zařízení.
 Jeho cílem je teď nejen získat vyšší práva nad tímto zařízením ale také získat informace vhodné pro zajištění dlouhodobého přístupu k zařízení.
@@ -1625,7 +1625,7 @@ Nebo fakt, že uživatel využívá nějaké cloudové uložiště, jak je např
 \clfig{lab/show_user_processes}{\linewidth}{Ukázka všech procesů uživatele}{Vlastní}{fig:show_user_processes}
 
 
-\nlparagraph{Změny s privilegovaným uživatelem}
+\subsubsection{Změny s privilegovaným uživatelem}
 %todo add more or pictures?
 V rámci kompletnosti testování byly stejné operace, tedy \textit{Lab02} a \textit{Lab02v2}, pouštěny na jiném zařízení v infrastruktuře, tentokrát s privilegovaným přístupem.
 Získaná data byla až na pár operací stejná.
@@ -1639,13 +1639,13 @@ Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění
 %todo add picture with succesfull technique
 
 
-\subsubsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
+\subsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
 Zaměřením tohoto scénáře je otestování možností šíření útočníkova dosahu v infrastruktuře a dopad jeho činnosti.
 Scénář 2 byl primárně zaměřen na jedno zařízení a zisk informací, scénář 3 je zaměřen na infrastrukturu a dopad na uživatele a společnost.
 Předpokladem je, že útočník již zjistil minimální potřebná data ze scénáře 2, již ho nezajímá být tak skrytý, ale naopak chce napadenému cíli uškodit.
 V rámci možností Caldery proto budou simulovány možné techniky, které jsou v souladu s cíli útočníka.
 
-\nlparagraph{Lab03}
+\subsubsection{Lab03}
 Operace na šíření po infrastruktuře má název \textit{Lab03}, jako \textit{adversary} je využit základní útočník \textbf{Worm}.
 Tento útočník v Caldeře existuje hned v několika verzích s malými rozdíly, zajímavou myšlenkou proto bylo použít několik verzí a porovnat jejich výsledky.
 Specificky byla tato operace testována s útočníky \textbf{Worm, Worm2} a \textbf{Worm 3}.
@@ -1670,7 +1670,7 @@ Tento fakt je možný vidět na obrázku~\ref{fig:nslookup_fail}.
 Z výsledků je jasné, že testovaný infrastruktura je vůči tomuto útoku velmi odolná.
 Nejen že správně nastavená infrastruktura omezila zisk informací útočníka, ale také kompletně zamezila jeho dalšímu šíření.
 
-\nlparagraph{Lab03v2}
+\subsubsection{Lab03v2}
 Druhá část scénáře 3 je zaměřena na testování taktiky \textit{Impact}, jenž je zaměřena na manipulaci, přerušení nebo destrukci systémů a dat.
 V Caldeře byl proto vytvořen \textit{adversary}, který obsahuje techniky s tímto zaměřením.
 Průběh operace s tímto útočníkem je vidět na obrázku~\ref{fig:operation_ransom}.
