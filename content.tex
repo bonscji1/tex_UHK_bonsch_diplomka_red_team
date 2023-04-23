@@ -158,12 +158,13 @@ Monitorováni například politici Španělska a vůdci katalánské nezávislos
 Navíc sama skupina NSO uvedla, že pět států \firstac{EU} používá jejich špionážní software Pegasus.\cite{Enisa_thread_landscape}
 
 \nlparagraph{Další entity v průmyslu špehování na zakázku}
-~\clfig{Facebook_banned_entities}{\linewidth}{Entity identifikované společností Meta}{\cite{pegasus_facebook}}{fig:FacebookThreads}
-
 Facebook je jeden ze zdrojů informací, které se používají pro špehování.
 Meta se snaží tuto činnost zredukovat a tak provedla kroky proti 7 různým entitám operujícím špehování na zakázku.
 Tyto entity sídlily v Číně, Izraeli, Indii a Severní Makedonii, avšak svoje působení zaměřovaly na lidi ve více než 100 zemích po celém světě.
 Obrázek ~\ref{fig:FacebookThreads} ukazuje ovlivněné entity, je zde vidět, na kterých částech řetězce sledovací operace se jednotlivé entity podílely.
+
+~\clfig{Facebook_banned_entities}{\linewidth/2}{Entity identifikované společností Meta}{\cite{pegasus_facebook}}{fig:FacebookThreads}
+
 Řetězec se skládá z \textit{průzkumu}, \textit{navázání kontaktu} a \textit{využití}.
 První fází řetězce sledování, a obvykle nejhůře zaznamenatelnou, je \textit{průzkum} .
 Cíl sledování je potichu profilován s využitím softwaru k automatickému sběru dat z celého internetu.
@@ -183,12 +184,14 @@ Jako cenné informace jsou brány přihlašovací údaje, například k e-mailov
 Za nežádoucí akce se považuje instalace malwaru, specificky spywaru pro další zisk informací nebo ransomwaru pro peněžitý zisk.\cite{pegasus_facebook}
 
 \nlparagraph{Nejvíce napadené odvětví}
-~\clfig{ENISA_targeted_sectors}{\linewidth}{Nejvíce napadené sektory (v období červenec 2021 - červen 2022)}{\cite{Enisa_thread_landscape}}{fig:TargetedSectors}
 Z již zmíněného reportu\cite{Enisa_thread_landscape} je možné vyčíst, ve kterých odvětvích je zaznamenáno nejvíce útoků.
 Útoky jsou jen zřídka omezené na jeden sektor, ve většině případů i útok zaměřený na specifický sektor přetéká díky provázanosti do ostatních.
 Tento pohled na sektory je i přesto důležitý právě kvůli připravenosti jednotlivých sektorů na útoky.
 Můžeme očekávat, že sektor zabývající se zprostředkováním digitálních služeb bude mít jinak připravenou ochranu než například vládní sektor.
 A to nejen díky primárnímu zaměření sektoru, ale také dopadu úspěšných útoků v minulosti a předvídanému dopadu budoucích útoků.
+
+~\clfig{ENISA_targeted_sectors}{\linewidth}{Nejvíce napadené sektory (v období červenec 2021 - červen 2022)}{\cite{Enisa_thread_landscape}}{fig:TargetedSectors}
+
 Na první pohled je z obrázku~\ref{fig:TargetedSectors} vidět, že téměř čtvrtina útoků byla zaznamenána ve vládním sektoru.
 Kolem 13\% útoků míří na sektor zprostředkování digitálních služeb a dalších 13 \% na širokou veřejnost.
 Lze očekávat, že množství útoků v těchto sektorech je ovlivněno snadností propagace útoku a v případě veřejnosti navíc ještě celkovým množstvím možných cílů.
@@ -1207,7 +1210,7 @@ Tento fakt je vidět na obrázku~\ref{fig:caldera_error}.
 \clfig{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku}{Vlastní}{fig:caldera_error}
 
 
-\noindent %todo last, play with no indents?
+
 Problém vyplývá ze starších balíčků, které Caldera vyžaduje pro svoji funkčnost.
 Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují, což vede k chybám kompilace.
 Nabízí se několik řešení, jak problém vyřešit.
@@ -1458,7 +1461,7 @@ Jak již bylo zmíněno, Caldera je založena na frameworku Mitre ATT\&CK, proto
 %todo remake with create profile button and proper crop
 \clfig{lab/adversary_show_techniques}{\linewidth}{Ukázka technik u simulovaného útočníka}{Vlastní}{fig:adversary_show_techniques}
 
-\noindent %todo play with no indets at end
+
 Nový \textit{adversary} je vytvořen pomocí tlačítka \textit{new profile}.
 To otevře formulář pro vyplnění názvu a popisu tohoto profilu útočníka.
 Poté je nutné přidat techniky, které bude tento útočník provádět.
