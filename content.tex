@@ -1588,7 +1588,6 @@ Hlášení nastala až ve chvíli, kdy se simulovaný útočník pokoušel získ
 V rámci testování se tato práva snažil získat všemi možnostmi, které Caldera nabízí.
 Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\ref{fig:privilege_escalation},\ref{fig:all_blocked_threats} a~\ref{fig:specific_threat}.
 
-%todo remake, show some antivirus disablin and then this, its in the other operation
 ~\clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
 ~\clfig{lab/all_blocked_threats}{10cm}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
 ~\clfig{lab/specific_threat}{10cm}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
@@ -1633,8 +1632,8 @@ Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nevznikly 
 Zajímavé je, že se podařilo částečně vyřadit fungování antivirového programu.
 Další překvapivé zjištění také nastalo, když se místo selhání všech hrozeb pro zisk privilegií jedna technika vydařila.
 Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění.
-%todo add picture with succesfull technique
-%\clfig{lab/-----}{\linewidth}{Ukázka technik s privilegovaným uživatelem}{Vlastní}{fig:elevated_fail}
+
+\clfig{lab/elevated_fail}{\linewidth}{Ukázka technik s privilegovaným uživatelem}{Vlastní}{fig:elevated_fail}
 
 
 \subsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
@@ -1661,9 +1660,10 @@ Tento fakt potvrzuje nutnost dobré segmentace infrastruktury za cílem její ob
 Dalším krokem útočníka je provézt \textit{reverse IP nslookup} pro všechny nalezené IP adresy.
 Tento krok však selže, protože v síti není využívané \ac{DNS}, implementace totiž z důvodu velikosti a bezpečnosti nedávala smysl.
 Překvapivé je, že neexistence \ac{DNS} nejen že zastavila další šíření útočníka worm, ale navíc byly techniky provádějící tuto operaci chybně označeny za úspěšné.
-Tento fakt je možný vidět na obrázku~\ref{fig:nslookup_fail}.
-%todo create this one
-%\clfig{lab/nslookup_fail}{\linewidth}{Ukázka špatně označených technik}{Vlastní}{fig:nslookup_fail}
+Tento fakt je možný vidět na obrázcích~\ref{fig:nslookup_fail} a~\ref{fig:nslookup_fail_output} .
+
+\clfig{lab/nslookup_fail}{\linewidth}{Ukázka špatně označených technik}{Vlastní}{fig:nslookup_fail}
+\clfig{lab/nslookup_fail_output}{\linewidth}{Ukázka výstupu špatně označené techniky}{Vlastní}{fig:nslookup_fail_output}
 
 Z výsledků je jasné, že testovaný infrastruktura je vůči tomuto útoku velmi odolná.
 Nejen že správně nastavená infrastruktura omezila zisk informací útočníka, ale také kompletně zamezila jeho dalšímu šíření.
