@@ -1498,7 +1498,7 @@ Finálním krokem testování je spuštění operace.
 K tomuto účelu v Caldeře slouží záložka \textit{operations}, viz obrázek~\ref{fig:create_operation}.
 Zde je možné spouštět nebo vytvářet nové operace, ale zároveň tato záložka slouží pro správu již uskutečněných operací.
 Zachovávají se zde informace o průběhu operace a případných výstupech z daných technik.
-Jelikož již bylo připraveno vše pro správnou činnost operace, je na čase kliknout na tlačítko \textit{create operation}, čímž je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:create_operation}.
+Jelikož již bylo připraveno vše pro správnou činnost operace, je na čase kliknout na tlačítko \textit{create operation}, čímž je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:new_op}.
 Je zde několik důležitých nastavení.
 Jméno operace a nastavení požadovaného \textit{adversary} je přímočaré.
 \textit{Fact source} je zajímavější, jedná se o před-připravené poznatky, například o testovaném zařízení, které lze přímo zadat nebo použít zjištěné z předchozích operací.
@@ -1508,8 +1508,8 @@ Jsou zde nastavení pro cílovou skupinu[\textit{group}], tedy určení, kteří
 Základním je \textbf{atomic}, který posílá jednotlivé příkazy jeden po druhém ve stejném pořadí, v jakém se nachází v \textit{adversary}.
 Lze však vytvořit vlastní \textit{planner} s rozdílným chováním\cite{mitre_caldera_docs}.
 V neposlední řadě se zde nachází přepínače pro řízení chodu operací a možnosti zakódovaní a skrytí operace.
-%todo crop
-\clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:operation_creation}
+
+\clfig{lab/operation_creation}{\linewidth}{Ukázka tvorby operace}{Vlastní}{fig:new_op}
 
 Pro účely této práce jsou všechny operace nastaveny na automatické spuštění při vytvoření a také automatické uzavření a kolekci dat.
 Automatické spuštění je zřejmé, již máme připraveny všechny stavební bloky pro vykonání operace, a tak není třeba nic dalšího připravovat a čekat.
@@ -1538,19 +1538,20 @@ Tyto případy jsou však ojedinělé a není problém je nalézt, pokud nastano
 Je jasné, že pro útočníka existují úrovně dat, jenž jsou řazené podle složitosti zjištění, složitosti pochopení nebo důležitosti.
 Proto i v simulované operaci můžeme vidět, že útočník se nejdříve zaměřil na snadno zjistitelná data s nízkým rizikem odhalení.
 Příkladem je jméno uživatele a jeho doména, viz obrázek~\ref{fig:username_and_domain}.
-%todo crop
+
 \clfig{lab/username_and_domain}{\linewidth}{Výstup taktiky pro zjištění uživatele a jemu příslušné domény}{Vlastní}{fig:username_and_domain}
+
 
 Dalším krokem může být zjištění všech účtů na daném zařízení.
 Tato informace může vypovídat o počtu uživatelů, kteří se k zařízení běžně přihlašují, ale i jestli v organizaci existuje striktní metodologie vytváření přihlašovacích jmen.
 Třešničkou na pomyslném dortu jsou účty typu \textit{Admin} nebo \textit{Guest}, kde velmi často dochází k porušení praktik dobrých hesel.
 Není neobvyklé, že tyto účty mají hesla stejná jako jméno, nebo v případě účtů Admin je stejné heslo pro všechna zařízení.
 Kompromitace jediného Admin účtu by tak kompromitovala všechna zařízení s tímto účtem.
-Výstup z techniky pro zjištění bude vypadat jako výstup na obrázku~\ref{find_all_accounts}.
+Výstup z techniky pro zjištění bude vypadat jako výstup na obrázku~\ref{fig:find_all_accounts}.
 
 \clfig{lab/find_all_accounts}{\linewidth}{Výstup taktiky pro zjištění všech uživatelských účtů}{Vlastní}{fig:find_all_accounts}
 
-Také je možné zjistit přesné informace o operačním systému, viz obrázek~\ref{data_about_system_and_machine}.
+Také je možné zjistit přesné informace o operačním systému, viz obrázek~\ref{fig:data_about_system_and_machine}.
 Tato data o zařízení jsou pro útočníka zajímavá v kontextu hledání využitelných zranitelností.
 Na obrázku je vidět \textit{OS Version}, tedy přesná verze operačního systému.
 Podle tohoto údaje lze z otevřených databází jednoduše vyhledat nejen o kterou aktualizaci se jedná, ale také zda existují novější verze.
@@ -1589,8 +1590,8 @@ Tento fakt a vyvolané poplašné hlášení je možné vidět na obrázcích~\r
 
 %todo remake, show some antivirus disablin and then this, its in the other operation
 ~\clfig{lab/privilege_escalation}{\linewidth}{Probíhající operace zaměřená na získání administrátorských privilegií}{Vlastní}{fig:privilege_escalation}
-~\clfig{lab/all_blocked_threats}{\linewidth}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
-~\clfig{lab/specific_threat}{\linewidth}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
+~\clfig{lab/all_blocked_threats}{10cm}{Záznamy o vyvolaných hrozbách}{Vlastní}{fig:all_blocked_threats}
+~\clfig{lab/specific_threat}{10cm}{Specifika náhodně vybrané hrozby}{Vlastní}{fig:specific_threat}
 
 
 Jak je vidět z obrázků, všechny pokusy o získání administrátorských práv byly zastaveny a oznámeny uživateli.
@@ -1603,7 +1604,7 @@ Příkladem je například politika hesel, která existuje na daném zařízení
 Jak je patrné na obrázku~\ref{fig:show_password_policy}, Caldera si plně nerozumí s českou lokalizací systému.
 To pouze znamená, že není možné sběr dat plně zautomatizovat, nejdůležitější poznatky lze stále přečíst, i když se zvýšeným úsilím.
 
-%todo crop
+
 \clfig{lab/show_password_policy}{\linewidth}{Nalezená politika hesel}{Vlastní}{fig:show_password_policy}
 
 Poslední technikou v této operaci, která stojí za zvláštní zmínku, je zobrazení všech procesů daného uživatele.
@@ -1618,22 +1619,22 @@ Posledním důvodem, proč procesy uživatele útočníka zajímají, jsou data,
 Pokud narazí na proces, který ho zajímá, může na něj zaměřit další fáze útoku.
 Například už jen zjištění, jaký prohlížeč uživatel preferuje, zjednodušuje následující útoky na data.
 Nebo fakt, že uživatel využívá nějaké cloudové uložiště, jak je například vidět na obrázku~\ref{fig:show_user_processes}.
-%todo crop
+
 \clfig{lab/show_user_processes}{\linewidth}{Ukázka všech procesů uživatele}{Vlastní}{fig:show_user_processes}
 
 
 \subsubsection{Změny s privilegovaným uživatelem}
-%todo add more or pictures?
 V rámci kompletnosti testování byly stejné operace, tedy \textit{Lab02} a \textit{Lab02v2}, pouštěny na jiném zařízení v infrastruktuře, tentokrát s privilegovaným přístupem.
 Získaná data byla až na pár operací stejná.
 To potvrzuje domněnku robustního systému, kde celková stabilita a dostatečné zabezpečení v podobě antiviru odbouralo alespoň část hrozby.
 Zajímavá jsou však data z operace \textit{Lab02v2}.
 Operace \textit{Lab02} byla primárně pro zjištění dat, proto tam nevznikly významné odchylky.
-\textit{Lab02v2} byl na získání vyšších uživatelských práv, což popravdě nedává s administrátorským účtem smysl.
+\textit{Lab02v2} byl na získání vyšších uživatelských práv, což popravdě nedává s administrátorským účtem smysl, viz obrázek~\ref{fig:elevated_fail}.
 Zajímavé je, že se podařilo částečně vyřadit fungování antivirového programu.
 Další překvapivé zjištění také nastalo, když se místo selhání všech hrozeb pro zisk privilegií jedna technika vydařila.
 Tento poznatek nemá velký smysl, ale je to zajímavé a úsměvné zjištění.
 %todo add picture with succesfull technique
+%\clfig{lab/-----}{\linewidth}{Ukázka technik s privilegovaným uživatelem}{Vlastní}{fig:elevated_fail}
 
 
 \subsection{Scénář 3 - \textit{Discovery, Impact} a \textit{Lateral movement}}
