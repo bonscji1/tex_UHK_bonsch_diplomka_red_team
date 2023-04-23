@@ -1,23 +1,46 @@
 % TODO WRITER: text
 
-
+kontrola citací, jestli jsou správně
 
 pozor na dvojité mezery, kontrola hned jak dopíšu
 %todo end
 
 
 
-\section{Úvod}\label{sec:uvod}%todo do
-%todo use different words
-V dnešní moderní době jsou kladeny stále větší nároky na
-bezpečnost. S rozvojem internetu je přístup k informacím velmi
-jednoduchý, na druhou stranu je však jejich ochrana stále složitější.
-Není proto překvapením, že se vyvíjí stále novější, lepší a
-pokrokovější metody pro ochranu dat.
+\section{Úvod}\label{sec:uvod}
+V dnešní době tráví velká část lidské populace díky rozvoji moderních značné množství času interakcemi s těmito technologiemi.
+Ať už se jedná o internet, \firstac{IoT} zařízení, mobilní bankovnictví nebo sociální sítě, lidé se na technologiích stávají čím dál více závislí.
+Technologie nám usnadňují všední život, dovolují práci z domova nebo přináší příležitosti, které i jen pár let zpátky neexistovaly.
+Tento rozvoj bohužel nemá jen klady, přinesl zároveň hrozby, kterým nyní populace čelí.
+Jsou kladeny stále větší nároky na bezpečnost, ani to se však nezdá být dostatečné.
+Objevují se nové hrozby, ale i ty stávající se neustále vyvíjí, což vede k nutnosti vytváření pokročilejších metod obrany.
+Některé hrozby, jako malware, jsou pro lidstvo nové, jiné jsou staré jako lidstvo samo a pouze se novým okolnostem přizpůsobily.
+Jedním příkladem za všechny je Sociální inženýrství, s rozvojem internetu je přístup k informacím jednoduchý a není tak problém tímto typem útoku ohrožovat velké množství populace.
+Internet navíc přinesl dostupnost informací nejen běžným občanům, ale i útočníkům, kteří proto nemají problém vytvářet propracované útoky ani získat nové postupy od jiných útočníků.
 
-% TODO WRITER: text
+\paragraph{}
+Existuje také nezměrné množství hrozeb kterým nečelí jen lidé, ale i firmy a dokonce státy.
+Státy na celém světě se staly na kybernetickém světě zcela závislé a jakékoli jeho selhání může ohrozit jejich funkčnost a odpoutání se od něj je již nemožné\cite{LI20218176}.
+Je jasné, že prostředí, v němž mezi sebou soupeří státy, je značné úsilí věnováno jak zabezpečení, tak útoku.
+Rozdíly mezi kybernetickým útokem, kybernetickým zločinem a kybernetickou válkou jsou ve většině případů založeny pouze na účastnících těchto situací\cite{LI20218176, Enisa_thread_landscape}.
+Způsob útoku či hrozby mají jen minimální vliv na zařazení do předchozích kategorií, zohledněn bývá pouze výsledek.
+Vyšší účast států v kybernetické světe však nese následek i na jejich obyvatelstvo a organizace, působící na území daného státu.
+Pokrok digitalizace sice usnaďnuje mnohým obyvatelům život, je však potřebné myslet i na riziku, kterém jím hrozí primárně v podobě úniku osobních informací.
+Je nutné vytvářet, dodržovat a obnovovat mnoho předpisů zajištující holistickou obranu všech subjektů.
+Stejně tak je ale nutné uznat, že praktické příklady mnohdy daným předpisům protiřečí, nebo naopak ukazují, že předpis v reálném světě není aplikovatelný.
+Je tedy nutné propojit idealistický pohled na obranu v rámci předpisů a nařízení s pohledem praktickým.
+Právě za tímto účelem je nutné nastavené předpisy testovat skutečnými útoky, aby bylo možné určit, zda opravdu splňují důvod svého vzniku.
 
-Zde vysvětlit problémovou situaci a otázky, které se budou v bakalářské/diplomové práci řešit.
+\paragraph{}
+Tato diplomová práce je rozdělena na dvě primární části - teoretickou a praktickou.
+V teoretické části jsou zkoumány nejnutnější informace nutné k pochopení kybernetické bezpečnosti.
+Jsou představeny nejčastější hrozby nejen z pohledu útoků, ale také útočníků spolu s jejich motivacemi a metodikami.
+Také jsou představeny základní teoretické principy testování, které jsou poté vyzkoušeny v praktické části práce.
+Proto bylo vytvořeno testovací prostředí, testované prostředí napodobující reálnou infrastruktury a scénáře možných útoky, jenž jsou s pomocí těchto prostředí testovány.
+Výsledkem jsou cenná data, ukazující silné i slabé stránky testované infrastruktury, a postupy, jak sestavit a upravit testovací prostředí pro potřeby testování v praxi.
+
+
+
 
 \section{Cíl práce}\label{sec:cil-prace}
 Diplomová práce je zaměřena na zkoumání oblasti kybernetické bezpečnosti.
@@ -65,26 +88,10 @@ Z toho důvodu bylo pro zpracování této diplomové práce čerpáno převáž
 bylo ponecháno původní znění, protože při doslovném překladu by mohlo dojít ke špatné interpretaci uváděných pojmů.
 
 
-
-\section{Úvod do problematiky kybernetické bezpečnosti}\label{sec:uvod-do-problematiky-kyberneticke-bezpecnosti}%todo move as úvod?
-V dnešní době tráví velká část lidské populace díky rozvoji moderních značné množství času interakcemi s těmito technologiemi.
-Ať už se jedná o internet, \firstac{IoT}, mobilní bankovnictví nebo sociální sítě, lidé se na technologii stávají čím dál více závislí.
-Technologie nám usnadňují všední život, dovolují práci z domova nebo přináší příležitosti, které i jen pár let zpátky neexistovaly.
-Tento rozvoj bohužel nemá jen klady,přinesl zároveň hrozby, kterým nyní populace čelí.
-Některé hrozby, jako malware, jsou pro lidstvo nové, jiné jsou staré jako lidstvo samo a pouze se novým okolnostem přizpůsobily.
-Jedním příkladem za všechny je Sociální inženýrství.
-
-\paragraph{}
-Existuje nezměrné množství hrozeb a nečelí jim jen lidé, ale i firmy a dokonce státy.
-Státy na celém světě se staly na kybernetickém světě zcela závislé a jakékoli jeho selhání může ohrozit jejich funkčnost a odpoutání se od něj je již nemožné.\cite{LI20218176}
-Je jasné, že prostředí, v němž mezi sebou soupeří státy, je značné úsilí věnováno jak zabezpečení, tak útoku.
-Rozdíly mezi kybernetickým útokem, kybernetickým zločinem a kybernetickou válkou jsou ve většině případů založeny pouze na účastnících těchto situací.\cite{LI20218176}
-Způsob útoku či hrozby mají jen minimální vliv na zařazení do předchozích kategorií, zohledněn bývá pouze výsledek.
-
-\section{Relevance}\label{sec:relevance}
+\section{Relevantnost problematiky kybernetické bezpečnosti}\label{sec:relevance}
 Relevantnost problematiky kybernetické bezpečnosti potvrzuje nejen množství akademických textů, které zkoumají tuto problematiku, ale také stále větší zájem všeobecné veřejnosti.
 Hlavním důvodem je vzrůstající povědomí populace způsobené především medializací útoků sociálního inženýrství nebo ransomwarových kampaní, které populaci v poslední době ovlivňovaly.
-V době psaní této práce je v popředí například ransomwarový útok na dětskou nemocnici SickKids, při němž došlo k omezení optimální funkčnosti nemocnice zašifrováním důležitých interních systémů.\cite{bleep_sickkids_ransom}
+V době psaní této práce je v popředí například ransomwarový útok na dětskou nemocnici \textit{SickKids}, při němž došlo k omezení optimální funkčnosti nemocnice zašifrováním důležitých interních systémů\cite{bleep_sickkids_ransom}.
 I když se Ransomwarová skupina \textit{LockBit} omluvila a zdarma poskytla nemocnici \textit{decryptor}, nemění to nic na vážnosti situace – skutečnosti, že takový útok vůbec nastal.
 A bohužel není jediným ransomwarovým útokem zaměřeným na zdravotnictví, naopak je možné předpokládat, že v budoucnu nastanou i další útoky.
 A příští útok nemusí být veden skupinou, která se řídí silným morálním kompasem.
@@ -101,7 +108,7 @@ A tyto hrozby je nutné najít a zkoumat, aby bylo možné ochranu vytvořit.
 \subsection{Studie trendů kybernetické bezpečnosti}\label{subsec:studie-trendu-kyberneticke-bezpecnosti}
 Dlouhodobě můžeme v rámci kybernetické bezpečnosti rozeznávat několik klíčových zaměření.
 Zajímavé jsou změny v prioritách zaměření v určitém období, které můžeme zkoumat na literatuře.
-Velké změny lze zaznamenat především před a po pandemii Covidu-19.\cite{KUMAR2022102821}
+Velké změny lze zaznamenat především před a po pandemii Covidu-19\cite{KUMAR2022102821}.
 Jako i u jiných odvětví můžeme celou sféru dělit na 2 části, část akademickou a část veřejnou.
 Je jasné, že zaměření těchto dvou částí budou lehce rozdílná, proto je nutné dívat se na ně odděleně, třebaže se v mnoha ohledech překrývají a ovlivňují.
 Důvodem, proč zkoumáme rozdíl před a po Covidu-19, je rapidní navýšení adopce digitálních technologií, které v této době proběhlo.
@@ -110,12 +117,12 @@ Je značný rozdíl v bezpečnosti práce uživatele, nachází-li se v uzavřen
 
 \nlparagraph{Akademická literatura}
 V akademické sféře je možné vidět zaměření výzkumu.
-Dlouhodobě populárními tématy jsou \textit{cyber risk management, detekce malwaru} nebo \textit{systémy detekce přístupu}.\cite{KUMAR2022102821}
+Dlouhodobě populárními tématy jsou \textit{cyber risk management, detekce malwaru} nebo \textit{systémy detekce přístupu}.
 Tato témata je možné nalézt jak před, tak i po pandemii Covidu-19.
-Témata, která byla mnohem více zkoumána před pandemií, jsou například využití \textit{Machine learningu}, a to jak pro detekci hrozeb, tak pro hledání nových vektorů útoku, dále \textit{Blockchain} a \textit{Cryptoměny}.\cite{KUMAR2022102821}
+Témata, která byla mnohem více zkoumána před pandemií, jsou například využití \textit{Machine learningu}, a to jak pro detekci hrozeb, tak pro hledání nových vektorů útoku, dále \textit{Blockchain} a \textit{Cryptoměny}.
 Pandemie způsobila velký obrat v myšlení a reorganizaci priorit, což vedlo ke zkoumání témat, která byla nutná aplikovat okamžitě nebo která byla nutná pro budoucí fungování společnosti.
-Objevují se zde mnohem více témata zaměřená na \textit{Zdravotnictví, Bankovní sektor} nebo \textit{zranitelnosti dodavatelského řetězce}.\cite{KUMAR2022102821}
-Všechna tato témata mají jasný vznik v okolnostech pandemie a jejich zkoumání je prováděno i roky po pandemii samotné.
+Objevují se zde mnohem více témata zaměřená na \textit{Zdravotnictví, Bankovní sektor} nebo \textit{zranitelnosti dodavatelského řetězce}.
+Všechna tato témata mají jasný vznik v okolnostech pandemie a jejich zkoumání je prováděno i roky po pandemii samotné.\cite{KUMAR2022102821}
 
 \nlparagraph{Všeobecná literatura}
 Všeobecná literatura poukazuje na zájmy a zvědavost lidu, proto zde lze odvodit zaměření i problémy populace.
