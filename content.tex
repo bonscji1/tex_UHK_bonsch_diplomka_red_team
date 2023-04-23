@@ -1688,35 +1688,37 @@ Možná nejznámějším příkladem je \textit{Metasploit}\cite{metasploit}.
 
 \section{Závěry a doporučení}\label{sec:zavery-a-doporuceni}
 V závěru práce je nutné zhodnotit, zda bylo dosaženo všech cílů práce a zda byly ověřeny všechny předložené hypotézy.
-V teoretické části práce byly předány základní znalosti o kybernetického bezpečnosti a také byl čtenář seznámen se současným stavem.
-Je ukázána relevantnost této tématiky, pomocí rešerše jsou představeny nejdůležitější znalosti, příkladem jsou typy útoků nebo útočníků, a na závěr jsou pro lepší pochopení praktické části předány znalosti ohledně testování a nástrojů, jenž se k testování používají.
+V teoretické části práce byly předány základní znalosti o kybernetického bezpečnosti a také byl čtenář seznámen se současným stavem této tématiky.
+Je ukázána relevantnost, pomocí rešerše jsou představeny nejdůležitější znalosti, jenž čtenář potřebuje znát, jako rozpoznání útoků nebo znalost útočníků.
+Na závěr jsou pro lepší pochopení praktické části předány znalosti ohledně testování a nástrojů k testování využívaných.
 Informace jsou čerpány z kvalitních zdrojů a nemůže tak být pochyb o jejich aplikovatelnosti a korektnosti.
 
 \paragraph{}
 V praktické části práce bylo cílem vytvořit jednoduché a srozumitelné testovací prostředí spolu s návodek k jeho použití.
 Zabývá se tímto i první představená hypotéza, tedy zda je možné vytvořit takto popsané prostředí a adekvátně seznámit s jeho používáním nového uživatele.
 Odpověď zde není jasná a hypotézu nelze potvrdit ani vyvrátit bez dodatečného testování.
-Samozřejmě, že testovací prostředí vytvořit jde, bohužel každá osoba bude jinak vnímat, zda je prostředí "jednoduché a srozumitelné".
+Samozřejmě, že testovací prostředí vytvořit lze, bohužel každá osoba bude jinak vnímat, zda je prostředí "jednoduché a srozumitelné".
 Autor však věří, že popsané postupy jsou natolik podrobné, aby i v případě nepochopení bylo možné dojít k cílenému výsledku.
-Dále byly ukázány základy testování a uvedeny příklady a připomínky, které je možné aplikovat i na skutečné infrastruktury ze které testování vycházelo.
+Dále byly ukázány základy testování a uvedeny příklady a připomínky, které je možné aplikovat i na skutečnou infrastrukturu, ze které testování vycházelo.
 Lze tedy říci, že druhá představená hypotéza, zabývající se aplikací výsledků testování pro zlepšení bezpečnosti reálného prostředí, byla potvrzena.
-Výsledky testování jsou ve většině příkladů očekávány, vždy existují povrchní data, která může útočník získat, například data o uživateli, síti nebo o politice hesel bylo možné získat velmi jednoduše.
-Dle očekávání také dopadly části útoků zasahující do systému hluboce, ty byly zastaveny obranou systému.
+Výsledky testování jsou ve většině příkladů očekávány, vždy existují povrchní data, která může útočník získat, například bylo snadné získat data o uživateli, síti nebo o politice hesel.
+Dle očekávání také dopadly části útoků hlouběji zasahující do systému, ty byly zastaveny obranou systému a ve většině případů nahlášeny uživateli.
 Nepříjemným zjištěním však bylo, které informace jsou považovány za povrchní a tedy jednoduše přístupné.
 Například nalezení přesné verze operačního systému vede po jednoduchém vyhledávání na internetu k jeho známým zranitelnostem a dokonce i připravenému malware, které danou zranitelnost zneužívá.
 Tento údaj je však útočníkovi jednoduše přístupný, nehledě na závažnost jeho zjištění.
 Velkým zklamáním bylo také množství a typ informací, které se povedlo získat o vybrané organizaci.
-Byly zjištěny informace, které lze využít k několika typům útoků a představují tak bezpečnostní hrozbu.
+Byly zjištěny informace, které lze využít k několika typům útoků a představují tak bezpečnostní riziko.
 
 \paragraph{}
-Je vhodné zmínit další možnosti výzkumu související s touto prací.
-Prvním doplnění této práce závisí na úzké spolupráci s organizací, v rámci možností by bylo zajímavé vytvořit scénáře přímo podle již uskutečněných útoků na organizaci nebo podobné organizace a zjistit, zda je organizace připravena takovému útoku čelit.
+Je přínosné zmínit další možnosti výzkumu související s touto prací.
+Prvním možné zkoumání závisí na úzké spolupráci s organizací.
+V rámci možností by bylo zajímavé vytvořit scénáře přímo podle již uskutečněných útoků které dané organizaci již hrozily a zjistit, zda je organizace stále připravena takovému útoku čelit.
 Také opravdové testování infrastruktury by mohlo přinést významná data pro zlepšení bezpečnosti organizace.
-Problémem je však důvěra mezi potencionálním autorem a tetovanou organizací.
+Problémem těchto zkoumání je však důvěra mezi potencionálním autorem a testovanou organizací.
 Dalším možným zkoumaným tématem v souvislosti s touto prací by bylo větší zaměření na jednu specifickou oblast útoku.
-Z důvodu pokrytí mnoha taktik, technik a několika nástrojů a metodologií není možnost se žádnému z nich věnovat do hloubky a připravit jeho zhodnocení a možné návrhy na vylepšení.
+Z důvodu pokrytí mnoha taktik, technik a nástrojů není možné, aby se autor práce každému z nich věnovat do hloubky a připravil jejich zhodnocení a možné návrhy na vylepšení.
 Autor si například dokáže představit práci založenou pouze na zkoumání taktiky \textit{Reconnaissance}, kde by byly zkoumány využívané nástroje, shromažďována nalezená data a představeny nejčastější místa, kde je u organizací nutné zlepšit práci s daty.
-Tato práce by bylo zkoumat několik vybraných organizací, aby bylo ukázáno na nejčastější slabá místa.
+Tato práce by mohla zkoumat několik vybraných organizací, aby bylo poukázáno na nejčastější slabá místa.
 Cíleně by bylo možné ukázat, kde je nutné omezit sdílení informací nebo naopak ukázat, jaké data nelze schovat a tak s nimi nakládat právě jako s daty, které jsou veřejně známé a tedy zneužitelné.
 
 
