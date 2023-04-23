@@ -87,30 +87,22 @@
   supervisor.title.p={Mgr.},   %titul před jménem (nepovinné) / title before the name (optional)
   supervisor.title.a={Ph.D.},
   % Anotace
-  % TODO WRITER: enter czech annotation
+  % enter czech annotation
   annotation.cs={
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet ornare diam,
-    id consequat diam. Integer accumsan eu mauris eu rutrum. Donec scelerisque eu nibh non
-    aliquam. Sed at nunc vel magna dignissim laoreet sit amet id sapien. Donec pharetra,
-    diam et molestie fringilla, magna eros luctus metus, a dapibus erat nulla ullamcorper
-    lectus. In augue tellus, sagittis condimentum odio quis, consectetur vestibulum nisl.
-    Nam euismod hendrerit efficitur. Cras eu ipsum at neque pretium porttitor. Mauris
-    fermentum dolor a libero feugiat hendrerit. Mauris venenatis orci molestie vulputate
-    semper. Duis finibus accumsan ultricies. Pellentesque viverra tortor posuere venenatis
-    eleifend. Etiam dignissim mattis iaculis.
+    Cílem práce bylo poukázat na současný stav kybernetické bezpečnosti a vytvořit jednoduché a srozumitelné testovací prostředí spolu s návodem na jeho použití.
+    Byla provedena rešerše literatury, kde jsou zkoumány nejnutnější informace nutné k pochopení kybernetické bezpečnosti, hrozby v podobě druhů útočníků a nejčastější typů útoků.
+    Také jsou představeny základní principy testování, které jsou poté vyzkoušeny pomocí vytvořeného testovacího prostředí na simulované infrastruktuře s využitím scénářů, jenž napodobují reálné chování útočníka.
+    Aby měla práce relevantní dopad, je simulovaná infrastruktura založena na reálné infrastruktuře využívané ve skutečné organizaci.
+    Výsledkem je zhodnocení scénářů, ukázka silných i slabých stránek infrastruktury a postupy, jak sestavit a upravit testovací prostředí pro potřeby testování v praxi.
   },
-  % TODO WRITER: enter english annotation
+  %  enter english annotation
   annotation.en={
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet ornare diam,
-    id consequat diam. Integer accumsan eu mauris eu rutrum. Donec scelerisque eu nibh non
-    aliquam. Sed at nunc vel magna dignissim laoreet sit amet id sapien. Donec pharetra,
-    diam et molestie fringilla, magna eros luctus metus, a dapibus erat nulla ullamcorper
-    lectus. In augue tellus, sagittis condimentum odio quis, consectetur vestibulum nisl.
-    Nam euismod hendrerit efficitur. Cras eu ipsum at neque pretium porttitor. Mauris
-    fermentum dolor a libero feugiat hendrerit. Mauris venenatis orci molestie vulputate
-    semper. Duis finibus accumsan ultricies. Pellentesque viverra tortor posuere venenatis
-    eleifend. Etiam dignissim mattis iaculis.
-  },
+    The aim of this work was to highlight the current state of cyber-security and create a simple and understandable testing environment along with instructions for its use.
+    A literature review was conducted, examining the essential information necessary for understanding cyber-security, threats posed by different types of attackers, and the most common types of attacks.
+    Basic testing principles were also introduced and tested using the created testing environment on simulated infrastructure using scenarios that mimic real attacker behavior.
+    To ensure the work has relevant impact, the simulated infrastructure is based on real infrastructure used in an actual organization.
+    The results include an evaluation of the scenarios, demonstration of strengths and weaknesses of the infrastructure, as well as procedures for creating and modifying the testing environment for practical testing purposes.
+},
   % WRITER: enter declaration if you want something else
   declaration={
     Prohlašuji, že jsem diplomovou práci zpracoval samostatně a s použitím uvedené literatury.
@@ -134,7 +126,7 @@
 
 % začátek dokumentu
 \begin{document}
-  %todo fix if not enought pages -> \linespread{1.25}
+  %fix if not enought pages -> \linespread{1.25}
   \linespread{1.25}
   % Vysazeni titulnich stran / Typesetting of the title pages
   % ----------------------------------------------
@@ -235,8 +227,7 @@
 
   \newpage
 
-  % TODO WRITER: check adjustment, maybe switch to the PDF version
-  %\includepdf[pages=-, offset=20 -50, width=20cm]{Images/assignment.png}
+  %\includepdf[pages=-, offset=20 -50, width=20cm]{Images/assignment.png}% this is original
   \includepdf[pages=-, offset=20 -40, width=18cm]{Images/assignment.png}
 
 \end{document}
