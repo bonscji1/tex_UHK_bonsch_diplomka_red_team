@@ -1192,9 +1192,6 @@ Velkou výhodou je zaměření na open-source nástroje, často vytvářené pro
 Lze tak jednoduše využít jejich znalosti ke zjednodušení práce ostatních uživatelů.
 V případě potřeby se však stále jedná o distribuci Linuxu a proto je v rámci kmenové distribuce jednoduché nainstalovat jakýkoli nástroj, který by mohl uživatel potřebovat.
 Repozitáře Kali Linuxu však zjednodušují instalaci právě testovacích nástrojů.\cite{kali_mainpage}
-
-\clfig{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí}{Vlastní}{fig:kali_purple}
-
 Menší změna od původního plánu využít Kali nastala při 10. výročí této distribuce\cite{kali_purple}.
 Vývojáři představili Kali Purple, kterou je možné vidět na obrázku~\ref{fig:kali_purple}.
 Tato verze Kali Linuxu je oproti klasické ofenzivně zaměřené Kali více orientována na defenzivní testování.
@@ -1204,14 +1201,14 @@ S tímto rozhodnutím se však váže i menší problém - Kali nabízí na svý
 Kali Purple je v době psaní tohoto textu dostupná pouze v podobě klasického instalačního \textit{image}.
 Prvotní příprava je proto o instalační krok ztížena, to však není zásadní problém.
 
+\clfig{Kali_Purple_VirtualBox}{\linewidth}{Spuštěná Kali Purple ve virtuálním prostředí}{Vlastní}{fig:kali_purple}
+
 \subsubsection{Caldera}
 Po přípravě operačního systému ve virtuálním prostředí je čas nainstalovat nástroj Mitre Caldera.
 Při samotné instalaci Caldery však nastal další problém, nejnovější verze Caldery v době psaní je 4.1.0, která vyšla 19. 9. 2022 a v době testování tato verze Caldery nejde na nové verzi Kali Purple zkompilovat.
 Tento fakt je vidět na obrázku~\ref{fig:caldera_error}.
-%todo upravit
+
 \clfig{Caldera_error_msg}{\linewidth}{Chyba kompilace Caldera frameworku}{Vlastní}{fig:caldera_error}
-
-
 
 Problém vyplývá ze starších balíčků, které Caldera vyžaduje pro svoji funkčnost.
 Je zřejmé, že nejnovější verze pip3 a python3 je již plně nepodporují, což vede k chybám kompilace.
@@ -1244,12 +1241,12 @@ Po změně na tuto novou verzí byl identifikován další problémový balíče
 Je jím \textbf{reportlab} ve verzi 3.5.67, ten je ale opět možné nahradit novější verzí 3.6.12.
 Následný pokus o zkompilování proběhl úspěšně.
 Upravený soubor s požadovanými balíčky je vidět na obrázku~\ref{fig:new_setup}.
-%todo remake, just the requirements
+
 \clfig{new_setup}{\linewidth}{Nová podoba souboru requirements.txt}{Vlastní}{fig:new_setup}
 
 Po spuštění serveru existuje propojení přes \textbf{localhost:8888}.
 I přihlášení pomocí základního uživatele \textbf{red} s heslem \textbf{admin} proběhlo úspěšně a tak lze předpokládat, že Caldera je funkční a připravena pro testování, viz ~\ref{fig:Caldera_running}.
-%todo remake
+
 \clfig{Caldera_running}{\linewidth}{Caldera framework po úvodním přihlášení}{Vlastní}{fig:Caldera_running}
 
 \subsubsection{Recon-ng}
@@ -1284,7 +1281,7 @@ Vzniklo na základě dotazníku a po rozhovoru s odborníkem, který reálné pr
 Je jasné, že simulované prostředí podléhá simplifikaci, byla však snaha zachovat všechny nejdůležitější prvky.
 Prvotní návrh topologie byl jednoduchý a reflektoval získaná data, viz obrázek~\ref{fig:prvotni_navrh}.
 
-\clfig{prvotni_navrh}{\linewidth}{Prvotní návrh testovaného prostředí}{Vlastní}{fig:prvotni_navrh}
+\clfig{prvotni_navrh}{10cm}{Prvotní návrh testovaného prostředí}{Vlastní}{fig:prvotni_navrh}
 
 Posléze byl vymodelován v programu Cisco Packet Tracer do použitelného návrhu prostředí.
 Je jasně vidět zachování základní myšlenky, byly ale přesně definované prvky topologie a jejich vlastnosti jako IP adresy koncových stanic, rozsahy jednotlivých sítí a zařazení do \firstac{VLAN} skupin.
@@ -1292,7 +1289,6 @@ V rámci programu Packet Tracer byla také na prvcích provedena potřebná konf
 Model prostředí je na obrázku~\ref{fig:ptmodel}.
 
 \clfig{ptModel}{\linewidth}{Návrh prostředí v Cisco Packet Tracer}{Vlastní}{fig:ptmodel}
-
 
 Posledním krokem je implementace infrastruktury na skutečných zařízeních.
 Za tímto účelem byla využita síťová laboratoř J-5 Univerzity Hradec Králové.
@@ -1415,7 +1411,7 @@ Tento fakt pouze svědčí o tom, že je nutné aktualizovat zařízení z důvo
 Pro simulaci scénáře je nutné připravit agenta v testovacím nástroji Caldera.
 Tento agent pak simuluje kompromitování zařízení a provádí testování, které mu nastavíme.
 V Caldeře je možné sledovat a vytvářet agenty v záložce agents, viz obrázek~\ref{fig:caldera_agents}.
-%todo crop image
+
 \clfig{lab/Agent_mainpage}{\linewidth}{Stránka pro ovládání agentů}{Vlastní}{fig:caldera_agents}
 
 Agenta lze vytvořit stiskem tlačítka \textit{deploy an agent}.
@@ -1457,12 +1453,10 @@ Stále fungující agent se proto v tomto seznamu znovu objeví při jeho dalš�
 Dalším důležitým krokem je příprava chování útočníka.
 To je v Caldeře simulované pomocí takzvaných \textit{adversaries}.
 \textit{Adversary} je simulovaný útočník, kterému je možné vybrat techniky, které bude v operaci provádět.
-To je možné vidět na obrázku~\ref{fig:adversary_show_techniques}.
+To je možné vidět na obrázku~\ref{fig:adversary_make_new}.
 Jak již bylo zmíněno, Caldera je založena na frameworku Mitre ATT\&CK, proto je možno u \textit{adversaries} vybírat techniky podle taktik z Mitre ATT\&CK\@.
 
-%todo remake with create profile button and proper crop
-\clfig{lab/adversary_show_techniques}{\linewidth}{Ukázka technik u simulovaného útočníka}{Vlastní}{fig:adversary_show_techniques}
-
+\clfig{lab/adversary_make_new}{\linewidth}{Ukázka technik u simulovaného útočníka}{Vlastní}{fig:adversary_make_new}
 
 Nový \textit{adversary} je vytvořen pomocí tlačítka \textit{new profile}.
 To otevře formulář pro vyplnění názvu a popisu tohoto profilu útočníka.
@@ -1483,9 +1477,7 @@ Naopak pokud je vyžadováno využití určité taktiky, je možné vyhledávat 
 Volba taktiky pak vede k volbě technik vedoucím na volbu sub-technik nebo specifických provedení dané techniky.
 Tímto způsobem může dále upravovat chování útočníka na bázi jednotlivých technik.
 
-%todo make picture for add ability search
-%todo add picture\label{fig:ability_selection}
-%\clfig{lab/ability_selection}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
+\clfig{lab/ability_add}{\linewidth}{Ukázka výběru technik}{Vlastní}{fig:ability_selection}
 
 \nlparagraph{Adversary pro scénář 2}
 Pro scénář 2 byli vyzkoušeni 2 hlavní profily útočníků, které byly pojmenovány \textit{Lab02} a \textit{Lab02v2}.
@@ -1499,13 +1491,14 @@ Tento útočník proto obsahuje 31 technik zaměřených právě k tomuto zámě
 
 
 \subsubsection{Spuštění operace}
-%todo check? dunno
-%\clfig{lab/operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:operation}
+
+\clfig{lab/create_operation}{\linewidth}{Ukázka správy operací}{Vlastní}{fig:create_operation}
+
 Finálním krokem testování je spuštění operace.
-K tomuto účelu v Caldeře slouží záložka \textit{operations}, viz obrázek~\ref{fig:operation}.
+K tomuto účelu v Caldeře slouží záložka \textit{operations}, viz obrázek~\ref{fig:create_operation}.
 Zde je možné spouštět nebo vytvářet nové operace, ale zároveň tato záložka slouží pro správu již uskutečněných operací.
 Zachovávají se zde informace o průběhu operace a případných výstupech z daných technik.
-Jelikož již bylo připraveno vše pro správnou činnost operace, je na čase kliknout na tlačítko \textit{create operation}, čímž je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:operation_creation}.
+Jelikož již bylo připraveno vše pro správnou činnost operace, je na čase kliknout na tlačítko \textit{create operation}, čímž je vyvolán formulář pro tvorbu nové operace, viz obrázek~\ref{fig:create_operation}.
 Je zde několik důležitých nastavení.
 Jméno operace a nastavení požadovaného \textit{adversary} je přímočaré.
 \textit{Fact source} je zajímavější, jedná se o před-připravené poznatky, například o testovaném zařízení, které lze přímo zadat nebo použít zjištěné z předchozích operací.
