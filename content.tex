@@ -1305,7 +1305,7 @@ Na obrázku~\ref{fig:mitre_colors} je možné vidět barevné znázornění repr
 \clfig{Mitre}{\linewidth}{Barevné označení jednotlivých scénářů}{Vlastní}{fig:mitre_colors}
 
 
-\subsection{Scénář 1 -- \textit{Recon}}
+\subsection{Scénář 1 -- \textit{Recon}}\label{subsec:scenar-1}
 První scénář je zaměřen na práci s informacemi.
 Jen velmi malé množství útoků probíhá bez prvotní fáze získávání informací a drtivá většina z nich je neúspěšná právě kvůli tomu, že útočníci podcenili tento první krok.
 Sběr informací lze provádět mnoha způsoby.
@@ -1379,7 +1379,7 @@ Jedná se o totiž o starší verzi serveru Apache vydanou v roce 2017.
 Tato informace dává útočníkovi možnost nalézt zranitelnosti pro tuto specifickou verzi a je to tedy značným bezpečnostním rizikem.
 Posledním zajímavým poznatkem bylo nalezení portu 5060 s protokolem SIP a port 8443 se službou OpenVPN\@.
 
-\subsection{Scénář 2 -- \textit{Discovery} a \textit{Elevate-privileges}}
+\subsection{Scénář 2 -- \textit{Discovery} a \textit{Elevate-privileges}}\label{subsec:scenar-2}
 Scénář 2 navazuje na scénář 1.
 Snahou je simulovat možné kroky útočníka poté, co provedl sběr informací o cíli.
 Cílem útočníka je tedy využít získaná data ve svůj prospěch a provést kompromitaci systému.
@@ -1697,7 +1697,9 @@ Odpověď zde není jasná a hypotézu nelze potvrdit ani vyvrátit bez dodateč
 Samozřejmě, že testovací prostředí vytvořit lze, bohužel každá osoba bude jinak vnímat, zda je prostředí "jednoduché a srozumitelné".
 Autor však věří, že popsané postupy jsou natolik podrobné, aby i v případě nepochopení bylo možné dojít k cílenému výsledku.
 Dále byly ukázány základy testování a uvedeny příklady a připomínky, které je možné aplikovat i na skutečnou infrastrukturu, z niž testování vycházelo.
+Výborným příkladem je kapitola~\ref{subsec:scenar-1}, zabývající se zjišťováním informací o organizaci, které lze využít k útokům Sociálního inženýrství, nebo také kapitola~\ref{subsec:scenar-2}, jež ukazuje získání specifické verze operačního systému a jak tuto informaci může útočník zneužít.
 Lze tedy říci, že druhá představená hypotéza, zabývající se aplikací výsledků testování pro zlepšení bezpečnosti reálného prostředí, byla potvrzena.
+
 Výsledky testování jsou ve většině příkladů očekávány, vždy existují povrchní data, která může útočník získat -- například bylo snadné získat data o uživateli, síti nebo o politice hesel.
 Dle očekávání také dopadly části útoků hlouběji zasahující do systému, ty byly zastaveny obranou systému a ve většině případů nahlášeny uživateli.
 Nepříjemným zjištěním však bylo, které informace jsou považovány za povrchní, a tedy jednoduše přístupné.
